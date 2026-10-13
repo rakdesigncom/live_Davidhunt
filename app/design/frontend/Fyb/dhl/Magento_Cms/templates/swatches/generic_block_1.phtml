@@ -1,0 +1,42 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$blockTitle = $block->getData('block_title');
+$blockSubtitle = $block->getData('block_subtitle');
+$blockImageId = $block->getData('block_image_id');
+$showSideLine = $block->getData('show_side_line');
+$blockTexts = $block->getData('block_texts');
+$images = $block->getData('images');
+?>
+<div class="aname_position"><a name="<?= $blockImageId ?>"></a></div>
+<div id="<?= $blockImageId ?>"></div>
+<div class="static-page-content block block-<?= $blockImageId ?> clearfix">
+    <div class="static_text_3images">
+        <div>
+            <h2 class="small-uppertitle"><?= $blockSubtitle ?></h2>
+            <h1 class="small-underline"><?= $blockTitle ?></h1>
+            <?php foreach ($blockTexts as $text): ?>
+                <p><?= $text ?></p>
+
+            <?php endforeach; ?>
+            <div class="order_samples_buttons">
+                <a href="<?= $block->getUrl('catalogues') ?>" class="button">ORDER SAMPLES</a>
+                <a href="<?= $block->getUrl('catalogues') ?>" class="button">DOWNLOAD PDF</a>
+            </div>
+        </div>
+        <div class="static_text_3images-images">
+            <div class="static_text_3images-images-col-1"><img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/' . $blockImageId . '_1.jpg'); ?>" alt="<?= $blockSubtitle ?> "></div>
+            <div  class="static_text_3images-images-col-2">
+                <div class="static_text_3images-images-col-2-1"><img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/' . $blockImageId . '_2.jpg'); ?>" alt="<?= $blockSubtitle ?> "></div>
+                <div class="static_text_3images-images-col-2-2"><img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/' . $blockImageId . '_3.jpg'); ?>" alt="<?= $blockSubtitle ?> "></div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <?php if ($showSideLine): ?>
+        <span class="side-line"><?= __($blockTitle) ?></span>
+    <?php endif; ?>
+</div>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="AutifyDigital\LloydscardnetPayment\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="AutifyDigital\LloydscardnetPayment\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">AutifyDigitalLcnet</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">AutifyDigital\LloydscardnetPayment\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="AutifyDigital\LloydscardnetPayment\Api\PaymentsRepositoryInterface" type="AutifyDigital\LloydscardnetPayment\Model\PaymentsRepository"/>
+	<preference for="AutifyDigital\LloydscardnetPayment\Api\Data\PaymentsInterface" type="AutifyDigital\LloydscardnetPayment\Model\Payments"/>
+	<preference for="AutifyDigital\LloydscardnetPayment\Api\Data\PaymentsSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="AutifyDigital\LloydscardnetPayment\Model\ResourceModel\Payments\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">autify_lloydscardnetpayment_payments</argument>
+			<argument name="resourceModel" xsi:type="string">AutifyDigital\LloydscardnetPayment\Model\ResourceModel\Payments\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="autify_lloydscardnetpayment_payments_listing_data_source" xsi:type="string">AutifyDigital\LloydscardnetPayment\Model\ResourceModel\Payments\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

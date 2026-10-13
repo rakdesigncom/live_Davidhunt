@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <dar>
+                <active>1</active>
+                <shipping_cost_standard>10.95</shipping_cost_standard>
+                <shipping_cost_overnight>13.95</shipping_cost_overnight>
+                <free_shipping_subtotal>75.00</free_shipping_subtotal>
+                <tax_including>1</tax_including>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>1</sort_order>
+                <model>Fyb\Shipping\Model\Carrier\DarCarrier</model>
+            </dar>
+        </carriers>
+    </default>
+</config>

@@ -1,0 +1,39 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$team = [
+    [
+        'name' => 'Nicola McGuirk',
+        'role' => 'Group Managing Director',
+        'desc' => 'Nicola is MD of the dar lighting group. With over 20 years at the helm her support has been pivotal in bringing David Hunt to the forefront of innovative lighting design. Nicola is an advocate of British manufacturing and is always investing in new manufacturing techniques and procedures that can better service our products and clients. Throughout the group Nicola promotes a strong ethos of best practice and excellent customer service.'
+    ],
+    [
+        'name' => 'Andrew Cooper',
+        'role' => 'Managing Director',
+        'desc' => 'Andrew joined the David Hunt team in early 2013 as our Managing Director. With a degree in Manufacturing Engineering and a career spanning both Operations and Engineering Management across the Oil & Gas, Mobile Telecoms, and Weighing Industries, Andrews background makes him well suited to running our daily operations, promoting strong team values and developing skills and processes.'
+    ],
+    [
+        'name' => 'Hollie Moreland',
+        'role' => 'Creative Director',
+        'desc' => 'Hollie joined David Hunt as Brand Manager in 2011, becoming Creative Director in 2017. She is responsible for new product design and development, art direction and exhibition design. Having studied at Parsons School of Design Paris and with a background in photography, product and graphic design, Hollie is close to every aspect of the creative process . She previously worked for clothing retailer Joules and is fastidious about accuracy and attention to detail.'
+    ],
+    [
+        'name' => 'Stephen Hillman',
+        'role' => 'Product Manager',
+        'desc' => 'Steve is our go to guy for all things production related. With over 22 years service at David Hunt he knows a thing or two about lighting design and manufacturing. If you have purchased a David Hunt fitting you can guarantee that Steve will have had a part in its creation. Steve is the one who takes a design concept and creates a final product. We have yet to ask Steve a question about resin he has not been able to answer so extensive is his knowledge of the production process.'
+    ],
+];
+?>
+<div class="static-page-content">
+    <div class="team_grid">
+        <?php foreach ($team as $key => $item): ?>
+            <div>
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/team/team_' . ($key + 1) . '.png'); ?>"
+                     alt="Employee <?= ($key + 1) ?>"/>
+                <h5 class="italic_24_text"><?= $item['name'] ?></h5>
+                <h6><?= $item['role'] ?></h6>
+                <div><?= $item['desc'] ?></div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

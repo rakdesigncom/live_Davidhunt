@@ -1,0 +1,52 @@
+{
+    "sparsh_banner": {
+        "column": {
+            "banner_id": true,
+            "banner_title": true,
+            "banner_description": true,
+            "banner_type": true,
+            "banner_image": true,
+            "banner_video": true,
+            "banner_video_thumb_image": true,
+            "banner_youtube": true,
+            "banner_video_autoplay": true,
+            "banner_vimeo": true,
+            "start_date": true,
+            "end_date": true,
+            "label_button_text": true,
+            "call_to_action": true,
+            "position": true,
+            "is_active": true,
+            "creation_time": true,
+            "update_time": true
+        },
+        "index": {
+            "SPARSH_BANNER_BANNER_TITLE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "sparsh_banner_store": {
+        "column": {
+            "banner_id": true,
+            "store_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SPARSH_BANNER_STORE_BANNER_ID_SPARSH_BANNER_BANNER_ID": true,
+            "SPARSH_BANNER_STORE_STORE_ID_STORE_STORE_ID": true
+        }
+    },
+    "sparsh_banner_customer_group": {
+        "column": {
+            "banner_id": true,
+            "customer_group_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SPARSH_BANNER_CUSTOMER_GROUP_BANNER_ID_SPARSH_BANNER_BANNER_ID": true,
+            "SPARSH_BANNER_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID": true
+        }
+    }
+}

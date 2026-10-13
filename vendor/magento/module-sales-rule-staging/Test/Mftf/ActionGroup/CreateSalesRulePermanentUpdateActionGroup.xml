@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2018 Adobe
+ * All Rights Reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Adobe and its suppliers, if any. The intellectual
+ * and technical concepts contained herein are proprietary to Adobe
+ * and its suppliers and are protected by all applicable intellectual
+ * property laws, including trade secret and copyright laws.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe.
+ */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="CreateSalesRulePermanentUpdateActionGroup">
+        <arguments>
+            <argument name="ruleName"/>
+            <argument name="schedule"/>
+        </arguments>
+        <generateDate date="{{schedule.startDate}}" format="m/j/Y 12:00 A" stepKey="generateDate"/>
+        <amOnPage url="{{AdminCartPriceRulesPage.url}}" stepKey="amOnCartPriceList"/>
+        <waitForPageLoad stepKey="waitForPriceList"/>
+        <fillField selector="{{AdminCartPriceRulesSection.filterByNameInput}}" userInput="{{ruleName.name}}" stepKey="filterByName"/>
+        <click selector="{{AdminCartPriceRulesSection.searchButton}}" stepKey="doFilter"/>
+        <click selector="{{AdminCartPriceRulesSection.rowByIndex('1')}}" stepKey="goToEditRulePage"/>
+        <click selector="{{AdminStagingSlideOutSection.scheduleNewUpdateBtn}}" stepKey="clickButtonSheduleNewUpdate1"/>
+        <fillField selector="{{AdminStagingSlideOutSection.updateName}}" userInput="{{schedule.name}}" stepKey="fillUpdateName"/>
+        <fillField selector="{{AdminStagingSlideOutSection.updateDescription}}" userInput="{{schedule.description}}" stepKey="fillDescription"/>
+        <fillField selector="{{AdminStagingSlideOutSection.startDate}}" userInput="{$generateDate}" stepKey="fillStartDate"/>
+        <click selector="{{AdminStagingSlideOutSection.save}}" stepKey="clickSave"/>
+        <waitForPageLoad time="30" stepKey="waitForPageLoad2"/>
+    </actionGroup>
+</actionGroups>

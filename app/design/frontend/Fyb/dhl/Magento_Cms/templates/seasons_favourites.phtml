@@ -1,0 +1,32 @@
+<?php
+use Magento\CatalogWidget\Block\Product\ProductsList;
+?>
+<a name="newcollection"></a>
+<div class="homepage-season-favorites">
+    <a href="#customize" class="vertical-arrow-button">
+        <?= __("Customise") ?>
+    </a>
+    <div>
+
+        <h2 class="small-uppertitle">Discover</h2>
+        <h1 class="small-underline">This seasons favourites</h1>
+
+    </div>
+    <div class="homepage-season-favorites-products">
+        <?php
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $list = $objectManager->get(\Magento\CatalogWidget\Block\Product\ProductsList::class);
+
+        $widgetCollection = $objectManager->create('Magento\Widget\Model\Widget\InstanceFactory')
+            ->create()->load('dhl_seasons_products', 'title');
+
+        $data = json_decode($widgetCollection->getData('widget_parameters'), true);
+        $list->addData($data);
+        $list->addData(['conditions' => json_encode($data['conditions'])]);
+        $list->setTemplate('Magento_Catalog::widget/grid_options.phtml')
+        ?>
+        <?=
+            $list->toHtml();
+        ?>
+    </div>
+</div>

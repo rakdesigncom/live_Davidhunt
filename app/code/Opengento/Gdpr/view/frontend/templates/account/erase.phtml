@@ -1,0 +1,80 @@
+<?php
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Opengento\Gdpr\ViewModel\Customer\Privacy\SettingsDataProvider;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+$escaper = $escaper ?? $block;
+
+/** @var SettingsDataProvider $settingsDataProvider */
+$settingsDataProvider = $block->getData('settingsDataProvider');
+?>
+<form class="form form-edit-account"
+      action="<?= $escaper->escapeUrl($block->getData('eraseActionUrl')) ?>"
+      method="post"
+      id="form-validate"
+      data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>"
+      autocomplete="off"
+      novalidate="novalidate">
+    <fieldset class="fieldset" data-container="erase-account">
+        <?= $block->getBlockHtml('formkey') ?>
+        <legend class="legend">
+            <span><?= $escaper->escapeHtml(__('Confirm password to continue')) ?></span>
+        </legend>
+        <div class="field password current required">
+            <label class="label" for="password">
+                <span><?= $escaper->escapeHtml(__('Password')) ?></span>
+            </label>
+            <div class="control">
+                <input type="password" class="input-text" name="password" id="password" data-validate="{required:true}" autocomplete="off"/>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" class="action submit primary primary-danger" id="erase" title="<?= $escaper->escapeHtmlAttr(__('Erase Account')) ?>">
+                    <span><?= $escaper->escapeHtml(__('Erase Personal Data')) ?></span>
+                </button>
+            </div>
+            <div class="secondary">
+                <a class="action back" href="<?= $escaper->escapeUrl($block->getData('backUrl')) ?>">
+                    <span><?= $escaper->escapeHtml(__('Back')) ?></span>
+                </a>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<script>
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/confirm",
+        "mage/validation"
+    ], function ($, confirm) {
+        "use strict";
+
+        var dataForm = $("#form-validate");
+
+        dataForm.mage("validation", {ignore: ":hidden"}).find("input").attr("autocomplete", "off");
+
+        $("#erase").on("click", function (e) {
+            e.preventDefault();
+            if (dataForm.validation("isValid")) {
+                confirm({
+                    title: "<?= $escaper->escapeJs($escaper->escapeHtml(__('Warning'))) ?>",
+                    content: "<?= $escaper->escapeJs($escaper->escapeHtml(__('Do you really want to erase your personal data?'))) ?>",
+                    actions: {
+                        confirm: function () {
+                            dataForm.submit();
+                        }
+                    }
+                })
+            }
+        });
+    });
+</script>

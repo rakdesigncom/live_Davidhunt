@@ -1,0 +1,157 @@
+& when (@media-common = true) {
+    button, a.button {
+        text-transform: uppercase;
+        font-family: @button-primary__font-family;
+        color: @button__color;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+        text-shadow: none;
+        background: @button__background;
+        border: @button__border;
+        padding: @button__padding;
+        font-size: @button__font-size;
+        line-height: @button__font-size;
+        text-align: center;
+        letter-spacing: @buttons_letter_spacing;
+
+
+        &:focus,
+        &:active {
+            background: @button__background;
+            border: @button__border;
+            color: @button__color;
+        }
+
+        &:hover {
+            background: @button__hover__background;
+            border: @button__hover_border;
+            color: @button__hover__color;
+            text-decoration: none;
+        }
+    }
+
+    button.grey, a.button.grey {
+
+        background: @button__color;
+        border: @button__color;
+        color: @color-white;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background: @button__color;
+            border: @button__color;
+            color: @color-white;
+        }
+    }
+
+    button.action.primary, button.action-primary, .action.primary, .action-primary {
+        font-size: @button__font-size;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        font-family: @button-primary__font-family;
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    ._keyfocus *:focus, input:not([disabled]):focus, textarea:not([disabled]):focus, select:not([disabled]):focus {
+        box-shadow: none;
+    }
+
+    .vertical-side-line-container {
+        position: absolute;
+    }
+    //
+    //.vertical-side-line {
+    //    writing-mode: vertical-rl;
+    //    text-orientation: mixed;
+    //    border: 0;
+    //    min-height: 300px;
+    //    padding-top: 220px;
+    //    padding-left: 0;
+    //    padding-right: 0;
+    //    color: @color_dark_grey_lighter;
+    //    text-transform: uppercase;
+    //    font-size: @font-size__13;
+    //    font-family: @font-family-gill-sans;
+    //    position: relative;
+    //
+    //    &:focus,
+    //    &:active,
+    //    &:visited,
+    //    &:hover {
+    //
+    //        border: none;
+    //        color: @color_dark_grey_lighter;
+    //        text-decoration: none;
+    //    }
+    //
+    //    &:before {
+    //        content: "";
+    //        background: @color_dark_grey_lighter;
+    //        position: absolute;
+    //        top: 0;
+    //        left: 9px;
+    //        height: 200px;
+    //        width: 1px;
+    //
+    //    }
+    //
+    //}
+
+    .vertical-side-line,
+    .vertical-arrow-button {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        border: 0;
+        background: no-repeat top center url(../images/grey_down_long_arrow.png);
+        background-size: 9px 160px;
+        min-height: 300px;
+        padding-top: 190px;
+        padding-left: 0;
+        padding-right: 3px;
+        color: @color_dark_grey_lighter;
+        text-transform: uppercase;
+        font-size: @font-size__13;
+        font-family: @font-family-gill-sans;
+
+        &:focus,
+        &:active,
+        &:visited,
+        &:hover {
+            background: no-repeat top center url(../images/grey_down_long_arrow.png);
+            background-size: 9px 160px;
+            border: none;
+            color: @color_dark_grey_lighter;
+            text-decoration: none;
+        }
+
+    }
+
+    .vertical-arrow-button.white {
+
+        background: no-repeat top center url(../images/white_down_long_arrow.png);
+        color: @color-white;
+        padding-top: 200px;
+
+        &:focus,
+        &:active,
+        &:hover {
+            background: no-repeat top center url(../images/white_down_long_arrow.png);
+            color: @color-white;;
+        }
+
+    }
+
+    .page-footer {
+        a.button {
+            color: @color-white;
+        }
+    }
+    .cart-discount .actions-toolbar .action.primary{
+        margin-left:10px;
+        padding: 17px 24px 15px;
+    }
+
+}

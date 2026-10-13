@@ -1,0 +1,19 @@
+# Ignore everything
+nav_proc_logs
+a.out
+json_feed/*
+healtheck/*
+
+#dont ignore
+!.gitignore
+!class_darImgProcessor.php
+!class_wsFuncs.php
+!class_darWsProcessor.php
+!class_darWsBespokeConfProcessor.php
+!class_magentoCustomOpts.php
+!class_magentoCust.php
+!darFacebookFeed.php
+!darImageSitemap.php
+!darWebReport.php
+!darWebShadeConfigurator.php
+!darWebFeed.php

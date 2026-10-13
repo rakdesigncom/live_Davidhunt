@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Category left navigation
+ *
+ * @var \Magento\Catalog\Block\Navigation $block
+ * @var \Magento\Framework\Locale\LocaleFormatter $localeFormatter
+ */
+?>
+<?php
+/** @var \Magento\Catalog\Model\Category $_category */
+$category = $block->getCategory();
+if (!$category = $block->getCategory()) {
+    return;
+}
+?>
+
+<div class="block main-category-info">
+    <div class="main-category-description">
+        <?= $category->getDescription() ?>
+      </div>
+</div>

@@ -1,0 +1,29 @@
+.sticky-notification-bar {
+    top:0;
+    width: 100%;
+    z-index: 99999;
+    text-align: center;
+    line-height: 35px;
+}
+
+.sticky-notification-bar .content {
+    text-align: center;
+    min-height: 40px;
+    font-size: 14px;
+    padding-top: 0px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.sticky-notification-bar .content p {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .sticky-notification-bar .content {
+        font-size: 12px;
+        padding-bottom: 10px;
+        word-break: break-word;
+    }
+}

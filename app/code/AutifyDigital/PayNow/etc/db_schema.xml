@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="autifydigital_paynow_paynow" resource="default" engine="innodb" comment="autifydigital_paynow_paynow Table">
+		<column xsi:type="int" name="paynow_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="paynow_id"/>
+		</constraint>
+		<column name="invoice_number" nullable="true" xsi:type="varchar" comment="Invoice Number" length="255"/>
+		<column name="name" nullable="true" xsi:type="varchar" comment="Name" length="255"/>
+		<column name="email_address" nullable="true" xsi:type="varchar" comment="Email Address" length="255"/>
+		<column name="amount" nullable="true" xsi:type="decimal" comment="amount" scale="4" precision="12"/>
+		<column name="company_name" nullable="true" xsi:type="varchar" comment="Company Name" length="255"/>
+		<column name="billto_name" nullable="true" xsi:type="varchar" comment="Billing Name" length="255"/>
+		<column name="billto_street1" nullable="true" xsi:type="text" comment="Billing Street 1"/>
+		<column name="billto_street2" nullable="true" xsi:type="text" comment="Billing Street 2"/>
+		<column name="billto_city" nullable="true" xsi:type="varchar" comment="Billing City" length="255"/>
+		<column name="billto_postcode" nullable="true" xsi:type="varchar" comment="Billing Postcode" length="255"/>
+		<column name="billto_state" nullable="true" xsi:type="varchar" comment="Billing State" length="255"/>
+		<column name="billto_country" nullable="true" xsi:type="varchar" comment="Billing Country" length="255"/>
+		<column name="billto_phone" nullable="true" xsi:type="varchar" comment="Billing Phone" length="255"/>
+		<column name="shipto_name" nullable="true" xsi:type="varchar" comment="Shipping Name" length="255"/>
+		<column name="shipto_street1" nullable="true" xsi:type="text" comment="Shipping Street 1"/>
+		<column name="shipto_street2" nullable="true" xsi:type="text" comment="Shipping Street 2"/>
+		<column name="shipto_city" nullable="true" xsi:type="varchar" comment="Shipping City" length="255"/>
+		<column name="shipto_postcode" nullable="true" xsi:type="varchar" comment="Shipping Postcode" length="255"/>
+		<column name="shipto_state" nullable="true" xsi:type="varchar" comment="Shipping State" length="255"/>
+		<column name="shipto_country" nullable="true" xsi:type="varchar" comment="Shipping Country" length="255"/>
+		<column name="shipto_phone" nullable="true" xsi:type="varchar" comment="Shipping Phone" length="255"/>
+		<column name="merchant_transaction_id" nullable="true" xsi:type="varchar" comment="Merchant Transaction ID" length="255"/>
+		<column name="gateway_transaction_id" nullable="true" xsi:type="varchar" comment="Gateway Transaction ID" length="255"/>
+		<column name="payment_status" nullable="true" xsi:type="int" comment="Payment Status" identity="false"/>
+		<column name="email_sent" nullable="true" xsi:type="int" comment="Email Sent" identity="false"/>
+		<column name="created_at" nullable="true" xsi:type="timestamp" comment="Created At" default="CURRENT_TIMESTAMP"/>
+		<column name="updated_at" nullable="true" xsi:type="timestamp" comment="Updated At" default="CURRENT_TIMESTAMP" on_update="true"/>
+	</table>
+</schema>

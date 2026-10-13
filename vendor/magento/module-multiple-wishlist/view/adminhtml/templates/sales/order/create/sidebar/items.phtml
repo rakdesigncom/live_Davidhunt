@@ -1,0 +1,222 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+use Magento\Sales\Block\Adminhtml\Order\Create\Sidebar\AbstractSidebar;
+use Magento\Sales\ViewModel\Order\Create\SidebarPermissionCheck;
+
+/* @var $block AbstractSidebar */
+/** @var SecureHtmlRenderer $secureRenderer */
+/** @var Escaper $escaper */
+/** @var SidebarPermissionCheck $sideBarPermissionCheck */
+
+?>
+<?php
+$blockDataId = $block->getDataId();
+$jsEscapedBlockDataId = $escaper->escapeJs($blockDataId);
+$sideBarPermissionCheck = $block->getData('sideBarPermissionCheck');
+?>
+<?php  if ($sideBarPermissionCheck->isAllowed()): ?>
+<div class="create-order-sidebar-block" id="sidebar_data_<?= $escaper->escapeHtmlAttr($blockDataId) ?>">
+    <div class="head sidebar-title-block">
+        <a href="#" class="action-refresh"
+           title="<?= $escaper->escapeHtml(__('Refresh')) ?>">
+            <span><?= $escaper->escapeHtml(__('Refresh')) ?></span>
+        </a>
+        <?= /* @noEscape */
+        $secureRenderer->renderEventListenerAsTag(
+            'onclick',
+            "order.loadArea(
+                'sidebar_" . $jsEscapedBlockDataId . "',
+                'sidebar_data_" . $jsEscapedBlockDataId . "'
+                );event.preventDefault()",
+            '#sidebar_data_' . $escaper->escapeJs($blockDataId) . ' a.action-refresh'
+        ); ?>
+        <h5 class="create-order-sidebar-label">
+            <?= $escaper->escapeHtml($block->getHeaderText()) ?>
+            <span class="normal">(<?= $escaper->escapeHtml($block->getItemCount()) ?>)</span>
+        </h5>
+        <select class="sidebar-selector admin__control-select">
+            <option value="all"><?= $escaper->escapeHtml(__('All Wish Lists')) ?></option>
+            <?php foreach ($block->getWishlists() as $id => $name):?>
+                <option value="<?= $escaper->escapeHtmlAttr($id) ?>"><?= $escaper->escapeHtml($name) ?></option>
+            <?php endforeach;?>
+        </select>
+    </div>
+    <div class="content">
+        <div class="auto-scroll">
+            <?php if ($block->getItemCount()): ?>
+            <table class="data-table admin__table-primary">
+                <thead>
+                    <tr>
+                        <th class="col-item"><?= $escaper->escapeHtml(__('Item')) ?></th>
+
+                        <?php if ($block->canDisplayItemQty()): ?>
+                            <th class="col-qty"><?= $escaper->escapeHtml(__('Qty')) ?></th>
+                        <?php endif; ?>
+
+                        <?php if ($block->canDisplayPrice()): ?>
+                            <th class="col-price"><?= $escaper->escapeHtml(__('Price')) ?></th>
+                        <?php endif; ?>
+
+                        <?php if ($block->canRemoveItems()): ?>
+                            <th class="col-remove">
+                                <span title="<?= $escaper->escapeHtmlAttr(__('Remove')) ?>"
+                                      class="icon icon-remove">
+                                    <span><?= $escaper->escapeHtml(__('Remove')) ?></span>
+                                </span>
+                            </th>
+                        <?php endif; ?>
+
+                        <th class="col-add">
+                            <span title="<?= $escaper->escapeHtmlAttr(__('Add To Order')) ?>"
+                                  class="icon icon-add">
+                                <span><?= $escaper->escapeHtml(__('Add To Order')) ?></span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <?php foreach ($block->getItems() as $_item): ?>
+                <tbody>
+                    <tr class="row wishlist-<?= $escaper->escapeHtmlAttr($_item->getWishlistId()) ?>">
+                        <td class="col-item"><?= $escaper->escapeHtml($_item->getName()) ?></td>
+
+                        <?php if ($block->canDisplayItemQty()): ?>
+                            <td class="col-qty">
+                                <?= /* @noEscape */ (int)$block->getItemQty($_item) ?>
+                            </td>
+                        <?php endif; ?>
+
+                        <?php if ($block->canDisplayPrice()): ?>
+                            <td class="col-price"><?= /* @noEscape */ $block->convertPrice($_item->getPrice()) ?></td>
+                        <?php endif; ?>
+
+                        <?php if ($block->canRemoveItems()): ?>
+                            <td class="col-remove">
+                                <?php
+                                $removeInputId = 'sidebar-remove-'
+                                    . $escaper->escapeHtmlAttr($block->getSidebarStorageAction()) . '-'
+                                    . $escaper->escapeHtmlAttr($block->getItemId($_item))
+                                ?>
+                                <input id="<?= /* @noEscape */ $removeInputId ?>"
+                                       type="checkbox"
+                                       name="sidebar[remove]
+                                       [<?= $escaper->escapeHtmlAttr($block->getItemId($_item)) ?>]"
+                                       class="admin__control-checkbox"
+                                       value="<?= $escaper->escapeHtmlAttr($blockDataId) ?>"
+                                       title="<?= $escaper->escapeHtmlAttr(__('Remove')) ?>"/>
+                                <label class="admin__field-label"
+                                       for="<?= /* @noEscape */ $removeInputId ?>">
+                                </label>
+                            </td>
+                        <?php endif; ?>
+
+                        <td class="col-add">
+                            <?php if ($block->isConfigurationRequired($_item->getTypeId())
+                                && $blockDataId == 'wishlist'): ?>
+                            <?php
+                                $linkId = $blockDataId . '-item-configure-'
+                                    . $escaper->escapeHtmlAttr($block->getProductId($_item)) . '-'
+                                    . $escaper->escapeHtmlAttr($block->getItemId($_item))
+                            ?>
+                                <a href="#"
+                                   id="<?= /* @noEscape*/ $linkId ?>"
+                                   class="icon icon-configure"
+                                   title="<?= $escaper->escapeHtml(__('Configure and Add to Order')) ?>">
+                                    <span><?= $escaper->escapeHtml(__('Configure and Add to Order')) ?></span>
+                                </a>
+                                <?= /* @noEscape */
+                                $secureRenderer->renderEventListenerAsTag(
+                                    'onclick',
+                                    "order.sidebarConfigureProduct('sidebar_wishlist',"
+                                        . $escaper->escapeJs($block->getProductId($_item)) . ","
+                                        . $escaper->escapeJs($block->getItemId($_item)) . "); return false",
+                                    '#' . $linkId
+                                );
+                                ?>
+                            <?php elseif ($block->isConfigurationRequired($_item->getTypeId())): ?>
+                                <?php
+                                $linkId = $blockDataId . '-item-configure-'
+                                    . $escaper->escapeHtmlAttr($block->getProductId($_item));
+                                ?>
+                                <a href="#"
+                                   class="icon icon-configure"
+                                   title="<?= $escaper->escapeHtml(__('Configure and Add to Order')) ?>">
+                                    <span><?= $escaper->escapeHtml(__('Configure and Add to Order')) ?></span>
+                                </a>
+                                <?= /* @noEscape */
+                                $secureRenderer->renderEventListenerAsTag(
+                                    'onclick',
+                                    "order.sidebarConfigureProduct('sidebar',"
+                                        . $escaper->escapeJs($block->getProductId($_item)) . "); return false",
+                                    '#' . $linkId
+                                );
+                                ?>
+                            <?php else: ?>
+                                <?php
+                                    $addToOrderInputId = 'sidebar-'
+                                        . $escaper->escapeHtmlAttr($block->getSidebarStorageAction()) . '-'
+                                        . $escaper->escapeHtmlAttr($block->getIdentifierId($_item));
+                                    $addToOrderInputName = 'sidebar['
+                                        . $escaper->escapeHtmlAttr($block->getSidebarStorageAction()) . ']['
+                                        . $escaper->escapeHtmlAttr($block->getIdentifierId($_item))  . ']';
+                                    $addToOrderInputValue = $block->canDisplayItemQty() ? $_item->getQty()*1 : 1;
+                                ?>
+                                <input id="<?= /* @noEscape */ $addToOrderInputId ?>"
+                                       type="checkbox"
+                                       name="<?= /* @noEscape */ $addToOrderInputName ?>"
+                                       value="<?= /* @noEscape */ $addToOrderInputValue ?>"
+                                       class="admin__control-checkbox"
+                                       title="<?= $escaper->escapeHtmlAttr(__('Add To Order')) ?>"/>
+                                <label class="admin__field-label"
+                                       for="<?= /* @noEscape */ $addToOrderInputId ?>">
+                                </label>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                </tbody>
+                <?php endforeach; ?>
+            </table>
+            <?php else: ?>
+                <span class="no-items"><?= $escaper->escapeHtml(__('No items')) ?></span>
+            <?php endif ?>
+        </div>
+        <?php if ($block->getItemCount() && $block->canRemoveItems()): ?>
+            <?= $block->getChildHtml('empty_customer_cart_button') ?>
+        <?php endif; ?>
+    </div>
+</div>
+<?php endif; ?>
+<?php $scriptString = <<<script
+require(['prototype'], function(){
+
+//<![CDATA[
+    wishlistBlockId = 'sidebar_data_{$jsEscapedBlockDataId}';
+    wishlistBlock = {
+        table : $(wishlistBlockId).down('.content table'),
+        selector : $(wishlistBlockId).down('.head select'),
+        init : function() {
+            Event.observe(this.selector, 'change', this.filter.bind(this))
+        },
+        filter : function() {
+            if (this.selector.value) {
+                $(this.table).select('tr.row').each((function(row) {
+                    var wishlistId = $(row).className.split('-')[1];
+                    $(row).setStyle({
+                        'display': (this.selector.value == 'all' || wishlistId == this.selector.value) ? '' : 'none'
+                    });
+                }).bind(this));
+            }
+        }
+    };
+    wishlistBlock.init();
+//]]>
+
+});
+script;
+?>
+<?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>

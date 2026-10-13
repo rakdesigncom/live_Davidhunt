@@ -1,0 +1,58 @@
+<?php
+/************************************************************************
+ *
+ * ADOBE CONFIDENTIAL
+ * ___________________
+ *
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Adobe and its suppliers, if any. The intellectual
+ * and technical concepts contained herein are proprietary to Adobe
+ * and its suppliers and are protected by all applicable intellectual
+ * property laws, including trade secret and copyright laws.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe.
+ * ************************************************************************
+ */
+
+use Magento\Framework\Escaper;
+use Magento\AdobeCommerceEventsClient\Block\Adminhtml\System\Config\SynchronizeEventsButton;
+
+/** @var Escaper $escaper */
+/** @var SynchronizeEventsButton $block */
+?>
+<script type="text/x-magento-init">
+    {
+        "#synchronize_events": {
+            "Magento_AdobeCommerceEventsClient/js/configuration-button": {
+                "ajaxUrl": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+                "buttonId": "#synchronize_events",
+                "buttonInfoId": "#synchronize_button_info",
+                "messageDivId": "#synchronization_message",
+                "messages": {
+                    "saveConfig": "Save your configuration before synchronizing events.",
+                    "success": "Successfully synchronized events.",
+                    "failure": "Failed to synchronize events."
+                }
+            }
+        }
+    }
+</script>
+
+<?= $block->getButtonHtml() ?>
+<div id="synchronize_button_info">
+<?php if (!$block->isConfigurationComplete()): ?>
+    <p class="note">
+        <span>Complete all fields in the "General configuration" section before synchronizing events.</span>
+    </p>
+<?php elseif (!$block->hasEventsToSync()): ?>
+    <p class="note"><span>No events for syncing to Adobe I/O found.</span></p>
+<?php else: ?>
+    <div id="synchronization_message" style="display: none;">
+        <div class="message-text"></div>
+    </div>
+<?php endif; ?>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="customizer" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Customizer</label>
+            <tab>fyb_base</tab>
+            <resource>Fyb_Customizer::config</resource>
+            <group id="general" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
+                <label>General Configuration</label>
+                <field id="url" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="text">
+                    <label>Customise Base Url</label>
+                    <comment>https://domain.com</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

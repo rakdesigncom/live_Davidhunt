@@ -1,0 +1,2275 @@
+nohup: ignoring input
+Created '/home/mtwodarl/live.darlighting.co.uk/nav_proc_logs/DEFAULT_SHADES.lck' lock file for pid '3050' lock type 'GEN'
+No Shade_Silk_Colours records to process
+No Shade_Braid records to process
+No Shade_Fringe records to process
+No Shade_Liner records to process
+No DHL_Cable records to process
+No DHL_Glass records to process
+No DHL_Inner_Paint records to process
+No DHL_Outer_Paint records to process
+Processing DHL_Default_Shades
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAAMwA5ADcAAAACe/9TADAAOAA5ADk=10;18779449010;
+    [Item_No] => ANT0397
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+    [Shade_Range] => ANTLER
+)
+Creating default shade for item no 'ANT0397'
+Setting dhl_partnum to 'ANT0397'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Setting shade_range to 'ANTLER'
+Saving default shade for item no 'ANT0397'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAAMwA5ADcAAAACe/9TADAAOAA5ADk=10;18779449010;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAAMwA5ADcAAAACe/9TADAAOAA5ADk=10;18779449010;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAAMwA5ADgAAAACe/9TADAAOAA5ADk=10;14479258490;
+    [Item_No] => ANT0398
+    [Shade_Code] => S0899
+)
+Creating default shade for item no 'ANT0398'
+Setting dhl_partnum to 'ANT0398'
+Setting shade_code to 'S0899'
+Saving default shade for item no 'ANT0398'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAAMwA5ADgAAAACe/9TADAAOAA5ADk=10;14479258490;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAAMwA5ADgAAAACe/9TADAAOAA5ADk=10;14479258490;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAAMwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449020;
+    [Item_No] => ANT0399
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+    [Shade_Range] => ANTLER
+)
+Creating default shade for item no 'ANT0399'
+Setting dhl_partnum to 'ANT0399'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Setting shade_range to 'ANTLER'
+Saving default shade for item no 'ANT0399'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAAMwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449020;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAAMwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449020;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANAA5ADcAAAACe/9TADAAOQA5ADk=10;14479258500;
+    [Item_No] => ANT0497
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0497'
+Setting dhl_partnum to 'ANT0497'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0497'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANAA5ADcAAAACe/9TADAAOQA5ADk=10;14479258500;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANAA5ADcAAAACe/9TADAAOQA5ADk=10;14479258500;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANQAwADAAAAACe/9TADAAOQA5ADk=10;18779449030;
+    [Item_No] => ANT0500
+    [Shade_Code] => S0999
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+    [Shade_Range] => ANTLER
+)
+Creating default shade for item no 'ANT0500'
+Setting dhl_partnum to 'ANT0500'
+Setting shade_code to 'S0999'
+Setting shade_type to 'DHL'
+Setting shade_range to 'ANTLER'
+Saving default shade for item no 'ANT0500'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANQAwADAAAAACe/9TADAAOQA5ADk=10;18779449030;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANQAwADAAAAACe/9TADAAOQA5ADk=10;18779449030;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANQA5ADcAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258510;
+    [Item_No] => ANT0597S
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0597S'
+Setting dhl_partnum to 'ANT0597S'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0597S'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANQA5ADcAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258510;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANQA5ADcAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258510;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANQA5ADgAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258520;
+    [Item_No] => ANT0598S
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0598S'
+Setting dhl_partnum to 'ANT0598S'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0598S'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANQA5ADgAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258520;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANQA5ADgAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258520;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANQA5ADkAAAACe/9TADAAOQA5ADk=10;18779449040;
+    [Item_No] => ANT0599
+    [Shade_Code] => S0999
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+    [Shade_Range] => ANTLER
+)
+Creating default shade for item no 'ANT0599'
+Setting dhl_partnum to 'ANT0599'
+Setting shade_code to 'S0999'
+Setting shade_type to 'DHL'
+Setting shade_range to 'ANTLER'
+Saving default shade for item no 'ANT0599'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANQA5ADkAAAACe/9TADAAOQA5ADk=10;18779449040;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANQA5ADkAAAACe/9TADAAOQA5ADk=10;18779449040;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANQA5ADkAVAAAAAJ7/1MAMAA5ADkAOQ==10;14479258540;
+    [Item_No] => ANT0599T
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0599T'
+Setting dhl_partnum to 'ANT0599T'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0599T'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANQA5ADkAVAAAAAJ7/1MAMAA5ADkAOQ==10;14479258540;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANQA5ADkAVAAAAAJ7/1MAMAA5ADkAOQ==10;14479258540;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANgA5ADcAAAACe/9TADAAOAA5ADk=10;14479258550;
+    [Item_No] => ANT0697
+    [Shade_Code] => S0899
+)
+Creating default shade for item no 'ANT0697'
+Setting dhl_partnum to 'ANT0697'
+Setting shade_code to 'S0899'
+Saving default shade for item no 'ANT0697'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANgA5ADcAAAACe/9TADAAOAA5ADk=10;14479258550;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANgA5ADcAAAACe/9TADAAOAA5ADk=10;14479258550;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANgA5ADgAAAACe/9TADAAOAA5ADk=10;14479258560;
+    [Item_No] => ANT0698
+    [Shade_Code] => S0899
+)
+Creating default shade for item no 'ANT0698'
+Setting dhl_partnum to 'ANT0698'
+Setting shade_code to 'S0899'
+Saving default shade for item no 'ANT0698'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANgA5ADgAAAACe/9TADAAOAA5ADk=10;14479258560;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANgA5ADgAAAACe/9TADAAOAA5ADk=10;14479258560;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANgA5ADkAAAACe/9TADAAOAA5ADk=10;18779449050;
+    [Item_No] => ANT0699
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+    [Shade_Range] => ANTLER
+)
+Creating default shade for item no 'ANT0699'
+Setting dhl_partnum to 'ANT0699'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Setting shade_range to 'ANTLER'
+Saving default shade for item no 'ANT0699'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANgA5ADkAAAACe/9TADAAOAA5ADk=10;18779449050;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANgA5ADkAAAACe/9TADAAOAA5ADk=10;18779449050;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADcATAAAAAJ7/1MAMAA5ADkAOQ==10;14479258570;
+    [Item_No] => ANT0797L
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0797L'
+Setting dhl_partnum to 'ANT0797L'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0797L'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADcATAAAAAJ7/1MAMAA5ADkAOQ==10;14479258570;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANwA5ADcATAAAAAJ7/1MAMAA5ADkAOQ==10;14479258570;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADcAUgAAAAJ7/1MAMAA5ADkAOQ==10;14479258580;
+    [Item_No] => ANT0797R
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0797R'
+Setting dhl_partnum to 'ANT0797R'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0797R'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADcAUgAAAAJ7/1MAMAA5ADkAOQ==10;14479258580;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANwA5ADcAUgAAAAJ7/1MAMAA5ADkAOQ==10;14479258580;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADcAUwAAAAJ7/1MAMAA4ADkAOQ==10;14479258590;
+    [Item_No] => ANT0797S
+    [Shade_Code] => S0899
+)
+Creating default shade for item no 'ANT0797S'
+Setting dhl_partnum to 'ANT0797S'
+Setting shade_code to 'S0899'
+Saving default shade for item no 'ANT0797S'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADcAUwAAAAJ7/1MAMAA4ADkAOQ==10;14479258590;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANwA5ADcAUwAAAAJ7/1MAMAA4ADkAOQ==10;14479258590;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADgATAAAAAJ7/0QAUgBUADEAMw==10;14479258600;
+    [Item_No] => ANT0798L
+    [Shade_Code] => DRT13
+)
+Creating default shade for item no 'ANT0798L'
+Setting dhl_partnum to 'ANT0798L'
+Setting shade_code to 'DRT13'
+Saving default shade for item no 'ANT0798L'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADgATAAAAAJ7/0QAUgBUADEAMw==10;14479258600;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANwA5ADgATAAAAAJ7/0QAUgBUADEAMw==10;14479258600;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADgAUgAAAAJ7/0QAUgBUADEAMw==10;14479258610;
+    [Item_No] => ANT0798R
+    [Shade_Code] => DRT13
+)
+Creating default shade for item no 'ANT0798R'
+Setting dhl_partnum to 'ANT0798R'
+Setting shade_code to 'DRT13'
+Saving default shade for item no 'ANT0798R'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADgAUgAAAAJ7/0QAUgBUADEAMw==10;14479258610;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANwA5ADgAUgAAAAJ7/0QAUgBUADEAMw==10;14479258610;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADgAUwAAAAJ7/1MAMAA4ADkAOQ==10;14479258620;
+    [Item_No] => ANT0798S
+    [Shade_Code] => S0899
+)
+Creating default shade for item no 'ANT0798S'
+Setting dhl_partnum to 'ANT0798S'
+Setting shade_code to 'S0899'
+Saving default shade for item no 'ANT0798S'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAANwA5ADgAUwAAAAJ7/1MAMAA4ADkAOQ==10;14479258620;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAANwA5ADgAUwAAAAJ7/1MAMAA4ADkAOQ==10;14479258620;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449070;
+    [Item_No] => ANT0799
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+    [Shade_Range] => ANTLER
+)
+Creating default shade for item no 'ANT0799'
+Setting dhl_partnum to 'ANT0799'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Setting shade_range to 'ANTLER'
+Saving default shade for item no 'ANT0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADAANwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449070;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADAANwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449070;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAAOAA5ADcAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258630;
+    [Item_No] => ANT0897S
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0897S'
+Setting dhl_partnum to 'ANT0897S'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0897S'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAAOAA5ADcAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258630;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAAOAA5ADcAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258630;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAAOAA5ADgAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258640;
+    [Item_No] => ANT0898S
+    [Shade_Code] => S0999
+)
+Creating default shade for item no 'ANT0898S'
+Setting dhl_partnum to 'ANT0898S'
+Setting shade_code to 'S0999'
+Saving default shade for item no 'ANT0898S'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0EATgBUADAAOAA5ADgAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258640;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0EATgBUADAAOAA5ADgAUwAAAAJ7/1MAMAA5ADkAOQ==10;14479258640;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAMgA5ADcAAAACe/9EAFIAUwA0ADA=10;14479258650;
+    [Item_No] => ANT4297
+    [Shade_Code] => DRS40
+)
+Creating default shade for item no 'ANT4297'
+Setting dhl_partnum to 'ANT4297'
+Setting shade_code to 'DRS40'
+Saving default shade for item no 'ANT4297'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAMgA5ADcAAAACe/9EAFIAUwA0ADA=10;14479258650;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADQAMgA5ADcAAAACe/9EAFIAUwA0ADA=10;14479258650;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAMgA5ADgAAAACe/9EAFIAUwA0ADA=10;14479258660;
+    [Item_No] => ANT4298
+    [Shade_Code] => DRS40
+)
+Creating default shade for item no 'ANT4298'
+Setting dhl_partnum to 'ANT4298'
+Setting shade_code to 'DRS40'
+Saving default shade for item no 'ANT4298'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAMgA5ADgAAAACe/9EAFIAUwA0ADA=10;14479258660;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADQAMgA5ADgAAAACe/9EAFIAUwA0ADA=10;14479258660;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAOQA5ADcAAAACe/9EAFIAUwA1ADA=10;14479258670;
+    [Item_No] => ANT4997
+    [Shade_Code] => DRS50
+)
+Creating default shade for item no 'ANT4997'
+Setting dhl_partnum to 'ANT4997'
+Setting shade_code to 'DRS50'
+Saving default shade for item no 'ANT4997'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAOQA5ADcAAAACe/9EAFIAUwA1ADA=10;14479258670;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADQAOQA5ADcAAAACe/9EAFIAUwA1ADA=10;14479258670;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAOQA5ADgAAAACe/9EAFIAUwA1ADA=10;14479258680;
+    [Item_No] => ANT4998
+    [Shade_Code] => DRS50
+)
+Creating default shade for item no 'ANT4998'
+Setting dhl_partnum to 'ANT4998'
+Setting shade_code to 'DRS50'
+Saving default shade for item no 'ANT4998'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EATgBUADQAOQA5ADgAAAACe/9EAFIAUwA1ADA=10;14479258680;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EATgBUADQAOQA5ADgAAAACe/9EAFIAUwA1ADA=10;14479258680;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0EAUwBDADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449080;
+    [Item_No] => ASC0799
+    [Shade_Code] => S0199
+    [Shade_Range] => KNURL
+)
+Creating default shade for item no 'ASC0799'
+Setting dhl_partnum to 'ASC0799'
+Setting shade_code to 'S0199'
+Setting shade_range to 'KNURL'
+Saving default shade for item no 'ASC0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0EAUwBDADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449080;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0EAUwBDADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449080;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0IAUgBVADAANwAwADAATAAAAAJ7/1MAMQAzADkAOQ==10;18779449090;
+    [Item_No] => BRU0700L
+    [Shade_Code] => S1399
+    [Shade_Range] => BRUTUS
+)
+Creating default shade for item no 'BRU0700L'
+Setting dhl_partnum to 'BRU0700L'
+Setting shade_code to 'S1399'
+Setting shade_range to 'BRUTUS'
+Saving default shade for item no 'BRU0700L'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0IAUgBVADAANwAwADAATAAAAAJ7/1MAMQAzADkAOQ==10;18779449090;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0IAUgBVADAANwAwADAATAAAAAJ7/1MAMQAzADkAOQ==10;18779449090;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/0IAUgBVADAANwAwADAAUgAAAAJ7/1MAMQAzADkAOQ==10;18779449100;
+    [Item_No] => BRU0700R
+    [Shade_Code] => S1399
+    [Shade_Range] => BRUTUS
+)
+Creating default shade for item no 'BRU0700R'
+Setting dhl_partnum to 'BRU0700R'
+Setting shade_code to 'S1399'
+Setting shade_range to 'BRUTUS'
+Saving default shade for item no 'BRU0700R'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/0IAUgBVADAANwAwADAAUgAAAAJ7/1MAMQAzADkAOQ==10;18779449100;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/0IAUgBVADAANwAwADAAUgAAAAJ7/1MAMQAzADkAOQ==10;18779449100;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MASABJADAAMQA3ADUAAAACe/9EAFIAVAAyADA=10;18779449130;
+    [Item_No] => CHI0175
+    [Shade_Code] => DRT20
+    [Shade_Style] => CYL
+    [Shade_Range] => DRUM TALL
+)
+Creating default shade for item no 'CHI0175'
+Setting dhl_partnum to 'CHI0175'
+Setting shade_code to 'DRT20'
+Setting shade_range to 'DRUM TALL'
+Saving default shade for item no 'CHI0175'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MASABJADAAMQA3ADUAAAACe/9EAFIAVAAyADA=10;18779449130;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MASABJADAAMQA3ADUAAAACe/9EAFIAVAAyADA=10;18779449130;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MASABJADAANwA3ADUAAAACe/9EAFIAVAAxADM=10;18779449140;
+    [Item_No] => CHI0775
+    [Shade_Code] => DRT13
+    [Shade_Style] => CYL
+    [Shade_Range] => DRUM TALL
+)
+Creating default shade for item no 'CHI0775'
+Setting dhl_partnum to 'CHI0775'
+Setting shade_code to 'DRT13'
+Setting shade_range to 'DRUM TALL'
+Saving default shade for item no 'CHI0775'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MASABJADAANwA3ADUAAAACe/9EAFIAVAAxADM=10;18779449140;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MASABJADAANwA3ADUAAAACe/9EAFIAVAAxADM=10;18779449140;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MATwBHADAANwAwADAAAAACe/9TADAAMQA5ADk=10;14479258720;
+    [Item_No] => COG0700
+    [Shade_Code] => S0199
+)
+Creating default shade for item no 'COG0700'
+Setting dhl_partnum to 'COG0700'
+Setting shade_code to 'S0199'
+Saving default shade for item no 'COG0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MATwBHADAANwAwADAAAAACe/9TADAAMQA5ADk=10;14479258720;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MATwBHADAANwAwADAAAAACe/9TADAAMQA5ADk=10;14479258720;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MATwBHADAANwA5ADQAAAACe/9TADAAMQA5ADk=10;14479258730;
+    [Item_No] => COG0794
+    [Shade_Code] => S0199
+)
+Creating default shade for item no 'COG0794'
+Setting dhl_partnum to 'COG0794'
+Setting shade_code to 'S0199'
+Saving default shade for item no 'COG0794'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MATwBHADAANwA5ADQAAAACe/9TADAAMQA5ADk=10;14479258730;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MATwBHADAANwA5ADQAAAACe/9TADAAMQA5ADk=10;14479258730;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MATwBOADAANwA5ADkAAAACe/9TADAAMgA5ADk=10;18779449150;
+    [Item_No] => CON0799
+    [Shade_Code] => S0299
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'CON0799'
+Setting dhl_partnum to 'CON0799'
+Setting shade_code to 'S0299'
+Saving default shade for item no 'CON0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MATwBOADAANwA5ADkAAAACe/9TADAAMgA5ADk=10;18779449150;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MATwBOADAANwA5ADkAAAACe/9TADAAMgA5ADk=10;18779449150;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADAANwAwADAAAAACe/9TADEAMQA5ADk=10;18779449170;
+    [Item_No] => CRO0700
+    [Shade_Code] => S1199
+    [Shade_Range] => TILE
+)
+Creating default shade for item no 'CRO0700'
+Setting dhl_partnum to 'CRO0700'
+Setting shade_code to 'S1199'
+Setting shade_range to 'TILE'
+Saving default shade for item no 'CRO0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADAANwAwADAAAAACe/9TADEAMQA5ADk=10;18779449170;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MAUgBPADAANwAwADAAAAACe/9TADEAMQA5ADk=10;18779449170;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADAANwA5ADkAAAACe/9TADEAMQA5ADk=10;18779449180;
+    [Item_No] => CRO0799
+    [Shade_Code] => S1199
+    [Shade_Range] => TILE
+)
+Creating default shade for item no 'CRO0799'
+Setting dhl_partnum to 'CRO0799'
+Setting shade_code to 'S1199'
+Setting shade_range to 'TILE'
+Saving default shade for item no 'CRO0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADAANwA5ADkAAAACe/9TADEAMQA5ADk=10;18779449180;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MAUgBPADAANwA5ADkAAAACe/9TADEAMQA5ADk=10;18779449180;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADQAMgAwADAAAAACe/9aAE8ARgAxADI=10;18779449190;
+    [Item_No] => CRO4200
+    [Shade_Code] => ZOF12
+    [Shade_Style] => SQU
+    [Shade_Range] => ZOFFANY
+)
+Creating default shade for item no 'CRO4200'
+Setting dhl_partnum to 'CRO4200'
+Setting shade_code to 'ZOF12'
+Setting shade_range to 'ZOFFANY'
+Saving default shade for item no 'CRO4200'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADQAMgAwADAAAAACe/9aAE8ARgAxADI=10;18779449190;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MAUgBPADQAMgAwADAAAAACe/9aAE8ARgAxADI=10;18779449190;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADQAMgA5ADkAAAACe/9aAE8ARgAxADI=10;18779449210;
+    [Item_No] => CRO4299
+    [Shade_Code] => ZOF12
+    [Shade_Style] => SQU
+    [Shade_Range] => ZOFFANY
+)
+Creating default shade for item no 'CRO4299'
+Setting dhl_partnum to 'CRO4299'
+Setting shade_code to 'ZOF12'
+Setting shade_range to 'ZOFFANY'
+Saving default shade for item no 'CRO4299'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0MAUgBPADQAMgA5ADkAAAACe/9aAE8ARgAxADI=10;18779449210;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0MAUgBPADQAMgA5ADkAAAACe/9aAE8ARgAxADI=10;18779449210;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAANQAwADAAAAACe/9EAE8AUgAwADc=10;18779449230;
+    [Item_No] => DOR0500
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR0500'
+Setting dhl_partnum to 'DOR0500'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR0500'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAANQAwADAAAAACe/9EAE8AUgAwADc=10;18779449230;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADAANQAwADAAAAACe/9EAE8AUgAwADc=10;18779449230;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAANQA5ADYAAAACe/9EAE8AUgAwADc=10;14479258800;
+    [Item_No] => DOR0596
+    [Shade_Code] => DOR07
+)
+Creating default shade for item no 'DOR0596'
+Setting dhl_partnum to 'DOR0596'
+Setting shade_code to 'DOR07'
+Saving default shade for item no 'DOR0596'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAANQA5ADYAAAACe/9EAE8AUgAwADc=10;14479258800;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADAANQA5ADYAAAACe/9EAE8AUgAwADc=10;14479258800;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAANQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449240;
+    [Item_No] => DOR0599
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR0599'
+Setting dhl_partnum to 'DOR0599'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR0599'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAANQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449240;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADAANQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449240;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAAOQAwADAAAAACe/9EAE8AUgAwADc=10;18779449250;
+    [Item_No] => DOR0900
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR0900'
+Setting dhl_partnum to 'DOR0900'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR0900'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAAOQAwADAAAAACe/9EAE8AUgAwADc=10;18779449250;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADAAOQAwADAAAAACe/9EAE8AUgAwADc=10;18779449250;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAAOQA5ADYAAAACe/9EAE8AUgAwADc=10;14479258830;
+    [Item_No] => DOR0996
+    [Shade_Code] => DOR07
+)
+Creating default shade for item no 'DOR0996'
+Setting dhl_partnum to 'DOR0996'
+Setting shade_code to 'DOR07'
+Saving default shade for item no 'DOR0996'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAAOQA5ADYAAAACe/9EAE8AUgAwADc=10;14479258830;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADAAOQA5ADYAAAACe/9EAE8AUgAwADc=10;14479258830;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAAOQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449260;
+    [Item_No] => DOR0999
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR0999'
+Setting dhl_partnum to 'DOR0999'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR0999'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADAAOQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449260;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADAAOQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449260;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEAMwAwADAAAAACe/9EAE8AUgAwADc=10;18779449270;
+    [Item_No] => DOR1300
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR1300'
+Setting dhl_partnum to 'DOR1300'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR1300'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEAMwAwADAAAAACe/9EAE8AUgAwADc=10;18779449270;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADEAMwAwADAAAAACe/9EAE8AUgAwADc=10;18779449270;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEAMwA5ADkAAAACe/9EAE8AUgAwADc=10;18779449280;
+    [Item_No] => DOR1399
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR1399'
+Setting dhl_partnum to 'DOR1399'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR1399'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEAMwA5ADkAAAACe/9EAE8AUgAwADc=10;18779449280;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADEAMwA5ADkAAAACe/9EAE8AUgAwADc=10;18779449280;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEANQAwADAAAAACe/9EAE8AUgAwADc=10;18779449290;
+    [Item_No] => DOR1500
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR1500'
+Setting dhl_partnum to 'DOR1500'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR1500'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEANQAwADAAAAACe/9EAE8AUgAwADc=10;18779449290;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADEANQAwADAAAAACe/9EAE8AUgAwADc=10;18779449290;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEANQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449300;
+    [Item_No] => DOR1599
+    [Shade_Code] => DOR07
+    [Shade_Type] => DHL
+    [Shade_Style] => TAP,CLI
+    [Shade_Range] => DOREEN
+)
+Creating default shade for item no 'DOR1599'
+Setting dhl_partnum to 'DOR1599'
+Setting shade_code to 'DOR07'
+Setting shade_type to 'DHL'
+Setting shade_range to 'DOREEN'
+Saving default shade for item no 'DOR1599'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0QATwBSADEANQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449300;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0QATwBSADEANQA5ADkAAAACe/9EAE8AUgAwADc=10;18779449300;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAMwAwADAAAAACe/9TADAANgA5ADk=10;18779449310;
+    [Item_No] => GAR0300
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR0300'
+Setting dhl_partnum to 'GAR0300'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR0300'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAMwAwADAAAAACe/9TADAANgA5ADk=10;18779449310;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADAAMwAwADAAAAACe/9TADAANgA5ADk=10;18779449310;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAMwA5ADkAAAACe/9TADAANgA5ADk=10;18779449320;
+    [Item_No] => GAR0399
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR0399'
+Setting dhl_partnum to 'GAR0399'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR0399'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAMwA5ADkAAAACe/9TADAANgA5ADk=10;18779449320;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADAAMwA5ADkAAAACe/9TADAANgA5ADk=10;18779449320;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAANgAwADAAAAACe/9TADAANgA5ADk=10;18779449330;
+    [Item_No] => GAR0600
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR0600'
+Setting dhl_partnum to 'GAR0600'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR0600'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAANgAwADAAAAACe/9TADAANgA5ADk=10;18779449330;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADAANgAwADAAAAACe/9TADAANgA5ADk=10;18779449330;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAANgA5ADkAAAACe/9TADAANgA5ADk=10;18779449340;
+    [Item_No] => GAR0699
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR0699'
+Setting dhl_partnum to 'GAR0699'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR0699'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAANgA5ADkAAAACe/9TADAANgA5ADk=10;18779449340;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADAANgA5ADkAAAACe/9TADAANgA5ADk=10;18779449340;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAOQAwADAAAAACe/9TADAANgA5ADk=10;18779449350;
+    [Item_No] => GAR0900
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR0900'
+Setting dhl_partnum to 'GAR0900'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR0900'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAOQAwADAAAAACe/9TADAANgA5ADk=10;18779449350;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADAAOQAwADAAAAACe/9TADAANgA5ADk=10;18779449350;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAOQA5ADkAAAACe/9TADAANgA5ADk=10;18779449360;
+    [Item_No] => GAR0999
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR0999'
+Setting dhl_partnum to 'GAR0999'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR0999'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADAAOQA5ADkAAAACe/9TADAANgA5ADk=10;18779449360;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADAAOQA5ADkAAAACe/9TADAANgA5ADk=10;18779449360;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEAMwAwADAAAAACe/9TADAANgA5ADk=10;18779449370;
+    [Item_No] => GAR1300
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR1300'
+Setting dhl_partnum to 'GAR1300'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR1300'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEAMwAwADAAAAACe/9TADAANgA5ADk=10;18779449370;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADEAMwAwADAAAAACe/9TADAANgA5ADk=10;18779449370;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEAMwA5ADkAAAACe/9TADAANgA5ADk=10;18779449380;
+    [Item_No] => GAR1399
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR1399'
+Setting dhl_partnum to 'GAR1399'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR1399'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEAMwA5ADkAAAACe/9TADAANgA5ADk=10;18779449380;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADEAMwA5ADkAAAACe/9TADAANgA5ADk=10;18779449380;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEANQAwADAAAAACe/9TADAANgA5ADk=10;18779449400;
+    [Item_No] => GAR1500
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR1500'
+Setting dhl_partnum to 'GAR1500'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR1500'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEANQAwADAAAAACe/9TADAANgA5ADk=10;18779449400;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADEANQAwADAAAAACe/9TADAANgA5ADk=10;18779449400;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEANQA5ADkAAAACe/9TADAANgA5ADk=10;18779449410;
+    [Item_No] => GAR1599
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'GAR1599'
+Setting dhl_partnum to 'GAR1599'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'GAR1599'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0cAQQBSADEANQA5ADkAAAACe/9TADAANgA5ADk=10;18779449410;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0cAQQBSADEANQA5ADkAAAACe/9TADAANgA5ADk=10;18779449410;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAANAA0ADAAAAACe/9TADAANQA5ADk=10;18779449420;
+    [Item_No] => HUN0440
+    [Shade_Code] => S0599
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'HUN0440'
+Setting dhl_partnum to 'HUN0440'
+Setting shade_code to 'S0599'
+Saving default shade for item no 'HUN0440'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAANAA0ADAAAAACe/9TADAANQA5ADk=10;18779449420;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0gAVQBOADAANAA0ADAAAAACe/9TADAANQA5ADk=10;18779449420;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAANgA0ADAAAAACe/9TADAANgA5ADk=10;18779449440;
+    [Item_No] => HUN0640
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'HUN0640'
+Setting dhl_partnum to 'HUN0640'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'HUN0640'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAANgA0ADAAAAACe/9TADAANgA5ADk=10;18779449440;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0gAVQBOADAANgA0ADAAAAACe/9TADAANgA5ADk=10;18779449440;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAANwA0ADAAAAACe/9TADAANgA5ADk=10;18779449450;
+    [Item_No] => HUN0740
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'HUN0740'
+Setting dhl_partnum to 'HUN0740'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'HUN0740'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAANwA0ADAAAAACe/9TADAANgA5ADk=10;18779449450;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0gAVQBOADAANwA0ADAAAAACe/9TADAANgA5ADk=10;18779449450;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAAOQA0ADAAAAACe/9TADAANgA5ADk=10;18779449460;
+    [Item_No] => HUN0940
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'HUN0940'
+Setting dhl_partnum to 'HUN0940'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'HUN0940'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0gAVQBOADAAOQA0ADAAAAACe/9TADAANgA5ADk=10;18779449460;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0gAVQBOADAAOQA0ADAAAAACe/9TADAANgA5ADk=10;18779449460;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANgA5ADEAAAACe/9TADAANgA5ADk=10;14479258990;
+    [Item_No] => ICA0691
+    [Shade_Code] => S0699
+)
+Creating default shade for item no 'ICA0691'
+Setting dhl_partnum to 'ICA0691'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'ICA0691'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANgA5ADEAAAACe/9TADAANgA5ADk=10;14479258990;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0kAQwBBADAANgA5ADEAAAACe/9TADAANgA5ADk=10;14479258990;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANgA5ADkAAAACe/9TADAANgA5ADk=10;14479259000;
+    [Item_No] => ICA0699
+    [Shade_Code] => S0699
+)
+Creating default shade for item no 'ICA0699'
+Setting dhl_partnum to 'ICA0699'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'ICA0699'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANgA5ADkAAAACe/9TADAANgA5ADk=10;14479259000;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0kAQwBBADAANgA5ADkAAAACe/9TADAANgA5ADk=10;14479259000;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANwA5ADEAAAACe/9TADAANgA5ADk=10;14479259010;
+    [Item_No] => ICA0791
+    [Shade_Code] => S0699
+)
+Creating default shade for item no 'ICA0791'
+Setting dhl_partnum to 'ICA0791'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'ICA0791'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANwA5ADEAAAACe/9TADAANgA5ADk=10;14479259010;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0kAQwBBADAANwA5ADEAAAACe/9TADAANgA5ADk=10;14479259010;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANwA5ADkAAAACe/9TADAANgA5ADk=10;14479259020;
+    [Item_No] => ICA0799
+    [Shade_Code] => S0699
+)
+Creating default shade for item no 'ICA0799'
+Setting dhl_partnum to 'ICA0799'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'ICA0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0kAQwBBADAANwA5ADkAAAACe/9TADAANgA5ADk=10;14479259020;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0kAQwBBADAANwA5ADkAAAACe/9TADAANgA5ADk=10;14479259020;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAAMwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449470;
+    [Item_No] => JOS0399
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'JOS0399'
+Setting dhl_partnum to 'JOS0399'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Saving default shade for item no 'JOS0399'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAAMwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449470;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADAAMwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449470;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANQA5ADkAAAACe/9TADAAOAA5ADk=10;18779449500;
+    [Item_No] => JOS0599
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'JOS0599'
+Setting dhl_partnum to 'JOS0599'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Saving default shade for item no 'JOS0599'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANQA5ADkAAAACe/9TADAAOAA5ADk=10;18779449500;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADAANQA5ADkAAAACe/9TADAAOAA5ADk=10;18779449500;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANgAwADEAAAACe/9TADEANgA5ADk=10;14479259030;
+    [Item_No] => JOS0601
+    [Shade_Code] => S1699
+)
+Creating default shade for item no 'JOS0601'
+Setting dhl_partnum to 'JOS0601'
+Setting shade_code to 'S1699'
+Saving default shade for item no 'JOS0601'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANgAwADEAAAACe/9TADEANgA5ADk=10;14479259030;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADAANgAwADEAAAACe/9TADEANgA5ADk=10;14479259030;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANgA5ADkAAAACe/9TADEANgA5ADk=10;18779449510;
+    [Item_No] => JOS0699
+    [Shade_Code] => S1699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'JOS0699'
+Setting dhl_partnum to 'JOS0699'
+Setting shade_code to 'S1699'
+Saving default shade for item no 'JOS0699'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANgA5ADkAAAACe/9TADEANgA5ADk=10;18779449510;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADAANgA5ADkAAAACe/9TADEANgA5ADk=10;18779449510;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449520;
+    [Item_No] => JOS0799
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'JOS0799'
+Setting dhl_partnum to 'JOS0799'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Saving default shade for item no 'JOS0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAANwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449520;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADAANwA5ADkAAAACe/9TADAAOAA5ADk=10;18779449520;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAAOQA5ADkAAAACe/9TADAAOAA5ADk=10;18779449540;
+    [Item_No] => JOS0999
+    [Shade_Code] => S0899
+    [Shade_Type] => DHL
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'JOS0999'
+Setting dhl_partnum to 'JOS0999'
+Setting shade_code to 'S0899'
+Setting shade_type to 'DHL'
+Saving default shade for item no 'JOS0999'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADAAOQA5ADkAAAACe/9TADAAOAA5ADk=10;18779449540;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADAAOQA5ADkAAAACe/9TADAAOAA5ADk=10;18779449540;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADUAMwA5ADkAAAACe/9TADAANwA5ADk=10;18779449550;
+    [Item_No] => JOS5399
+    [Shade_Code] => S0799
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'JOS5399'
+Setting dhl_partnum to 'JOS5399'
+Setting shade_code to 'S0799'
+Saving default shade for item no 'JOS5399'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0oATwBTADUAMwA5ADkAAAACe/9TADAANwA5ADk=10;18779449550;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0oATwBTADUAMwA5ADkAAAACe/9TADAANwA5ADk=10;18779449550;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0sATgBVADAANwAwADAAAAACe/9TADAAMQA5ADk=10;18779449570;
+    [Item_No] => KNU0700
+    [Shade_Code] => S0199
+    [Shade_Range] => KNURL
+)
+Creating default shade for item no 'KNU0700'
+Setting dhl_partnum to 'KNU0700'
+Setting shade_code to 'S0199'
+Setting shade_range to 'KNURL'
+Saving default shade for item no 'KNU0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0sATgBVADAANwAwADAAAAACe/9TADAAMQA5ADk=10;18779449570;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0sATgBVADAANwAwADAAAAACe/9TADAAMQA5ADk=10;18779449570;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0sATgBVADAANwA5ADUAAAACe/9TADAAMQA5ADk=10;18779449580;
+    [Item_No] => KNU0795
+    [Shade_Code] => S0199
+    [Shade_Range] => KNURL
+)
+Creating default shade for item no 'KNU0795'
+Setting dhl_partnum to 'KNU0795'
+Setting shade_code to 'S0199'
+Setting shade_range to 'KNURL'
+Saving default shade for item no 'KNU0795'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0sATgBVADAANwA5ADUAAAACe/9TADAAMQA5ADk=10;18779449580;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0sATgBVADAANwA5ADUAAAACe/9TADAAMQA5ADk=10;18779449580;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0sATgBVADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449590;
+    [Item_No] => KNU0799
+    [Shade_Code] => S0199
+    [Shade_Range] => KNURL
+)
+Creating default shade for item no 'KNU0799'
+Setting dhl_partnum to 'KNU0799'
+Setting shade_code to 'S0199'
+Setting shade_range to 'KNURL'
+Saving default shade for item no 'KNU0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0sATgBVADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449590;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0sATgBVADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449590;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANAA5ADQAAAACe/9TADAANwA5ADk=10;14479259070;
+    [Item_No] => LUN0494
+    [Shade_Code] => S0799
+)
+Creating default shade for item no 'LUN0494'
+Setting dhl_partnum to 'LUN0494'
+Setting shade_code to 'S0799'
+Saving default shade for item no 'LUN0494'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANAA5ADQAAAACe/9TADAANwA5ADk=10;14479259070;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADAANAA5ADQAAAACe/9TADAANwA5ADk=10;14479259070;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANAA5ADQAAAACe/9UAEEAUAAyADA=10;18779449600;
+    [Item_No] => LUN0494
+    [Shade_Code] => TAP20
+    [Shade_Style] => TAP
+    [Shade_Range] => TAPERED DRUM
+)
+Updating default shade for item no 'LUN0494'
+Setting shade_code to 'TAP20'
+Setting shade_range to 'TAPERED DRUM'
+Saving default shade for item no 'LUN0494'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANAA5ADQAAAACe/9UAEEAUAAyADA=10;18779449600;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADAANAA5ADQAAAACe/9UAEEAUAAyADA=10;18779449600;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANwA5ADQAAAACe/9FAE0AUAAyADA=10;14479259080;
+    [Item_No] => LUN0794
+    [Shade_Code] => EMP20
+)
+Creating default shade for item no 'LUN0794'
+Setting dhl_partnum to 'LUN0794'
+Setting shade_code to 'EMP20'
+Saving default shade for item no 'LUN0794'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANwA5ADQAAAACe/9FAE0AUAAyADA=10;14479259080;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADAANwA5ADQAAAACe/9FAE0AUAAyADA=10;14479259080;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANwA5ADQAAAACe/9UAEEAUAAyADA=10;18779449620;
+    [Item_No] => LUN0794
+    [Shade_Code] => TAP20
+    [Shade_Style] => TAP
+    [Shade_Range] => TAPERED DRUM
+)
+Updating default shade for item no 'LUN0794'
+Setting shade_code to 'TAP20'
+Setting shade_range to 'TAPERED DRUM'
+Saving default shade for item no 'LUN0794'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADAANwA5ADQAAAACe/9UAEEAUAAyADA=10;18779449620;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADAANwA5ADQAAAACe/9UAEEAUAAyADA=10;18779449620;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADQAMgA5ADQAAAACe/9UAEEAUAAyADA=10;14479259090;
+    [Item_No] => LUN4294
+    [Shade_Code] => TAP20
+)
+Creating default shade for item no 'LUN4294'
+Setting dhl_partnum to 'LUN4294'
+Setting shade_code to 'TAP20'
+Saving default shade for item no 'LUN4294'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADQAMgA5ADQAAAACe/9UAEEAUAAyADA=10;14479259090;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADQAMgA5ADQAAAACe/9UAEEAUAAyADA=10;14479259090;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADQAMwA5ADQAAAACe/9UAEEAUAAyADA=10;14479259100;
+    [Item_No] => LUN4394
+    [Shade_Code] => TAP20
+)
+Creating default shade for item no 'LUN4394'
+Setting dhl_partnum to 'LUN4394'
+Setting shade_code to 'TAP20'
+Saving default shade for item no 'LUN4394'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADQAMwA5ADQAAAACe/9UAEEAUAAyADA=10;14479259100;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADQAMwA5ADQAAAACe/9UAEEAUAAyADA=10;14479259100;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADgANgA5ADQAAAACe/9FAE0AUAAyADA=10;14479259110;
+    [Item_No] => LUN8694
+    [Shade_Code] => EMP20
+)
+Creating default shade for item no 'LUN8694'
+Setting dhl_partnum to 'LUN8694'
+Setting shade_code to 'EMP20'
+Saving default shade for item no 'LUN8694'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADgANgA5ADQAAAACe/9FAE0AUAAyADA=10;14479259110;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADgANgA5ADQAAAACe/9FAE0AUAAyADA=10;14479259110;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADgANgA5ADQAAAACe/9TADAANwA5ADk=10;18779449630;
+    [Item_No] => LUN8694
+    [Shade_Code] => S0799
+    [Shade_Style] => CYL
+)
+Updating default shade for item no 'LUN8694'
+Setting shade_code to 'S0799'
+Saving default shade for item no 'LUN8694'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/0wAVQBOADgANgA5ADQAAAACe/9TADAANwA5ADk=10;18779449630;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/0wAVQBOADgANgA5ADQAAAACe/9TADAANwA5ADk=10;18779449630;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1AAQQBSADAANwAwADAAAAACe/9NAFUAUgAwADc=10;14479259120;
+    [Item_No] => PAR0700
+    [Shade_Code] => MUR07
+)
+Creating default shade for item no 'PAR0700'
+Setting dhl_partnum to 'PAR0700'
+Setting shade_code to 'MUR07'
+Saving default shade for item no 'PAR0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1AAQQBSADAANwAwADAAAAACe/9NAFUAUgAwADc=10;14479259120;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1AAQQBSADAANwAwADAAAAACe/9NAFUAUgAwADc=10;14479259120;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/1AAQQBSADAANwAwADAATAAAAAJ7/1AAQQBSADAANw==10;18779449640;
+    [Item_No] => PAR0700L
+    [Shade_Code] => PAR07
+    [Shade_Style] => TAP
+    [Shade_Range] => PARROT
+)
+Creating default shade for item no 'PAR0700L'
+Setting dhl_partnum to 'PAR0700L'
+Setting shade_code to 'PAR07'
+Setting shade_range to 'PARROT'
+Saving default shade for item no 'PAR0700L'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/1AAQQBSADAANwAwADAATAAAAAJ7/1AAQQBSADAANw==10;18779449640;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/1AAQQBSADAANwAwADAATAAAAAJ7/1AAQQBSADAANw==10;18779449640;'
+
+====
+stdClass Object
+(
+    [Key] => 52;cMUAAAJ7/1AAQQBSADAANwAwADAAUgAAAAJ7/1AAQQBSADAANw==10;18779449650;
+    [Item_No] => PAR0700R
+    [Shade_Code] => PAR07
+    [Shade_Style] => TAP
+    [Shade_Range] => PARROT
+)
+Creating default shade for item no 'PAR0700R'
+Setting dhl_partnum to 'PAR0700R'
+Setting shade_code to 'PAR07'
+Setting shade_range to 'PARROT'
+Saving default shade for item no 'PAR0700R'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 52;cMUAAAJ7/1AAQQBSADAANwAwADAAUgAAAAJ7/1AAQQBSADAANw==10;18779449650;
+    [actiontype] => -
+)
+
+Update Key has not changed from '52;cMUAAAJ7/1AAQQBSADAANwAwADAAUgAAAAJ7/1AAQQBSADAANw==10;18779449650;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1AASQBHADAANwA5ADgAAAACe/9CAFIAWQAwADc=10;18779449660;
+    [Item_No] => PIG0798
+    [Shade_Code] => BRY07
+    [Shade_Style] => CLI
+    [Shade_Range] => BYRON
+)
+Creating default shade for item no 'PIG0798'
+Setting dhl_partnum to 'PIG0798'
+Setting shade_code to 'BRY07'
+Setting shade_range to 'BYRON'
+Saving default shade for item no 'PIG0798'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1AASQBHADAANwA5ADgAAAACe/9CAFIAWQAwADc=10;18779449660;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1AASQBHADAANwA5ADgAAAACe/9CAFIAWQAwADc=10;18779449660;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1AASQBHADAANwA5ADgAAAACe/9IAEkATQAwADc=10;14479259130;
+    [Item_No] => PIG0798
+    [Shade_Code] => HIM07
+)
+Updating default shade for item no 'PIG0798'
+Setting shade_code to 'HIM07'
+Saving default shade for item no 'PIG0798'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1AASQBHADAANwA5ADgAAAACe/9IAEkATQAwADc=10;14479259130;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1AASQBHADAANwA5ADgAAAACe/9IAEkATQAwADc=10;14479259130;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANAAwADAAAAACe/9TADAANQA5ADk=10;18779449670;
+    [Item_No] => SLO0400
+    [Shade_Code] => S0599
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'SLO0400'
+Setting dhl_partnum to 'SLO0400'
+Setting shade_code to 'S0599'
+Saving default shade for item no 'SLO0400'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANAAwADAAAAACe/9TADAANQA5ADk=10;18779449670;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADAANAAwADAAAAACe/9TADAANQA5ADk=10;18779449670;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANAA5ADkAAAACe/9TADAANQA5ADk=10;18779449680;
+    [Item_No] => SLO0499
+    [Shade_Code] => S0599
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'SLO0499'
+Setting dhl_partnum to 'SLO0499'
+Setting shade_code to 'S0599'
+Saving default shade for item no 'SLO0499'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANAA5ADkAAAACe/9TADAANQA5ADk=10;18779449680;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADAANAA5ADkAAAACe/9TADAANQA5ADk=10;18779449680;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANgAwADAAAAACe/9TADAANgA5ADk=10;18779449690;
+    [Item_No] => SLO0600
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'SLO0600'
+Setting dhl_partnum to 'SLO0600'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'SLO0600'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANgAwADAAAAACe/9TADAANgA5ADk=10;18779449690;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADAANgAwADAAAAACe/9TADAANgA5ADk=10;18779449690;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANgA5ADkAAAACe/9TADAANgA5ADk=10;18779449700;
+    [Item_No] => SLO0699
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'SLO0699'
+Setting dhl_partnum to 'SLO0699'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'SLO0699'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANgA5ADkAAAACe/9TADAANgA5ADk=10;18779449700;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADAANgA5ADkAAAACe/9TADAANgA5ADk=10;18779449700;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANwAwADAAAAACe/9TADAANgA5ADk=10;18779449710;
+    [Item_No] => SLO0700
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'SLO0700'
+Setting dhl_partnum to 'SLO0700'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'SLO0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANwAwADAAAAACe/9TADAANgA5ADk=10;18779449710;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADAANwAwADAAAAACe/9TADAANgA5ADk=10;18779449710;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANwA5ADkAAAACe/9TADAANgA5ADk=10;18779449750;
+    [Item_No] => SLO0799
+    [Shade_Code] => S0699
+    [Shade_Style] => CYL
+)
+Creating default shade for item no 'SLO0799'
+Setting dhl_partnum to 'SLO0799'
+Setting shade_code to 'S0699'
+Saving default shade for item no 'SLO0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADAANwA5ADkAAAACe/9TADAANgA5ADk=10;18779449750;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADAANwA5ADkAAAACe/9TADAANgA5ADk=10;18779449750;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAAwADAAAAACe/9TADAAMQA5ADk=10;18779448950;
+    [Item_No] => SLO3000
+    [Shade_Code] => S0199
+)
+Creating default shade for item no 'SLO3000'
+Setting dhl_partnum to 'SLO3000'
+Setting shade_code to 'S0199'
+Saving default shade for item no 'SLO3000'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAAwADAAAAACe/9TADAAMQA5ADk=10;18779448950;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADMAMAAwADAAAAACe/9TADAAMQA5ADk=10;18779448950;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAAwADAAAAACe/9TADAAMwA5ADk=10;14479259200;
+    [Item_No] => SLO3000
+    [Shade_Code] => S0399
+)
+Updating default shade for item no 'SLO3000'
+Setting shade_code to 'S0399'
+Saving default shade for item no 'SLO3000'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAAwADAAAAACe/9TADAAMwA5ADk=10;14479259200;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADMAMAAwADAAAAACe/9TADAAMwA5ADk=10;14479259200;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAA5ADkAAAACe/9TADAAMQA5ADk=10;18779448970;
+    [Item_No] => SLO3099
+    [Shade_Code] => S0199
+)
+Creating default shade for item no 'SLO3099'
+Setting dhl_partnum to 'SLO3099'
+Setting shade_code to 'S0199'
+Saving default shade for item no 'SLO3099'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAA5ADkAAAACe/9TADAAMQA5ADk=10;18779448970;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADMAMAA5ADkAAAACe/9TADAAMQA5ADk=10;18779448970;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAA5ADkAAAACe/9TADAAMwA5ADk=10;14479259210;
+    [Item_No] => SLO3099
+    [Shade_Code] => S0399
+)
+Updating default shade for item no 'SLO3099'
+Setting shade_code to 'S0399'
+Saving default shade for item no 'SLO3099'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATABPADMAMAA5ADkAAAACe/9TADAAMwA5ADk=10;14479259210;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATABPADMAMAA5ADkAAAACe/9TADAAMwA5ADk=10;14479259210;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATgBBADAANwAwADAAAAACe/9TADEAMwA5ADk=10;18779449770;
+    [Item_No] => SNA0700
+    [Shade_Code] => S1399
+    [Shade_Range] => BRUTUS
+)
+Creating default shade for item no 'SNA0700'
+Setting dhl_partnum to 'SNA0700'
+Setting shade_code to 'S1399'
+Setting shade_range to 'BRUTUS'
+Saving default shade for item no 'SNA0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATgBBADAANwAwADAAAAACe/9TADEAMwA5ADk=10;18779449770;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATgBBADAANwAwADAAAAACe/9TADEAMwA5ADk=10;18779449770;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1MATgBBADAANwA5ADkAAAACe/9TADEAMwA5ADk=10;18779449780;
+    [Item_No] => SNA0799
+    [Shade_Code] => S1399
+    [Shade_Range] => BRUTUS
+)
+Creating default shade for item no 'SNA0799'
+Setting dhl_partnum to 'SNA0799'
+Setting shade_code to 'S1399'
+Setting shade_range to 'BRUTUS'
+Saving default shade for item no 'SNA0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1MATgBBADAANwA5ADkAAAACe/9TADEAMwA5ADk=10;18779449780;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1MATgBBADAANwA5ADkAAAACe/9TADEAMwA5ADk=10;18779449780;'
+
+====
+stdClass Object
+(
+    [Key] => 56;cMUAAAJ7/1MAUABFADAANwAwADAALQBCAFoAAAACe/9TADAAMQA5ADk=10;14479259240;
+    [Item_No] => SPE0700-BZ
+    [Shade_Code] => S0199
+)
+Creating default shade for item no 'SPE0700-BZ'
+Setting dhl_partnum to 'SPE0700-BZ'
+Setting shade_code to 'S0199'
+Saving default shade for item no 'SPE0700-BZ'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 56;cMUAAAJ7/1MAUABFADAANwAwADAALQBCAFoAAAACe/9TADAAMQA5ADk=10;14479259240;
+    [actiontype] => -
+)
+
+Update Key has not changed from '56;cMUAAAJ7/1MAUABFADAANwAwADAALQBCAFoAAAACe/9TADAAMQA5ADk=10;14479259240;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QASQBMADAANwAwADAAAAACe/9TADEAMQA5ADk=10;14479259250;
+    [Item_No] => TIL0700
+    [Shade_Code] => S1199
+)
+Creating default shade for item no 'TIL0700'
+Setting dhl_partnum to 'TIL0700'
+Setting shade_code to 'S1199'
+Saving default shade for item no 'TIL0700'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QASQBMADAANwAwADAAAAACe/9TADEAMQA5ADk=10;14479259250;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QASQBMADAANwAwADAAAAACe/9TADEAMQA5ADk=10;14479259250;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QASQBMADAANwAyADMAAAACe/9TADEAMQA5ADk=10;14479259260;
+    [Item_No] => TIL0723
+    [Shade_Code] => S1199
+)
+Creating default shade for item no 'TIL0723'
+Setting dhl_partnum to 'TIL0723'
+Setting shade_code to 'S1199'
+Saving default shade for item no 'TIL0723'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QASQBMADAANwAyADMAAAACe/9TADEAMQA5ADk=10;14479259260;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QASQBMADAANwAyADMAAAACe/9TADEAMQA5ADk=10;14479259260;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QASQBMADAANwA5ADkAAAACe/9TADEAMQA5ADk=10;18779449790;
+    [Item_No] => TIL0799
+    [Shade_Code] => S1199
+    [Shade_Range] => TILE
+)
+Creating default shade for item no 'TIL0799'
+Setting dhl_partnum to 'TIL0799'
+Setting shade_code to 'S1199'
+Setting shade_range to 'TILE'
+Saving default shade for item no 'TIL0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QASQBMADAANwA5ADkAAAACe/9TADEAMQA5ADk=10;18779449790;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QASQBMADAANwA5ADkAAAACe/9TADEAMQA5ADk=10;18779449790;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAAMQA5ADUAAAACe/9TADEANQA5ADk=10;14479259280;
+    [Item_No] => TWA0195
+    [Shade_Code] => S1599
+)
+Creating default shade for item no 'TWA0195'
+Setting dhl_partnum to 'TWA0195'
+Setting shade_code to 'S1599'
+Saving default shade for item no 'TWA0195'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAAMQA5ADUAAAACe/9TADEANQA5ADk=10;14479259280;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QAVwBBADAAMQA5ADUAAAACe/9TADEANQA5ADk=10;14479259280;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAAMQA5ADkAAAACe/9TADEANQA5ADk=10;14479259290;
+    [Item_No] => TWA0199
+    [Shade_Code] => S1599
+)
+Creating default shade for item no 'TWA0199'
+Setting dhl_partnum to 'TWA0199'
+Setting shade_code to 'S1599'
+Saving default shade for item no 'TWA0199'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAAMQA5ADkAAAACe/9TADEANQA5ADk=10;14479259290;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QAVwBBADAAMQA5ADkAAAACe/9TADEANQA5ADk=10;14479259290;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAANwA5ADUAAAACe/9TADAAMQA5ADk=10;18779449800;
+    [Item_No] => TWA0795
+    [Shade_Code] => S0199
+    [Shade_Range] => KNURL
+)
+Creating default shade for item no 'TWA0795'
+Setting dhl_partnum to 'TWA0795'
+Setting shade_code to 'S0199'
+Setting shade_range to 'KNURL'
+Saving default shade for item no 'TWA0795'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAANwA5ADUAAAACe/9TADAAMQA5ADk=10;18779449800;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QAVwBBADAANwA5ADUAAAACe/9TADAAMQA5ADk=10;18779449800;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449820;
+    [Item_No] => TWA0799
+    [Shade_Code] => S0199
+    [Shade_Range] => KNURL
+)
+Creating default shade for item no 'TWA0799'
+Setting dhl_partnum to 'TWA0799'
+Setting shade_code to 'S0199'
+Setting shade_range to 'KNURL'
+Saving default shade for item no 'TWA0799'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1QAVwBBADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449820;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1QAVwBBADAANwA5ADkAAAACe/9TADAAMQA5ADk=10;18779449820;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1YAQQBMADAAMwAwADAAAAACe/9TADAANAA5ADk=10;14479259320;
+    [Item_No] => VAL0300
+    [Shade_Code] => S0499
+)
+Creating default shade for item no 'VAL0300'
+Setting dhl_partnum to 'VAL0300'
+Setting shade_code to 'S0499'
+Saving default shade for item no 'VAL0300'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1YAQQBMADAAMwAwADAAAAACe/9TADAANAA5ADk=10;14479259320;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1YAQQBMADAAMwAwADAAAAACe/9TADAANAA5ADk=10;14479259320;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1YAQQBMADAAOQAwADAAAAACe/9TADAAMwA5ADk=10;14479259330;
+    [Item_No] => VAL0900
+    [Shade_Code] => S0399
+)
+Creating default shade for item no 'VAL0900'
+Setting dhl_partnum to 'VAL0900'
+Setting shade_code to 'S0399'
+Saving default shade for item no 'VAL0900'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1YAQQBMADAAOQAwADAAAAACe/9TADAAMwA5ADk=10;14479259330;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1YAQQBMADAAOQAwADAAAAACe/9TADAAMwA5ADk=10;14479259330;'
+
+====
+stdClass Object
+(
+    [Key] => 48;cMUAAAJ7/1cASQBMADAANAA5ADkAAAACe/9XAEkATAAyADA=10;18779449000;
+    [Item_No] => WIL0499
+    [Shade_Code] => WIL20
+)
+Creating default shade for item no 'WIL0499'
+Setting dhl_partnum to 'WIL0499'
+Setting shade_code to 'WIL20'
+Saving default shade for item no 'WIL0499'
+Update for web service 'DHL_Default_Shades' Array
+(
+    [Key] => 48;cMUAAAJ7/1cASQBMADAANAA5ADkAAAACe/9XAEkATAAyADA=10;18779449000;
+    [actiontype] => -
+)
+
+Update Key has not changed from '48;cMUAAAJ7/1cASQBMADAANAA5ADkAAAACe/9XAEkATAAyADA=10;18779449000;'
+No DHL_Default_Shades records to process
+Deleted /home/mtwodarl/live.darlighting.co.uk/nav_proc_logs/DEFAULT_SHADES.lck lock file

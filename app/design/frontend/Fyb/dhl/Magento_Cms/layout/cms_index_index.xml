@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <container name="main.customise.wrapper" after="main.content" htmlTag="div" htmlClass="full-width-section" />
+            <container name="main.customise.after.wrapper" after="main.customise.wrapper" htmlTag="div" htmlClass="page-main page-main-details-after">
+                <container name="main.customise.after.wrapper.columns" htmlTag="div" htmlClass="columns">
+                    <container name="main.customise.after.wrapper.main" htmlTag="div" htmlClass="column main">
+                    </container>
+                </container>
+            </container>
+            <container name="main.showroom.wrapper" after="main.customise.after.wrapper" htmlTag="div" htmlClass="full-width-section" />
+            <container name="main.footerhomepage.after.wrapper" after="main.showroom.wrapper" htmlTag="div" htmlClass="page-main page-main-details-after">
+                <container name="main.footerhomepage.after.wrapper.columns" htmlTag="div" htmlClass="columns">
+                    <container name="main.footerhomepage.after.wrapper.main" htmlTag="div" htmlClass="column main">
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="main.inspire" template="Magento_Cms::inspire.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="main.seasons_favourites" template="Magento_Cms::seasons_favourites.phtml" >
+                <block class="Magento\Framework\View\Element\RendererList" name="configurable.product.type.details.renderers" as="details.renderers">
+                    <block class="Magento\Framework\View\Element\Template" as="default"/>
+                </block>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="main.customise.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="main.customise" template="Magento_Cms::customise.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="main.instragram" template="Magento_Cms::instragram.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="main.showroom.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="main.showroom" template="Magento_Cms::showroom.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="main.customise.after.wrapper.main">
+            <block class="Magento\Framework\View\Element\Template" name="main.featured" template="Magento_Cms::featured.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="main.footerhomepage.after.wrapper.main">
+            <block class="Magento\Framework\View\Element\Template" name="main.our_info" template="Magento_Cms::our_info.phtml"/>
+
+        </referenceContainer>
+
+        <referenceContainer name="page.top">
+            <block class="Magento\Framework\View\Element\Template" name="main.video" template="Magento_Cms::video.phtml" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">home_page_video_dhl</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Newsletter\Block\Subscribe" name="main.newsletter" after="page.bottom.container" template="Magento_Cms::newsletter.phtml"/>
+        </referenceContainer>
+
+        <referenceBlock name="page.main.title" remove="true" />
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="use_strict" xsi:type="boolean">true</argument>
+                <argument name="logo_file" xsi:type="string">Fyb_Theme::images/logo_dhl_white.png</argument>
+                <argument name="logo_file_second" xsi:type="string">Fyb_Theme::images/logo_dhl.png</argument>
+                <argument name="logo_width" xsi:type="number">98</argument>
+                <argument name="logo_height" xsi:type="number">80</argument>
+                <argument name="logo_alt" xsi:type="string">David Hunt Lighting</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

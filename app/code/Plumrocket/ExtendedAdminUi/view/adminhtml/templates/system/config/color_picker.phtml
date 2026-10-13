@@ -1,0 +1,48 @@
+<?php
+/**
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2021 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license/  End-user License Agreement
+ */
+?>
+<?php /** @var \Magento\Backend\Block\Template $block */ ?>
+<script>
+    require(['pickr'], function(Pickr) {
+        var input = document.getElementById('<?= $block->escapeHtml($block->getData('elementId')) ?>');
+        var inheritCheckbox = document.getElementById(
+            '<?= $block->escapeHtml($block->getData('elementId')) ?>_inherit'
+        );
+        var pickr = Pickr.create(JSON.parse('<?= /* @noEscape */ $block->getData('jsonConfig') ?>'));
+
+        pickr.on('change', function (color, instance) {
+            if (null === color) {
+                input.value = '';
+            } else {
+                input.value = color.toHEXA();
+            }
+        });
+
+        pickr.on('clear', function (instance) {
+            input.value = '';
+        });
+
+        input.addEventListener('change', function (ev) {
+            if (ev.target.value === '') {
+                pickr.setColor(null);
+            } else {
+                pickr.setColor(ev.target.value);
+            }
+        });
+
+        // Use default/use system value
+        if (inheritCheckbox) {
+            inheritCheckbox.addEventListener('change', function (event) {
+                if (event.target.checked) {
+                    pickr.disable();
+                } else {
+                    pickr.enable();
+                }
+            });
+        }
+    });
+</script>

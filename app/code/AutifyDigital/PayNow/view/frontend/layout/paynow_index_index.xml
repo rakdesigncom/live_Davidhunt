@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<script src="AutifyDigital_PayNow::js/paynow.js" />
+	</head>
+	<body>
+		<referenceBlock name="page.main.title">
+		    <arguments>
+		        <argument name="title" xsi:type="string" translate="true">Pay Now</argument>
+		    </arguments>            
+		</referenceBlock>
+		<referenceContainer name="content">
+			<block name="paynow.index.form" class="AutifyDigital\PayNow\Block\Index\Index" template="AutifyDigital_PayNow::index/form.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

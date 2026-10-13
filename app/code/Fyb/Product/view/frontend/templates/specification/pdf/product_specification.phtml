@@ -1,0 +1,19 @@
+<?php
+/** @var \Fyb\Product\Block\Product\Specification $block */
+
+$product = $block->getProduct();
+?>
+
+<h1><?= $block->escapeHtml(__($product->getName())) ?></h1>
+<div>
+    <?= $block->getImage($product, 'category_page_grid')->toHtml() ?>
+</div>
+<div>
+    <div>
+        <?= $block->getChildHtml('product.info.overview'); ?>
+    </div>
+    <div>
+        <span><?= __('Product code: %1', $product->getSku()) ?></span>
+        <?= $block->getChildHtml('product.attributes'); ?>
+    </div>
+</div>

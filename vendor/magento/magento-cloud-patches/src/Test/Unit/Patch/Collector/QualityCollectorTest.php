@@ -1,0 +1,309 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+declare(strict_types=1);
+
+namespace Magento\CloudPatches\Test\Unit\Patch\Collector;
+
+use Magento\CloudPatches\App\GenericException;
+use Magento\CloudPatches\Composer\Package;
+use Magento\CloudPatches\Composer\QualityPackage;
+use Magento\CloudPatches\Patch\Collector\CollectorException;
+use Magento\CloudPatches\Patch\Collector\GetPatchesConfigInterface;
+use Magento\CloudPatches\Patch\Collector\GetSupportPatchesConfig;
+use Magento\CloudPatches\Patch\Collector\SupportCollector;
+use Magento\CloudPatches\Patch\Collector\ValidatePatchesConfig;
+use Magento\CloudPatches\Patch\Data\Patch;
+use Magento\CloudPatches\Patch\Data\PatchInterface;
+use Magento\CloudPatches\Patch\PatchBuilder;
+use Magento\CloudPatches\Patch\PatchIntegrityException;
+use Magento\CloudPatches\Patch\SourceProvider;
+use Magento\CloudPatches\Patch\SourceProviderException;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
+use PHPUnit\Framework\TestCase;
+
+/**
+ * @inheritDoc
+ */
+class QualityCollectorTest extends TestCase
+{
+    const QUALITY_PATCH_DIR = 'quality/patch/dir';
+
+    /**
+     * @var SupportCollector
+     */
+    private $collector;
+
+    /**
+     * @var PatchBuilder|MockObject
+     */
+    private $patchBuilder;
+
+    /**
+     * @var Package|MockObject
+     */
+    private $package;
+
+    /**
+     * @var QualityPackage|MockObject
+     */
+    private $qualityPackage;
+
+    /**
+     * @var GetPatchesConfigInterface|MockObject
+     */
+    private $patchesConfig;
+
+    /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        $this->package = $this->createMock(Package::class);
+        $this->qualityPackage = $this->createMock(QualityPackage::class);
+        $this->patchBuilder = $this->createMock(PatchBuilder::class);
+        $this->patchesConfig = $this->createMock(GetPatchesConfigInterface::class);
+
+        $this->collector = new SupportCollector(
+            $this->package,
+            $this->qualityPackage,
+            $this->patchBuilder,
+            $this->patchesConfig
+        );
+    }
+
+    /**
+     * Tests collecting patches - valid configuration.
+     *
+     * @return void
+     */
+    #[AllowMockObjectsWithoutExpectations]
+    public function testCollectSuccessful(): void
+    {
+        $validConfig = require __DIR__ . '/Fixture/quality_config_valid.php';
+        $this->patchesConfig->expects($this->once())
+            ->method('execute')
+            ->willReturn($validConfig);
+        $this->qualityPackage->method('getPatchesDirectoryPath')
+            ->willReturn(self::QUALITY_PATCH_DIR);
+
+        $this->package->method('matchConstraint')
+            ->willReturnMap([
+                ['magento/magento2-base', '2.1.4 - 2.1.14', false],
+                ['magento/magento2-base', '2.2.0 - 2.2.5', true],
+                ['magento/magento2-ee-base', '2.2.0 - 2.2.5', true],
+            ]);
+
+        // Replacing withConsecutive with with() and logicalOr
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setId')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo('MDVA-2470'),
+                    $this->equalTo('MDVA-2470'),
+                    $this->equalTo('MDVA-2033')
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setTitle')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo('Fix asset locker race condition when using Redis'),
+                    $this->equalTo('Fix asset locker race condition when using Redis'),
+                    $this->equalTo('Allow DB dumps done with the support module to complete')
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setFilename')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo('MDVA-2470__fix_asset_locking_race_condition__2.2.0.patch'),
+                    $this->equalTo('MDVA-2470__fix_asset_locking_race_condition__2.2.0_ee.patch'),
+                    $this->equalTo('MDVA-2033__prevent_deadlock_during_db_dump__2.2.0.patch')
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setPath')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo(
+                        self::QUALITY_PATCH_DIR . '/MDVA-2470__fix_asset_locking_race_condition__2.2.0.patch'
+                    ),
+                    $this->equalTo(
+                        self::QUALITY_PATCH_DIR . '/MDVA-2470__fix_asset_locking_race_condition__2.2.0_ee.patch'
+                    ),
+                    $this->equalTo(
+                        self::QUALITY_PATCH_DIR . '/MDVA-2033__prevent_deadlock_during_db_dump__2.2.0.patch'
+                    )
+                )
+            );
+
+        $this->PatchBuildertest();
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('build')
+            ->willReturn($this->createMock(Patch::class));
+
+        $this->assertTrue(is_array($this->collector->collect()));
+    }
+    
+    /**
+     * Test PatchBuilder method.
+     *
+     * @return void
+     */
+    public function patchBuilderTest(): void
+    {
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setType')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo(PatchInterface::TYPE_OPTIONAL),
+                    $this->equalTo(PatchInterface::TYPE_OPTIONAL),
+                    $this->equalTo(PatchInterface::TYPE_OPTIONAL)
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setPackageName')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo('magento/magento2-base'),
+                    $this->equalTo('magento/magento2-ee-base'),
+                    $this->equalTo('magento/magento2-ee-base')
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setPackageConstraint')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo('2.2.0 - 2.2.5'),
+                    $this->equalTo('2.2.0 - 2.2.5'),
+                    $this->equalTo('2.2.0 - 2.2.5')
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setRequire')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo([]),
+                    $this->equalTo([]),
+                    $this->equalTo(['MC-11111', 'MC-22222'])
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setReplacedWith')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo(''),
+                    $this->equalTo(''),
+                    $this->equalTo('MC-33333')
+                )
+            );
+
+        $this->patchBuilder->expects($this->exactly(3))
+            ->method('setDeprecated')
+            ->with(
+                $this->logicalOr(
+                    $this->equalTo(false),
+                    $this->equalTo(false),
+                    $this->equalTo(true)
+                )
+            );
+    }
+
+    /**
+     * Tests collecting patches - invalid configuration.
+     *
+     * @return void
+     */
+    #[AllowMockObjectsWithoutExpectations]
+    public function testInvalidConfiguration(): void
+    {
+        $config = require __DIR__ . '/Fixture/quality_config_invalid.php';
+
+        $expectedExceptionMessage = 'Patch MDVA-2033 has invalid configuration:' .
+            PHP_EOL . ' - Property \'file\' is not found in \'2.2.0 - 2.2.5\'' .
+            PHP_EOL . ' - Property \'require\' from \'2.2.0 - 2.2.5\' should have an array type' .
+            PHP_EOL . ' - Property \'replaced-with\' from \'2.2.0 - 2.2.5\' should have a string type' .
+            PHP_EOL . ' - Property \'deprecated\' from \'2.2.0 - 2.2.5\' should have a boolean type';
+
+        $sourceProvider = $this->createMock(SourceProvider::class);
+        $sourceProvider->expects($this->once())->method('getSupportPatches')->willReturn($config);
+
+        $this->patchesConfig = new GetSupportPatchesConfig(
+            $sourceProvider,
+            new ValidatePatchesConfig()
+        );
+
+        $this->patchBuilder->expects($this->never())
+            ->method('build');
+
+        $this->expectException(CollectorException::class);
+        $this->expectExceptionMessage($expectedExceptionMessage);
+
+        $this->collector = new SupportCollector(
+            $this->package,
+            $this->qualityPackage,
+            $this->patchBuilder,
+            $this->patchesConfig
+        );
+
+        $this->collector->collect();
+    }
+
+    /**
+     * Tests case when patch factory can't create a patch for some reason.
+     *
+     * @return void
+     */
+    #[AllowMockObjectsWithoutExpectations]
+    public function testPatchIntegrityException(): void
+    {
+        $validConfig = require __DIR__ . '/Fixture/quality_config_valid.php';
+        $this->patchesConfig->expects($this->once())
+            ->method('execute')
+            ->willReturn($validConfig);
+
+        $this->package->method('matchConstraint')
+            ->willReturnMap([
+                ['magento/magento2-base', '2.1.4 - 2.1.14', false],
+                ['magento/magento2-base', '2.2.0 - 2.2.5', true],
+                ['magento/magento2-ee-base', '2.2.0 - 2.2.5', true],
+            ]);
+
+        $this->patchBuilder->method('build')
+            ->willThrowException(new PatchIntegrityException(''));
+
+        $this->expectException(CollectorException::class);
+        $this->collector->collect();
+    }
+
+    /**
+     * Tests case when configuration can't be retrieved from source.
+     *
+     * @return void
+     */
+    #[AllowMockObjectsWithoutExpectations]
+    public function testSourceProviderException(): void
+    {
+        $this->patchesConfig->expects($this->once())
+            ->method('execute')
+            ->willThrowException(new CollectorException(''));
+
+        $this->patchBuilder->expects($this->never())
+            ->method('build');
+
+        $this->expectException(CollectorException::class);
+        $this->collector->collect();
+    }
+}

@@ -1,0 +1,86 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/**
+ * Category left navigation
+ *
+ * @var \Magento\Catalog\Block\Navigation $block
+ * @var \Magento\Catalog\ViewModel\Category\Image $imageViewModel
+ * @var \Magento\Framework\Locale\LocaleFormatter $localeFormatter
+ */
+?>
+<?php
+$currentCategory = $block->getCategory();
+$_outputhelper = $this->helper('Magento\Catalog\Helper\Output');
+if (!$currentCategory) {
+    return;
+}
+$countItems = 0;
+
+$imageViewModel = $block->getData('imageViewModel');
+$customizeHelper = $this->helper(\Fyb\Customizer\Helper\Data::class);
+?>
+<?php $_categories = $block->getCurrentChildCategories() ;?>
+<?php $_count = is_array($_categories) ? count($_categories) : $_categories->count(); ?>
+<?php if ($_count):?>
+    <div class="block filter">
+        <div class="category-list">
+            <?php /** @var \Magento\Catalog\Model\Category $_category */ ?>
+            <?php foreach ($_categories as $_category):?>
+                <?php $_category = \Magento\Framework\App\ObjectManager::getInstance()->create('Magento\Catalog\Model\Category')->load($_category->getId()); ?>
+                <?php if ($_category->getIsActive() ):?>
+                    <div class="item">
+                        <?php
+                        $countItems++;
+                        $isMenuViewCategory = $currentCategory->getLevel() <= 3 && $_category->hasChildren();
+                        if ($_category->getLevel() < 3) {
+                            $catUrl = $block->getUrl('products/' . $_category->getUrlKey());
+                        } else {
+                            $catUrl = $block->getCategoryUrl($_category);
+                        }
+                        if ($isMenuViewCategory) {
+                            $catUrl .= '?menu=1';
+                        }
+                        ?>
+                        <a href="<?= $block->escapeUrl($catUrl) ?>"
+                            <?php if ($block->isCategoryActive($_category)):?>
+                                class="current"
+                            <?php endif; ?>
+                        >
+
+                            <?php $catImg = $imageViewModel->getUrl($_category) ?: $block->getViewFileUrl('Magento_Catalog::images/category_default_placeholder.png'); ?>
+                            <img src="<?= $catImg ?>" alt="<?= $block->escapeHtml($_category->getName()) ?>" />
+                            <h2 class="category-list-name"><?= $block->escapeHtml($_category->getName()) ?></h2>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach ?>
+            <?php if ($currentCategory->getLevel() != 2):?>
+                <div class="item">
+                    <a href="<?= $block->escapeUrl($block->getCategoryUrl($currentCategory)) ?>"
+                        <?php if ($block->isCategoryActive($currentCategory)):?>
+                            class="current"
+                        <?php endif; ?>
+                    >
+                        <?php $catImg = $imageViewModel->getUrl($currentCategory) ?: $block->getViewFileUrl('Magento_Catalog::images/category_default_placeholder.png'); ?>
+                        <img src="<?= $catImg ?>" alt="All" />
+                        <h2 class="category-list-name"><?= __('All') ?></h2>
+                    </a>
+                </div>
+            <?php else: ?>
+                <?php if ($currentCategory->getName() == 'Categories'): ?>
+                    <div class="item">
+                        <a href="<?= $customizeHelper->getCustomizeLink() ?>">
+                            <?php $catImg = $block->getViewFileUrl('Magento_Catalog::images/customise.png'); ?>
+                            <img src="<?= $catImg ?>" alt="Customise" />
+                            <h2 class="category-list-name"><?= __('Customise') ?></h2>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>

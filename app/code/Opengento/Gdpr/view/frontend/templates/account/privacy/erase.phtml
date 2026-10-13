@@ -1,0 +1,64 @@
+<?php
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Opengento\Gdpr\ViewModel\Customer\Privacy\EraseCustomerDataProvider;
+use Opengento\Gdpr\ViewModel\Customer\Privacy\EraseDataProvider;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+$escaper = $escaper ?? $block;
+
+/** @var EraseDataProvider $eraseDataProvider */
+$eraseDataProvider = $block->getData('eraseDataProvider');
+/** @var EraseCustomerDataProvider $eraseCustomerDataProvider */
+$eraseCustomerDataProvider = $block->getData('eraseCustomerDataProvider');
+?>
+<div class="block block-dashboard-info">
+    <div class="block-title">
+        <strong><?= $escaper->escapeHtml(__('Right to be forgotten')) ?></strong>
+    </div>
+    <div class="block-content">
+        <?php if ($eraseDataProvider->getErasureInformationHtml()): ?>
+            <div class="widget block block-static-block">
+                <?= $eraseDataProvider->getErasureInformationHtml() ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($eraseCustomerDataProvider->canCancel()): ?>
+            <div class="message warning">
+                <span><?= $escaper->escapeHtml(__('Your account will be erased soon. You can undo this action.')) ?></span>
+            </div>
+            <form action="<?= $escaper->escapeUrl($block->getData('undoEraseActionUrl')) ?>" method="post">
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button class="action submit primary" id="undo_deletion">
+                            <span><?= $escaper->escapeHtml(__('Undo Action')) ?></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        <?php elseif ($eraseCustomerDataProvider->canCreate()): ?>
+            <?php if ($eraseDataProvider->getAnonymizeInformationHtml()): ?>
+                <div class="widget block block-static-block">
+                    <?= $eraseDataProvider->getAnonymizeInformationHtml() ?>
+                </div>
+            <?php endif; ?>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <a href="<?= $escaper->escapeUrl($block->getData('eraseActionUrl')) ?>" class="action primary primary-danger" id="delete">
+                        <span><?= $escaper->escapeHtml(__('Erase Personal Data')) ?></span>
+                    </a>
+                </div>
+            </div>
+        <?php else: ?>
+            <div class="message info">
+                <span><?= $escaper->escapeHtml(__('Your account cannot be erased while you have pending orders.')) ?></span>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>

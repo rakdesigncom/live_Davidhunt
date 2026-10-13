@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="AutifyDigital_LloydscardnetPayment::menu" title="Autify Digital Lloyds Cardnet" module="AutifyDigital_LloydscardnetPayment" sortOrder="40" resource="AutifyDigital_LloydscardnetPayment::menu" />
+
+		<add id="AutifyDigital_LloydscardnetPayment::autify_lloydscardnetpayment_payments" title="Lloyds Cardnet Payments" module="AutifyDigital_LloydscardnetPayment" sortOrder="10" resource="AutifyDigital_LloydscardnetPayment::autify_lloydscardnetpayment_payments" parent="AutifyDigital_LloydscardnetPayment::menu" action="autify_lloydscardnetpayment/payments/index"/>
+		<add id="AutifyDigital_LloydscardnetPayment::config_autifydigital_lloydscardnet" title="Payments Configuration" module="AutifyDigital_LloydscardnetPayment" sortOrder="20" resource="AutifyDigital_LloydscardnetPayment::config_autifydigital_lloydscardnet" parent="AutifyDigital_LloydscardnetPayment::menu" action="admin/system_config/edit/section/payment"/>
+	</menu>
+</config>

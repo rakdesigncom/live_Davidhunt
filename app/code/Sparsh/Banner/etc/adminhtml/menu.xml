@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sparsh_Banner::elements" title="Banners" module="Sparsh_Banner" parent="Fyb_Base::base" resource="Sparsh_Banner::manage_banners" sortOrder="50"/>
+        <add id="Sparsh_Banner::banner" title="Manage Banners" module="Sparsh_Banner" resource="Sparsh_Banner::manage_banners" parent="Sparsh_Banner::elements" sortOrder="1" action="banner/banner/" />
+        <add id="Sparsh_Banner::configuration" title="Configuration" module="Sparsh_Banner" resource="Sparsh_Banner::config_banner" parent="Sparsh_Banner::elements" sortOrder="2" action="admin/system_config/edit/section/sparsh_banner/"/>
+    </menu>
+</config>

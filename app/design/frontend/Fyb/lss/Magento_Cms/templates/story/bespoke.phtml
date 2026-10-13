@@ -1,0 +1,28 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$blockSubtitle = __('Bespoke');
+$blockTitle = __('Ordering');
+?>
+<a name="bespoke"></a>
+<div class="static-page-content block block-bespoke clearfix">
+    <div class="static_text_3images">
+        <div>
+            <h2 class="small-uppertitle"><?= $blockSubtitle ?></h2>
+            <h1 class="small-underline"><?= $blockTitle ?></h1>
+
+            <p>
+                For those who like to be a little different, we also offer a fully bespoke service for customers supplying their own fabrics.
+            </p>
+            <a href="<?= $block->getUrl('bespoke-ordering') ?>" class="button">Learn more</a>
+        </div>
+        <div class="static_text_2images-images">
+            <div class="static_text_2images-images-col-1">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/story/bespoke_1.jpg'); ?>" alt="<?= $blockTitle ?> 1">
+            </div>
+            <div class="static_text_2images-images-col-2">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/story/bespoke_2.jpg'); ?>" alt="<?= $blockTitle ?> 2">
+            </div>
+        </div>
+    </div>
+</div>

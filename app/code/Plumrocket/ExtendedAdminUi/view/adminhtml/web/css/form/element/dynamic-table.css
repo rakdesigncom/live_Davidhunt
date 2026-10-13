@@ -1,0 +1,58 @@
+/**
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license/  End-user License Agreement
+ */
+
+.messages.hidden-input-table {
+    display: none
+}
+
+div.dynamic-table-field {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.accordion .form-inline .config .dynamic-table-field td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+div.dynamic-table-field td input.checkbox[disabled] {
+    display: none;
+}
+
+div.dynamic-table-field tr.not-active td,
+div.dynamic-table-field tr.not-active input.input-text {
+    color: #999999;
+}
+
+div.dynamic-table-field td.dynamic-table-column-width-10 {
+    width: 10%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-20 {
+    width: 20%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-30 {
+    width: 30%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-40 {
+    width: 40%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-50 {
+    width: 50%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-60 {
+    width: 60%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-70 {
+    width: 70%;
+}
+div.dynamic-table-field td.dynamic-table-column-width-80 {
+    width: 80%;
+}
+
+button.dynamic-table-field.add-row-value {
+    margin-top: 5px;
+}

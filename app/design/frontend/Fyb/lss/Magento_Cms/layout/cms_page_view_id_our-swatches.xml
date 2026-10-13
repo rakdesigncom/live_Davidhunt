@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="cms.static.menu"
+                   template="Magento_Cms::html/cms_static_menu.phtml" after="-">
+                <arguments>
+                    <argument name="links_from" xsi:type="string">home_page_menu_lss_inspire</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+<!--        <referenceContainer name="content">-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.fabrics"-->
+<!--                   template="Magento_Cms::swatches/generic_block_1.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_texts" xsi:type="array">-->
+<!--                        <item name="text_1" xsi:type="string">-->
+<!--                            <![CDATA[The most beautiful lampshades begin with the finest fabrics.]]></item>-->
+<!--                        <item name="text_2" xsi:type="string">-->
+<!--                            <![CDATA[Our collection hosts a hand–picked range of woven cottons, luxury satins, dupion silks and pure linens, each finished in a wide variety of both rich and subtle natural dyes.  ]]></item>-->
+<!--                        <item name="text_3" xsi:type="string">-->
+<!--                            <![CDATA[We work alongside British-based fabric suppliers who share our passion for craft and source only the finest materials in order to guarantee quality and longevity on all of our lampshades.]]></item>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Fabrics</argument>-->
+<!--                    <argument name="block_subtitle" xsi:type="string">Our</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">fabrics</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">false</argument>-->
+<!--                    <argument name="images" xsi:type="array">-->
+<!--                        <item name="fabrics_1" xsi:type="string">fabrics_1</item>-->
+<!--                        <item name="fabrics_2" xsi:type="string">fabrics_2</item>-->
+<!--                        <item name="fabrics_3" xsi:type="string">fabrics_3</item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.woven_cotton"-->
+<!--                   template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our classic patterned cotton is available in four colour ways that when gathered or pleated gives a wonderfully soft finish. Our cotton partner Ian Mankin has over 150 years of heritage and a passion for their craft that goes into every metre of fabric they weave, all designed and made at their Lancashire mill. They breathe life into these traditional fabrics with contemporary designs and skilful creativity, representing great value and unbeatable quality, with a focus on natural fibres..]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Cottons</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">woven_cotton</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+
+
+<!--                    <argument name="materials" xsi:type="array">-->
+
+<!--                        <item name="color_87" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">87</item>-->
+<!--                            <item name="desc" xsi:type="string">INDIGO STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_81" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">81</item>-->
+<!--                            <item name="desc" xsi:type="string">INDIGO CHECK COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_88" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">88</item>-->
+<!--                            <item name="desc" xsi:type="string">PEONY STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_82" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">82</item>-->
+<!--                            <item name="desc" xsi:type="string">PEONY CHECK COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_89" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">89</item>-->
+<!--                            <item name="desc" xsi:type="string">PINK STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_83" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">83</item>-->
+<!--                            <item name="desc" xsi:type="string">PINK CHECK COTTON</item>-->
+<!--                        </item>-->
+
+
+<!--                        <item name="color_90" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">90</item>-->
+<!--                            <item name="desc" xsi:type="string">SAGE STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_84" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">84</item>-->
+<!--                            <item name="desc" xsi:type="string">SAGE CHECK COTTON</item>-->
+<!--                        </item>-->
+
+
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.luxury_satin"-->
+<!--                   template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our most extensive collection is our elegant satin range, available in fifteen colours.-->
+<!--These fabrics have a supple handle thanks to a blend of 62% cotton and 38% polyester. With an unmistakeable iridescent lustre, these fabrics lend themselves perfectly to more contemporary hard shades owing to their sleek, flawless finish. Our satin partner Warwick fabrics are based in Gloucestershire and have supplied trade fabrics for 30 years.-->
+<!--]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Satins</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">luxury_satin</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_16" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">16</item>-->
+<!--                            <item name="desc" xsi:type="string">SWAN SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_18" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">18</item>-->
+<!--                            <item name="desc" xsi:type="string">ALMOND CREAM SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_19" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">19</item>-->
+<!--                            <item name="desc" xsi:type="string">CLOUD SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_49" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">49</item>-->
+<!--                            <item name="desc" xsi:type="string">PANNACOTTA SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_17" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">17</item>-->
+<!--                            <item name="desc" xsi:type="string">SEAL SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_42" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">42</item>-->
+<!--                            <item name="desc" xsi:type="string">SOOT SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_46" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">46</item>-->
+<!--                            <item name="desc" xsi:type="string">CHESTNUT SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_48" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">48</item>-->
+<!--                            <item name="desc" xsi:type="string">SEPHORA SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_51" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">51</item>-->
+<!--                            <item name="desc" xsi:type="string">URCHIN SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_45" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">45</item>-->
+<!--                            <item name="desc" xsi:type="string">MARIGOLD SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_52" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">52</item>-->
+<!--                            <item name="desc" xsi:type="string">SPICE SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_53" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">53</item>-->
+<!--                            <item name="desc" xsi:type="string">CRIMSON SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_43" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">43</item>-->
+<!--                            <item name="desc" xsi:type="string">AIRFOCE BLUE SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_44" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">44</item>-->
+<!--                            <item name="desc" xsi:type="string">POSEIDON SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_47" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">47</item>-->
+<!--                            <item name="desc" xsi:type="string">MATCHA SATIN</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.dupion_silk"-->
+<!--                   template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our dupion silks are available in six colour ways and come with texture in abundance; they can be rolled, gathered or pleated for totally different effects. Dupion silk is a natural and sustainable handwoven fabric, the fibres of which are produced from yarns intertwined by silkworms cocooning closely together. Due to this, dupion silk is characterised by variations and irregularities in both the weave and shade, which gives it a unique beauty. Our silk partner James Hare have a proud history spanning over 150 years and are considered one of Britain’s leading fabric specialists.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Dupion Silk</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">dupion_silk</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_15" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">15</item>-->
+<!--                            <item name="desc" xsi:type="string">IVORY SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_39" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">39</item>-->
+<!--                            <item name="desc" xsi:type="string">SILVER GREY SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_37" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">37</item>-->
+<!--                            <item name="desc" xsi:type="string">CHARCOAL SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_01" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">01</item>-->
+<!--                            <item name="desc" xsi:type="string">TAUPE SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_72" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">72</item>-->
+<!--                            <item name="desc" xsi:type="string">TRUFFLE SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_41" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">41</item>-->
+<!--                            <item name="desc" xsi:type="string">SEA MIST GOLD SILK</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.pure_linen"-->
+<!--                   template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our two laid-back linen colour ways offer an elegantly simple solution with a classic natural feel. Featuring beautiful texture and a subtle matt sheen, these sophisticated fabrics are highly versatile and at home in a range of interiors. Linen is a natural fabric made from the flax plant; one of nature’s strongest fibres, its threads have variable lengths that contribute directly to its overall strength and longevity. Our silk partner James Hare have a proud history spanning over 150 years and are considered one of Britain’s leading fabric specialists.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Linens</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">pure_linen</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_07" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">07</item>-->
+<!--                            <item name="desc" xsi:type="string">BONE LINEN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_08" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">08</item>-->
+<!--                            <item name="desc" xsi:type="string">LIMESTONE LINEN</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.hard_shade_linings"-->
+<!--                   template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Shade laminates give hardback shades their rigidity. We carefully select our laminate to ensure our shades are sturdy whilst also enabling the light to emit a soft glow through the fabric. White laminates are primarily used when the interior shade is hidden, for example on flush fittings featuring diffusers. Where the inner shade can be seen, metallic laminates can be used to add a stunning reflective finish. They will also influence the light, with gold and bronze giving a warmer ambience compared to a cooler neutral silver.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Laminate Linings</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">laminate_linings</argument>-->
+
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_wi" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">WI</item>-->
+<!--                            <item name="desc" xsi:type="string">WHITE</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_si" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">SI</item>-->
+<!--                            <item name="desc" xsi:type="string">SILVER</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_bz" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">BZ</item>-->
+<!--                            <item name="desc" xsi:type="string">BRONZE</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_gd" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">GD</item>-->
+<!--                            <item name="desc" xsi:type="string">GOLD</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.taffeta_linings"-->
+<!--                   template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our taffeta linings are a crisp, smooth woven fabric made from an acetate polyester mix. There are two distinct types of taffeta: yarn-dyed and piece-dyed. Piece-dyed taffeta is often used in linings and is soft to the touch.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Taffeta Linings</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">taffeta_linings</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_ti" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">TI</item>-->
+<!--                            <item name="desc" xsi:type="string">IVORY TAFFETA</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_tg" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">TG</item>-->
+<!--                            <item name="desc" xsi:type="string">GOLD TAFFETA</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
+
+        <referenceBlock name="breadcrumbs" remove="true"/>
+
+    </body>
+</page>

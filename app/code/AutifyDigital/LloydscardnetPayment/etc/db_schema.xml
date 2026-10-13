@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="autify_lloydscardnetpayment_payments" resource="default" engine="innodb" comment="autify_lloydscardnetpayment_payments Table">
+		<column xsi:type="int" name="payments_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="payments_id"/>
+		</constraint>
+		<column name="amount" nullable="true" xsi:type="varchar" comment="amount" length="255"/>
+		<column name="status" nullable="true" xsi:type="varchar" comment="status" length="255"/>
+		<column name="order_id" nullable="true" xsi:type="int" comment="order_id" identity="false"/>
+		<column name="order_increment_id" nullable="true" xsi:type="varchar" comment="order_increment_id" length="255"/>
+		<column name="remote_reference" nullable="true" xsi:type="text" comment="remote_reference"/>
+		<column name="remote_message" nullable="true" xsi:type="text" comment="remote_message"/>
+		<column name="remote_status_or_code" nullable="true" xsi:type="text" comment="remote_status_or_code"/>
+		<column name="cardnet_order_id" nullable="true" xsi:type="text" comment="cardnet_order_id"/>
+		<column name="cardnet_refund_id" nullable="true" xsi:type="text" comment="cardnet_refund_id"/>
+		<column name="transaction_update_webhook" nullable="true" xsi:type="smallint" comment="transaction_update" identity="false" default="0"/>
+		<column name="transaction_update_response" nullable="true" xsi:type="smallint" comment="transaction_update_response" identity="false" default="0"/>
+		<column name="redirect_email_sent" nullable="true" xsi:type="smallint" comment="redirect_email_sent" identity="false" default="0"/>
+		<column name="created_at" nullable="false" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="false"/>
+		<column name="updated_at" nullable="true" xsi:type="datetime" default="CURRENT_TIMESTAMP" on_update="true"/>
+	</table>
+</schema>

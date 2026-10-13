@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="cms.static.menu" template="Magento_Cms::html/cms_static_menu.phtml" after="-">
+                <arguments>
+                    <argument name="links_from" xsi:type="string">home_page_menu_lss_about_us</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="columns.top">
+            <block class="Magento\Framework\View\Element\Template" name="find.desc" template="Magento_Cms::find/desc.phtml" after="page.main.title"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="find.map" template="Magento_Cms::find/map.phtml"/>
+        </referenceContainer>
+
+
+
+        <referenceBlock name="breadcrumbs" remove="true" />
+    </body>
+</page>

@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment" sortOrder="1000" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+            <group id="autifydigital" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Autify Digital Payments</label>
+                <group id="lcnet" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Lloyds Online Payment</label>
+                    <group id="basic" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Basic Settings</label>
+                        <field id="payment_ref_prefix" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Payment Reference Prefix</label>
+                        </field>
+                        <field id="payment_leading_zeros" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Payment Reference Leading Zeros After Prefix</label>
+                        </field>
+                        <field id="log" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Enable Log</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/lcnetredirect/log</config_path>
+                        </field>
+                        <group id="test_credential" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Test Credentials</label>
+                            <field id="store_id" translate="label" type="obscure" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>Store ID</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                            <field id="shared_secret" translate="label" type="obscure" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>Shared Secret</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                            <field id="api_key" translate="label" type="obscure" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>API Key</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                            <field id="api_secret" translate="label" type="obscure" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>API Secret</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                        </group>
+                        <group id="live_credential" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Live Credentials</label>
+                            <field id="store_id" translate="label" type="obscure" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>Store ID</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                            <field id="shared_secret" translate="label" type="obscure" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>Shared Secret</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                            <field id="api_key" translate="label" type="obscure" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>API Key</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                            <field id="api_secret" translate="label" type="obscure" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                                <label>API Secret</label>
+                                <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            </field>
+                        </group>
+                    </group>
+                    <group id="redirect" sortOrder="2" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                        <label>Redirect (Hosted) Settings - Recommended</label>
+                        <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Enable</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/lcnetredirect/active</config_path>
+                        </field>
+                        <field id="display_text" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Display Text</label>
+                            <comment>This text will display on the frontend.</comment>
+                            <config_path>payment/lcnetredirect/title</config_path>
+                        </field>
+                        <field id="allowspecific" translate="label" type="allowspecific" sortOrder="4" showInDefault="9" showInWebsite="1" showInStore="1">
+                            <label>Payment From Applicable Countries</label>
+                            <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                            <config_path>payment/lcnetredirect/allowspecific</config_path>
+                        </field>
+                        <field id="specificcountry" translate="label" type="multiselect" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Payment From Specific Countries</label>
+                            <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                            <config_path>payment/lcnetredirect/specificcountry</config_path>
+                        </field>
+                        <field id="lloyds_mode" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Payment Mode</label>
+                            <source_model>AutifyDigital\LloydscardnetPayment\Model\Config\Source\LloydsMode</source_model>
+                            <config_path>payment/lcnetredirect/lloyds_mode</config_path>
+                        </field>
+                        <field id="min_order_total" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Minimum Order </label>
+                            <config_path>payment/lcnetredirect/min_order_total</config_path>
+                        </field>
+                        <field id="max_order_total" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Maximum Order </label>
+                            <config_path>payment/lcnetredirect/max_order_total</config_path>
+                        </field>
+                        <field id="order_status" type="select" sortOrder="11" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                            <label>Magento Order Status</label>
+                            <source_model>AutifyDigital\LloydscardnetPayment\Model\Config\Source\PaymentStatus</source_model>
+                            <config_path>payment/lcnetredirect/order_status</config_path>
+                            <comment><![CDATA[Setting a Magento Order status while redirecting to hosted page.]]></comment>
+                        </field>
+                        <field id="dynamic_merchant_name" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Dynamic Merchant Name </label>
+                            <config_path>payment/lcnetredirect/dynamic_merchant_name</config_path>
+                            <comment><![CDATA[Setting a Dynamic Merchant Name while redirecting to hosted page. This will display in the customer's bank account transaction report. Leave this empty if you don't wanna change the details.]]></comment>
+                        </field>
+                        <field id="payment_logo" translate="label" sortOrder="1" type="Magento\Config\Block\System\Config\Form\Field\Image" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Payment Logo</label>
+                            <config_path>payment/lcnetredirect/payment_logo</config_path>
+                            <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                            <base_url type="media" scope_info="1">lloydscardnet</base_url>
+                            <upload_dir config="system" scope_info="1">lloydscardnet</upload_dir>
+                            <comment><![CDATA[Please upload jpg, jpeg, svg, png.]]></comment>
+                        </field>
+                        <field id="tooltip_before_button" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Tooltip before Place Order button </label>
+                            <config_path>payment/lcnetredirect/tooltip_before_button</config_path>
+                            <comment><![CDATA[e.g We will redirect you to the LBOP hosted page.]]></comment>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

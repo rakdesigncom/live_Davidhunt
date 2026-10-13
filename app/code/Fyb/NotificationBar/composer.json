@@ -1,0 +1,20 @@
+{
+    "name": "fyb_romania/module-notification-bar",
+    "description": "Hello Bar - Top Bar Promotions by FYB Romania",
+    "type": "magento2-module",
+    "version": "1.0.2",
+    "require": {
+        "fyb_romania/module-base": "*"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Fyb\\NotificationBar\\": ""
+        }
+    }
+}

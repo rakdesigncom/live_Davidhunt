@@ -1,0 +1,101 @@
+<!--@subject {{trans "Partner Form"}} @-->
+<!--@vars {
+"var data.email":"Sender Email",
+"var data.name":"Sender Name",
+"var data.telephone":"Sender Telephone"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><strong>{{trans "Company Name"}}</strong></td>
+        <td>{{var data.name}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Contact Name"}}</strong></td>
+        <td>{{var data.name}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Street Address"}}</strong></td>
+        <td>{{var data.street_address}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Street Address 2"}}</strong></td>
+        <td>{{var data.street_address_2}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "City"}}</strong></td>
+        <td>{{var data.city}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Country"}}</strong></td>
+        <td>{{var data.country}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Postcode"}}</strong></td>
+        <td>{{var data.postcode}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Telephone"}}</strong></td>
+        <td>{{var data.telephone}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Mobile No"}}</strong></td>
+        <td>{{var data.mobile_no}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "E-Mail Address"}}</strong></td>
+        <td>{{var data.email}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Website Address"}}</strong></td>
+        <td>{{var data.website_address}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Company Reg No"}}</strong></td>
+        <td>{{var data.company_reg_no}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Vat Reg No"}}</strong></td>
+        <td>{{var data.vat_reg_no}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Nature of Business"}}</strong></td>
+        <td>{{var data.nature_business}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "How many employees do you have?"}}</strong></td>
+        <td>{{var data.count_employees}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Do you have a retail showroom?"}}</strong></td>
+        <td>{{var data.have_showroom}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "What action do you require?"}}</strong></td>
+        <td>{{var data.what_action}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "How did you hear about us?"}}</strong></td>
+        <td>{{var data.hear_about}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Please provide details of 2 existing trade suppliers(not for trade reference purposes)"}}</strong></td>
+        <td>{{var data.trade_suppliers}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Have you previously purchased David Hunt Lighting products?"}}</strong></td>
+        <td>{{var data.previous_purchase}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Do you sell online?"}}</strong></td>
+        <td>{{var data.sell_online}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "If yes, please say where"}}</strong></td>
+        <td>{{var data.where_sell_online}}</td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

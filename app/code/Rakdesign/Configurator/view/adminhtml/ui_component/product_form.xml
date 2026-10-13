@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="demotab">
+       <argument name="data" xsi:type="array">
+           <item name="config" xsi:type="array">
+               <item name="label" xsi:type="string" translate="true">Shade Configurator Combinations</item>
+               <item name="collapsible" xsi:type="boolean">true</item>
+               <item name="sortOrder" xsi:type="number">20</item>
+           </item>
+       </argument>
+       <container name="fieldname_container" >
+           <argument name="data" xsi:type="array">
+               <item name="config" xsi:type="array">
+                   <item name="sortOrder" xsi:type="number">160</item>
+               </item>
+           </argument>
+
+           <htmlContent name="html_content_demo">
+               <block name="shade_configurations" class="Rakdesign\Configurator\Block\Adminhtml\Product\CustomTab" />
+<!--               <argument name="block" xsi:type="object">Rakdesign\Configurator\Block\Adminhtml\Product\CustomTab</argument>-->
+           </htmlContent>
+       </container>
+   </fieldset>
+</form>

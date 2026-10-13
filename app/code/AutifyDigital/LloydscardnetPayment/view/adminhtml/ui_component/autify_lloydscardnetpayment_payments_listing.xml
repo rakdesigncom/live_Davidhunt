@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">autify_lloydscardnetpayment_payments_listing.autify_lloydscardnetpayment_payments_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>autify_lloydscardnetpayment_payments_columns</spinner>
+		<deps>
+			<dep>autify_lloydscardnetpayment_payments_listing.autify_lloydscardnetpayment_payments_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="autify_lloydscardnetpayment_payments_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">payments_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>AutifyDigital_LloydscardnetPayment::autify_lloydscardnetpayment_payments</aclResource>
+		<dataProvider name="autify_lloydscardnetpayment_payments_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>payments_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="autify_lloydscardnetpayment_payments_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>payments_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="payments_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="amount">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Order Amount</label>
+			</settings>
+		</column>
+		<column name="status" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <options class="AutifyDigital\LloydscardnetPayment\Model\Config\Source\Status"/>
+                <filter>select</filter>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+		<column name="order_increment_id" class="AutifyDigital\LloydscardnetPayment\Ui\Component\Listing\Column\OrderId">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Order Id</label>
+				<bodyTmpl>ui/grid/cells/html</bodyTmpl>
+			</settings>
+		</column>
+		<column name="cardnet_order_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Gateway Order ID</label>
+			</settings>
+		</column>
+		<column name="remote_reference">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Gateway Merchant Transaction ID</label>
+			</settings>
+		</column>
+		<column name="remote_message">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Gateway Message</label>
+			</settings>
+		</column>
+		<column name="remote_status_or_code">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Gateway Status</label>
+			</settings>
+		</column>
+		<column name="cardnet_refund_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Gateway Refund Transaction ID</label>
+			</settings>
+		</column>
+		<column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
+			<settings>
+				<filter>dateRange</filter>
+				<sortable>true</sortable>
+				<dataType>date</dataType>
+				<label translate="true">Payment Date</label>
+				<dateFormat>MMM dd, yyyy, 0:00:00</dateFormat>
+			</settings>
+		</column>
+	</columns>
+</listing>

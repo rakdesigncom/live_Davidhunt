@@ -1,0 +1,39 @@
+<?php
+/**
+ * @package     Plumrocket_ProductFilter
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+?>
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var Plumrocket\ProductFilter\ViewModel\JsConfig $filterJsConfig */
+$filterJsConfig = $block->getData('viewModel');
+
+?>
+<div id="product-filter-init"></div>
+
+<script type="text/x-magento-init">
+    {
+        "#product-filter-init": {
+            "Plumrocket_LayeredNavigationLite/js/init": <?= /** @noEscape */ $filterJsConfig->getJson() ?>
+        }
+    }
+</script>
+
+<?php /** Fix for browser history after ajax-queries */?>
+<script>
+    require([
+        "plumrocket/product-filter/action",
+        "domReady!"
+    ], function (filterAction) {
+        var oldOnpopstate = window.onpopstate;
+        window.onpopstate = function (event) {
+            if (typeof oldOnpopstate === 'function') oldOnpopstate();
+            filterAction.setSkipHistory(true);
+            if (event.state !== null) {
+                filterAction.applyUrl(window.location.href);
+            }
+        };
+    });
+</script>

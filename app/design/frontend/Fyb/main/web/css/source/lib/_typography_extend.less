@@ -1,0 +1,287 @@
+& when (@media-common = true) {
+    body {
+        font-family: @font-family-gill-sans-light;
+        font-weight: 300;
+        font-style: normal;
+        font-size: @font-size__normal_body;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: @font-family-gfs-didot_italic;
+        font-weight: normal;
+        font-style: italic;
+        color: @color_dark_grey;
+    }
+
+
+    h1.small-underline {
+        position: relative;
+        font-family: @font-family-headers;
+        font-weight: 300;
+        font-style: normal;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.1em;
+
+        &:after {
+            content: "";
+            background: @color_dark_grey;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 40px;
+        }
+    }
+    h1.small-underline-small-text {
+        position: relative;
+        font-family: @font-family-headers;
+        font-weight: 300;
+        font-style: normal;
+        font-size: @font-size__18;
+        line-height: @line-height_22;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        &:after {
+            content: "";
+            background: @color-white;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            height: 1px;
+            width: 40px;
+        }
+    }
+
+    h1.line-before {
+        position: relative;
+        font-family: @font-family-headers;
+        font-weight: 300;
+        font-style: normal;
+        font-size: @font-size__18;
+        line-height: @line-height_22;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding-left: 64px;
+
+        &:before {
+            content: "";
+            background: @color-white;
+            position: absolute;
+            top: 48%;
+            left: 0;
+            height: 1px;
+            width: 40px;
+        }
+    }
+
+    h3 {
+
+
+        font-size: @font-size__24;
+    }
+
+    h2.small-uppertitle {
+        font-size: @font-size__24;
+        margin: 0;
+        padding: 0;
+        line-height: @line-height_32;
+    }
+
+    h5 {
+
+        font-family: @font-family-gill-sans;
+        font-weight: normal;
+        font-style: normal;
+        font-size: @font-size__bigger;
+    }
+
+    b, strong {
+        font-family: @font-family-gill-sans;
+        font-weight: normal;
+        font-style: normal;
+        color: @color_dark_grey;
+
+    }
+
+    .italic_24_text {
+        font-family: @font-family-gfs-didot_italic;
+        font-weight: normal;
+        font-style: italic;
+        font-size: @font-size__24;
+        line-height: @line-height_27;
+    }
+
+    .center_content {
+        text-align: center;
+    }
+
+    .block {
+        .title {
+            strong {
+                font-family: @font-family-gfs-didot_italic;
+                font-weight: normal;
+                font-style: italic;
+                font-size: @h1__font-size;
+            }
+        }
+    }
+
+    .widget {
+        .block-title {
+            strong {
+                font-family: @font-family-gfs-didot_italic;
+                font-weight: normal;
+                font-style: italic;
+                font-size: @h1__font-size;
+                line-height: @line-height_35;
+            }
+        }
+    }
+
+    .category-list {
+
+        .item {
+
+            .category-list-name {
+
+                color: @color-white;
+
+            }
+        }
+    }
+
+    .page-footer {
+        .footer-title {
+            font-family: @font-family-gfs-didot_italic;
+            font-weight: normal;
+            font-style: italic;
+
+        }
+
+        .footer_handmade {
+            font-size: @font-size__s;
+        }
+    }
+
+    .product-social-links {
+        .action.mailto.friend,
+        .action.towishlist {
+            text-transform: none;
+            color: @color_dark_grey;
+            font-weight: normal;
+        }
+    }
+
+    .product-item {
+        .price-box {
+            font-family: @font-family-gfs-didot_italic;
+            font-weight: normal;
+            font-style: italic;
+            margin: 0;
+        }
+    }
+
+    .products-grid {
+        .product-item-info {
+
+            box-shadow: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+
+            &:hover {
+
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+
+            }
+        }
+
+    }
+
+    .product-info-price {
+        .price-box {
+            .price-container {
+                .price {
+                    font-family: @font-family-gfs-didot_italic;
+                    font-weight: normal;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    .subtitle-with-line {
+        font-family: @font-family-gill-sans-light;
+        font-weight: 300;
+        font-style: normal;
+        text-transform: uppercase;
+        padding-left: 50px;
+
+        position: relative;
+
+        &:after {
+            content: "";
+            background: @color-white;
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            height: 1px;
+            width: 40px;
+        }
+
+    }
+
+    .subtitle_small {
+        font-family: @font-family-gill-sans-light;
+        font-weight: 300;
+        font-style: normal;
+        text-transform: uppercase;
+
+    }
+
+    .bottom_margin_general {
+        margin-bottom: @theme_general_spacing;
+    }
+
+    .tooltip {
+        .lib-tooltip(top);
+    }
+
+    .fieldset > .field > .label {
+        font-weight: 400;
+    }
+
+    .icon-font-attribute {
+        font-family: @font-family-Darsymbolsnew;
+        font-size: @font-size__32;
+    }
+
+    .message.success,
+    .message.error,
+    .page.messages {
+        font-size: initial;
+    }
+    dt{
+        font-weight: initial;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    h1.small-underline {
+        line-height: @line-height_35;
+        font-size: @font-size__32;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    h1.small-underline {
+        line-height: @line-height_58;
+        font-size: @font-size__48;
+    }
+}

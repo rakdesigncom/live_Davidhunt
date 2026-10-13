@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="AutifyDigital\PayNow\Api\PaynowRepositoryInterface" type="AutifyDigital\PayNow\Model\PaynowRepository"/>
+	<preference for="AutifyDigital\PayNow\Api\Data\PaynowInterface" type="AutifyDigital\PayNow\Model\Paynow"/>
+	<preference for="AutifyDigital\PayNow\Api\Data\PaynowSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="AutifyDigital\PayNow\Model\ResourceModel\Paynow\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">autifydigital_paynow_paynow</argument>
+			<argument name="resourceModel" xsi:type="string">AutifyDigital\PayNow\Model\ResourceModel\Paynow\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="autifydigital_paynow_paynow_listing_data_source" xsi:type="string">AutifyDigital\PayNow\Model\ResourceModel\Paynow\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

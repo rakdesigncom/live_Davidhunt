@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+	<template id="paynow_email_configuration_success_transaction_customer" label="Success Transaction Email Template for Customer" file="success_transaction_customer.html" type="html" module="AutifyDigital_PayNow" area="frontend"/>
+	<template id="paynow_email_configuration_failed_transaction_customer" label="Failed Transaction Email Template for Customer" file="failed_transaction_customer.html" type="html" module="AutifyDigital_PayNow" area="frontend"/>
+	<template id="paynow_email_configuration_success_transaction_admin" label="Success Transaction Email Template for Admin" file="success_transaction_admin.html" type="html" module="AutifyDigital_PayNow" area="frontend"/>
+	<template id="paynow_email_configuration_failed_transaction_admin" label="Failed Transaction Email Template for Admin" file="failed_transaction_admin.html" type="html" module="AutifyDigital_PayNow" area="frontend"/>
+</config>

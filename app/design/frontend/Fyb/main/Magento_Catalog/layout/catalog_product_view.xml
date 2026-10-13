@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--  Make product page full width -->
+        <referenceContainer name="page.wrapper">
+            <container name="product.info.details.wrapper" after="main.content" htmlTag="div" htmlClass="product-full-width-section" />
+            <container name="product.info.details.after.wrapper" after="product.info.details.wrapper" htmlTag="div" htmlClass="page-main page-main-details-after">
+                <container name="product.info.details.after.wrapper.columns" htmlTag="div" htmlClass="columns">
+                    <container name="product.info.details.after.wrapper.main" label="Product Details Main Content Container" htmlTag="div" htmlClass="column main">
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <move element="product.info.details" destination="product.info.details.wrapper" />
+        <move element="content.aside" destination="product.info.details.after.wrapper.main" />
+        <!--  Make product page full width -->
+
+
+        <referenceBlock name="product.info">
+            <block class="Magento\Catalog\Block\Product\View" name="product.info.fabrics" template="Magento_Catalog::product/view/fabric_buttons.phtml" />
+        </referenceBlock>
+
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.social">
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.stockistto"
+                       template="Magento_Catalog::product/view/stockist.phtml" before="product.info.addto"/>
+            </referenceContainer>
+
+            <referenceContainer name="product.info.price">
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.delivery"
+                       template="Magento_Catalog::product/view/delivery_time.phtml" before="product.price.final"/>
+            </referenceContainer>
+        </referenceContainer>
+
+        <referenceContainer name="content.aside">
+            <block class="Magento\Catalog\Block\Widget\RecentlyViewed" name="product.info.viewed" template="Magento_Catalog::product/widget/viewed/grid.phtml" after="-">
+                <arguments>
+                    <argument name="uiComponent" xsi:type="string">widget_recently_viewed</argument>
+                    <argument name="page_size" xsi:type="number">4</argument>
+                    <argument name="show_attributes" xsi:type="string">name,image,price</argument>
+                    <argument name="show_buttons" xsi:type="string"></argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="additional.product.footer" after="page.bottom.container" template="Magento_Catalog::product/view/product_footer.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.details.wrapper">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.long" after="-" as="description_long" template="Magento_Catalog::product/view/product_description.phtml" />
+        </referenceContainer>
+
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Framework\View\Element\Template" name="product.technical.information" before="page.main.title" template="Magento_Catalog::product/view/technical_information_button.phtml"/>
+            <block class="Magento\Catalog\Block\Product\View" name="product.info.customise" before="product.info" template="Magento_Catalog::product/view/customise.phtml"/>
+        </referenceContainer>
+
+        <referenceBlock name="product.info.sku">
+            <arguments>
+                <argument name="at_label" xsi:type="string">Product Code</argument>
+            </arguments>
+        </referenceBlock>
+
+        <block class="Fyb\Theme\Block\Product\Breadcrumbs"/>
+
+        <move element="product.info.stock.sku" destination="product.info.main" after="page.main.title"/>
+        <move element="product.info.overview" destination="product.info.main" after="product.info.stock.sku"/>
+        <move element="product.info.details" destination="product.info.details.wrapper" before="product.info.description.long" />
+
+        <move element="product.technical.information" destination="product.info.main" before="page.main.title"/>
+
+        <referenceBlock name="product.info.description" remove="true"/>
+        <referenceBlock name="product.info.type" remove="true"/>
+    </body>
+</page>

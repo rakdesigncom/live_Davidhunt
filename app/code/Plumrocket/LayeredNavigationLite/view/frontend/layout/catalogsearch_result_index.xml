@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalogsearch.leftnav">
+            <action ifconfig="prproductfilter/general/enabled" method="setTemplate">
+                <argument name="template" xsi:type="string">Plumrocket_LayeredNavigationLite::layer/view.phtml</argument>
+            </action>
+
+            <referenceBlock name="catalogsearch.navigation.renderer">
+                <action ifconfig="prproductfilter/general/enabled" method="setTemplate">
+                    <argument name="template" xsi:type="string">Plumrocket_LayeredNavigationLite::layer/filter.phtml</argument>
+                </action>
+            </referenceBlock>
+        </referenceBlock>
+        <referenceBlock name="product_list_toolbar">
+            <block class="Plumrocket\LayeredNavigationLite\Block\Html\Pager" name="product_list_toolbar_pager"/>
+        </referenceBlock>
+        <referenceBlock name="catalogsearch.navigation.state">
+            <action ifconfig="prproductfilter/general/enabled" method="setTemplate">
+                <argument name="template" xsi:type="string">Plumrocket_LayeredNavigationLite::layer/state.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

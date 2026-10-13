@@ -1,0 +1,56 @@
+<?php
+/** @var \Fyb\Theme\Block\Menu\Category\CategoryInfo $block */
+?>
+
+<?php
+$category = $block->getCurrentCategory();
+if (!$category) {
+    return;
+}
+
+$mainCategory = $block->getLevelMainCategory($category, 2);
+$secondMainCategory = $block->getLevelMainCategory($category, 3);
+$isMenuPage = $block->getRequest()->getParam('menu');
+$buildHelper = $this->helper(\Rakdesign\Configurator\Helper\Data::class);
+?>
+<div class="header_submenu_static">
+    <ul>
+        <li class="<?= $mainCategory->getId() == $category->getId() ? 'active': '' ?>">
+            <a href="<?= $block->escapeUrl($mainCategory->getUrl()) ?>">
+                <span
+                    class="level2-name sub-cat-name"><?= $block->escapeHtmlAttr(__('All ' . $mainCategory->getName())) ?></span>
+            </a>
+        </li>
+        <?php foreach ($mainCategory->getChildrenCategories() as $cat): ?>
+            <?php if ($cat->getIsActive()): ?>
+                <li class="<?= $cat->getId() == $secondMainCategory->getId() ? 'active': '' ?>">
+                    <a href="<?= $block->escapeUrl($cat->getUrl() . '?menu=1') ?>">
+                        <span class="level2-name sub-cat-name"><?= $block->escapeHtmlAttr(__($cat->getName())) ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<?php if ($category->getLevel() > 2 && $mainCategory->getName() == 'Categories' && count($secondMainCategory->getChildrenCategories())): ?>
+    <div class="header_submenu_static submenu_second_line">
+        <ul>
+            <?php foreach ($secondMainCategory->getChildrenCategories() as $cat): ?>
+                <?php if ($cat->getIsActive()): ?>
+                    <li class="<?= $cat->getId() == $category->getId() ? 'active': '' ?>">
+                        <a href="<?= $block->escapeUrl($cat->getUrl()) ?>">
+                        <span
+                            class="level2-name sub-cat-name"><?= $block->escapeHtmlAttr(__($cat->getName())) ?></span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <li class="<?= $secondMainCategory->getId() == $category->getId() && !$isMenuPage ? 'active': '' ?>">
+                <a href="<?= $block->escapeUrl($secondMainCategory->getUrl()) ?>">
+                    <span class="level2-name sub-cat-name"><?= __('All') ?></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+<?php endif; ?>

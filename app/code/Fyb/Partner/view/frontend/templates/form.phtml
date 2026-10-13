@@ -1,0 +1,449 @@
+<?php
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \Fyb\Partner\Block\PartnerForm $block */
+?>
+<div class="form-partner-content">
+    <form class="form partner"
+          action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+          id="partner-form"
+          method="post"
+          data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+          data-mage-init='{"validation":{}}'>
+        <fieldset class="fieldset">
+            <h5><?= $block->escapeHtml(__('Trade Enquiries')) ?></h5>
+            <div class="static-page-description">Please fill out the following form if you would like to become a stockist for David Hunt lighting. One of our representatives will be in touch with you directly to discuss your requirements.</div>
+            <div class="field company">
+                <label class="label" for="company"><span><?= $block->escapeHtml(__('Company Name')) ?></span></label>
+                <div class="control">
+                    <input name="company"
+                           id="company"
+                           title="<?= $block->escapeHtmlAttr(__('Company Name')) ?>"
+                           class="input-text"
+                           type="text"
+                           maxlength="100"
+                           data-validate="{required:true}"/>
+                </div>
+            </div>
+            <div class="field name required">
+                <label class="label" for="name"><span><?= $block->escapeHtml(__('Contact Name')) ?></span></label>
+                <div class="control">
+                    <input name="name"
+                           id="name"
+                           title="<?= $block->escapeHtmlAttr(__('Contact Name')) ?>"
+                           class="input-text"
+                           type="text"
+                           maxlength="100"
+                           data-validate="{required:true}"/>
+                </div>
+            </div>
+            <div class="field street_address required">
+                <label class="label"
+                       for="street_address"><span><?= $block->escapeHtml(__('Street Address')) ?></span></label>
+                <div class="control">
+                    <input name="street_address"
+                           id="street_address"
+                           title="<?= $block->escapeHtmlAttr(__('Street Address')) ?>"
+                           class="input-text"
+                           type="text"
+                           maxlength="255"
+                           data-validate="{required:true}"
+                    />
+                </div>
+            </div>
+            <div class="field street_address_2">
+                <label class="label"
+                       for="street_address_2"><span><?= $block->escapeHtml(__('Street Address 2')) ?></span></label>
+                <div class="control">
+                    <input name="street_address_2"
+                           id="street_address_2"
+                           maxlength="255"
+                           title="<?= $block->escapeHtmlAttr(__('Street Address 2')) ?>"
+                           class="input-text"
+                           type="text"
+                    />
+                </div>
+            </div>
+
+            <div class="fieldset grid-half">
+                <div class="field city required">
+                    <label class="label" for="city"><span><?= $block->escapeHtml(__('City')) ?></span></label>
+                    <div class="control">
+                        <input name="city"
+                               id="city"
+                               maxlength="50"
+                               title="<?= $block->escapeHtmlAttr(__('City')) ?>"
+                               class="input-text"
+                               type="text"
+                               data-validate="{required:true}"
+                        />
+                    </div>
+                </div>
+                <div class="field county required">
+                    <label class="label" for="county"><span><?= $block->escapeHtml(__('County')) ?></span></label>
+                    <div class="control">
+                        <input name="county"
+                               id="county"
+                               maxlength="50"
+                               title="<?= $block->escapeHtmlAttr(__('County')) ?>"
+                               class="input-text"
+                               type="text"
+                               data-validate="{required:true}"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="field postcode required">
+                <label class="label"
+                       for="postcode"><span><?= $block->escapeHtml(__('Postcode')) ?></span></label>
+                <div class="control">
+                    <input name="postcode"
+                           id="postcode"
+                           maxlength="50"
+                           title="<?= $block->escapeHtmlAttr(__('Postcode')) ?>"
+                           class="input-text"
+                           data-validate="{required:true}"
+                           type="text"
+                    />
+                </div>
+            </div>
+            <div class="fieldset grid-half">
+                <div class="field telephone required">
+                    <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Telephone')) ?></span></label>
+                    <div class="control">
+                        <input name="telephone"
+                               id="telephone"
+                               title="<?= $block->escapeHtmlAttr(__('Telephone')) ?>"
+                               class="input-text"
+                               maxlength="50"
+                               type="text"
+                               data-validate="{required:true}"
+                               data-mage-init='{"mage/trim-input":{}}'
+                        />
+                    </div>
+                </div>
+                <div class="field mobile_no">
+                    <label class="label" for="mobile_no"><span><?= $block->escapeHtml(__('Mobile No')) ?></span></label>
+                    <div class="control">
+                        <input name="mobile_no"
+                               id="mobile_no"
+                               title="<?= $block->escapeHtmlAttr(__('Mobile No')) ?>"
+                               class="input-text"
+                               maxlength="50"
+                               type="text"
+                               data-mage-init='{"mage/trim-input":{}}'
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="field email required">
+                <label class="label" for="email"><span><?= $block->escapeHtml(__('E-Mail Address')) ?></span></label>
+                <div class="control">
+                    <input name="email"
+                           id="email"
+                           title="<?= $block->escapeHtmlAttr(__('E-Mail Address')) ?>"
+                           class="input-text"
+                           type="email"
+                           maxlength="100"
+                           data-validate="{required:true, 'validate-email':true}"
+                           data-mage-init='{"mage/trim-input":{}}'
+                    />
+                </div>
+            </div>
+            <div class="field website_address">
+                <label class="label" for="website_address"><span><?= $block->escapeHtml(__('Website Address')) ?></span></label>
+                <div class="control">
+                    <input name="website_address"
+                           id="website_address"
+                           title="<?= $block->escapeHtmlAttr(__('Website Address')) ?>"
+                           class="input-text"
+                           maxlength="100"
+                           type="text"
+                           data-mage-init='{"mage/trim-input":{}}'
+                    />
+                </div>
+            </div>
+            <div class="fieldset grid-half">
+                <div class="field company_reg_no">
+                    <label class="label"
+                           for="company_reg_no"><span><?= $block->escapeHtml(__('Company Reg No')) ?></span></label>
+                    <div class="control">
+                        <input name="company_reg_no"
+                               id="company_reg_no"
+                               maxlength="50"
+                               title="<?= $block->escapeHtmlAttr(__('Company Reg No')) ?>"
+                               class="input-text"
+                               type="text"
+                        />
+                    </div>
+                </div>
+                <div class="field vat_reg_no">
+                    <label class="label"
+                           for="vat_reg_no"><span><?= $block->escapeHtml(__('Vat Reg No')) ?></span></label>
+                    <div class="control">
+                        <input name="vat_reg_no"
+                               id="vat_reg_no"
+                               maxlength="50"
+                               title="<?= $block->escapeHtmlAttr(__('Vat Reg No')) ?>"
+                               class="input-text"
+                               type="text"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="field nature_business">
+                <label class="label" for="nature_business"><span><?= $block->escapeHtml(__('Nature of Business')) ?></span></label>
+                <div class="control">
+                    <select name="nature_business" id="nature_business">
+                        <option value="">--- Please select ---</option>
+                        <option value="Independent Lighting Retailer">Independent Lighting Retailer</option>
+                        <option value="Furniture Retailer">Furniture Retailer</option>
+                        <option value="Giftware Retailer">Giftware Retailer</option>
+                        <option value="Interior Designer">Interior Designer</option>
+                        <option value="Electrical Wholesaler">Electrical Wholesaler</option>
+                        <option value="Contractor">Contractor</option>
+                        <option value="Internet/Mail Order">Internet/Mail Order</option>
+                        <option value="0">Other (Please Specify)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field other_nature_business" style="display: none;">
+                <label class="label" for="other_nature_business"><span><?= $block->escapeHtml(__('Specify Nature of Business')) ?></span></label>
+                <div class="control">
+                    <input name="other_nature_business"
+                           id="other_nature_business"
+                           maxlength="100"
+                           title="<?= $block->escapeHtmlAttr(__('Specify Nature of Business')) ?>"
+                           class="input-text"
+                           type="text"
+                    />
+                </div>
+            </div>
+
+            <div class="field count_employees required">
+                <label class="label"
+                       for="count_employees"><span><?= $block->escapeHtml(__('How many employees do you have?')) ?></span></label>
+                <div class="control">
+                    <input name="count_employees"
+                           id="count_employees"
+                           title="<?= $block->escapeHtmlAttr(__('How many employees do you have?')) ?>"
+                           value=""
+                           class="input-text"
+                           type="number"
+                           data-validate="{required:true, 'validate-number':true, 'validate-zero-or-greater': true }"
+                           data-mage-init='{"mage/trim-input":{}}'
+                    />
+                </div>
+            </div>
+            <div class="field have_showroom required">
+                <label class="label"
+                       for="have_showroom"><span><?= $block->escapeHtml(__('Do you have a retail showroom?')) ?></span></label>
+                <div class="options-list">
+                    <div class="field choice">
+                        <input type="radio" class="radio" id="have_showroom_1"
+                               data-validate="{'validate-one-required-by-name':true}" name="have_showroom" value="0">
+                        <label class="label" for="have_showroom_1">
+                            No
+                        </label>
+                    </div>
+                    <div class="field choice">
+                        <input type="radio" class="radio" id="have_showroom_2"
+                               data-validate="{'validate-one-required-by-name':true}" name="have_showroom" value="1">
+                        <label class="label" for="have_showroom_2">
+                            Yes
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fieldset grid-half">
+                <div class="field what_action required">
+                    <label class="label" for="what_action"><span><?= $block->escapeHtml(__('What action do you require?')) ?></span></label>
+                    <div class="control">
+                        <select name="what_action" id="what_action" data-validate="{required:true}">
+                            <option value="">--- Please select ---</option>
+                            <option value="Catalogue Request">Catalogue Request</option>
+                            <option value="Representative to Call">Representative to Call</option>
+                            <option value="Product Information">Product Information</option>
+                            <option value="0">Other (Please Specify)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field hear_about required">
+                    <label class="label" for="hear_about"><span><?= $block->escapeHtml(__('How did you hear about us?')) ?></span></label>
+                    <div class="control">
+                        <select name="hear_about" id="hear_about" data-validate="{required:true}">
+                            <option value="">--- Please select ---</option>
+                            <option value="Referral">Referral</option>
+                            <option value="Previous Customer">Previous Customer</option>
+                            <option value="Internet Search">Internet Search</option>
+                            <option value="Trade Association">Trade Association</option>
+                            <option value="Press">Press</option>
+                            <option value="Website">Website</option>
+                            <option value="Exhibition">Exhibition</option>
+                            <option value="0">Other (Please Specify)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field other_what_action required" style="display: none;">
+                    <label class="label" for="other_what_action"><span><?= $block->escapeHtml(__('Specify what action do you require')) ?></span></label>
+                    <div class="control">
+                        <input name="other_what_action"
+                               id="other_what_action"
+                               maxlength="100"
+                               title="<?= $block->escapeHtmlAttr(__('Specify what action do you require')) ?>"
+                               class="input-text"
+                               type="text"
+                               data-validate="{required:true}"
+                        />
+                    </div>
+                </div>
+                <div class="field other_hear_about required" style="display: none;">
+                    <label class="label" for="other_hear_about"><span><?= $block->escapeHtml(__('Specify how did you hear about us')) ?></span></label>
+                    <div class="control">
+                        <input name="other_hear_about"
+                               id="other_hear_about"
+                               maxlength="100"
+                               title="<?= $block->escapeHtmlAttr(__('Specify how did you hear about us')) ?>"
+                               class="input-text"
+                               type="text"
+                               data-validate="{required:true}"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="field trade_suppliers">
+                <label class="label"
+                       for="trade_suppliers"><span><?= $block->escapeHtml(__('Please provide details of 2 existing trade suppliers(not for trade reference purposes)')) ?></span></label>
+                <div class="control">
+                    <input name="trade_suppliers"
+                           id="trade_suppliers"
+                           maxlength="255"
+                           title="<?= $block->escapeHtmlAttr(__('Please provide details of 2 existing trade suppliers(not for trade reference purposes)')) ?>"
+                           class="input-text"
+                           type="text"
+                    />
+                </div>
+            </div>
+
+            <div class="field previous_purchase required">
+                <label class="label"
+                       for="previous_purchase"><span><?= $block->escapeHtml(__('Have you previously purchased David Hunt Lighting products?')) ?></span></label>
+                <div class="options-list">
+                    <div class="field choice">
+                        <input type="radio" class="radio" id="previous_purchase_1"
+                               data-validate="{'validate-one-required-by-name':true}" name="previous_purchase"
+                               value="0">
+                        <label class="label" for="previous_purchase_1">
+                            No
+                        </label>
+                    </div>
+                    <div class="field choice">
+                        <input type="radio" class="radio" id="previous_purchase_2"
+                               data-validate="{'validate-one-required-by-name':true}" name="previous_purchase"
+                               value="1">
+                        <label class="label" for="previous_purchase_2">
+                            Yes
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field sell_online required">
+                <label class="label" for="sell_online"><span><?= $block->escapeHtml(__('Do you sell online?')) ?></span></label>
+                <div class="options-list">
+                    <div class="field choice">
+                        <input type="radio" class="radio" id="sell_online_1"
+                               data-validate="{'validate-one-required-by-name':true}" name="sell_online" value="0">
+                        <label class="label" for="sell_online_1">
+                            No
+                        </label>
+                    </div>
+                    <div class="field choice">
+                        <input type="radio" class="radio" id="sell_online_2"
+                               data-validate="{'validate-one-required-by-name':true}" name="sell_online" value="1">
+                        <label class="label" for="sell_online_2">
+                            Yes
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field where_sell_online">
+                <label class="label"
+                       for="where_sell_online"><span><?= $block->escapeHtml(__('If yes, please say where')) ?></span></label>
+                <div class="control">
+                    <input name="where_sell_online"
+                           id="where_sell_online"
+                           maxlength="100"
+                           title="<?= $block->escapeHtmlAttr(__('If yes, please say where')) ?>"
+                           class="input-text"
+                           type="text"
+                    />
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input name="mailing_list"
+                           id="mailing_list"
+                           type="checkbox"/>
+                    <label class="label" for="mailing_list">
+                        <span><?= $block->escapeHtml(__('Join the mailing list')) ?></span>
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input name="terms"
+                           id="terms"
+                           type="checkbox"
+                           data-validate="{required:true}"/>
+                    <label class="label" for="terms">
+                        <span><?= $block->escapeHtml(__('I confirm I have read and accept the terms presented within the Privacy policy.*')) ?></span>
+                    </label>
+                </div>
+            </div>
+
+            <span><?= $block->escapeHtml(__('* Required fields')) ?></span>
+        </fieldset>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <input type="hidden" name="hideit" id="hideit" value=""/>
+                <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                    <span><?= $block->escapeHtml(__('Submit')) ?></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "partner-form"
+            }
+        }
+    }
+
+</script>
+<script>
+    require([
+        'jquery',
+        'domReady!',
+    ], function ($) {
+        $('#nature_business, #what_action, #hear_about').on('change', function () {
+            if ($(this).val() === '0') {
+                $('.other_' + $(this).attr('id')).show();
+            } else {
+                $('.other_' +  $(this).attr('id')).hide();
+            }
+        })
+    });
+</script>

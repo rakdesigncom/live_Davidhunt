@@ -1,0 +1,33 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$blockSubtitle = __('Our');
+$blockTitle = __('Heritage');
+?>
+<a name="heritage"></a>
+<div class="static-page-content block block-heritage clearfix">
+    <div class="static_text_3images">
+        <div>
+            <h2 class="small-uppertitle"><?= $blockSubtitle ?></h2>
+            <h1 class="small-underline"><?= $blockTitle ?></h1>
+
+            <p>
+                The earliest recorded member of the Hunt family was John Hunt, born in 1687 and listed as a master
+                brass founder, making fine candlesticks during the reign of the Hanoverian dynasty.
+                Throughout the last three centuries, ten generations of the Hunt family have adapted to a rapidly
+                modernising world, but two traditions have remained a constant: the eldest son of each generation
+                has been named John and all have manufactured fine lighting.
+            </p>
+            <a href="<?= $block->getUrl('heritage') ?>" class="button">Learn more</a>
+        </div>
+        <div class="static_text_2images-images">
+            <div class="static_text_2images-images-col-1">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/heritage/Heritage-1.jpg'); ?>" alt="<?= $blockTitle ?> 1">
+            </div>
+            <div class="static_text_2images-images-col-2">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/heritage/Heritage-2.jpg'); ?>" alt="<?= $blockTitle ?> 2">
+            </div>
+        </div>
+    </div>
+</div>
+

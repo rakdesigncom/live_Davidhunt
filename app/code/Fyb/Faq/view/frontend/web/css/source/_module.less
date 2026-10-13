@@ -1,0 +1,97 @@
+& when (@media-common = true) {
+    .faq {
+        color: transparent;
+    }
+
+    .faq_content {
+        max-width: 1236px;
+        margin: 10px;
+        margin: 0 auto;
+    }
+
+    .faq_content-question_item {
+        padding: 20px;
+        border: 1px solid @color_simple_grey;
+        background:@color-white ;
+        margin-bottom: 40px;
+
+        .faq_content-question_item-title {
+            h4 {
+                font-family: @font-family-gfs-didot_italic;
+                font-style: italic;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                position:relative;
+                cursor: pointer;
+
+                &:after {
+                    position:absolute;
+
+
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 20px;
+                    line-height: 20px;
+                    content: '\e622';
+                    font-family: 'luma-icons';
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                    font-style: normal;
+                }
+            }
+        }
+        .faq_content-question_item-content{
+            padding-top:40px;
+            font-size: @font-size__18;
+            line-height: 24px;
+        }
+    }
+    .faq_content-question_item.active{
+        background:@color_simple_grey ;
+        h4 {
+            &:after {
+                content: '\e621';
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .faq_content-question_item {
+
+
+        .faq_content-question_item-title {
+            h4 {
+
+
+                &:after {
+
+                    top: -25px;
+                    right: 10px;
+                }
+            }
+        }
+
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .faq_content-question_item {
+
+
+        .faq_content-question_item-title {
+            h4 {
+
+
+                &:after {
+
+                    top: 0;
+                    right: 45px;
+
+                }
+            }
+        }
+
+    }
+}

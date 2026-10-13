@@ -1,0 +1,119 @@
+attribute_code,frontend_input,backend_type,backend_model,source_model,frontend_label,,Column Excel Name INCOMING,Default Product Attribute ,,Use in Filter,Used in Product Listing,Visible on Catalog Pages on Storefront
+,,,,,,,Primary ID,,,FALSE,FALSE,FALSE
+,,,,,,,Spec No,,,FALSE,FALSE,FALSE
+,,,,,,,Project No,,,FALSE,FALSE,FALSE
+,,,,,,,Item Status,,,FALSE,FALSE,FALSE
+shade_range_name,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Range,,Range Name,,,TRUE,FALSE,TRUE
+selling_season,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Selling Season,,Selling Season,,,FALSE,FALSE,FALSE
+selling_year,text,varchar,,,Selling Year,,Selling Year,,,FALSE,FALSE,FALSE
+,,,,,,,RRP (ex vat),Price,,FALSE,FALSE,FALSE
+,,,,,,,Country of Origin,Country of Manufacture,,FALSE,FALSE,FALSE
+prod_type,select,int,,,DAR Product Type,,WEB-Product Type,,,TRUE,FALSE,TRUE
+cat_product_type,select,int,,,Cat Product Type,,Product Type,,,FALSE,FALSE,FALSE
+,,,,,,,Product Category,,,FALSE,FALSE,FALSE
+,,,,,,,Product SubCategory,,,FALSE,FALSE,FALSE
+,,,,,,,Product SubCategory 2,,,FALSE,FALSE,FALSE
+primary_material,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Primary Material,,Primary Material,,,FALSE,FALSE,FALSE
+primary_material_details,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Primary Material Details,,Primary Material Details,,,FALSE,FALSE,FALSE
+primary_finish,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Primary Finish,,Primary Finish,,,FALSE,FALSE,FALSE
+primary_color,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Primary Colour,,Primary Colour,,,FALSE,FALSE,FALSE
+secondary_material,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Secondary Material,,Secondary Material,,,FALSE,FALSE,FALSE
+secondary_material_details,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Secondary Material Details,,Secondary Material Details,,,FALSE,FALSE,FALSE
+secondary_finish,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Secondary Finish,,Secondary Finish,,,FALSE,FALSE,FALSE
+secondary_color,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Secondary Colour,,Secondary Colour,,,FALSE,FALSE,FALSE
+appearance,multiselect,text,Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend,,Appearance,,Appearance,,,TRUE,FALSE,TRUE
+dar_min_height,text,varchar,,,Minimum height,,Min Height,,,TRUE,FALSE,TRUE
+dar_max_height,text,varchar,,,Maximum height,,Max Height,,,TRUE,FALSE,TRUE
+measurements,text,varchar,,,Measurements,,Measurements,,,FALSE,TRUE,TRUE
+basemeasurements,text,varchar,,,Base Dimensions,,Base Measurements,,,FALSE,TRUE,TRUE
+shademeasurements,text,varchar,,,Shade Dimensions,,Shade Measurements,,,FALSE,TRUE,TRUE
+fixint_bracket_measurements,text,varchar,,,Fixing Plate Dimensions,,Fixing Bracket Measurements,,,FALSE,TRUE,TRUE
+,,,,,,,Configurable Product,,,FALSE,FALSE,FALSE
+material_composition,text,varchar,,,Material Composition,,Material Composition,,,FALSE,FALSE,FALSE
+shade_included,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Shade Included,,Shade Included,,,TRUE,TRUE,TRUE
+shade_shape,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Shade Shape,,Shade Shape,,,FALSE,FALSE,FALSE
+gimble_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Gimble Type,,Gimble Type,,,FALSE,FALSE,FALSE
+outer_shadecolour,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Outer Shade Colour,,Outer Shade Colour,,,FALSE,FALSE,FALSE
+inner_shadematerial,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Inner Shade Material,,Inner Shade Material,,,FALSE,FALSE,FALSE
+inner_shadecolour,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Inner Shade Colour,,Inner Shade Colour,,,FALSE,FALSE,FALSE
+outer_shadematerial,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Outer Shade Material,,Outer Shade Material,,,FALSE,FALSE,FALSE
+primary_bulb_detail,text,varchar,,,Primary Bulb Detail,,Primary Bulb Detail,,,FALSE,TRUE,TRUE
+,,,,,Bulb Web Link,,Bulb Web Link,,,FALSE,FALSE,FALSE
+lamp_holder_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Lamp Holder Type,,Lamp Holder Type,,,FALSE,FALSE,TRUE
+number_of_lamps,text,varchar,,,No of Lamps,,No Of Lamps,,,TRUE,FALSE,TRUE
+total_watts,text,varchar,,,Total Watts,,Wattage,,,TRUE,FALSE,TRUE
+subject_to_shade,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Subject to Shade,,Subject to Shade,,,FALSE,FALSE,FALSE
+bulb_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Bulb Type,,Bulb Type,,,FALSE,FALSE,FALSE
+lamp_included,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Lamp Included,,Lamp Included,,,FALSE,FALSE,FALSE
+primary_bulb_included_detail,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Bulb Included,,Primary Bulb Included Detail,,,FALSE,TRUE,TRUE
+lamp_replaceable,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Lamp Replaceable,,Lamp Replaceable,,,FALSE,TRUE,TRUE
+dimmable,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Dimmable,,Dimmable,,,FALSE,TRUE,TRUE
+switch_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Switch Type,,Switch Type,,,TRUE,TRUE,TRUE
+cable_colour,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Cable Colour,,Cable Colour,,,FALSE,TRUE,TRUE
+has_bluetooth,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Bluetooth,,Bluetooth,,,FALSE,TRUE,TRUE
+motion_sensor,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Motion Sensor,,Motion Sensor,,,FALSE,TRUE,TRUE
+solar_powered,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Solar Powered,,Solar Powered,,,FALSE,TRUE,TRUE
+batteries_required,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Batteries Required,,Batteries Required,,,FALSE,TRUE,TRUE
+batteries_included,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Batteries Included,,Batteries Included,,,FALSE,TRUE,TRUE
+has_usb,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,USB,,USB,,,FALSE,TRUE,TRUE
+electrical_accessories,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Electrical Class,,Class,,,TRUE,TRUE,TRUE
+iprating,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,IP Rating,,IP Rating,,,TRUE,TRUE,TRUE
+icons,text,varchar,,,Icon Font,,Icons,,,FALSE,TRUE,TRUE
+lamplife,text,varchar,,,Lamplife,,Lamplife,,,FALSE,TRUE,TRUE
+efficiency,text,varchar,,,Efficiency,,Efficiency,,,FALSE,TRUE,TRUE
+lumens,text,varchar,,,Lumens,,Lumens,,,FALSE,TRUE,TRUE
+colour_rendering,text,varchar,,,Colour Rendering,,Colour Rendering,,,FALSE,TRUE,TRUE
+colour_temp,text,varchar,,,Colour Temp,,Colour Temp,,,FALSE,TRUE,TRUE
+sls_lamp_holder_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,SLS Lamp Holder Type,,SLS Lamp Holder Type,,,FALSE,FALSE,FALSE
+sls_number_of_lamps,text,varchar,,,SLS No Of Lamps,,SLS No Of Lamps,,,FALSE,FALSE,FALSE
+sls_total_watts,text,varchar,,,SLS Total Watts,,SLS Wattage,,,FALSE,FALSE,FALSE
+sls_subject_to_shade,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,SLS Subject to Shade,,SLS Subject to Shade,,,FALSE,FALSE,FALSE
+sls_bulb_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,SLS Bulb Type,,SLS Bulb Type,,,FALSE,FALSE,FALSE
+sls_recommendedlamp,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,SLS Recommended Lamp,,SLS Recommended Lamp,,,FALSE,FALSE,FALSE
+sls_lamp_included,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,SLS Lamp Included,,SLS Lamp Included,,,FALSE,FALSE,FALSE
+secondary_bulb_included_detail,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Secondary Bulb Included Detail,,Secondary Bulb Included Detail,,,FALSE,FALSE,FALSE
+sls_lamp_replaceable,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,SLS Lamp Replaceable,,SLS Lamp Replaceable,,,FALSE,FALSE,FALSE
+sls_dimmable,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,SLS Dimmable,,SLS Dimmable,,,FALSE,FALSE,FALSE
+sls_switch_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,SLS Switch Type,,SLS Switch Type,,,FALSE,FALSE,FALSE
+sls_lamplife,text,varchar,,,SLS Lamplife,,SLS Lamplife,,,FALSE,FALSE,FALSE
+sls_cable_colour,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,SLS Cable Colour,,SLS Cable Colour,,,FALSE,FALSE,FALSE
+sls_colour_rendering,text,varchar,,,SLS Colour Rendering,,SLS Colour Rendering,,,FALSE,FALSE,FALSE
+sls_lumens,text,varchar,,,SLS Lumens,,SLS Lumens,,,FALSE,FALSE,FALSE
+sls_colour_temp,text,varchar,,,SLS Colour Temp,,SLS Colour Temp,,,FALSE,FALSE,FALSE
+dual_mount,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Dual Mount,,Dual Mount,,,FALSE,TRUE,TRUE
+selling_pack_size,text,varchar,,,Selling Pack Size,,Selling Pack Size,,,FALSE,TRUE,TRUE
+qty_in_export_carton,text,varchar,,,Qty In Export Carton,,Qty In Export Carton,,,FALSE,FALSE,FALSE
+inner_barcode,text,varchar,,,Inner Barcode,,Inner Barcode,,,FALSE,FALSE,FALSE
+outer_barcode,text,varchar,,,Outer Barcode,,Outer Barcode,,,FALSE,FALSE,FALSE
+pallet_delivery,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Pallet Delivery,,Pallet Delivery,,,FALSE,FALSE,FALSE
+pallet_type,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Pallet Type,,Pallet Type,,,FALSE,FALSE,FALSE
+two_man_lift,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Two Man Lift,,Two Man Lift,,,FALSE,FALSE,FALSE
+,,,,,,,Web Description,Product Name,,FALSE,FALSE,FALSE
+product_style,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Product Style,,Product Style,,,FALSE,FALSE,FALSE
+suitable,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Suitable,,Suitable For,,,TRUE,TRUE,TRUE
+current_catalogue,text,varchar,,,Current Catalogue,,Current Catalogue,,,FALSE,FALSE,FALSE
+,,,,,,,Product Weight,Weight,,FALSE,TRUE,TRUE
+primary_secondary_appearance,multiselect,text,Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend,,Finish,,Primary & Secondary Appearance,,,FALSE,TRUE,TRUE
+hanging_orientation,text,varchar,,,Hanging Orientation,,Hanging Orientation,,,FALSE,FALSE,FALSE
+,,,,,,,Internal Copy Text,Short Description,,FALSE,FALSE,FALSE
+,,,,,,,Primary Copy Text,Description,,FALSE,FALSE,FALSE
+,,,,,,,Laura Ashley: Who Are We?,,,FALSE,FALSE,FALSE
+secondary_bulb_included,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Secondary Bulb Included Detail,,Secondary Bulb Included Detail,,,FALSE,FALSE,FALSE
+sls_efficiency,text,varchar,,,SLS Efficiency,,SLS Efficiency,,,FALSE,FALSE,FALSE
+delivery_text,text,varchar,,,Delivery Time,,Delivery Time,,,FALSE,FALSE,TRUE
+our_palette,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Our Palette,,Our Palette,,,FALSE,FALSE,FALSE
+our_fabric,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Our Fabric,,Our Fabric,,,FALSE,FALSE,FALSE
+finishes,,,,,Colour Palette,,Finishes,,,TRUE,TRUE,TRUE
+material,multiselect,text,Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend,,Material,,Materials,,,TRUE,TRUE,TRUE
+shade_range_product,boolean,int,,Magento\Eav\Model\Entity\Attribute\Source\Boolean,Shade Range Product,,,,,FALSE,FALSE,TRUE
+shade_range_type,text,varchar,,,Shade Range Type,,,,,FALSE,FALSE,TRUE
+shade_styles,text,varchar,,,Shade Styles,,,,,FALSE,FALSE,TRUE
+recommendedlamp,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Recommended Lamp,,Recommended Lamp,,,FALSE,TRUE,TRUE
+secondary_bulb_detail,text,varchar,,,Secondary Bulb Detail,,Secondary Bulb Detail,,,FALSE,TRUE,TRUE
+dimension_shade,text,varchar,,,Dimension With Shade,,Dimension With Shade,,,FALSE,TRUE,TRUE
+features,select,int,,Magento\Eav\Model\Entity\Attribute\Source\Table,Features,,Features,,,FALSE,FALSE,FALSE
+web_faqs,textarea,text,,,Web FAQs,,Web FAQs,,,FALSE,FALSE,FALSE
+dhl_web_faqs,textarea,text,,,DHL Web FAQs,,DHL Web FAQs,,,FALSE,FALSE,FALSE
+downloadable_link,text,varchar,,,Download Link,,Download Link,,,FALSE,FALSE,FALSE
+primary_associated_shade,text,varchar,,,Primary Associated Shade,,Primary Associated Shade,,,FALSE,TRUE,TRUE
+associated_shades,text,varchar,,,Associated Shades,,Associated Shades,,,FALSE,TRUE,TRUE

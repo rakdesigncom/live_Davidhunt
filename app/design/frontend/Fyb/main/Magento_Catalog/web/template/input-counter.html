@@ -1,0 +1,10 @@
+<div class="input-group">
+    <button data-bind="click: decreaseQty">-</button>
+    <input data-bind="value: qty(), attr: {'data-validate': getDataValidator(), 'title': $t('Qty')}"
+           type="number"
+           name="qty"
+           id="qty"
+           maxlength="12"
+           class="input-group__input" />
+    <button data-bind="click: increaseQty">+</button>
+</div>

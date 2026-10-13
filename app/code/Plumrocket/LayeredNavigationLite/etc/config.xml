@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <prproductfilter>
+            <main>
+                <scroll_up>1</scroll_up>
+            </main>
+            <settings>
+                <empty_option>0</empty_option>
+            </settings>
+            <seo>
+                <page_heading>
+                    <filters>all</filters>
+                    <position>after</position>
+                    <separator> - </separator>
+                </page_heading>
+                <meta_title>
+                    <filters>all</filters>
+                    <position>after</position>
+                    <separator> | </separator>
+                </meta_title>
+            </seo>
+        </prproductfilter>
+    </default>
+</config>

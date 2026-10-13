@@ -1,0 +1,29 @@
+<?php
+$links = [
+    [
+        'Heritage' => 'heritage',
+        'Craftsmanship' => 'craftsmanship',
+        'Bespoke'  => 'bespoke',
+    ],
+    [
+        'Catalogues' => 'catalogues',
+        'Swatches' => 'our-swatches',
+        'Blog' => 'blog',
+    ]
+];
+?>
+<?php foreach ($links as $keyLinkGroup => $linkGroup): ?>
+<div class="root-col-3 clearfix">
+    <ul class="level3-listing root-col-1 clearfix">
+        <?php $i = 1; ?>
+        <?php foreach ($linkGroup as $linkName => $link): ?>
+            <li class="nav-1-<?= $keyLinkGroup ?>-<?= $i ?> category-item">
+                <a href="<?= $block->getUrl($link) ?>">
+                    <span class="level2-name sub-cat-name"><?= __($linkName) ?></span>
+                </a>
+            </li>
+            <?php $i++; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endforeach; ?>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">Fyb_Theme::images/logo_lss.png</argument>
+                <argument name="logo_width" xsi:type="number">98</argument>
+                <argument name="logo_height" xsi:type="number">80</argument>
+                <argument name="logo_alt" xsi:type="string">The Light Shade Studio</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

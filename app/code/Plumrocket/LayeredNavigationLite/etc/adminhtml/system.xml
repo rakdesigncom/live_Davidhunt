@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="prproductfilter" translate="label" type="text" sortOrder="6780161" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Layered Navigation Lite</label>
+            <tab>plumrocket</tab>
+            <resource>Plumrocket_ProductFilter::config_prproductfilter</resource>
+
+            <group id="toolbox" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Plumrocket\Base\Block\Adminhtml\System\Config\Form\ToolbarFieldset</frontend_model>
+                <field id="version" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>Plumrocket\Base\Block\Adminhtml\System\Config\Form\Version</frontend_model>
+                    <attribute type="pr_extension_name">LayeredNavigationLite</attribute>
+                </field>
+            </group>
+
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <attribute type="expanded">1</attribute>
+                <field id="enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="main" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Main Settings</label>
+                <field id="scroll_up" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Scroll Up After Filtering</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="settings" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Attribute Filters</label>
+                <field id="attributes" translate="label comment" type="hidden" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <frontend_model>Plumrocket\LayeredNavigationLite\Block\Adminhtml\System\Config\Form\Attribute</frontend_model>
+                    <label>Filter List</label>
+                    <comment><![CDATA[- Drag & drop attributes that should be used in layered navigation.<br/>- Sort them to change their order in the frontend.]]></comment>
+                    <hint>Attributes</hint>
+                </field>
+                <field id="empty_option" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Empty Filter Options</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "No", product filter options with "0" results will be hidden from the list of available options.</comment>
+                </field>
+            </group>
+
+            <group id="seo" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SEO Settings</label>
+                <attribute type="expanded">0</attribute>
+                <group id="url" translate="label comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SEO-Friendly URLs</label>
+                    <field id="url_preview" translate="label" type="Plumrocket\LayeredNavigationLite\Block\Adminhtml\System\Config\Form\SeoUrlPreview" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>URL Preview</label>
+                        <frontend_model>Plumrocket\ExtendedAdminUi\Block\Adminhtml\System\Config\Form\CustomisableField</frontend_model>
+                        <attribute type="pr_disable_inherit_checkbox">true</attribute>
+                    </field>
+                    <field id="insert_in" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Insert Filters In</label>
+                        <source_model>Plumrocket\LayeredNavigationLite\Model\OptionSource\InsertFiltersIn</source_model>
+                    </field>
+                </group>
+                <group id="page_heading" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Page Heading</label>
+                    <field id="position" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Add Filter Titles</label>
+                        <source_model>Plumrocket\LayeredNavigationLite\Model\OptionSource\CategoryFilterTitlePosition</source_model>
+                        <comment>Create dynamic Category Page Heading that changes based on filter selections.</comment>
+                    </field>
+                    <field id="filters" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable for</label>
+                        <source_model>Plumrocket\LayeredNavigationLite\Model\OptionSource\Filters</source_model>
+                        <frontend_class>pr-chosen</frontend_class>
+                    </field>
+                    <field id="separator" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Separate Filter Titles By</label>
+                    </field>
+                </group>
+                <group id="meta_title" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Page Meta Title</label>
+                    <field id="position" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Add Filter Titles</label>
+                        <source_model>Plumrocket\LayeredNavigationLite\Model\OptionSource\CategoryFilterMetaTitlePosition</source_model>
+                    </field>
+                    <field id="filters" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Enable for</label>
+                        <source_model>Plumrocket\LayeredNavigationLite\Model\OptionSource\Filters</source_model>
+                        <frontend_class>pr-chosen</frontend_class>
+                    </field>
+                    <field id="separator" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label>Separate Filter Titles By</label>
+                    </field>
+                </group>
+            </group>
+
+            <group id="pro_ad" translate="label" type="text" sortOrder="999" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Plumrocket\ExtendedAdminUi\Block\Adminhtml\System\Config\Form\PureFieldset</frontend_model>
+                <field id="pro_ad" translate="label" type="hidden" sortOrder="0" showInDefault="1">
+                    <frontend_model>Plumrocket\LayeredNavigationLite\Block\Adminhtml\System\Config\Form\ProAd</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

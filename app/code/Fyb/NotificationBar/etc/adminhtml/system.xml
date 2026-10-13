@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author FYB Romania
+ * @copyright Copyright (c) FYB Romania (https://fyb.ro)
+ * @package Notification Bar for Magento 2
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="notification_bar" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Hello Bar - Top Bar Promotions</label>
+            <tab>fyb_base</tab>
+            <resource>Fyb_NotificationBar::config</resource>
+            <group id="general" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="is_sticky" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Sticky</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If it’s sticky, the page will scroll, but the message will always remain visible. If it’s not sticky, as the user scrolls, the message area scrolls outside of the page.</comment>
+                </field>
+                <field id="content" translate="label" type="editor" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification Content</label>
+                    <frontend_model>Fyb\NotificationBar\Block\Adminhtml\System\Config\Editor</frontend_model>
+                </field>
+                <field id="text_color" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Text Color</label>
+                    <frontend_model>Fyb\NotificationBar\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <comment>Click on the field to open the colour picker. Click outside of the colour picker to save the value.</comment>
+                </field>
+                <field id="background_color" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Fyb\NotificationBar\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <comment>Click on the field to open the colour picker. Click outside of the colour picker to save the value.</comment>
+                </field>
+                <field id="min_height" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Min Height (px)</label>
+                    <validate>required-entry validate-number validate-zero-or-greater</validate>
+                    <comment>Min Height of the box is used to force the zone’s total height. The text will always be centered within the box. You can keep this setting empty to apply the default value of 40.</comment>
+                </field>
+                <field id="custom_css" translate="label" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Custom CSS</label>
+                    <comment>Main block has style .sticky-notification-bar.</comment>
+                </field>
+                <field id="pages_exclude" translate="label" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Pages to Exclude</label>
+                    <comment><![CDATA[Enter url paths separated by ","(comma) if you want the notification to be hidden on some pages. Also, it's supports regular expressions. Ex. checkout, customer/account, customer/*]]></comment>
+                </field>
+                <field id="from_date" translate="label" type="date" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Start Date</label>
+                    <frontend_model>Fyb\NotificationBar\Block\Adminhtml\System\Config\DatePicker</frontend_model>
+                    <validate>validate-datetime</validate>
+                    <comment>Select the date from which you want the message to be visible. If you want the message to be visible immediately, leave this empty.</comment>
+                </field>
+                <field id="to_date" translate="label" type="date" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>End Date</label>
+                    <frontend_model>Fyb\NotificationBar\Block\Adminhtml\System\Config\DatePicker</frontend_model>
+                    <validate>validate-datetime</validate>
+                    <comment>Select the date until you want the message to be visible. If you don’t want to manually change the message, please keep this field empty.</comment>
+                </field>
+            </group>
+            <group id="preview" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Fyb\NotificationBar\Block\Adminhtml\System\Config\PreviewPromo</frontend_model>
+            </group>
+        </section>
+    </system>
+</config>

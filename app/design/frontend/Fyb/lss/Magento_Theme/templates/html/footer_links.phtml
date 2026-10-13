@@ -1,0 +1,107 @@
+<?php
+/** @var $block \Fyb\Theme\Block\StoreInfo */
+
+$customizeHelper = $this->helper(\Fyb\Customizer\Helper\Data::class);
+
+$inspireLinks = [
+
+        'Bespoke Ordering' => 'bespoke-ordering',
+        'Handmade in Britain' => 'handmade-britain',
+        'Premium Quality'  => 'premium-quality',
+
+        'Catalogues' => 'catalogues',
+        'Swatches' => 'our-swatches',
+
+];
+
+$aboutLinks = [
+
+        'Our Story' => 'story',
+        'Contact us'  => 'contact',
+
+        'Find us' => 'find-us',
+        'Find a stockist' => 'stockist',
+        'Delivery times' => 'delivery-times',
+
+        'Trade Enquiries' => 'partner',
+        'FAQs' => 'faqs',
+
+];
+?>
+
+<div id="footer-links-collapse">
+    <div class="footer_logo bigger_logo">
+        <img src="<?= $block->getViewFileUrl('Fyb_Theme::images/logo_lss_white.png') ?>" alt="The Light Shade Studio">
+        <p class="footer_handmade">HAND MADE IN BRITAIN</p>
+        <p>Based in Oxfordshire, England our small talented team of dedicated shade makers meticulously craft lampshades by hand.</p>
+
+    </div>
+    <div class="footer_item_content" data-role="collapsible">
+        <div class="footer-title" data-role="title">Products</div>
+        <div class="footer-links" data-role="content">
+            <ul class="links-list">
+                <?php foreach ($block->getCategories() as $category): ?>
+                    <li><a href="<?= $category->getUrl() ?>?menu=1"><?= __($category->getName()) ?></a></li>
+                <?php endforeach; ?>
+                <li><a href="<?= $customizeHelper->getCustomizeLink() ?>"><?= __('Customise') ?></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer_item_content" data-role="collapsible">
+        <div class="footer-title" data-role="title">Inspire</div>
+        <div class="footer-links" data-role="content">
+            <ul class="links-list">
+                <?php foreach ($inspireLinks as $key => $link): ?>
+                    <li><a href="<?= $block->getUrl($link) ?>"><?=$key;?></a></li>
+                <?php endforeach; ?>
+
+            </ul>
+        </div>
+    </div>
+    <div class="footer_item_content" data-role="collapsible">
+        <div class="footer-title" data-role="title">About</div>
+        <div class="footer-links" data-role="content">
+            <ul class="links-list">
+                <?php foreach ($aboutLinks as $key => $link): ?>
+                    <li><a href="<?= $block->getUrl($link) ?>"><?=$key;?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'collapsible',
+        'matchMedia',
+        'domReady!',
+    ], function ($) {
+        'use strict';
+
+        var elems = [];
+        $.each($(".footer_item_content"), function(_, item){
+            elems.push(item);
+            $(item).collapsible({
+                animate: 200,
+                easing: "easeOutCubic",
+            });
+        });
+
+        mediaCheck({
+            media: '(min-width: 768px)',
+            entry: function () {
+                $.each(elems, function(_, item){
+                    $(item).collapsible("forceActivate");
+                    $(item).collapsible('option', 'disabled', true);
+                });
+            },
+            exit: function () {
+                $.each(elems, function(_, item){
+                    $(item).collapsible("forceDeactivate");
+                    $(item).collapsible('option', 'disabled', false);
+                });
+            }
+        });
+    });
+</script>

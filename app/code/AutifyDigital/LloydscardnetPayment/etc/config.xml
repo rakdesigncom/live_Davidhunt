@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<payment>
+			<lcnetredirect>
+				<log>1</log>
+                <active>0</active>
+                <model>AutifyDigital\LloydscardnetPayment\Model\Payment\Lcnetredirect</model>
+                <order_status>pending_payment</order_status>
+                <title>Lloydscardnet Online Payment</title>
+                <allowspecific>0</allowspecific>
+                <lloyds_mode>Test</lloyds_mode>
+                <payment_type>Redirect</payment_type>
+                <min_order_total>0.01</min_order_total>
+                <tooltip_before_button>You will be redirected to the Lloyds Online Payment gateway to proceed with payment.</tooltip_before_button>
+			</lcnetredirect>
+		</payment>
+	</default>
+</config>

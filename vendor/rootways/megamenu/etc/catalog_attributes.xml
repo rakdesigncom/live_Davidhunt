@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/catalog_attributes.xsd">
+    <group name="catalog_category">
+        <!--<attribute name="image_url"/>-->
+        <attribute name="megamenu_type"/>
+        <attribute name="megamenu_type_numofcolumns"/>
+        <attribute name="megamenu_show_catimage"/>
+        <attribute name="megamenu_show_catimage_img"/>
+        <attribute name="megamenu_show_catimage_width"/>
+        <attribute name="megamenu_show_catimage_height"/>
+        <attribute name="megamenu_type_leftblock"/>
+        <attribute name="megamenu_type_leftblock_w"/>
+        <attribute name="megamenu_type_rightblock"/>
+        <attribute name="megamenu_type_rightblock_w"/>
+        <attribute name="megamenu_type_header"/>
+        <attribute name="megamenu_type_footer"/>
+        <attribute name="megamenu_type_labeltx"/>
+        <attribute name="megamenu_type_labelclr"/>
+        <attribute name="megamenu_type_class"/>
+        <attribute name="megamenu_type_half_pos"/>
+        <attribute name="megamenu_type_viewmore"/>
+        <attribute name="megamenu_type_subcatlevel"/>
+        <attribute name="megamenu_type_showtitle"/>
+        <attribute name="megamenu_type_subcol"/>
+        <attribute name="megamenu_type_imgpos"/>
+    </group>
+</config>

@@ -1,0 +1,86 @@
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .cms-home {
+
+        .video-homepage {
+            position: relative;
+            .video-homepage-content {
+                background: #000000;
+            }
+        }
+
+        .video-homepage.banner-type {
+            position: relative;
+
+            .swiper-slide {
+                img{
+                    width:100%;
+                    height:auto;
+                }
+            }
+            .video-homepage-content-inner{
+                overflow-x: hidden;
+            }
+
+            .video-homepage-inside{
+                height: 50vw;
+            }
+        }
+        .shadow {
+            z-index:1;
+        }
+
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .cms-home {
+        .video-homepage {
+            height: 800px;
+            position: relative;
+
+            .video-homepage-content {
+                height: 800px;
+                overflow-x: hidden;
+                width: 100%;
+                background: #000000;
+
+                .video-homepage-content-inner {
+                    width: 1420px;
+                    height: 800px;;
+                    margin-left: -700px;
+                }
+            }
+        }
+
+        .video-homepage.banner-type {
+            height: 700px;
+            position: relative;
+            .shadow {
+                z-index:1;
+            }
+
+            .video-homepage-content {
+                height: 700px;
+                overflow-x: hidden;
+                width: 100%;
+
+                .video-homepage-content-inner {
+                    width: 1400px;
+                    height: 700px;;
+                    margin-left: -700px;
+                    .video-homepage-inside{
+                        height: 700px;;
+                        .swiper-wrapper{
+                            height: 700px;;
+                            .swiper-slide{
+                                img{
+                                    width:100%;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

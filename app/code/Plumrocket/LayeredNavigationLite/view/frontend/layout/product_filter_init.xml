@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Plumrocket_LayeredNavigationLite::css/productfilter.css" />
+        <css src="Plumrocket_LayeredNavigationLite::css/nouislider.min.css" />
+    </head>
+    <body>
+        <attribute name="class" value="plumrocket-product-filter"/>
+        <referenceContainer name="after.body.start">
+            <block name="product.filter.init" ifconfig="prproductfilter/general/enabled" template="Plumrocket_LayeredNavigationLite::init.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Plumrocket\LayeredNavigationLite\ViewModel\JsConfig</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

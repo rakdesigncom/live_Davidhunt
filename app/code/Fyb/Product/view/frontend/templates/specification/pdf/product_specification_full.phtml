@@ -1,0 +1,150 @@
+<?php ob_start(); ?>
+<?php
+/** @var \Fyb\Product\Block\Product\Specification $block */
+
+$product = $block->getProduct();
+$customizeHelper = $this->helper(\Fyb\Customizer\Helper\Data::class);
+?>
+
+<body border="0" style="">
+    <style>
+        body {
+            font-family: 'Gill Sans Light', serif;
+            color: #000000;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 11px;
+            line-height: 13px;
+        }
+
+        .icon-font-attribute {
+            font-family: 'Darsymbolsnew';
+        }
+        h1.text-upper {
+            font-family: 'Gill Sans Light', serif;
+            text-transform: uppercase;
+            color: #000000;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 26px;
+            margin: 0 0 5px 0;
+            letter-spacing: 0.1em;
+        }
+
+        h3 {
+            font-family: 'Didot LT Std', serif;
+            font-weight: normal;
+            font-style: italic;
+            color: #000000;
+            font-size: 14px;
+            line-height: 16px;
+            margin: 0 0 5px 0;
+        }
+
+        table > tbody > tr > td {
+            padding: 0;
+        }
+
+        .italictext {
+            font-family: 'Didot LT Std', serif;
+            font-weight: normal;
+            font-style: italic;
+        }
+        p{
+            margin-bottom:5px;
+        }
+        div{
+            margin: 0;
+        }
+    </style>
+
+    <table style="width:100%">
+        <tr>
+            <td style="width:20%;">
+            <?php if (false && $customizeHelper->isCustomizable($product)): ?>
+                <img height="90" style="height: 90px; width: auto" src="<?= $block->getQrCode($customizeHelper->getCustomizeLink($product)) ?>" alt="Logo">
+            <?php endif; ?>
+            </td>
+            <td style="text-align: center; width:60%;">
+                <img height="60"  style="height: 60px; width: auto" src="<?= $block->getLogo() ?>" alt="Logo">
+            </td>
+            <td style="width:20%;"></td>
+        </tr>
+    </table>
+
+    <?php
+    $productName = explode(' ', $product->getName());
+    ?>
+    <table cellpadding="0" cellspacing="0" style="width:100%" nobr="true">
+        <tr>
+            <td style="width: 60%">
+                <table cellpadding="0" cellspacing="0" style="width:100%" nobr="true">
+                    <tr>
+                        <td> <h1 class="text-upper" ><?= $block->escapeHtml(__($productName[0])) ?></h1></td>
+                    </tr>
+
+
+                <?php if (isset($productName[1])): ?>
+                    <tr>
+                        <td>
+                    <h3><?= implode(' ', array_slice($productName, 1)) ?></h3>
+                        </td>
+                    </tr>
+                <?php endif; ?>
+                    <tr>
+                        <td>
+                            <?php
+                            $desc = $block->getChildHtml('product.info.overview');
+                            $desc = str_replace(['<b>', '</b>'], ['<strong>', '</strong>'], $desc);
+                            $desc = $block->stripTags(trim($desc), ['br', 'div', 'b', 'strong']);
+                            ?>
+                            <?= $desc; ?>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </td>
+            <td style="width: 40%; text-align: right;">
+                <img width="190px" src="<?= $block->getProductImage($product, 'category_page_grid') ?>"
+                     style="height:auto; width:190px;" alt="<?= $product->getName() ?>">
+            </td>
+        </tr>
+    </table>
+    <hr/>
+    <div>
+        <?= $block->getChildHtml('product.attributes'); ?>
+    </div>
+    <div>
+        <table cellpadding="0" cellspacing="0" style="width:100%; margin-top:0;" nobr="true">
+            <tr>
+                <td><h3 >Additional Information:</h3></td>
+            </tr>
+
+            <tr>
+                <td><?= strip_tags($product->getData('dhl_web_faqs') ?: '') ?></td>
+            </tr>
+
+        </table>
+    </div>
+    <table align="center" cellpadding="0" cellspacing="0" style=" margin-top:5px; width:100%">
+        <tr>
+            <td style="width:38%;text-align: center; padding:0; border-right: 1px solid #000000;font-family: 'Didot LT Std', serif;font-weight: normal;font-style: italic;">
+                www.davidhuntlighting.co.uk
+            </td>
+
+            <td style="width:41%;text-align: center; padding:0; border-right: 1px solid #000000;font-family: 'Didot LT Std', serif;font-weight: normal;font-style: italic;">
+                sales@davidhuntlighting.co.uk
+            </td>
+
+            <td style="width:20%;text-align: center; padding:0; font-family: 'Didot LT Std', serif;font-weight: normal;font-style: italic;">
+                01295 672 628
+            </td>
+
+        </tr>
+    </table>
+</body>
+<?php
+$output = preg_replace('/\s\s+/', '', ob_get_clean());
+echo $output;

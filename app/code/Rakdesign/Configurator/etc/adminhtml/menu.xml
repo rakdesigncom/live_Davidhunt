@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rakdesign_Configurator::configurator" title="Shade Configurator" module="Rakdesign_Configurator" parent="Fyb_Base::base" sortOrder="61" resource="Rakdesign_Configurator::configurator"/>
+        <add id="Rakdesign_Configurator::configuratorsetting" title="Product List" module="Rakdesign_Configurator" sortOrder="40" parent="Rakdesign_Configurator::configurator" action="customconfigurator/customconfigurator/index" resource="Rakdesign_Configurator::configuratorsetting"/>
+    </menu>
+</config>

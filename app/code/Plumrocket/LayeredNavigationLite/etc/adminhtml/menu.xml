@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Plumrocket_ProductFilter::prproductfilter"
+             title="Layered Navigation Lite"
+             translate="title"
+             module="Plumrocket_LayeredNavigationLite"
+             parent="Plumrocket_Base::elements"
+             sortOrder="6780161"
+             resource="Plumrocket_ProductFilter::prproductfilter"/>
+        <add id="Plumrocket_ProductFilter::prproductfilter_configuration"
+             title="Configuration"
+             translate="title"
+             module="Plumrocket_LayeredNavigationLite"
+             parent="Plumrocket_ProductFilter::prproductfilter"
+             sortOrder="20"
+             action="adminhtml/system_config/edit/section/prproductfilter"
+             resource="Plumrocket_ProductFilter::config_prproductfilter"/>
+    </menu>
+</config>

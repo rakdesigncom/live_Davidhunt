@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+        <add id="Fyb_StockistLocator::stockistlocator" title="Stockist Locator" module="Fyb_StockistLocator" sortOrder="100" parent="Fyb_Base::base" resource="Fyb_StockistLocator::stockistlocator" />
+        <add id="Fyb_StockistLocator::stockist" title="Manage Stockists" module="Fyb_StockistLocator" sortOrder="20" parent="Fyb_StockistLocator::stockistlocator" action="stockistlocator/stockist" resource="Fyb_StockistLocator::stockistlocator" />
+    </menu>
+</config>

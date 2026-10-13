@@ -1,0 +1,116 @@
+Processing orders up to 2020-01-04 15:56:13
+
+====
+customer email = shop@darlighting.co.uk
+shipping address: Array
+(
+    [entity_id] => 174741
+    [parent_id] => 87371
+    [customer_address_id] => 
+    [quote_address_id] => 
+    [region_id] => 
+    [customer_id] => 
+    [fax] => 
+    [region] => Derbyshire
+    [postcode] => S41 0HL
+    [lastname] => -
+    [street] => 85 Spital Lane
+    [city] => Chesterfield
+    [email] => shop@darlighting.co.uk
+    [telephone] => -
+    [country_id] => GB
+    [firstname] => -
+    [address_type] => shipping
+    [prefix] => 
+    [middlename] => 
+    [suffix] => 
+    [company] => 
+    [vat_id] => 
+    [vat_is_valid] => 
+    [vat_request_id] => 
+    [vat_request_date] => 
+    [vat_request_success] => 
+    [giftregistry_item_id] => 
+    [adcurrency] => GBP
+    [advatcat] => S
+    [capltype] => TRAD
+    [custom_addr_id] => 1
+    [userid] => 
+    [maincontact] => 
+    [cdefdeladd] => 
+)
+
+Setting city to 'Ch**********'
+Setting region to 'De********'
+Setting postcode to 'S4*****'
+Setting street toArray
+(
+    [0] => 85************
+)
+
+saving shipping address order id '2000087305'
+customer email = shop@darlighting.co.uk
+Setting order_export_status to 'order_sent_gdpr'
+saving Mageno order id '2000087305'
+
+====
+customer email = shop@darlighting.co.uk
+shipping address: Array
+(
+    [entity_id] => 175003
+    [parent_id] => 87502
+    [customer_address_id] => 
+    [quote_address_id] => 
+    [region_id] => 
+    [customer_id] => 
+    [fax] => 
+    [region] => Gloucestershire
+    [postcode] => BS36 1BB
+    [lastname] => Smith
+    [street] => 25 Sandstone Rise
+Winterbourne
+    [city] => Bristol
+    [email] => shop@darlighting.co.uk
+    [telephone] => 07546252528
+    [country_id] => GB
+    [firstname] => David
+    [address_type] => shipping
+    [prefix] => 
+    [middlename] => 
+    [suffix] => 
+    [company] => 
+    [vat_id] => 
+    [vat_is_valid] => 
+    [vat_request_id] => 
+    [vat_request_date] => 
+    [vat_request_success] => 
+    [giftregistry_item_id] => 
+    [adcurrency] => adcurrency
+GBP
+    [advatcat] => advatcat
+S
+    [capltype] => capltype
+TRAD
+    [custom_addr_id] => custom_addr_id
+1
+    [userid] => 
+    [maincontact] => 
+    [cdefdeladd] => 
+)
+
+Setting firstname to 'Da***'
+Setting lastname to 'Sm***'
+Setting city to 'Br*****'
+Setting region to 'Gl*************'
+Setting postcode to 'BS******'
+Setting telephone to '07*********'
+Setting street toArray
+(
+    [0] => 25***************
+    [1] => Wi**********
+)
+
+saving shipping address order id '2000087436'
+customer email = shop@darlighting.co.uk
+Setting order_export_status to 'order_sent_gdpr'
+saving Mageno order id '2000087436'

@@ -1,0 +1,20 @@
+/**
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2020 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license/  End-user License Agreement
+ */
+
+.plum_admin__field-radios-with-image {
+    display: inline-block;
+    width: auto;
+    margin-right: 4rem;
+}
+
+.plum_admin__field-radios-with-image .pr-radio-img-wrp {
+    margin-top: 1.5rem;
+    margin-left: -2.6rem;
+}
+
+.plum_admin__field-radios-with-image.admin__field-option > .admin__control-radio {
+    display: none;
+}

@@ -1,0 +1,42 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$blockTitle = $block->getData('block_title');
+$blockText = $block->getData('block_text');
+$blockImageId = $block->getData('block_image_id');
+$blockImagePrefix = $block->getData('block_image_prefix');
+$colors = $block->getData('materials');
+$showSideLine = $block->getData('show_side_line');
+$bigGrid = $block->getData('big_grid');
+?>
+<div class="block block-<?= $blockImageId ?>">
+    <div class="inside_block_text_and_image">
+        <div class="inside_block_text_content">
+            <h2><?= __($blockTitle) ?></h2>
+            <p><?= __($blockText) ?></p>
+        </div>
+        <div>
+            <img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/main.jpg'); ?>" alt="<?= $blockTitle ?> Main">
+        </div>
+    </div>
+    <div class="grid <?= $bigGrid ? 'big-grid': 'small-grid'?>">
+        <?php foreach ($colors as $key => $color): ?>
+            <div class="rollover-image-item">
+                <?php if($blockImagePrefix): ?>
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/'.$blockImagePrefix."-Thumbnail-" . $key . '.jpg'); ?>" alt="<?= $blockTitle ?> <?= $color['title'] ?>">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/'.$blockImagePrefix."-Rollover-" . $key . '.jpg'); ?>" alt="<?= $blockTitle ?> <?= $color['title'] ?>" class="rollover-image">
+                <?php else:?>
+                    <img src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/' . $blockImageId . '/'. $key . '.jpg'); ?>" alt="<?= $blockTitle ?> <?= $color['title'] ?>">
+                <?php endif;?>
+                <h6><?= $color['title'] ?></h6>
+                <span><?= $color['desc'] ?></span>
+
+
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <?php if ($showSideLine): ?>
+        <div class="vertical-side-line-container"><span class="vertical-side-line"><?= __($blockTitle) ?></span></div>
+    <?php endif; ?>
+</div>

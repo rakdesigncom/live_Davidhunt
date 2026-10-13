@@ -1,0 +1,61 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$colors = [
+    '01' => 'ARCTIC WHITE',
+    '04' => 'COTSWOLD CREAM',
+    '12' => 'BLUSH PINK',
+    '18' => 'MARMALADE',
+    '25' => 'STRAWBERRY',
+    '32' => 'AUBERGINE',
+    '33' => 'COCONUT',
+    '02' => 'PEBBLE',
+    '05' => 'SAGE GREEN',
+    '19' => 'JUNIPER GREEN',
+    '07' => 'POWDER GREY',
+    '08' => 'LEAD GREY',
+    '30' => 'AMALFI BLUE',
+    '06' => 'RIVER BLUE',
+    '31' => 'PERSIAN BLUE',
+    '09' => 'SMOKE BLUE',
+    '10' => 'BLACK',
+];
+$images = [
+    '01' => 'Our-Palette-01-Arctic-White.jpg',
+    '04' => 'Our-Palette-04-Cotswold-Cream.jpg',
+    '12' => 'Our-Palette-12-Blush-Pink.jpg',
+    '18' => 'Our-Palette-18-Marmalade.jpg',
+    '25' => 'Our-Palette-25-Strawberry.jpg',
+    '32' => 'Our-Palette-32-Aubergine.jpg',
+    '33' => 'Our-Palette-33-Coconut.jpg',
+    '02' => 'Our-Palette-02-Pebble.jpg',
+    '05' => 'Our-Palette-05-Sage-Green.jpg',
+    '19' => 'Our-Palette-19-Juniper-Green.jpg',
+    '07' => 'Our-Palette-07-Powder-Grey.jpg',
+    '08' => 'Our-Palette-08-Lead-Grey.jpg',
+    '30' => 'Our-Palette-30-Amalfi-Blue.jpg',
+    '06' => 'Our-Palette-06-River-Blue.jpg',
+    '31' => 'Our-Palette-31-Persian-Blue.jpg',
+    '09' => 'Our-Palette-09-Smoke-Blue.jpg',
+    '10' => 'Our-Palette-10-Black.jpg',
+];
+?>
+<!--<div class="center_page-buttons">-->
+<!--    <a href="#" class="button">ORDER SAMPLES</a>-->
+<!--    <a href="#" class="button">DOWNLOAD PDF</a>-->
+<!--</div>-->
+<div class="swatches-palette">
+    <div class="swatches-palette-container">
+        <?php foreach ($colors as $key => $color): ?>
+            <div class="swatches-palette-item">
+                <img
+                    src="<?= $block->getViewFileUrl('Magento_Cms::images/swatches/palette_colors/' . $images[$key] );?>"
+                    alt="Color <?= $key ?>">
+                <div class="palette-description">
+                    <h5><?= $key ?></h5>
+                    <span><?= $color ?></span>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="vertical-side-line-container"><span class="vertical-side-line">Our Palette</span></div>
+</div>

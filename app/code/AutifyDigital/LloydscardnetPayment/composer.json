@@ -1,0 +1,25 @@
+{
+    "name": "autifydigital/module-lloydscardnetpayment",
+    "description": "AutifyDigital Lloydscardnet Payment module",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "version": "1.0.2",
+    "authors": [
+        {
+            "name": "Autify Digital Ltd",
+            "email": "support@autify.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~8.1.0||~8.2.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "AutifyDigital\\LloydscardnetPayment\\": ""
+        }
+    }
+}

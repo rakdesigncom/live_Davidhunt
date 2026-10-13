@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="img-src">
+            <values>
+                <value id="mailchiimp_logo" type="host">ebizmarts-website.s3.amazonaws.com</value>
+                <value id="mailchimp_images" type="host">downloads.mailchimp.com</value>
+                <value id="mailchimp_images_gallery" type="host">gallery.mailchimp.com</value>
+                <value id="form-assets-mailchimp" type="host">form-assets.mailchimp.com</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="form-assets-mailchimp" type="host">form-assets.mailchimp.com</value>
+                <value id="mc-intuit" type="host">*.intuit.com</value>
+                <value id="mc-intuit-sub" type="host">*.a.intuit.com</value>
+                <value id="mc-pixel-cdn" type="host">mcjs.prd.a.intuit.com</value>
+                <value id="mc-pixel-chimpstatic" type="host">chimpstatic.com</value>
+                <value id="mc-aws" type="host">*.amazonaws.com</value>
+            </values>
+        </policy>
+        <policy id="script-src">
+            <values>
+                <value id="chimpstatic" type="host">chimpstatic.com</value>
+                <value id="mc-pixel-cdn" type="host">mcjs.prd.a.intuit.com</value>
+                <value id="mailchimp-js" type="host">downloads.mailchimp.com</value>
+                <value id="list-management" type="host">*.list-manage.com</value>
+                <value id="form-assets-mailchimp" type="host">form-assets.mailchimp.com</value>
+                <value id="mc-sdk-inline" type="hash" algorithm="sha256">XixzHLHNI6aMABAAOkoOkkILEVDbnPvl7w762hRvU2s=</value>
+                <value id="mc_pixel_loader_inline_hash_old" type="hash" algorithm="sha256">6AIRWmXvA3N5Y6wjwDPAyUacVUR9lp2IEko3qG+1Hgk=</value>
+            </values>
+        </policy>
+        <policy id='style-src'>
+            <values>
+                <value id="mailchimp-styles" type="host">downloads.mailchimp.com</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

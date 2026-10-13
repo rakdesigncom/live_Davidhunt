@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Mageplaza\Blog\Model\Config\Source\DateFormat\Type">
+        <plugin name="Fyb_Blog::AdditionalDateTypes"
+                type="Fyb\Blog\Plugin\DateType"/>
+    </type>
+    <type name="Mageplaza\Blog\Model\Config\Source\DateFormat\TypeMonth">
+        <plugin name="Fyb_Blog::AdditionalMonthTypes"
+                type="Fyb\Blog\Plugin\AdditionalTypeMonth"/>
+    </type>
+    <type name="Mageplaza\Blog\Block\Frontend">
+        <plugin name="Fyb_Blog::PostInfoModify"
+                type="Fyb\Blog\Plugin\PostInfo"/>
+    </type>
+</config>

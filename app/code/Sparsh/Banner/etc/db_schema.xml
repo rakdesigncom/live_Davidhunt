@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sparsh_banner" resource="default" comment="Sparsh Banner">
+        <column xsi:type="int" name="banner_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Banner Id"/>
+        <column xsi:type="varchar" name="banner_title" nullable="false" length="255" comment="Banner Title"/>
+        <column xsi:type="mediumtext" name="banner_description" nullable="true" comment="Banner Description"/>
+        <column xsi:type="varchar" name="banner_type" nullable="false" length="255" default="Image"
+                comment="Banner Type"/>
+        <column xsi:type="varchar" name="banner_image" nullable="true" length="255" comment="Banner Image"/>
+        <column xsi:type="varchar" name="banner_video" nullable="true" length="255" comment="Banner Video"/>
+        <column xsi:type="text" name="banner_video_thumb_image" nullable="true" comment="Banner Thumb Image"/>
+        <column xsi:type="varchar" name="banner_youtube" nullable="true" length="255" comment="Banner Youtube"/>
+        <column xsi:type="smallint" name="banner_video_autoplay" padding="10" nullable="true"
+                comment="Banner Video Autoplay"/>
+        <column xsi:type="text" name="banner_vimeo" nullable="true" comment="Banner Vimeo"/>
+        <column xsi:type="datetime" name="start_date" nullable="true" comment="Banner Start Date"/>
+        <column xsi:type="datetime" name="end_date" nullable="true" comment="Banner End Date"/>
+        <column xsi:type="varchar" name="label_button_text" nullable="true" length="255" comment="Banner button text"/>
+        <column xsi:type="varchar" name="call_to_action" nullable="false" length="255" comment="Banner Action"/>
+        <column xsi:type="int" name="position" padding="10" nullable="false" comment="Position" default="0"/>
+        <column xsi:type="smallint" name="is_active" padding="10" nullable="false" default="1"
+                comment="Is Banner Active?"/>
+        <column xsi:type="timestamp" name="creation_time" nullable="false" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" nullable="false" comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id"/>
+        </constraint>
+        <index referenceId="SPARSH_BANNER_BANNER_TITLE" indexType="fulltext">
+            <column name="banner_title"/>
+        </index>
+    </table>
+
+    <table name="sparsh_banner_store" resource="default" comment="Sparsh Banner To Store Linkage Table">
+        <column xsi:type="int" name="banner_id" padding="10" unsigned="true" nullable="false" comment="Banner ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" comment="Store ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id"/>
+            <column name="store_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="SPARSH_BANNER_STORE_BANNER_ID_SPARSH_BANNER_BANNER_ID"
+                    table="sparsh_banner_store" column="banner_id" referenceTable="sparsh_banner"
+                    referenceColumn="banner_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="SPARSH_BANNER_STORE_STORE_ID_STORE_STORE_ID"
+                    table="sparsh_banner_store" column="store_id" referenceTable="store" referenceColumn="store_id"
+                    onDelete="CASCADE"/>
+    </table>
+
+    <table name="sparsh_banner_customer_group" resource="default" comment="Sparsh Banner Customer Group Table">
+        <column xsi:type="int" name="banner_id" padding="10" unsigned="true" nullable="false" comment="Banner ID"/>
+        <column xsi:type="int" name="customer_group_id" padding="10" unsigned="true" nullable="false"
+                comment="Customer Group ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id"/>
+            <column name="customer_group_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="SPARSH_BANNER_CUSTOMER_GROUP_BANNER_ID_SPARSH_BANNER_BANNER_ID"
+                    table="sparsh_banner_customer_group" column="banner_id" referenceTable="sparsh_banner"
+                    referenceColumn="banner_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="SPARSH_BANNER_CUSTOMER_GROUP_ID_CUSTOMER_GROUP_ID"
+                    table="sparsh_banner_customer_group" column="customer_group_id" referenceTable="customer_group"
+                    referenceColumn="customer_group_id" onDelete="CASCADE"/>
+    </table>
+</schema>

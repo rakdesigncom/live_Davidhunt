@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="model_save_after">
+        <observer name="opengento_gdpr_invalidate_export_entity" instance="Opengento\Gdpr\Observer\InvalidateExport"/>
+    </event>
+    <event name="model_delete_after">
+        <observer name="opengento_gdpr_delete_export_entity" instance="Opengento\Gdpr\Observer\DeleteExport"/>
+    </event>
+</config>

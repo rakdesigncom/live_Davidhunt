@@ -1,0 +1,13 @@
+<div class="details-qty visible">
+    <span class="label"><!-- ko i18n: 'Qty' --><!-- /ko --></span>
+    <input data-bind="attr: {
+               id: 'cart-item-'+$parents[1].item_id+'-qty'}, value: $parents[1].qty"
+               type="number"
+               size="4"
+               class="item-qty cart-item-qty">
+</div>
+<div class="qtybuttons">
+    <a href="#" class="delete" data-bind="click: delConfirm.bind($data, $parents[1]), attr: {title: $t('Delete from cart')}"><span>x</span></a>
+    <a href="#" class="remove" data-bind="click: sub.bind($data, $parents[1]), attr: {title: $t('Remove item')}"><span>-</span></a>
+    <a href="#" class="add" data-bind="click: add.bind($data, $parents[1]), attr: {title: $t('Add item')}"><span>+</span></a>
+</div>

@@ -1,0 +1,132 @@
+<div class="video-homepage" id="video-homepage-promo" style="position:relative;">
+    <div class="video-homepage-content">
+        <div class="video-homepage-content-inner" style="min-height: 50vw;">
+            <div class="video-homepage-inside">
+                <div class="swiper-container" id="home-page-slider">
+                    <div class="swiper-wrapper">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="homepage-video-info">
+        <a href="<?= $block->getUrl('categories') ?>" >
+            <h2>Discover our new</h2>
+            <h1>Spring Collection</h1>
+            <p>Discover a world of hand-made pleated and hardback shades in the finest materials</p>
+        </a>
+    </div>
+    <div class="shadow"></div>
+    <div class="homepage-top_text">
+        <img src="<?= $block->getViewFileUrl('Fyb_Theme::images/logo_lss_white.png') ?>" width="90px">
+        <div class="homepage-top_line"></div>
+        <div>HAND MADE IN BRITAIN</div>
+    </div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'fybSwiper',
+        'domReady!',
+    ], function ($) {
+        'use strict';
+
+        $.ajax({
+            type: 'GET',
+            url: '/rest/V1/banner/current-banner',
+            dataType: 'json',
+            success: function (data) {
+                if (!data) {
+                    return;
+                }
+
+                var bannerContainer = $('#home-page-slider .swiper-wrapper');
+                var divContainer = '<div class="swiper-slide"></div>';
+                var isVideo = false;
+
+                $.each(data, function(i, banner) {
+                    var container = $(divContainer);
+                    if (banner.banner_vimeo) {
+                        isVideo = true;
+                        var videoContainer = $('.video-homepage-inside');
+                        videoContainer.attr('style', 'padding:56.25% 0 0 0;position:relative;');
+                        videoContainer.html('<div><iframe src="' +
+                            banner.banner_vimeo +
+                            '?autoplay=1&loop=1&autopause=0&player_id=0&app_id=58479&muted=1&controls=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Landing-Page-Vid-3" frameborder="0" allow=fullscreen allow=autoplay></iframe>'
+                            + '</div>'
+                        );
+                        return false;
+                    }
+
+                    var bannerTitle = banner.banner_title ? banner.banner_title: 'Home Page Banner ' + i;
+
+                    container.append(
+                        $('<img data-position="' + i  + '" data-id="' + banner.banner_id + '" src="' + banner.banner_image + '" alt="' + bannerTitle + '" title="' + bannerTitle + '"  loading="lazy"/>' +
+                            '<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>'
+                        )
+                    );
+
+                    bannerContainer.append(container);
+                });
+
+                if (!isVideo) {
+                    $('#video-homepage-promo').addClass('banner-type');
+                    $('#home-page-slider').swiper({
+                        swiper: {
+                            spaceBetween: 0,
+                            navigation: false,
+                            scrollbar: false,
+                            clickable: false,
+                            autoplay: {
+                                delay: 5000,
+                                disableOnInteraction: false,
+                            },
+                            breakpoints: false,
+                        }
+                    });
+                }
+            }
+        });
+
+
+        function videoTextPlacement() {
+            var height = window.innerHeight;
+            var width = window.innerWidth;
+            var autoBottom = 20;
+
+            if (width >= 1024) {
+                autoBottom = 100;
+            }
+
+            if (height && $(".homepage-video-info").length) {
+
+                var infoTextHeight = $(".homepage-video-info").height() * 1;
+                var videoHeight = $(".video-homepage-content").height() * 1;
+
+                var newTop = height - infoTextHeight - 40;
+
+
+                if (newTop < 130) {
+                    newTop = 130;
+                }
+
+                if (newTop + infoTextHeight + autoBottom > videoHeight  ) {
+                    $(".homepage-video-info").css("top", "auto");
+                    $(".homepage-video-info").css("bottom", autoBottom+"px");
+
+                } else {
+                    $(".homepage-video-info").css("top", newTop + "px");
+                    $(".homepage-video-info").css("bottom", "auto");
+                }
+
+            }
+        }
+
+        videoTextPlacement();
+
+        $(window).resize(function () {
+            videoTextPlacement();
+        });
+    });
+</script>

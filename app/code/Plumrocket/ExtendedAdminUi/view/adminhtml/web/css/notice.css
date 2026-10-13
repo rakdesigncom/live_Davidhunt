@@ -1,0 +1,74 @@
+/**
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+
+.accordion .config .pr_notice .pr-notice__content-wrapper {
+  padding-top: 2.2rem;
+}
+
+.accordion .form-inline .config .pr-notice__content {
+  background: #fffbbb;
+  color: #333333;
+  font-size: 1.4rem;
+  margin: 0 0 1px;
+  padding: 1.8rem 4rem 1.8rem 5.5rem;
+  position: relative;
+  text-shadow: none;
+}
+
+.accordion .form-inline .config .pr_notice--error .pr-notice__content {
+  background: #ffcccc;
+}
+
+.accordion .form-inline .config .pr_notice--note .pr-notice__content {
+  background: #f1f1f1;
+}
+
+.pr-notice__content::before {
+  background: none;
+  border: 0;
+  font-family: 'Admin Icons';
+  font-size: 1.9rem;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 1.9rem;
+  line-height: inherit;
+  position: absolute;
+  speak: none;
+  text-shadow: none;
+  top: 50%;
+  margin-top: -1.25rem;
+  width: auto;
+}
+
+.pr_notice--note .pr-notice__content::before {
+  color: #007bdb;
+  content: '\e61a';
+}
+
+.pr_notice--info .pr-notice__content::before {
+  color: #007bdb;
+  content: '\e61a';
+}
+
+.pr_notice--success .pr-notice__content::before {
+  color: #79a22e;
+  content: '\e62d';
+}
+
+.pr_notice--warning .pr-notice__content::before {
+  color: #eb5202;
+  content: '\e623';
+}
+
+.pr_notice--error .pr-notice__content::before {
+  color: #e22626;
+  content: '\e632';
+  font-size: 1.5rem;
+  left: 2.2rem;
+  margin-top: -1.1rem;
+}
+

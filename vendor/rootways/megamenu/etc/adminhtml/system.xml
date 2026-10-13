@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Rootways Inc. Team
+ * @copyright Copyright (c) 2023 Rootways (https://www.rootways.com/)
+ * @package Rootways_Megamenu
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="rootways_extensions" translate="label" sortOrder="51" class="rootways-configtab">
+            <label>Rootways Extensions</label>
+        </tab>
+        <section id="rootmegamenu_option" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Mega Menu</label>
+            <tab>rootways_extensions</tab>
+            <resource>Rootways_Megamenu::config_megamenu</resource>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="card_settings_heading" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Status:</label>
+                    <frontend_model>Rootways\Megamenu\Block\Adminhtml\System\Config\Heading</frontend_model>
+                </field>
+
+                <field id="installed_version" translate="label" type="label" sortOrder="12"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Extension Information</label>
+                    <frontend_model>Rootways\Megamenu\Block\Adminhtml\System\Config\InstalledVersion</frontend_model>
+                </field>
+
+                <field id="licencekey" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>License Key</label>
+                    <comment><![CDATA[Pleter insert the license key and then click on the "Validate License Key" button.<br>
+                    After making the purchase, you should receive a license key via email. Contact us at <a target="_blank" href="mailto:help@rootways.com">help@rootways.com</a> if you didn't receive it.]]></comment>
+                </field>
+
+                <field id="validate_licencekey" translate="button_label" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label/>
+                    <button_label>Validate License Key</button_label>
+                    <frontend_model>Rootways\Megamenu\Block\Adminhtml\System\Config\ValidateKey</frontend_model>
+                </field>
+
+                <field id="ismultistore" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Is Multi Store</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If your website has multiple stores with different URLs then set this option to Yes and contact us for register multi-store license key.</comment>
+                </field>
+
+                <field id="general_heading" translate="label comment" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>General Settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="sticky" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sticky Menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_home_link" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Home link To Menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="topmenualignmenttype" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Menu Alignment</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Alignmenttype</source_model>
+                    <comment><![CDATA["From Center" does not work when you are displaying or enabling "Show All Category Under One Menu"]]></comment>
+                </field>
+
+                <field id="topmenuarrow" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Top Level Category Arrow</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[If the main category has subcategory then display arrow icon with the category name. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/cat_arrow.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="topmenu_icon" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Top Level Category Icon</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[Display top level categories icons. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/top_cat_icon.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="image_source" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mega Menu Image Source</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\ImageSource</source_model>
+                    <comment>
+                        <![CDATA[Choose from where you want to display all the category images in mega menu at the front-end. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/image_source.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="show_contactus" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Contact Form To Menu</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Contactus</source_model>
+                </field>
+
+                <field id="contactus_position" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Form Position</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\ContactusPosition</source_model>
+                    <comment><![CDATA[Choose the position of the Contact Us link in the mega menu. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/contactusposition.jpg">Learn more</a> <br/>NOTE: If you set "Yes" here then we please set the "Top Menu Alignment" option to "From Left". You can find the "Top Menu Alignment" option under the General Settings of Mega Menu.]]></comment>
+                </field>
+
+                <field id="contactus_content" translate="label comment" type="editor" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Us Menu Content</label>
+                    <comment>Please add content for contact us menu.</comment>
+                    <frontend_model>Rootways\Megamenu\Block\Adminhtml\System\Config\Editor</frontend_model>
+                    <depends>
+                        <field id="show_contactus">2</field>
+                    </depends>
+                </field>
+
+                <field id="custom_link" translate="label" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Link</label>
+                    <frontend_model>Rootways\Megamenu\Block\Adminhtml\System\Config\CustomLinks</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+
+
+
+
+
+                <!--
+                <field id="toplevel_heading" translate="label comment" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Top Level Category Settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                -->
+                <field id="underline" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Underline To Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Add underline to link when the mouse hovers on it.</comment>
+                </field>
+
+                <field id="show_view_more" translate="label" type="select" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show View More</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[This option is only for level 1 categories (Top Categories), if you want to set "View More" for subcategories then you can do it from that specific category page at the admin side. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/top_view_more.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="view_more" translate="label" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add View More After</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Alignmenttype</source_model>
+                     <depends>
+                        <field id="show_view_more">1</field>
+                    </depends>
+                </field>
+
+                <field id="dropdownanimation" translate="label" type="select" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Effects</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Dropdownanimation</source_model>
+                </field>
+
+                <field id="dropdown_delay" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delay Dropdown Hover</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="delay_hover_second" translate="label comment" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delay Second</label>
+                    <comment>E.g 0.3</comment>
+                    <depends>
+                        <field id="dropdown_delay">1</field>
+                    </depends>
+                </field>
+
+                <field id="manage_masonry" translate="label" type="select" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Masonry.js</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Masonry</source_model>
+                    <depends>
+                        <field id="enable_masonry">1</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet. <a target="_blank" href="https://masonry.desandro.com/">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="masonry_category" translate="label" type="multiselect" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Masonry.js - Select Categories</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\MasonryCategory</source_model>
+                    <comment>Masonry.js enabled for selected category.</comment>
+                    <depends>
+                         <field id="manage_masonry">2</field>
+                    </depends>
+                </field>
+
+                <field id="mobile_dropdownclickbehaviour" translate="label" type="select" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Click and Open Drop-down Behaviour</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\OpenDropdownBehaviour</source_model>
+                    <comment>
+                        <![CDATA[Choose whether you want to open drop-down only when clicking on the arrow icon OR open drop-down when clicking on the category name too.. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/opendropdown_behaviour.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="social_share_icon" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Social Share Icon</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_social_share_icon" translate="label comment" type="select" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Social Share Icon</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>NOTE: If you set "Yes" here then we please set the "Top Menu Alignment" option to "From Left". You can find the "Top Menu Alignment" option under the General Settings of Mega Menu.</comment>
+                </field>
+
+                <field id="fb" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+
+                <field id="twitter" translate="label" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twitter Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+                <!--
+                <field id="gplus" translate="label" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Plus Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+                -->
+
+                <field id="youtube" translate="label" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>YouTube Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+
+                <field id="vimeo" translate="label" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Vimeo Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+
+                <field id="instagram" translate="label" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Instagram Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+
+                <field id="pinterest" translate="label" type="text" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pinterest Link</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                </field>
+
+                <field id="skype" translate="label" type="text" sortOrder="390" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Skype Account ID</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                    <comment>E.g. rootwaysinc</comment>
+                </field>
+
+                <field id="emailid" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email ID</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                    <comment>E.g. help@rootways.com</comment>
+                </field>
+
+                <field id="phone" translate="label" type="text" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Phone Number</label>
+                    <depends>
+                        <field id="show_social_share_icon">1</field>
+                    </depends>
+                    <comment>E.g. 123-456-7890</comment>
+                </field>
+
+                <field id="toplevel_heading" translate="label" sortOrder="420" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show All Categories Settings</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_all_category" translate="label" type="select" sortOrder="430" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show All Category Under One Menu</label>
+                    <!--<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\ShowAllCategories</source_model>
+                    <comment>
+                        <![CDATA[Display all categories under one custom link, like "All Categories". <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_categories.jpg">Learn more</a>]]>
+                    </comment>
+                    <!--<tooltip></tooltip>-->
+                </field>
+
+                <field id="all_category_layout" translate="label" type="select" sortOrder="431"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>All Category Layout</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\AllCategoriesLayout</source_model>
+                    <comment>
+                        <![CDATA[<a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_category_astitle_full.jpg">Click here </a> to check "As Title - Full Width" layout.<br>
+                            <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_category_astitle_half.jpg">Click here </a> to check "As Title - Half Width" layout.<br>
+                            <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_category_sidebyside.jpg">Click here </a> to check "Side by Side" layout]]>
+                    </comment>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                </field>
+
+                <field id="all_category_dropdown_position" translate="label" type="select" sortOrder="432"
+                       showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Dropdown Position - Always From Top</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[<a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/dropdown_always_from_top.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="all_category_title" translate="label comment" type="text" sortOrder="440" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Category Menu Title</label>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Title of all category custom link.</comment>
+                </field>
+
+                <field id="show_all_category_selected_categories" translate="label" type="multiselect" sortOrder="450" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Category from Specific Countries</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\ShowAllSpecificCategories</source_model>
+                    <depends>
+                        <field id="show_all_category">2</field>
+                    </depends>
+                </field>
+
+                <field id="show_all_columns" translate="label" type="select" sortOrder="460" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Columns</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\ShowAllCategoriesColumns</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Choose how many columns you want a display at the front-end. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/view_all_cat_columns.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <!--
+                <field id="all_cat_manage_masonry" translate="label" type="select" sortOrder="470" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Masonry.js</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Masonry</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet. <a target="_blank" href="#">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="masonry_category" translate="label" type="multiselect" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Masonry.js - Select Categories</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\MasonryCategory</source_model>
+                    <comment>Masonry.js enabled for selected category.</comment>
+                    <depends>
+                         <field id="manage_masonry">2</field>
+                    </depends>
+                </field>
+                -->
+
+                <field id="show_all_category_icon" translate="label" type="select" sortOrder="480" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Icon of Level 1 Categories</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Choose wheter you want to display icon of main category or not for dropdown of "All Categories". <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_cat_icon.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="show_all_level2_icon" translate="label" type="select" sortOrder="490" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Image of Level 2 Categories</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Choose wheter you want to display images of level 2 category or not for dropdown of "All Categories". <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_cat_level2_cat_img.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="display_sub_cat_icon" translate="label" type="select" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Icon for Level 3 Categories</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\SubCatIcon</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Choose whether you want to display arrow, icon or nothing before each subcategories. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_cat_level3_cat_img.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="sub_category_icon" translate="label" type="image" sortOrder="510" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Upload Sub Category Icon/Image</label>
+                    <backend_model>Rootways\Megamenu\Model\SaveImage</backend_model>
+                    <base_url type="media">rootways/images</base_url>
+                    <comment>Allowed file types: jpg, jpeg, gif, png. Maximum size 1024 KB</comment>
+                    <depends>
+                        <field id="display_sub_cat_icon" separator="|">2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                </field>
+
+                <field id="all_cat_background_type" translate="label" type="select" sortOrder="520" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Background Type</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\BackgroundTypeHover</source_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                </field>
+
+                <field id="show_all_cat_bgcolor" translate="label" type="text" sortOrder="550" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_cat_background_type">0</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Default is FF0707. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/all_categories_bg_color.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="show_all_cat_gradient_bgcolor" translate="label" type="text" sortOrder="550" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Gradient Background Color</label>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_cat_background_type">1</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment><![CDATA[Eg, 0deg, #965454, #d40000 <br/><a target="_blank" href="https://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/gradient_bg.gif">Click here</a> to know how and what to add value here. <br/><strong>NOTE:</strong> Only Linear gradient is supported. <br/>You can use this <a target="_blank" href="https://cssgradient.io">https://cssgradient.io</a> or any gradient generator.]]></comment>
+                </field>
+
+                <field id="show_all_cat_fontcolor" translate="label comment" type="text" sortOrder="560" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="show_all_cat_hoverbgcolor" translate="label comment" type="text" sortOrder="570" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Hover Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_cat_background_type">0</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Default is 097FB4</comment>
+                </field>
+
+                <field id="show_all_cat_gradient_hoverbgcolor" translate="label" type="text" sortOrder="570" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Gradient Hover Background Color</label>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_cat_background_type">1</field>
+                    </depends>
+                    <comment><![CDATA[Eg. 0deg, #5f2424, #ff0707 <br/> <a target="_blank" href="https://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/gradient_bg.gif">Click here</a> to know how and what to add value here. <br/><strong>NOTE:</strong> Only Linear gradient is supported. <br/>You can use this <a target="_blank" href="https://cssgradient.io">https://cssgradient.io</a> or any gradient generator.]]></comment>
+                </field>
+
+                <field id="show_all_cat_hovercolor" translate="label comment" type="text" sortOrder="580" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Hover Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="show_all_cat_fontsize" translate="label comment" type="text" sortOrder="590" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories Title - Font Size</label>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Default is 13. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="all_cat_left_font_color" translate="label comment" type="text" sortOrder="600" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories LeftSide - Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Default is 000000</comment>
+                </field>
+
+                <field id="all_cat_left_bg_color" translate="label comment" type="text" sortOrder="610" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>All Categories LeftSide - Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="show_all_category" separator="|">1|2</field>
+                        <field id="all_category_layout" separator="|">1|2</field>
+                    </depends>
+                    <validate>required-entry</validate>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+            </group>
+
+            <group id="design" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Design</label>
+
+                <field id="basic_heading" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Main Category Design</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="background_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Type</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\BackgroundType</source_model>
+                </field>
+
+                <field id="bgcolor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                         <field id="background_type">0</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Default is 179BD7. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/menubordercl.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="mainbordercolor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Border Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                         <field id="background_type">0</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Default is 097FB4. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/menubordercl.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="gradient_bg" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Gradient Background CSS</label>
+                    <depends>
+                        <field id="background_type">2</field>
+                    </depends>
+                    <comment><![CDATA[Eg, 359deg, #807777, #28444a <br/><a target="_blank" href="https://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/gradient_bg.gif">Click here</a> to know how and what to add value here. <br/><strong>NOTE:</strong> Only Linear gradient is supported. <br/>You can use this <a target="_blank" href="https://cssgradient.io">https://cssgradient.io</a> or any gradient generator.]]></comment>
+                </field>
+
+                <field id="dropdownbordercolor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Border Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>
+                        <![CDATA[Default is 097FB4. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/menubordercl.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="dropdownborderwidth" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Border Top Width</label>
+                    <comment>
+                        <![CDATA[Default is 3. Please do no write PX with border width. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/menubordercl.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="fontcolor" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="fontsize" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment>Default is 13. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="hover_background_type" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Background Type</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\BackgroundTypeHover</source_model>
+                </field>
+
+                <field id="hoverbgcolor" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="hover_background_type">0</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[Default is 097FB4. <a target="_blank" href="http://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/menubordercl.jpg">Learn more</a>]]>
+                    </comment>
+                </field>
+
+                <field id="hover_gradient_bg" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Gradient Background Color</label>
+                    <comment><![CDATA[<a target="_blank" href="https://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/gradient_bg.gif">Click here</a> to know how and what to add value here. <br/><strong>NOTE:</strong> Only Linear gradient is supported. <br/>You can use this <a target="_blank" href="https://cssgradient.io">https://cssgradient.io</a> or any gradient generator.]]></comment>
+                    <depends>
+                        <field id="hover_background_type">1</field>
+                    </depends>
+                </field>
+
+                <field id="hoverfontcolor" translate="label comment" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="menulabel" translate="label comment" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu Font Style</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Menulabel</source_model>
+                    <comment>e.g Display main category font in upper case (Caps)</comment>
+                </field>
+
+                <field id="active_heading" translate="label comment" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Activated Menu Design</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="active_background_type" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Active Menu Background Type</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\BackgroundTypeHover</source_model>
+                </field>
+
+                <field id="activebgcolor" translate="label comment" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Active Menu Background color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <depends>
+                        <field id="active_background_type">0</field>
+                    </depends>
+                    <comment>Default is 097FB4</comment>
+                </field>
+
+                <field id="active_gradient_bg" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Active Menu Gradient Background Color</label>
+                    <comment><![CDATA[<a target="_blank" href="https://rootways.com/pub/media/wysiwyg/description_m2/megamenu/systemxml_learnmore/gradient_bg.gif">Click here</a> to know how and what to add value here. <br/><strong>NOTE:</strong> Only Linear gradient is supported. <br/>You can use this <a target="_blank" href="https://cssgradient.io">https://cssgradient.io</a> or any gradient generator.]]></comment>
+                    <depends>
+                        <field id="active_background_type">1</field>
+                    </depends>
+                </field>
+
+                <field id="activefontcolor" translate="label comment" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+
+
+
+
+                <field id="sub_heading" translate="label comment" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sub Category Design</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="submenubgcolor" translate="label comment" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Submenu - Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="submenufountcolor" translate="label comment" type="text" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+                <field id="submenufountsize" translate="label comment" type="text" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment>Default is 13. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="submenuhoverfontcolor" translate="label comment" type="text" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+                <field id="submenuheadingcolor" translate="label comment" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+                <field id="submenuheadingfontsize" translate="label comment" type="text" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading Font Size</label>
+                    <comment>Default is 15. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="sub_uppercase" translate="label comment" type="select" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu Font Style</label>
+                    <source_model>Rootways\Megamenu\Model\Config\Backend\Design\Menulabel</source_model>
+                    <comment>e.g Display sub-category font in upper case (Caps)</comment>
+                </field>
+
+
+
+
+
+                <field id="tabbing_heading" translate="label comment" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tabbing Menu Design</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="tebingbgcolor" translate="label comment" type="text" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Menu Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="tebingfontcolor" translate="label comment" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+                <field id="tebingfontsize" translate="label comment" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment>Default is 12. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="tebinghoverfontcolor" translate="label comment" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+                <field id="tebingheadingbgcolor" translate="label comment" type="text" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading - Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is F5F5F5</comment>
+                </field>
+
+                <field id="tebingheadingbordercolor" translate="label comment" type="text" sortOrder="340" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading Bottom Border Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is E2E2E2</comment>
+                </field>
+
+                <field id="tebingheadingfontcolor" translate="label comment" type="text" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading - Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+                <field id="tebingheadingfontsize" translate="label comment" type="text" sortOrder="360" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading - Font Size</label>
+                    <comment>Default is 12. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="tebinghoverbgcolor" translate="label comment" type="text" sortOrder="370" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading Hover Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is FFFFFF</comment>
+                </field>
+
+                <field id="tebingheadinghoverfontcolor" translate="label comment" type="text" sortOrder="380" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading Hover Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 424242</comment>
+                </field>
+
+
+
+
+
+
+                <field id="simple_heading" translate="label comment" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Simple Dropdown Design</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="simplesubbgcolor" translate="label comment" type="text" sortOrder="410" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Simple Dropdown Menutype - Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is F6F6F6</comment>
+                </field>
+
+                <field id="simplesubbordercolor" translate="label comment" type="text" sortOrder="420" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Border Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is F6F6F6</comment>
+                </field>
+
+                <field id="simplesubfontcolor" translate="label comment" type="text" sortOrder="430" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 000000</comment>
+                </field>
+
+                <field id="simplesubfontsize" translate="label comment" type="text" sortOrder="440" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment>Default is 12. Please do no write PX with font size.</comment>
+                </field>
+
+                <field id="simplesubhoerbgcolor" translate="label comment" type="text" sortOrder="450" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hove Background Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is E2E2E2</comment>
+                </field>
+
+                <field id="simplesubhoverfontcolor" translate="label comment" type="text" sortOrder="460" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Font Color</label>
+                    <backend_model>Rootways\Megamenu\Model\Config\Backend\Design\Color\Validatetransparent</backend_model>
+                    <frontend_model>Rootways\Megamenu\Block\System\Config\Form\Field\Color</frontend_model>
+                    <comment>Default is 000000</comment>
+                </field>
+            </group>
+
+            <group id="rw_menucustom_css" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Custom CSS</label>
+
+                <field id="menucustom_css" translate="label" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add Custom CSS</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

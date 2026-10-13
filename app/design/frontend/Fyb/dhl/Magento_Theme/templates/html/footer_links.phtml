@@ -1,0 +1,117 @@
+<?php
+/** @var $block \Fyb\Theme\Block\StoreInfo */
+
+$customizeHelper = $this->helper(\Fyb\Customizer\Helper\Data::class);
+
+
+$aboutLinks = [
+
+    'Our Story' => 'story',
+    'The team'  => 'team',
+
+    'Join us' => 'join',
+    'Contact us'  => 'contact',
+
+    'Find us' => 'find-us',
+    'Find a stockist' => 'stockist',
+    'Showroom' => 'showroom',
+    'Delivery times' => 'delivery-times',
+
+    'Trade Enquiries' => 'partner',
+    'FAQs' => 'faqs',
+
+];
+$inspireLinks = [
+
+    'Heritage' => 'heritage',
+    'Craftsmanship' => 'craftsmanship',
+    'Bespoke'  => 'bespoke',
+
+    'Catalogues' => 'catalogues',
+    'Swatches' => 'our-swatches',
+    'Blog' => 'blog',
+
+];
+?>
+
+<div id="footer-links-collapse">
+    <div class="footer_logo">
+        <img src="<?= $block->getViewFileUrl('Fyb_Theme::images/logo_dhl_white.png') ?>" alt="David Hunt lighting">
+        <p class="footer_handmade">HAND MADE IN THE COTSWOLDS</p>
+        <p>
+            David Hunt lighting is a long established British manufacturer of bespoke and luxury lighting. Our unique
+            designs are made by skilled craftsmen in our Cotswold workshops.
+        </p>
+    </div>
+    <div class="footer_item_content" data-role="collapsible">
+        <div class="footer-title" data-role="title">Products</div>
+        <div class="footer-links" data-role="content">
+            <ul class="links-list">
+                <?php foreach ($block->getCategories() as $category): ?>
+                    <li><a href="<?= $category->getUrl() ?>?menu=1"><?= __($category->getName()) ?></a></li>
+                <?php endforeach; ?>
+                <li><a href="<?= $customizeHelper->getCustomizeLink() ?>"><?= __('Customise') ?></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer_item_content" data-role="collapsible">
+        <div class="footer-title" data-role="title">Inspire</div>
+        <div class="footer-links" data-role="content">
+            <ul class="links-list">
+                <?php foreach ($inspireLinks as $key => $link): ?>
+                    <li><a href="<?= $block->getUrl($link) ?>"><?=$key;?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div class="footer_item_content" data-role="collapsible">
+        <div class="footer-title" data-role="title">About</div>
+        <div class="footer-links" data-role="content">
+            <ul class="links-list">
+                <?php foreach ($aboutLinks as $key => $link): ?>
+                    <li><a href="<?= $block->getUrl($link) ?>"><?=$key;?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    require([
+        'jquery',
+        'collapsible',
+        'matchMedia',
+        'domReady!',
+    ], function ($) {
+        'use strict';
+
+        var elems = [];
+        $.each($(".footer_item_content"), function(_, item){
+            elems.push(item);
+            $(item).collapsible({
+                animate: 200,
+                easing: "easeOutCubic",
+            });
+        });
+
+        mediaCheck({
+            media: '(min-width: 768px)',
+            // Switch to Desktop Version
+            entry: function () {
+                $.each(elems, function(_, item){
+                    $(item).collapsible("forceActivate");
+                    $(item).collapsible('option', 'disabled', true);
+                });
+            },
+            // Switch to Mobile Version
+            exit: function () {
+                $.each(elems, function(_, item){
+                    $(item).collapsible("forceDeactivate");
+                    $(item).collapsible('option', 'disabled', false);
+                });
+            }
+        });
+    });
+</script>

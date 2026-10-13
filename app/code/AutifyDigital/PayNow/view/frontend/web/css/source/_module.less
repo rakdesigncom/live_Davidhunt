@@ -1,0 +1,54 @@
+
+// .small-text {
+//     font-size: 11px; // Adjust the font size as needed
+//     color: #e18d76; // Adjust the color as needed
+//     // Add any other styles you want for small text
+// }
+
+// _extend.less or your custom .less file
+
+@euroBackgroundColor: #f0f0f0; // Change this to the desired background color for the Euro symbol
+
+
+.pay-now-cost-form {
+    .field.amount.required {
+        .input-group {
+            position: relative;
+
+            .input-group-prepend {
+                span {
+                    background-color: @euroBackgroundColor;
+                    border: 1px solid #ccc; // Add border styling as needed
+                    padding: 5px 10px; // Adjust the padding as needed
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                .currency-image {
+                    opacity: 0.8; /* Adjust the opacity as needed (0.0 to 1.0) */
+                    font-weight: bold;
+                }
+            }
+
+            input.pay-now-fields {
+                // Add your styles for the input field here
+                width: 100%; // Adjust the width as needed
+                padding: 8px; // Adjust padding as needed
+                border: 1px solid #ccc; // Add border styling as needed
+                padding-left: 40px; // Remove the left border to seamlessly connect with the Euro symbol
+            }
+        }
+        // input.pay-now-fields {
+        //     padding-left: 50px; // Adjust the padding to make room for the Euro symbol and some space
+        // }
+        
+        span.small-text {
+            // Add your styles for the small-text class here
+            font-size: 12px; // Adjust the font size as needed
+            color: #666; // Adjust the color as needed
+            display: block; // Ensure the small text appears on a new line
+            margin-top: 5px; // Adjust the margin as needed for spacing
+        }
+    } 
+}
+    

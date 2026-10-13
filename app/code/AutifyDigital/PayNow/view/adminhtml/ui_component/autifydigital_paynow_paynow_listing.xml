@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">autifydigital_paynow_paynow_listing.autifydigital_paynow_paynow_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>autifydigital_paynow_paynow_columns</spinner>
+		<deps>
+			<dep>autifydigital_paynow_paynow_listing.autifydigital_paynow_paynow_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="autifydigital_paynow_paynow_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">paynow_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<aclResource>AutifyDigital_PayNow::Paynow</aclResource>
+		<dataProvider name="autifydigital_paynow_paynow_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>paynow_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+		<bookmark name="bookmarks"/>
+		<columnsControls name="columns_controls"/>
+		<filters name="listing_filters"/>
+		<paging name="listing_paging"/>
+	</listingToolbar>
+	<columns name="autifydigital_paynow_paynow_columns">
+		<selectionsColumn name="ids">
+			<settings>
+				<indexField>paynow_id</indexField>
+			</settings>
+		</selectionsColumn>
+		<column name="paynow_id">
+			<settings>
+				<filter>text</filter>
+				<sorting>asc</sorting>
+				<label translate="true">ID</label>
+			</settings>
+		</column>
+		<column name="invoice_number">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Invoice #</label>
+			</settings>
+		</column>
+		<column name="name">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Name</label>
+			</settings>
+		</column>
+		<column name="email_address">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Email</label>
+			</settings>
+		</column>
+		<column name="amount" class="AutifyDigital\PayNow\Ui\Component\Listing\Column\Amount">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="filter" xsi:type="string">text</item>
+					<item name="label" xsi:type="string" translate="true">Amount</item>
+				</item>
+			</argument>
+		</column>
+
+
+		<column name="merchant_transaction_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Merchant Transaction ID</label>
+			</settings>
+		</column>
+		<column name="gateway_transaction_id">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Gateway Transaction ID</label>
+			</settings>
+		</column>
+		<column name="payment_status" component="Magento_Ui/js/grid/columns/select">
+			<settings>
+                <options class="AutifyDigital\PayNow\Model\Config\Source\PaymentStatus"/>
+                <filter>select</filter>
+                <editor>
+                    <editorType>select</editorType>
+                </editor>
+                <dataType>select</dataType>
+                <label translate="true">Payment Status</label>
+            </settings>
+		</column>
+		<column name="created_at">
+			<argument name="data" xsi:type="array">
+                <item name="js_config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Payment Date</item>
+                </item>
+            </argument>
+		</column>
+		<column name="updated_at">
+			<argument name="data" xsi:type="array">
+                <item name="js_config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="align" xsi:type="string">left</item>
+                    <item name="label" xsi:type="string" translate="true">Updated At</item>
+                </item>
+            </argument>
+		</column>
+		<column name="address" class="AutifyDigital\PayNow\Ui\Component\Listing\Column\Addresses">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="component" xsi:type="string">AutifyDigital_PayNow/js/grid/columns/address</item>
+					<item name="indexField" xsi:type="string">address</item>
+					<item name="sortable" xsi:type="boolean">false</item>
+					<item name="sortOrder" xsi:type="number">120</item>
+					<item name="label" xsi:type="string" translate="true">View Address</item>
+				</item>
+			</argument>
+		</column>
+	</columns>
+</listing>

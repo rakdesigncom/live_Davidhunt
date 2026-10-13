@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Opengento\Gdpr\ViewModel\Customer\Guest\ExportDataProvider;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+$escaper = $escaper ?? $block;
+
+/** @var ExportDataProvider $exportDataProvider */
+$exportDataProvider = $block->getData('exportDataProvider');
+?>
+<?php if ($exportDataProvider->isExported()): ?>
+    <a href="<?= $escaper->escapeHtmlAttr($escaper->escapeUrl($block->getData('actionUrl'))) ?>" class="action export">
+        <span><?= $escaper->escapeHtml(__('Download Personal Data')) ?></span>
+    </a>
+<?php elseif ($exportDataProvider->hasExport()): ?>
+    <div class="message info">
+        <span><?= $escaper->escapeHtml(__('Your personal data document is pending export.')) ?></span>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,29 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$blockSubtitle = __('Handmade');
+$blockTitle = __(' IN BRITAIN');
+?>
+<a name="handmadeinbritain"></a>
+<div class="static-page-content block block-heritage clearfix">
+    <div class="static_text_3images">
+        <div>
+            <h2 class="small-uppertitle"><?= $blockSubtitle ?></h2>
+            <h1 class="small-underline"><?= $blockTitle ?></h1>
+
+            <p>
+                Based in Oxfordshire, our experienced team of shade makers meticulously construct each of our lampshades exclusively by hand.
+            </p>
+            <a href="<?= $block->getUrl('handmade-britain') ?>" class="button">Learn more</a>
+        </div>
+        <div class="static_text_2images-images">
+            <div class="static_text_2images-images-col-1">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/story/handmade_in_britain_1.jpg'); ?>" alt="<?= $blockTitle ?> 1">
+            </div>
+            <div class="static_text_2images-images-col-2">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/story/handmade_in_britain_2.jpg'); ?>" alt="<?= $blockTitle ?> 2">
+            </div>
+        </div>
+    </div>
+</div>
+

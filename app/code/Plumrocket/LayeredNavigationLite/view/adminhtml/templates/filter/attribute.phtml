@@ -1,0 +1,144 @@
+<?php
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+
+/** @var \Plumrocket\LayeredNavigationLite\Block\Adminhtml\System\Config\Form\AbstractAttribute $block */
+?>
+
+<tr id="row_<?= /* @noEscape */ $block->getElementId() ?>"
+    class="pr-filter-options"
+    data-attribute="sortable-attribute"
+    data-configid="<?= /* @noEscape */ $block->getConfigId() ?>">
+    <td class="label"></td>
+
+     <div
+        data-mage-init='{
+            "prProductFilterAdmin_<?= /* @noEscape */ $block->getConfigId() ?>":{
+                "itemSelector": ".attr_item",
+                "elementId": "#<?= /* @noEscape */ $block->getElementId() ?>",
+                "connector": ".field-100-<?= /* @noEscape */ $block->getConfigId() ?>",
+                "isCustomOptions": <?= (int) $block->isCustomOptions() ?>,
+                "groupListEnabled": ".group .list_enabled",
+                "attributeListSelector": "#prproductsfilter_<?= /* @noEscape */ $block->getConfigId() ?>_group",
+                "attributeEnabledListSelector": "#prproductsfilter_<?= /* @noEscape */ $block->getConfigId() ?>_enabled_group",
+                "enabledAttributesField": "#prproductfilter_settings_<?= /* @noEscape */ $block->getConfigId() ?>"
+            }
+        }'>
+     </div>
+
+    <td class="value">
+
+        <div class="attribute-list">
+            <span class="label"><?= $block->escapeHtml(__('All %1', $block->getElement()->getHint())) ?></span>
+            <div>
+                <ul id="prproductsfilter_<?= /* @noEscape */ $block->getConfigId() ?>_group"
+                    class="<?php if ($block->getIsDisabled()): ?>disabled-attributes<?php endif; ?> field-100-<?= /* @noEscape */ $block->getConfigId() ?> enabled-list-field">
+                    <?php foreach ($block->getNotActiveAttributes() as $attributeCode => $attribute): ?>
+                        <li class="attr_item"
+                            data-value="<?= /* @noEscape */ $attributeCode ?>"
+                            data-label="<?= $block->escapeHtmlAttr($attribute->getFrontendLabel()) ?>">
+                            <label><?= /* @noEscape */ $attribute->getFrontendLabel() ?></label>
+                            <ul class="sortable list_enabled"></ul>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="attribute-list">
+            <span class="label"><?= $block->escapeHtml(__('%1 Used in Layered Navigation', $block->getElement()->getHint())) ?></span>
+            <div>
+                <ul id="prproductsfilter_<?= /* @noEscape */ $block->getConfigId() ?>_enabled_group"
+                    class="<?php if ($block->getIsDisabled()): ?>disabled-attributes<?php endif; ?> field-100-<?= /* @noEscape */ $block->getConfigId() ?> list_enabled enabled-list-field">
+
+                    <?php foreach ($block->getActiveAttributes() as $attributeCode => $attribute): ?>
+                        <?php
+                        if (is_numeric($attribute)) {
+                            continue; //fix
+                        }
+                        ?>
+                        <?php if (!is_array($attribute)): ?>
+                            <li class="attr_item"
+                                data-value="<?= /* @noEscape */ $attributeCode ?>"
+                                data-label="<?= $block->escapeHtmlAttr($attribute->getFrontendLabel()) ?>">
+                                <label><?= /* @noEscape */ $attribute->getFrontendLabel() ?></label>
+                                <ul class="sortable list_enabled"></ul>
+                            </li>
+                        <?php else: ?>
+
+                            <?php $mainAttribute = array_shift($attribute['attributes']); ?>
+                            <?php $mainAttributeCode = $mainAttribute->getAttributeCode(); ?>
+                            <li class="attr_item group"
+                                data-value="<?= /* @noEscape */ $mainAttributeCode ?>"
+                                data-label="<?= $block->escapeHtmlAttr($mainAttribute->getFrontendLabel()) ?>">
+                                <div class="group_head" data-group-name="<?= /* @noEscape */ $attributeCode ?>">
+                                   <div class="group_name">
+                                        <input type="text"
+                                               class="group_field"
+                                               placeholder="Group Name"
+                                               value="<?= /* @noEscape */ $attributeCode ?>">
+                                        <span class="cancel" title="cancel" style="display: none;"></span>
+                                        <span class="ok" title="save" style="display: none;"></span>
+                                        <span class="edit" title="edit" style="display: block;"></span>
+                                    </div>
+                                </div>
+                                <label><?= /* @noEscape */ $mainAttribute->getFrontendLabel() ?></label>
+                                <ul class="sortable list_enabled">
+                                    <?php foreach ($attribute['attributes'] as $aCode => $aLabel): ?>
+                                        <li class="attr_item ui-droppable"
+                                            data-value="<?= /* @noEscape */ $aCode ?>"
+                                            data-label="<?= $block->escapeHtmlAttr($aLabel->getFrontendLabel()) ?>">
+                                            <label><?= /* @noEscape */ $aLabel->getFrontendLabel() ?></label>
+                                            <ul class="sortable list_enabled"></ul>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+        <p class="note">
+            <span><?= /* @noEscape */ $block->getElement()->getComment() ?></span>
+        </p>
+        <?= $block->getInheritCheckboxHtml() ?>
+        <script>
+
+            window.productFilterCheckoboxRewrited = false;
+
+            if (!window.productFilterCheckoboxRewrited) {
+                require([
+                    "jquery",
+                    "mage/mage",
+                    "prototype",
+                    "mage/adminhtml/form",
+                    "domReady!"
+                ], function(jQuery){
+
+                    var oldFunction = toggleValueElements;
+                    toggleValueElements = function(checkbox, container, excludedElements, checked){
+
+                        var configId = jQuery(checkbox).parents('tr[data-attribute="sortable-attribute"]').data('configid');
+
+                        if (!checkbox.checked) {
+                            jQuery('#prproductsfilter_' + configId + '_group').removeClass('disabled-attributes');
+                            jQuery('#prproductsfilter_' + configId + '_enabled_group').removeClass('disabled-attributes');
+                        } else {
+                            jQuery('#prproductsfilter_' + configId + '_group').addClass('disabled-attributes');
+                            jQuery('#prproductsfilter_' + configId + '_enabled_group').addClass('disabled-attributes');
+                        }
+
+                        oldFunction(checkbox, container, excludedElements, checked);
+                    }
+
+                    window.productFilterCheckoboxRewrited = true;
+                });
+            }
+
+        </script>
+
+    </td>
+</tr>

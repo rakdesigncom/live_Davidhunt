@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\DataObject;
+use Magento\Framework\View\Element\RendererList;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+/** @var RendererList $rendererList */
+$rendererList = $block->getLayout()->getBlock('opengento.gdpr.customer.privacy.export.renderers');
+/** @var DataObject $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+<?php foreach ($viewModel->toArray() as $key => $value): ?>
+    <?= $rendererList->getRenderer($key, 'default', 'Opengento_Gdpr::export/renderer/default.phtml')->setData('viewModel', new DataObject([$key => $value]))->toHtml() ?>
+<?php endforeach; ?>

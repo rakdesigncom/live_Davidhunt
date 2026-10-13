@@ -1,0 +1,419 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="autifydigital" translate="label" sortOrder="999">
+			<label>Autify Digial</label>
+		</tab>
+		<section id="paynow" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Pay Now</label>
+			<tab>autifydigital</tab>
+			<resource>AutifyDigital_PayNow::config_autifydigital_paynow</resource>
+			<group id="current_version" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+	            <label>Current Version Installed</label>
+	            <field id="version" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+	                <label>Current Version</label>
+	                <backend_model>AutifyDigital\PayNow\Model\Config\Source\Version</backend_model>
+	            </field>
+	        </group>
+			<group id="configuration" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Configuration</label>
+				<field id="enable_paynow"  type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Enable Pay Now Form</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="store_id" type="text" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Store ID</label>
+					<comment/>
+				</field>
+				<field id="shared_secret" type="obscure" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Shared Secret</label>
+					<comment/>
+					<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+				</field>
+				<field id="merchant_dynamic_name" type="hidden" sortOrder="31" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Merchant Dynamic Name</label>
+					<comment>Merchant dynamic name will be display on the customer's bank account.</comment>
+				</field>
+				<field id="minimum_amount" type="text" sortOrder="34" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Minimum Amount</label>
+					<validate>validate-number</validate>
+					<comment/>
+				</field>
+				<field id="maximum_amount" type="text" sortOrder="35" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Maximum Amount</label>
+					<validate>validate-number</validate>
+					<comment/>
+				</field>
+
+				<field id="mode" type="select" sortOrder="40" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Live Mode</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="terms_condition_text" type="textarea" sortOrder="90" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Terms and Condition Text</label>
+					<comment/>
+				</field>
+				<field id="redirectto_page" type="select" sortOrder="100" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Redirect to Pay Now Page if the Payment is cancelled or declined.</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="email_configuration" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Email Configuration</label>
+				<field id="admin_email_only" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Send Email to Admin Sales Configuration</label>
+					<comment>If you disable this option, it will send an email to below input fields emails.</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="transaction_admin_email" type="text" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Transaction Confirmation Email</label>
+					<comment>E.g email1@example.com,email2@example.com</comment>
+				</field>
+				<field id="success_transaction_customer" type="select" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Customer - Successful Transaction Email Template</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="failed_transaction_customer" type="select" sortOrder="40" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Customer - Failed Transaction Email Template</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="success_transaction_admin" type="select" sortOrder="50" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Admin - Successful Transaction Email Template</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+				</field>
+				<field id="failed_transaction_admin" type="select" sortOrder="60" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Admin - Failed Transaction Email Template</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+				</field>
+			</group>
+			<group id="title_placeholder" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Pay Now Form Configuration</label>
+				<field id="shipping_enable" type="select" sortOrder="9" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Shipping Address Enable</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="title_placeholder_name_level" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Label For Name</label>
+				</field>
+				<field id="title_placeholder_name_placeholder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Placeholder For Name</label>
+				</field>
+				<field id="title_placeholder_email_level" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Label For Email Address</label>
+				</field>
+				<field id="title_placeholder_email_placeholder" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Placeholder For Email Address</label>
+				</field>
+				<field id="title_placeholder_invoice_level" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Label For Invoice Number</label>
+				</field>
+				<field id="title_placeholder_invoice_placeholder" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Placeholder For Invoice Number</label>
+				</field>
+				<field id="title_placeholder_amount_level" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Label For Amount</label>
+				</field>
+				<field id="title_placeholder_amount_placeholder" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Placeholder For Amount</label>
+				</field>
+				<group id="title_placeholder_billing" sortOrder="90" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Billing Address Configuration</label>
+					<field id="billing_name_level_enable" type="select" sortOrder="9" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Billing Name?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Name Field for the Billing Address.</comment>
+					</field>
+					<field id="billing_name_level" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Billing Name</label>
+						<depends>
+							<field id="billing_name_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_name_placeholder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Billing Name</label>
+						<depends>
+							<field id="billing_name_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="companyname_enable" type="select" sortOrder="29" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Company Name Enable</label>
+						<comment/>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					</field>
+					<field id="billing_company_name_level" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Company Name</label>
+					</field>
+					<field id="billing_company_name_placeholder" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Company Name</label>
+					</field>
+					<field id="billing_address_line1_level_enable" type="select" sortOrder="49" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Address Line 1?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Address Line 1 field for the Billing Address.</comment>
+					</field>
+					<field id="billing_address_line1_level" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Address Line 1</label>
+						<depends>
+							<field id="billing_address_line1_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_address_line1_placeholder" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Address Line 1</label>
+						<depends>
+							<field id="billing_address_line1_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_address_line2_level_enable" type="select" sortOrder="69" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Address Line 2?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Address Line 2 field for the Billing Address.</comment>
+					</field>
+					<field id="billing_address_line2_level" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Address Line 2</label>
+						<depends>
+							<field id="billing_address_line2_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_address_line2_placeholder" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Address Line 2</label>
+						<depends>
+							<field id="billing_address_line2_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_city_level_enable" type="select" sortOrder="89" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable City?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the City field for the Billing Address.</comment>
+					</field>
+					<field id="billing_city_level" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For City</label>
+						<depends>
+							<field id="billing_city_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_city_placeholder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For City</label>
+						<depends>
+							<field id="billing_city_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_postcode_level_enable" type="select" sortOrder="109" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Postcode?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Postcode field for the Billing Address.</comment>
+					</field>
+					<field id="billing_postcode_level" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Postcode</label>
+						<depends>
+							<field id="billing_postcode_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_postcode_placeholder" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Postcode</label>
+						<depends>
+							<field id="billing_postcode_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_county_level_enable" type="select" sortOrder="129" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable County?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the County field for the Billing Address.</comment>
+					</field>
+					<field id="billing_county_level" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For County</label>
+						<depends>
+							<field id="billing_county_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_county_placeholder" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For County</label>
+						<depends>
+							<field id="billing_county_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_country_level_enable" type="select" sortOrder="149" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Country?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Country field for the Billing Address.</comment>
+					</field>
+					<field id="billing_country_level" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Country</label>
+						<depends>
+							<field id="billing_country_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_country_placeholder" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Country?</label>
+						<depends>
+							<field id="billing_country_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_phone_number_level_enable" type="select" sortOrder="169" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Phone Number?</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Phone Number field for the Billing Address.</comment>
+					</field>
+					<field id="billing_phone_number_level" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Phone Number</label>
+						<depends>
+							<field id="billing_phone_number_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="billing_phone_number_placeholder" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Phone Number</label>
+						<depends>
+							<field id="billing_phone_number_level_enable">1</field>
+						</depends>
+					</field>
+				</group>
+				<group id="title_placeholder_shipping" sortOrder="100" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Shipping Address Configuration</label>
+
+					<field id="shipping_name_level_enable" type="select" sortOrder="9" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Name</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable the Name field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_name_level" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For shipping Name</label>
+						<depends>
+							<field id="shipping_name_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_name_placeholder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For shipping Name</label>
+						<depends>
+							<field id="shipping_name_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_address_line1_level_enable" type="select" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Address Line 1</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable Address Line 1 field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_address_line1_level" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Address Line 1</label>
+						<depends>
+							<field id="shipping_address_line1_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_address_line1_placeholder" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Address Line 1</label>
+						<depends>
+							<field id="shipping_address_line1_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_address_line2_level_enable" type="select" sortOrder="60" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Address Line 2</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable Address Line 2 field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_address_line2_level" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Address Line 2</label>
+						<depends>
+							<field id="shipping_address_line2_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_address_line2_placeholder" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Address Line 2</label>
+						<depends>
+							<field id="shipping_address_line2_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_city_level_enable" type="select" sortOrder="89" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable City</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable City field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_city_level" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For City</label>
+						<depends>
+							<field id="shipping_city_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_city_placeholder" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For City</label>
+						<depends>
+							<field id="shipping_city_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_postcode_level_enable" type="select" sortOrder="109" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Postcode</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable Postcode field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_postcode_level" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Postcode</label>
+						<depends>
+							<field id="shipping_postcode_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_postcode_placeholder" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Postcode</label>
+						<depends>
+							<field id="shipping_postcode_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_county_level_enable" type="select" sortOrder="129" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable County</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable County field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_county_level" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For County</label>
+						<depends>
+							<field id="shipping_county_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_county_placeholder" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For County</label>
+						<depends>
+							<field id="shipping_county_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_country_level_enable" type="select" sortOrder="149" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Country</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable Country field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_country_level" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Country</label>
+						<depends>
+							<field id="shipping_country_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_country_placeholder" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Country</label>
+						<depends>
+							<field id="shipping_country_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_phone_number_level_enable" type="select" sortOrder="169" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+						<label>Enable Phone Number</label>
+						<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+						<comment>It will disable Phone Number field for the Shipping Address.</comment>
+					</field>
+					<field id="shipping_phone_number_level" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Label For Phone Number</label>
+						<depends>
+							<field id="shipping_phone_number_level_enable">1</field>
+						</depends>
+					</field>
+					<field id="shipping_phone_number_placeholder" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+						<label>Placeholder For Phone Number</label>
+						<depends>
+							<field id="shipping_phone_number_level_enable">1</field>
+						</depends>
+					</field>
+				</group>
+			</group>
+		</section>
+	</system>
+</config>

@@ -1,0 +1,251 @@
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .homepage-customise {
+        .homepage-customise-container-button{
+            display:none;
+        }
+    }
+
+    .cms-home {
+        a.button {
+            display: block;
+
+        }
+        .homepage-inspire {
+            a.button {
+                display: block;
+
+            }
+        }
+        .homepage-ourinfo {
+            a.button {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .cms-home {
+        .homepage-inspire {
+            a.button {
+                display: inline-block;
+            }
+
+        }
+        .homepage-ourinfo {
+            a.button {
+                display: inline-block;
+
+            }
+        }
+        .vertical-arrow-button {
+            min-height: 97px;
+            background-size: 9px 160px;
+            padding-top: 180px;
+            position: absolute;
+        }
+
+        .homepage-inspire {
+
+            .vertical-arrow-button {
+                top: auto;
+                bottom:89px;
+                left: -10px;
+            }
+
+            .homepage-inspire-content {
+                a.button {
+                    display: block;
+                    width: fit-content;
+                }
+            }
+
+
+        }
+
+        .homepage-season-favorites {
+
+            .vertical-arrow-button {
+                bottom: 65px;
+                left: -10px;
+            }
+
+        }
+
+        .homepage-customise {
+            position:relative;
+            a.button {
+                left: 536px;
+                right: auto;
+                display:none;
+            }
+
+            .homepage-customise-container-button{
+                position:absolute;
+                z-index:1;
+                width:100%;
+                bottom:50px;
+
+                .homepage-customise-container-grid{
+                    max-width: 1488px;
+                    display: grid;
+                    grid-template-columns: auto 220px;
+                    margin-right: 216px;
+                }
+                a.button {
+                    position: relative;
+                    max-width: 100%;
+                    left:auto;
+                    right:auto;
+                    bottom:auto;
+                    width:auto;
+                    display:block;
+
+                }
+            }
+
+            .vertical-arrow-button {
+                bottom: 60px;
+                right: 30px;
+            }
+
+            a.button {
+                position: absolute;
+                bottom: 60px;
+                left: 30px;
+                display: none;
+                color: @color-white;
+                width: 229px;
+                text-align: center;
+            }
+        }
+
+        .homepage-featuredin {
+            .vertical-arrow-button {
+                bottom: 20px;
+                left: -10px;
+            }
+        }
+
+        .homepage-showroom {
+            .vertical-arrow-button {
+                bottom: 0;
+                left: -10px;
+            }
+
+            a.button {
+                position: absolute;
+                bottom: 0;
+                left: 100px;
+                display: block;
+                width: 228px;
+                text-align: center;
+                max-width: 20%;
+            }
+        }
+        .homepage-ourinfo{
+            a.button {
+                display: inline-block;
+                margin-top:@theme_general_spacing;
+                margin-right:10px;
+            }
+        }
+
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .cms-home {
+        .homepage-customise {
+            position:relative;
+            a.button {
+                left: 536px;
+                right: auto;
+                display:none;
+            }
+
+            .homepage-customise-container-button{
+                position:absolute;
+                z-index:1;
+                width:100%;
+                bottom:50px;
+
+                .homepage-customise-container-grid{
+                    max-width: 1488px;
+                    display: grid;
+                    grid-template-columns: auto 220px;
+                    margin-right: 216px;
+                }
+                a.button {
+                    position: relative;
+                    max-width: 100%;
+                    left:auto;
+                    right:auto;
+                    bottom:auto;
+                    width:auto;
+                    display:block;
+
+                }
+            }
+            .vertical-arrow-button {
+                bottom: 142px;
+
+            }
+            a.button {
+
+                bottom: 50px;
+                left: auto;
+                right: 216px;
+            }
+        }
+
+        .homepage-showroom {
+            .vertical-arrow-button {
+                bottom: 10px;
+
+            }
+
+            a.button {
+
+                bottom: 10px;
+
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .cms-home {
+        .homepage-customise {
+            .vertical-arrow-button {
+
+                right: 80px;
+            }
+
+        }
+        .homepage-showroom {
+            .vertical-arrow-button {
+                bottom: 120px;
+
+            }
+
+            a.button {
+
+                bottom: 120px;
+
+            }
+        }
+
+    }
+}
+
+@media all and (min-width: @screen__xxl) {
+    .cms-home {
+
+        .homepage-customise {
+
+
+
+        }
+    }
+}
+

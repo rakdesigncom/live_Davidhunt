@@ -1,0 +1,101 @@
+<?php $settings = $block->getSettings(); ?>
+<?php $shadesAndBase = $block->getShadesAndBase(); ?>
+<?php if ($settings): ?>
+    <?php $pageId = $block->getWebsiteId(); ?>
+    <?php $customerMode = false; ?>
+    <?php $price = ""; ?>
+    <?php if ($pageId == 2): ?>
+        <?php $price = '' ?>
+        <?php
+//        $customerHelper = $this->helper('StarDigital\GeneralFunctions\Helper\CustomerData');
+//        $customerMode = (bool) $customerHelper->getCustomerSession()->getCustomerFriendly();
+        ?>
+    <?php endif; ?>
+    <div class="std bottom-line">
+        <div class="row row-5vw">
+            <div class="title">
+                <h1 class="base-basic-title configurator-title">
+                    Build Your Own
+                </h1>
+                <span>Mix and match glass and suspensions</span>
+            </div>
+
+
+            <div class="col-xs-6">
+                <div>
+                    <span>Choose your Base</span>
+                    <a href="/" class="check-all-shades">
+                        <span><?php echo __('See All Shades'); ?></span>
+                    </a>
+                </div>
+
+                <div class="configurator-selector">
+                    <div class="flex-shade flex-shade-combination_line_one owl-carousel owl-theme">
+                        <div class="item"></div>
+                        <?php /* foreach ($shadesAndBase['base'] as $shade): ?>
+                          <div class="item"><a href="/" class="change-base-shade" data-item="combination_line_one" data-name="<?php echo $shade['name'] ?>"><img src="/pub/media/catalog/product<?php echo $shade['image']; ?>" class="img-responsive"/></a></div>
+                          <?php endforeach; */ ?>
+
+                    </div>
+                    <div class="configurator-controll configurator-controll-small" data-item="combination_line_one">
+                        <span class="prev"></span>
+                        <span class="next"></span>
+                    </div>
+                </div>
+                <div id="configurator-base-details" class="collapse details-collapse">
+                    <p class="no-margin table-flex no-table-flex-xs"><i class="base-sku no-wrap"></i></p>
+                    <?php if (!$customerMode): ?>
+                        <p class="<?php if ($pageId == 2): ?>font-strong <?php endif; ?> no-margin base-price-rrp configurator-part-price table-flex"><i><?php echo $price; ?> </i><span></span></p>
+                    <?php endif; ?>
+                </div>
+                <a href="#" class="btn btn-secondary load-lazy-info" style="display: none;" data-tochange="1" data-type="base"><?php echo __('More information'); ?></a>
+            </div>
+            <div class="col-xs-6">
+                <div>
+                    <span>Choose your Shade</span>
+                    <a href="/" class="check-all-bases"><span><?php echo __('See All Bases'); ?></span></a>
+                </div>
+
+                <a href="#" class="btn btn-secondary load-lazy-info" style="display: none;" data-tochange="1" data-type="shade"><?php echo __('More information'); ?></a>
+                <div class="configurator-selector">
+                    <div class="flex-shade flex-shade-combination_line_two owl-carousel owl-theme">
+                        <div class="item"></div>
+                        <?php /* foreach ($shadesAndBase['shade'] as $shade): ?>
+                          <div class="item"><a href="/" class="change-base-shade" data-item="combination_line_two" data-name="<?php echo $shade['name'] ?>"><img src="/pub/media/catalog/product<?php echo $shade['image']; ?>" class="img-responsive"/></a></div>
+                          <?php endforeach; */ ?>
+
+                    </div>
+                    <div class="configurator-controll configurator-controll-small" data-item="combination_line_two">
+                        <span class="prev"></span>
+                        <span class="next"></span>
+                    </div>
+                </div>
+                <div id="configurator-shade-details" class="collapse details-collapse">
+                    <p class="no-margin table-flex no-table-flex-xs"><i class="shade-sku no-wrap"></i></p>
+                    <?php if (!$customerMode): ?>
+                        <p class="<?php if ($pageId == 2): ?>font-strong <?php endif; ?> no-margin shade-price-rrp configurator-part-price table-flex"><i><?php echo $price; ?></i><span></span></p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="configurator-total-price">
+        <span>Estimated delivery time: 2 - 3 weeks</span>
+        <?php if ($pageId == 2): ?>
+            <?php if (!$customerMode): ?>
+                <strong class="font-strong"></strong>
+                <strong class="font-strong configurator-price type-price"></strong>
+                <div class="clearfix gap5"></div>
+            <?php else: ?>
+                <strong><?php echo __('RRP'); ?><small>(inc VAT)</small></strong>
+                <strong class="configurator-price type-rrp"></strong>
+            <?php endif; ?>
+        <?php else: ?>
+            <strong></strong>
+            <strong class="configurator-price type-rrp"></strong>
+        <?php endif; ?>
+
+    </div>
+
+<?php endif; ?>
+

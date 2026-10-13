@@ -1,0 +1,59 @@
+Processing orders up to 2020-01-04 15:54:08
+
+====
+customer email = shop@darlighting.co.uk
+shipping address: Array
+(
+    [entity_id] => 174739
+    [parent_id] => 87370
+    [customer_address_id] => 
+    [quote_address_id] => 
+    [region_id] => 
+    [customer_id] => 
+    [fax] => 
+    [region] => Surrey
+    [postcode] => GU7 1PD
+    [lastname] => Gravenstede
+    [street] => High Willows
+The Drive
+    [city] => Godalming
+    [email] => shop@darlighting.co.uk
+    [telephone] => 01483427080
+    [country_id] => GB
+    [firstname] => Richard
+    [address_type] => shipping
+    [prefix] => 
+    [middlename] => 
+    [suffix] => 
+    [company] => 
+    [vat_id] => 
+    [vat_is_valid] => 
+    [vat_request_id] => 
+    [vat_request_date] => 
+    [vat_request_success] => 
+    [giftregistry_item_id] => 
+    [adcurrency] => GBP
+    [advatcat] => S
+    [capltype] => TRAD
+    [custom_addr_id] => 1
+    [userid] => 
+    [maincontact] => 
+    [cdefdeladd] => 
+)
+
+Setting firstname to 'Ri*****'
+Setting lastname to 'Gr*********'
+Setting city to 'Go*******'
+Setting region to 'Su****'
+Setting postcode to 'GU*****'
+Setting telephone to '01*********'
+Setting street toArray
+(
+    [0] => Hi**********
+    [1] => Th*******
+)
+
+saving shipping address order id '2000087304'
+customer email = shop@darlighting.co.uk
+Setting order_export_status to 'order_sent_gdpr'
+saving Mageno order id '2000087304'

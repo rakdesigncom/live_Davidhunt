@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+<!--        <referenceContainer name="page.wrapper">-->
+<!--            <block class="Magento\Framework\View\Element\Template"-->
+<!--                   name="banner.view"-->
+<!--                   before="main.content"-->
+<!--                   template="Sparsh_Banner::banner.phtml"-->
+<!--                   ifconfig="sparsh_banner/general/enable"-->
+<!--            >-->
+<!--                <arguments>-->
+<!--                    <argument name="view_model" xsi:type="object">Sparsh\Banner\ViewModel\Banner</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
+    </body>
+</page>

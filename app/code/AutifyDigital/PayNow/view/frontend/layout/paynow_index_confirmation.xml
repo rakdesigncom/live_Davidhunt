@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="page.main.title">
+		    <arguments>
+		        <argument name="title" xsi:type="string" translate="true">Pay Now Confirmation</argument>
+		    </arguments>            
+		</referenceBlock>
+		<referenceContainer name="content">
+			<block name="paynow.confirmation" class="AutifyDigital\PayNow\Block\Index\Confirmation" template="AutifyDigital_PayNow::index/confirmation.phtml"/>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,123 @@
+<?php
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+
+/** @var \Plumrocket\LayeredNavigationLite\Block\Adminhtml\System\Config\Form\ProAd $block */
+?>
+
+<div class="pro-features">
+    <h2 class="pro-features_title"><?= $block->escapeHtml('Layered Navigation Pro Features') ?></h2>
+    <div id="pro-features_slider">
+        <nav class="pr-slider-navigation">
+            <h3 class="pr-tab-button tab--active" data-slide-id="1">
+                <?= $block->escapeHtml('Advanced SEO Settings') ?>
+                <span><?= $block->escapeHtml('Optimize your SEO with short and keyword-rich URLs, unique headings and meta titles for filter results pages.') ?></span>
+            </h3>
+            <h3 class="pr-tab-button" data-slide-id="2">
+                <?= $block->escapeHtml('Custom Option Support') ?>
+                <span><?= $block->escapeHtml('Create filters based on custom options. Choose which ones to display, specify their order, and apply to a category.') ?></span>
+            </h3>
+            <h3 class="pr-tab-button" data-slide-id="3">
+                <?= $block->escapeHtml('Bulk Filtering') ?>
+                <span><?= $block->escapeHtml('Let users select multiple attributes at once and then click the Filter button to get the results.') ?></span>
+            </h3>
+            <h3 class="pr-tab-button" data-slide-id="4">
+                <?= $block->escapeHtml('Horizontal Layered Navigation') ?>
+                <span><?= $block->escapeHtml('Enhance the default Magento navigation functionality - display product filters in the top toolbar or left sidebar.') ?></span>
+            </h3>
+            <h3 class="pr-tab-button" data-slide-id="5">
+                <?= $block->escapeHtml('Additional Filters') ?>
+                <span><?= $block->escapeHtml('Show off your new products and increase engagement with new filters: "Rating", "New Arrivals", "Stock Status" and "Sales".') ?></span>
+            </h3>
+            <h3 class="pr-tab-button" data-slide-id="6">
+                <?= $block->escapeHtml('Category-Based Filters') ?>
+                <span><?= $block->escapeHtml('Set up unique filter lists for each category to display only relevant options and make filtering even faster and more efficient.') ?></span>
+            </h3>
+        </nav>
+        <div class="pr-slides">
+            <div id="pr-slide-1" class="pr-slide pr-slide--active">
+                <img
+                    src="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f1.png')) ?>"
+                    srcset="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f1@2x.png')) ?> 2x"
+                    alt="<?= $block->escapeHtmlAttr('Advanced SEO Settings') ?>"
+                    width="525"
+                    height="305"
+                >
+            </div>
+            <div id="pr-slide-2" class="pr-slide">
+                <img
+                    src="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f2.png')) ?>"
+                    srcset="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f2@2x.png')) ?> 2x"
+                    alt="<?= $block->escapeHtmlAttr('Custom Option Support') ?>"
+                    width="525"
+                    height="283"
+                >
+            </div>
+            <div id="pr-slide-3" class="pr-slide">
+                <img
+                    src="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f3.png')) ?>"
+                    srcset="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f3@2x.png')) ?> 2x"
+                    alt="<?= $block->escapeHtmlAttr('Bulk Filtering') ?>"
+                    width="526"
+                    height="332"
+                >
+            </div>
+            <div id="pr-slide-4" class="pr-slide">
+                <img
+                    src="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f4.png')) ?>"
+                    srcset="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f4@2x.png')) ?> 2x"
+                    alt="<?= $block->escapeHtmlAttr('Horizontal Layered Navigation') ?>"
+                    width="527"
+                    height="286"
+                >
+            </div>
+            <div id="pr-slide-5" class="pr-slide">
+                <img
+                    src="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f5.png')) ?>"
+                    srcset="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f5@2x.png')) ?> 2x"
+                    alt="<?= $block->escapeHtmlAttr('Additional Filters') ?>"
+                    width="526"
+                    height="324"
+                >
+            </div>
+            <div id="pr-slide-6" class="pr-slide">
+                <img
+                    src="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f6.png')) ?>"
+                    srcset="<?= $block->escapeUrl($block->getViewFileUrl('Plumrocket_LayeredNavigationLite::images/pro-features/f6@2x.png')) ?> 2x"
+                    alt="<?= $block->escapeHtmlAttr('Category-Based Filters') ?>"
+                    width="526"
+                    height="310"
+                >
+            </div>
+        </div>
+    </div>
+    <a class="pro-features_btn" href="<?= $block->escapeUrl($block->getProExtensionUrl())?>" target="_blank">
+        <?= $block->escapeHtml('Get Layered Navigation Pro') ?>
+    </a>
+</div>
+<script>
+    (function () {
+        const slider = document.getElementById('pro-features_slider');
+        const sliderNavigation = slider.querySelector('.pr-slider-navigation');
+        let activeTab = slider.querySelector('.pr-tab-button.tab--active');
+        sliderNavigation.addEventListener('mouseover', changeSlide);
+
+        function changeSlide(event) {
+            const currentTab = event.target.closest('.pr-tab-button');
+            if (currentTab) {
+                const currentSlide = slider.querySelector('.pr-slide--active');
+                const nextSlide = document.getElementById('pr-slide-' + currentTab.dataset.slideId);
+                if (activeTab !== currentTab) {
+                    activeTab.classList.remove('tab--active')
+                    activeTab = currentTab;
+                    activeTab.classList.add('tab--active');
+                }
+                currentSlide.classList.remove('pr-slide--active');
+                nextSlide.classList.add('pr-slide--active');
+            }
+        }
+    })()
+</script>

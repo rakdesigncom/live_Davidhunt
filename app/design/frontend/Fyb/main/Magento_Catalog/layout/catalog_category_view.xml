@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Fyb\Theme\Block\Menu\Category\CategoryInfo" name="cms.static.menu" template="Magento_Catalog::navigation/additional_menu.phtml" after="-" />
+        </referenceContainer>
+
+        <referenceContainer name="columns.top">
+            <block class="Magento\Catalog\Block\Navigation" name="category.main.info" template="Magento_Catalog::categories_main_info.phtml" after="page.main.title"/>
+        </referenceContainer>
+
+        <move element="breadcrumbs" destination="columns.top" after="category.main.info" />
+
+        <referenceContainer name="category.view.container" remove="true" />
+    </body>
+</page>

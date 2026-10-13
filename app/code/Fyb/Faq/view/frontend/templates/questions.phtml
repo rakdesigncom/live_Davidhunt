@@ -1,0 +1,26 @@
+<?php
+/** @var \Fyb\Faq\Block\Faq $block */
+$questions = $block->getQuestions();
+?>
+<div class="faq_content">
+<div data-mage-init='{
+        "accordion":{
+            "active": [],
+            "collapsible": true,
+            "openedState": "active",
+            "multipleCollapsible": true
+    }}'>
+    <?php foreach($questions as $question): ?>
+        <div data-role="collapsible" class="faq_content-question_item">
+            <div data-role="title" class="faq_content-question_item-title">
+                <h4><?php echo $question->getQuestion(); ?></h4>
+            </div>
+
+            <div data-role="content" class="faq_content-question_item-content">
+                <?php echo $question->getAnswer(); ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+</div>
+

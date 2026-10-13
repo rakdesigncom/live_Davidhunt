@@ -1,0 +1,13 @@
+<?php
+/** @var \Magento\Catalog\Block\Product\View $block */
+$_product = $block->getProduct();
+
+?>
+
+<span class="estimated_delivery_time">
+    <?php if ($_product->getData('delivery_text')): ?>
+        <?= __($_product->getData('delivery_text')) ?>
+    <?php else: ?>
+        <?= '' ?>
+    <?php endif; ?>
+</span>

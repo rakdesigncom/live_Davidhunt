@@ -1,0 +1,52 @@
+<?php
+/**
+ * @package     Plumrocket_ProductFilter
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+?>
+<?php /** @var \Plumrocket\LayeredNavigationLite\Block\LayeredNavigation\Navigation\State $block */?>
+<?php $_filters = $block->getActiveFilters() ?>
+<?php if (! empty($_filters)): ?>
+<div class="filter-current" data-mage-init='{"collapsible":{"openedState":"active","collapsible":true,"active":false}}'>
+    <strong class="block-subtitle filter-current-subtitle"
+            role="heading"
+            aria-level="2"
+            data-count="<?= count($_filters) ?>"><?= $block->escapeHtml(__('Filter products')) ?></strong>
+    <ol class="items">
+        <?php foreach ($_filters as $_filter): ?>
+            <li class="item">
+                <span class="filter-label"><?= $block->escapeHtml(__($_filter->getName())) ?></span>
+                <span class="filter-value"><?= /* @noEscape */ $block->stripTags($_filter->getLabel()) ?></span>
+                <?php
+                $clearLinkUrl = $_filter->getClearLinkUrl();
+                $currentFilterName = $block->escapeHtml(__($_filter->getName())) . " " . $block->stripTags($_filter->getLabel());
+
+                if ($clearLinkUrl):
+                    ?>
+                    <a class="action previous" href="<?= $block->escapeUrl($_filter->getRemoveUrl()) ?>"
+                       title="<?= $block->escapeHtmlAttr(__('Previous')) ?>">
+                        <span><?= $block->escapeHtml(__('Previous')) ?></span>
+                    </a>
+                    <a class="action remove"
+                        data-variable="<?= $block->escapeHtmlAttr($_filter->getFilter()->getRequestVar()) ?>"
+                        data-value="<?= $block->escapeHtmlAttr($_filter->getValueString()) ?>"
+                        title="<?= $block->escapeHtml($_filter->getFilter()->getClearLinkText()) ?>"
+                        href="<?= $block->escapeUrl($clearLinkUrl) ?>">
+                        <span><?= $block->escapeHtml($_filter->getFilter()->getClearLinkText()) ?></span>
+                    </a>
+                <?php else: ?>
+                    <a class="action remove"
+                       href="<?= $block->escapeUrl($_filter->getRemoveUrl()) ?>"
+                       data-pr-filter="clearItem"
+                       data-variable="<?= $block->escapeHtmlAttr($_filter->getFilter()->getRequestVar()) ?>"
+                       data-value="<?= $block->escapeHtmlAttr($_filter->getValueString()) ?>"
+                       title="<?= $block->escapeHtml(__('Remove') . " " . $currentFilterName) ?>">
+                        <span><?= $block->escapeHtml(__('Remove This Item')) ?></span>
+                    </a>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ol>
+</div>
+<?php endif; ?>

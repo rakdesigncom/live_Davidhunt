@@ -1,0 +1,31 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+$blockSubtitle = __('Truly');
+$blockTitle = __('Bespoke');
+?>
+<a name="bespoke"></a>
+<div class="static-page-content block block-bespoke clearfix">
+    <div class="static_text_3images">
+        <div>
+            <h2 class="small-uppertitle"><?= $blockSubtitle ?></h2>
+            <h1 class="small-underline"><?= $blockTitle ?></h1>
+
+            <p>
+                Our online product configurator is a great place to begin your design journey with us, offering options
+                on a range of features for many of our flagship ranges. More often than not, we find that our customer’s
+                needs are met through this process alone, with many finding our choice of finishes, palette colours and
+                fabrics an ample solution for their requirements.
+            </p>
+            <a href="<?= $block->getUrl('bespoke') ?>" class="button">Learn more</a>
+        </div>
+        <div class="static_text_2images-images">
+            <div class="static_text_2images-images-col-1">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/story/bespoke_1.jpg'); ?>" alt="<?= $blockTitle ?> 1">
+            </div>
+            <div class="static_text_2images-images-col-2">
+                <img src="<?= $block->getViewFileUrl('Magento_Cms::images/story/bespoke_2.jpg'); ?>" alt="<?= $blockTitle ?> 2">
+            </div>
+        </div>
+    </div>
+</div>

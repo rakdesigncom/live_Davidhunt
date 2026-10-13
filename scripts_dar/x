@@ -1,0 +1,61 @@
+MAILTO=""
+PATH=/opt/nexcess/php70u/root/usr/bin:/opt/nexcess/php70u/root/usr/sbin:/usr/local/bin:/usr/bin:/bin
+1 0 * * * /bin/sh /home/mtwodarl/live.darlighting.co.uk/scripts/clear_proc_files.sh
+1 0 * * * cd /home/mtwodarl/live.darlighting.co.uk/scripts; /opt/nexcess/php70u/root/usr/bin/php dar_gdpr.php LIV
+#LIVE
+*/5 * * * *  /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/html/bin/magento cron:run
+#0 0 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT CATEGORIES
+15 0 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT PRODUCTS
+0 2 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT ATTRIBUTES
+10 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT LEAFLETS
+20 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT LOCAL_STOCKISTS
+30 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT ORDERS
+50 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT XWEBLAMPS
+0 4 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWsBespConf.php LIV IMPORT BESPOKE_SHADES
+45 4 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/html/bin/magento indexer:reindex
+
+0 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT STOCK
+15 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT PRICE_LIST
+*/15 6-23 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/prod_custopt_chk_m2.php >> /home/mtwodarl/live.darlighting.co.uk/scripts/prod_custopt.log 2>&1
+*/30 6-23 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/prod_def_m2.php >> /home/mtwodarl/live.darlighting.co.uk/scripts/prod_def_m2.log 2>&1
+
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT CUSTOMERS
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV IMPORT STOCK_LEVEL
+*/5 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darWs.php LIV EXPORT ORDERS
+*/10 1-23 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/live.darlighting.co.uk/scripts/darImg.php LIV
+#OLD DEV
+#0 0 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT CATEGORIES
+#15 0 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT PRODUCTS
+#0 2 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT ATTRIBUTES
+#10 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT LEAFLETS
+#20 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT LOCAL_STOCKISTS
+#30 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT ORDERS
+#40 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT XPROMOS
+#50 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT XWEBLAMPS
+#0 4 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darBespConf.php UAT IMPORT BESPOKE_SHADES
+#35 4 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/html/bin/magento indexer:reindex
+#*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darDb.php UAT IMPORT CUSTOMERS
+#*/10 1-23 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/m2.darlighting.co.uk/scripts/darImg.php UAT
+#NAV - DEV
+*/5 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/html/bin/magento cron:run
+#0 0 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT CATEGORIES
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT PRODUCTS
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT ATTRIBUTES
+10 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT LEAFLETS
+20 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT LOCAL_STOCKISTS
+50 3 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT XWEBLAMPS
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWsBespConf.php UAT IMPORT BESPOKE_SHADES
+*/5 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT EXPORT ORDERS
+
+35 4 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/html/bin/magento indexer:reindex
+
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT STOCK
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT PRICE_LIST
+
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT CUSTOMERS
+*/10 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darWs.php UAT IMPORT STOCK_LEVEL
+*/10 1-23 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/nav.darlighting.co.uk/scripts/darImg.php UAT
+#STAGING - NICK VERSION
+#*/10 1-23 * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/staging.darlighting.co.uk/scripts/darImg.php TST
+#LIGHTS FOR ALL
+*/5 * * * * /opt/nexcess/php70u/root/usr/bin/php /home/mtwodarl/lights4all.co.uk/html/bin/magento cron:run

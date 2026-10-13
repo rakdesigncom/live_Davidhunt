@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+
+if (!$_product instanceof \Magento\Catalog\Model\Product) {
+    return;
+}
+
+$_code = 'dhl_web_faqs';
+$_attributeValue = $_helper->productAttribute($_product, $_product->getData($_code), $_code);
+
+?>
+
+<div class="product attribute description">
+    <?php if ($_attributeValue) :?>
+        <div class="value"><?= /* @noEscape */ $_attributeValue ?></div>
+    <?php endif; ?>
+    <a class="button" href="<?= $block->getUrl('specification/product/pdf/id/' . $_product->getId()) . '?pdf=1' ?>">Download Specifications</a>
+</div>

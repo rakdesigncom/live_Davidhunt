@@ -1,0 +1,53 @@
+<?php
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Opengento\Gdpr\ViewModel\Customer\Guest\EraseDataProvider;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+$escaper = $escaper ?? $block;
+
+/** @var EraseDataProvider $eraseDataProvider */
+$eraseDataProvider = $block->getData('eraseDataProvider');
+?>
+<?php if ($eraseDataProvider->canCreate()): ?>
+    <form id="erase-form" action="<?= $escaper->escapeUrl($block->getData('eraseActionUrl')) ?>" method="post">
+        <button type="submit" class="action action-danger" id="erase">
+            <span><?= $escaper->escapeHtml(__('Erase Personal Data')) ?></span>
+        </button>
+    </form>
+    <script>
+        require([
+            "jquery",
+            "Magento_Ui/js/modal/confirm"
+        ], function ($, confirm) {
+            'use strict';
+
+            $("#erase").on("click", function (e) {
+                e.preventDefault();
+                confirm({
+                    title: "<?= $escaper->escapeJs($escaper->escapeHtml(__('Warning'))) ?>",
+                    content: "<?= $escaper->escapeJs($escaper->escapeHtml(__('Do you really want to erase your personal data?'))) ?>",
+                    actions: {
+                        confirm: function () {
+                            $("#erase-form").submit();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+<?php endif; ?>
+<?php if ($eraseDataProvider->canCancel()): ?>
+    <form action="<?= $escaper->escapeUrl($block->getData('undoActionUrl')) ?>" method="post">
+        <button type="submit" class="action undo" id="undo_deletion">
+            <span><?= $escaper->escapeHtml(__('Undo Erase Personal Data')) ?></span>
+        </button>
+    </form>
+<?php endif; ?>

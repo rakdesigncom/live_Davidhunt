@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="AutifyDigital_PayNow::top_level" title="AutifyDigital" module="AutifyDigital_PayNow" sortOrder="30" resource="Magento_Backend::content"/>
+		<add id="AutifyDigital_PayNow::autifydigital_paynow_paynow" title="Pay now" module="AutifyDigital_PayNow" sortOrder="20" resource="Magento_Backend::content" parent="AutifyDigital_PayNow::top_level" action="autifydigital_paynow/paynow/index"/>
+		<add id="AutifyDigital_PayNow::autifydigital_paynow_configuration" title="Configuration" module="AutifyDigital_PayNow" sortOrder="30" resource="Magento_Backend::content" parent="AutifyDigital_PayNow::top_level" action="admin/system_config/edit/section/paynow"/>
+	</menu>
+</config>

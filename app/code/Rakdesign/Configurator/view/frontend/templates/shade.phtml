@@ -1,0 +1,204 @@
+<?php
+/** @var \Rakdesign\Configurator\Block\Shade $block */
+$collection = $block->getCollection();
+$storeId = $block->getStoreId();
+$filters = []; //$block->getFilters($collection);
+$product = $block->getProduct();
+$permalink = $block->getPermalink();
+$addMetric = ['shade_width', 'shade_height', 'shade_diameter', 'base_width', 'base_height', 'base_diameter']; //TODO can be added to plugin configuration
+$requestType = isset($block->getRequestType()['type']) ? $block->getRequestType()['type'] : false;
+$arrayRangeSlider = ['complete_price', 'shade_diameter', 'shade_height', 'base_diameter', 'base_height', 'base_width', 'shade_width']; //TODO can be added to plugin configuration
+$sliderCount = 1;
+?>
+<?php if ($collection): ?>
+    <?php if ($product): ?>
+        <?php $customerMode = false; ?>
+        <?php if ($storeId == 2): ?>
+            <?php
+//            $customerHelper = $this->helper('StarDigital\GeneralFunctions\Helper\CustomerData');
+//            $customerMode = (bool) $customerHelper->getCustomerSession()->getCustomerFriendly();
+            ?>
+        <?php endif; ?>
+
+        <div class="breadcrumbs">
+            <ul class="items">
+                <li class=" bck-btn"><a href="history.back()"><i class="fa fa-chevron-left"></i> BACK</a></li>
+                <li class="item notranslate home">
+                    <a class="notranslate" href="/" title="Go to Home Page">Home</a>
+                </li>
+                <?php if ($permalink): ?>
+                    <li class="item notranslate product">
+                        <a class="notranslate" href="<?php echo $permalink; ?>" title="<?php echo $product->getName(); ?>"><?php echo $product->getName(); ?></a>
+                    </li>
+                <?php endif; ?>
+                <?php if ($requestType): ?>
+                    <li class="item notranslate product">
+                        <strong class="notranslate"><?php echo __('All') . ' ' . $requestType . ' ' . __('Options'); ?></strong>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+
+        <div class="grid-gap smaller no-padding-top">
+            <h1 class="section-heading text-center"><?php echo $product->getName(); ?></h1>
+        </div>
+    <?php endif; ?>
+    <div class="row">
+        <div class="col-sm-3">
+            <?php if ($filters): ?>
+                <div class="visible-xs open-filters btn btn-default"><i class="fa fa-filter"></i> <?php echo __('Filter products'); ?></div>
+                <div class="filters shade-configurator-filters" data-multiselect="1"> <?php //change data-multiselect 1||2 to switch modes      ?>
+                    <div class="visible-xs close-filter">✕</div>
+                    <div class="content">
+                        <?php foreach ($filters as $key => $filter): ?>
+
+                            <?php if (in_array($key, $arrayRangeSlider) && count($filter) >= 2): ?>
+                                <div class="filter">
+                                    <div class="title"><?php echo str_replace('_', ' ', $key) ?><?php echo in_array($key, $addMetric) ? ' (cm)' : ''; ?> <?php if ($storeId == 2 && $customerMode && $key == 'complete_price'): ?><small>(RRP inc VAT)</small><?php endif; ?></div>
+                                    <div class="content" >
+                                        <div class="price-slider" data-count="<?php echo $sliderCount; ?>" data-type="data-<?php echo $key; ?>" data-min="<?php echo floor(min($filter)); ?>" data-max="<?php echo ceil(max($filter)); ?>"></div>
+                                        <div class="price-value"></div>
+                                    </div>
+                                </div>
+                                <?php $sliderCount++; ?>
+                            <?php else: ?>
+                                <div class="filter">
+                                    <div class="title"><?php echo str_replace('_', ' ', $key) ?><?php echo in_array($key, $addMetric) ? ' (cm)' : ''; ?></div>
+                                    <div class="content" >
+                                        <?php sort($filter); ?>
+                                        <?php foreach ($filter as $item): ?>
+                                            <a href="#" data-type="data-<?php echo $key; ?>" data-value="<?php echo $item; ?>"><?php echo $item; ?></a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="actions">
+                        <span class="show-filter visible-xs" style="display: none;"><?php echo __('View filtered products'); ?></span>
+                        <span class="reset-all" style="display: none;"><?php echo __('Clear All'); ?></span>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
+        <div class="col-sm-9 products wrapper grid products-grid">
+            <ol id="ajax-product-list" class="products list items product-items">
+                <?php foreach ($collection as $item): ?>
+                    <li class="item product product-item"
+                    <?php if (isset($item['filters'][$requestType])): ?>
+                        <?php foreach ($item['filters'][$requestType] as $rkey => $filter): ?>
+                            <?php //if($filter=='Whites & Neutrals') {$filter.='|Blacks & Greys';} ?>
+                                <?php echo ' '; ?>data-<?php echo $rkey; ?>="<?php echo is_array($filter) ? implode('|', $filter) : $filter; ?>"
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        >
+                        <div class="product-item-info">
+                            <?php if ($permalink): ?>
+                                <a href="<?php echo $permalink; ?>?base=<?php echo $item['combination_line_one']['name']; ?>&shade=<?php echo $item['combination_line_two']['name']; ?>">
+                                <?php endif; ?>
+                                <img class="lazyb photo image" src="<?php echo $item['image']; ?> " alt="<?php echo $item['combination_line_one']['title']; ?> <?php echo $item['combination_line_two']['title']; ?> ">
+                                <?php if ($permalink): ?>
+                                </a>
+                            <?php endif; ?>
+                            <div class="product details product-item-details">
+                                <div class="product-item-inner">
+                                    <h2 class="product name product-name">
+                                        <?php if ($permalink): ?>
+                                            <a href="<?php echo $permalink; ?>?base=<?php echo $item['combination_line_one']['name']; ?>&shade=<?php echo $item['combination_line_two']['name']; ?>">
+                                            <?php endif; ?>
+                                            <?php if ($requestType == 'base'): ?>
+                                                <span>- with -</span>
+                                                <?php echo $item['combination_line_two']['title']; ?>
+
+                                                <?php //echo $item['combination_line_one']['title']; ?>
+                                            <?php else: ?>
+                                                <span>- with -</span>
+                                                <?php echo $item['combination_line_one']['title']; ?>
+
+                                                <?php //echo $item['combination_line_two']['title']; ?>
+                                            <?php endif; ?>
+                                            <?php if ($permalink): ?>
+                                            </a>
+                                        <?php endif; ?>
+                                    </h2>
+                                    <div class="price text-center">
+                                        <?php if ($storeId == 2): ?>
+                                            <?php if (!$customerMode): ?>
+                                                <span class="smaller"><?php echo __('List price:'); ?> <?php echo $item['price']; ?></span>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+
+                                    </div>
+                                    <div class="product actions product-item-actions">
+
+                                        <a title="Add to wishlist" href="#" data-id="<?php echo $item['combination_line_one']['id']; ?>" data-id2="<?php echo $item['combination_line_two']['id']; ?>" class="add-guest-wishlist"></a>
+
+                                        <a title="Add to Cart" href="#" data-base="<?php echo $item['combination_line_one']['name'].' - '.$item['combination_line_one']['title']; ?>" data-shade="<?php echo $item['combination_line_two']['name'].' - '.$item['combination_line_two']['title']; ?>" data-url="/configurator/cart/add" data-stock="<?php echo $item['combination_line_one']['stock_info']['stock']; ?>" data-stock2="<?php echo $item['combination_line_two']['stock_info']['stock']; ?>" data-qty="<?php echo $item['combination_line_one']['qty']; ?>" data-qty2="<?php echo $item['combination_line_two']['qty']; ?>" data-id="<?php echo $item['combination_line_one']['id']; ?>" data-id2="<?php echo $item['combination_line_two']['id']; ?>" class="add-to-cart configuration-add-to-cart-btn"><i class="fa fa-shopping-cart"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+        </div>
+    </div>
+
+<div class="configurator-add-to-cart-confirm" style="display:none;">
+    <div class="content">
+        <div class="std text-center">
+            <p>We're sorry <strong class="product-not-available product-not-available-base"></strong> <strong class="product-not-available product-not-available-shade"></strong> is currently out of stock</p>
+        </div>
+        <div class="modal-action">
+            <?php if ($storeId == 2): ?>
+                <a href="#"
+                   data-url="/configurator/cart/add"
+                   data-qty="1"
+                   data-qty2="1"
+                   data-id=""
+                   data-id2=""
+                   data-stock=""
+                   data-stock2=""
+                   title="<?php echo __('Press continue to add ') ?>"
+                   class="configuration-add-to-carts configuration-add-to-cart-btn force-add">
+                    <span><?php echo __('Press continue to add ') ?></span>
+                </a>
+            <?php endif; ?>
+            <a href="#"
+               data-url="/configurator/cart/add"
+               data-qty="1"
+               data-id=""
+               title="<?php echo __('buy base only') ?>"
+
+               class="configuration-add-to-carts configuration-add-to-cart-btn-base separate-btn configuration-add-to-cart-btn">
+                <span><?php echo __('buy base only') ?></span>
+            </a>
+            <a href="#"
+               data-url="/configurator/cart/add"
+               data-qty="1"
+               data-id=""
+               title="<?php echo __('buy shade only') ?>"
+               class="configuration-add-to-carts configuration-add-to-cart-btn-shade separate-btn configuration-add-to-cart-btn">
+                <span><?php echo __('buy shade only') ?></span>
+            </a>
+
+        </div>
+        <a href="#"
+           class="btn btn-secondary modal-cancel">
+            <span><?php echo __('Cancel to return to the selector') ?></span>
+        </a>
+    </div>
+</div>
+
+
+    <script>
+        require([
+            'jquery',
+            'shadenouislider'
+        ], function ($, noUiSlider) {
+
+
+        });
+    </script>
+<?php endif; ?>

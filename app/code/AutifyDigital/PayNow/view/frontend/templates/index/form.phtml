@@ -1,0 +1,244 @@
+<?php $helper = $this->helper(\AutifyDigital\PayNow\Helper\Data::class); ?>
+
+<?php if($helper->getConfig('paynow/configuration/enable_paynow') && $helper->getConfig('paynow/configuration/store_id') && $helper->getConfig('paynow/configuration/shared_secret')) : ?>
+<form class="pay-now-cost-form" action="<?= $escaper->escapeUrl($block->getUrl('paynow/index/post')) ?>" method="post" data-mage-init='{"validation":{}}'>
+	<fieldset class="fieldset">
+		<div class="field name required">
+            <label class="label" for="name"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_name_level'); ?></span></label>
+            <div class="control">
+                <input id="name" name="name" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_name_placeholder'); ?>" data-validate="{'required':true, 'validate-no-empty':true}" />
+            </div>
+        </div>
+        <div class="field email_address required">
+            <label class="label" for="email_address"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_email_level'); ?></span></label>
+            <div class="control">
+                <input id="email_address" name="email_address" type="email" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_email_placeholder'); ?>" data-validate="{'required':true, 'validate-email': true}" />
+            </div>
+        </div>
+
+		<div class="field invoice_number required">
+            <label class="label" for="invoice_number"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_invoice_level'); ?></span></label>
+            <div class="control">
+                <input id="invoice_number" name="invoice_number" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_invoice_placeholder'); ?>" data-validate="{'required':true, 'validate-no-empty':true}" />
+            </div>
+        </div>
+
+		<div class="field amount required" id="field_amount">
+			<label class="label" for="amount"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_amount_level'); ?></span></label>
+			<div class="control">
+				<div class="input-group"> <!-- Added a container for both the Euro symbol and the input field -->
+					<div class="input-group-prepend">
+						<span class="input-group-text currency-image">&#163;</span> <!-- Pound symbol (£) -->
+					</div>
+					<input id="amount" name="amount" type="number" min="<?= $helper->getConfig('paynow/configuration/minimum_amount')?>" max="<?= $helper->getConfig('paynow/configuration/maximum_amount')?>" class="pay-now-fields" placeholder="<?= __($helper->getConfig('paynow/title_placeholder/title_placeholder_amount_placeholder'), $helper->getConfig('paynow/configuration/minimum_amount')) ?>" pattern="^\d*(\.\d{0,2})?$" 
+					data-validate="{'required':true, 'validate-no-empty':true}"/>
+				</div>
+				<span class="small-text"><?= __("Invoice amount is required, enter numbers only. minimum amount of %1", $helper->getConfig('paynow/configuration/minimum_amount')) ?></span>
+			</div>
+		</div>
+
+		<?php if($helper->getConfig('paynow/configuration/combine_page')) : ?>
+			<h2><?= $escaper->escapeHtml(__('Billing Address')) ?></h2>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_name_level_enable')): ?>
+				<div class="field billto_name required">
+					<label class="label" for="billto_name"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_name_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_name" name="billto_name" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_name_placeholder'); ?>" maxlength="96" data-validate="{'required':true, 'validate-no-empty':true}" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+	        <?php if($helper->getConfig('paynow/title_placeholder/companyname_enable')): ?>
+	        <div class="field company_name">
+	            <label class="label" for="company_name"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_company_name_level'); ?></span></label>
+	            <div class="control">
+	                <input id="company_name" name="company_name" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_company_name_placeholder'); ?>" maxlength="96" />
+	            </div>
+	        </div>
+        	<?php endif; ?>
+
+        	<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_address_line1_level_enable')): ?>
+				<div class="field billto_street1 required">
+					<label class="label" for="billto_street1"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_address_line1_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_street1" name="billto_street1" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_address_line1_placeholder'); ?>" maxlength="96" data-validate="{'required':true, 'validate-no-empty':true}" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_address_line2_level_enable')): ?>
+				<div class="field billto_street2">
+					<label class="label" for="billto_street2"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_address_line2_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_street2" name="billto_street2" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_address_line2_placeholder'); ?>" maxlength="96" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_city_level_enable')): ?>
+				<div class="field billto_city required">
+					<label class="label" for="billto_city"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_city_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_city" name="billto_city" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_city_placeholder'); ?>" maxlength="96" data-validate="{'required':true, 'validate-no-empty':true}" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_postcode_level_enable')): ?>
+				<div class="field billto_postcode required">
+					<label class="label" for="billto_postcode"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_postcode_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_postcode" name="billto_postcode" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_postcode_placeholder'); ?>" maxlength="24" data-validate="{'required':true, 'validate-no-empty':true}" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_county_level_enable')): ?>
+				<div class="field billto_state">
+					<label class="label" for="billto_state"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_county_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_state" name="billto_state" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_county_placeholder'); ?>" maxlength="96" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_country_level_enable')): ?>
+				<div class="field billto_country required">
+					<label class="label" for="billto_country"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_country_level'); ?></span></label>
+					<div class="control">
+						<select name="billto_country" data-validate="{'required':true, 'validate-no-empty':true}">
+							<?= /* @noEscape */ $helper->getCountryList(); ?>
+						</select>
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_phone_number_level_enable')): ?>
+				<div class="field billto_phone required">
+					<label class="label" for="billto_phone"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_phone_number_level'); ?></span></label>
+					<div class="control">
+						<input id="billto_phone" name="billto_phone" type="tel" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_billing/billing_phone_number_placeholder'); ?>" maxlength="32" data-validate="{'required':true, 'validate-no-empty':true, 'validate-number':true}" />
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if($helper->getConfig('paynow/title_placeholder/shipping_enable')) : ?>
+	            <div class="field enable_shipping">
+        			<input id="enable_shipping" name="enable_shipping" type="checkbox" class="field custom-control-input" value="1">
+                    <span class="custom-control-label"><?= $escaper->escapeHtml(__('My billing and shipping address are same.')) ?></span>
+	            </div>
+
+	            <div class="fields shipping-address-container">
+	                <h2><?= $escaper->escapeHtml(__('Shipping Address')) ?></h2>
+					<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_name_level_enable')): ?>
+						<div class="field shipto_name required">
+							<label class="label" for="shipto_name"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_name_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_name" name="shipto_name" type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_name_placeholder'); ?>" maxlength="96" data-validate="{'required':true, 'validate-no-empty':true}" />
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_address_line1_level_enable')): ?>
+						<div class="field shipto_street1 required">
+							<label class="label" for="shipto_street1"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_address_line1_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_street1" name="shipto_street1"  type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_address_line1_placeholder'); ?>" maxlength="96" data-validate="{'required':true, 'validate-no-empty':true}" />
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_address_line2_level_enable')): ?>
+						<div class="field shipto_street2">
+							<label class="label" for="shipto_street2"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_address_line2_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_street2" name="shipto_street2"  type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_address_line2_placeholder'); ?>" maxlength="96" />
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_city_level_enable')): ?>
+						<div class="field shipto_city required">
+							<label class="label" for="shipto_city"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_city_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_city" name="shipto_city"  type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_city_placeholder'); ?>" maxlength="96" data-validate="{'required':true, 'validate-no-empty':true}" />
+							</div>
+						</div>
+					<?php endif; ?>
+
+			        <?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_postcode_level_enable')): ?>
+						<div class="field shipto_postcode required">
+							<label class="label" for="shipto_postcode"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_postcode_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_postcode" name="shipto_postcode"  type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_postcode_placeholder'); ?>" maxlength="24" data-validate="{'required':true, 'validate-no-empty':true}" />
+							</div>
+			        	</div>
+			        <?php endif; ?>
+
+					<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_county_level_enable')): ?>
+						<div class="field shipto_state">
+							<label class="label" for="shipto_state"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_county_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_state" name="shipto_state"  type="text" class="pay-now-fields" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_county_placeholder'); ?>" maxlength="96" />
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_country_level_enable')): ?>
+						<div class="field shipto_country required">
+							<label class="label" for="shipto_country"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_country_level'); ?></span></label>
+							<div class="control">
+								<select name="shipto_country" data-validate="{'required':true, 'validate-no-empty':true}">
+									<?= /* @noEscape */ $helper->getCountryList(); ?>
+								</select>
+							</div>
+						</div>
+					<?php endif; ?>
+					
+			        <?php if ($helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_phone_number_level_enable')): ?>
+						<div class="field shipto_phone required">
+							<label class="label" for="shipto_phone"><span><?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_phone_number_level'); ?></span></label>
+							<div class="control">
+								<input id="shipto_phone" name="shipto_phone" type="tel" class="pay-now-fields field" placeholder="<?= $helper->getConfig('paynow/title_placeholder/title_placeholder_shipping/shipping_phone_number_placeholder'); ?>" maxlength="32" data-validate="{'required':true, 'validate-no-empty':true, 'validate-number':true}" />
+							</div>
+						</div>
+			        <?php endif; ?>
+
+	            </div>
+			<?php endif; ?>
+		<?php endif; ?>
+
+		<?php if ( ! empty( $helper->getConfig('paynow/configuration/terms_condition_text') ) ) : ?>
+			<div class="field">
+				<label class="label" for="consent">&nbsp;</label>
+				<div class="control">
+					<input id="consent" data-validate="{'required':true}" type="checkbox" class="field custom-control-input" name="consent">
+					<span class="custom-control-label"><?php echo $escaper->escapeHtml($helper->getConfig('paynow/configuration/terms_condition_text')); ?></span>
+				</div>
+			</div>
+		<?php endif; ?>
+
+		<div class="field">
+			<button type="submit" title="Submit" class="action submit primary">
+                <span><?=  $escaper->escapeHtml(__('Pay')) ?></span>
+            </button>
+		</div>
+
+	</fieldset>
+</form>
+	<script>
+	require(['jquery'], function($) {
+		$(document).ready(function() {
+			$('#pay_now_cost_form').submit(function(e) {
+				if (!$('#consent').prop('checked')) {
+					e.preventDefault(); // Prevent form submission
+					$('#checkbox-error-message').show();
+				} else {
+					$('#checkbox-error-message').hide();
+				}
+			});
+		});
+	});
+</script>
+<?php endif; ?>

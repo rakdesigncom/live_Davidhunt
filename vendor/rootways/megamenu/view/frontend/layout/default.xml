@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Rootways Team
+ * @copyright Copyright (c) 2023 Rootways Inc. (https://www.rootways.com)
+ * @package Rootways_Megamenu
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Rootways_Megamenu::css/rootmenu.css" />
+        <script src="Rootways_Megamenu::js/rootmenu.js"/>
+    </head>
+    <body>
+       <referenceContainer name="head.additional">
+            <block name="rootwaysmenuhead"
+                   template="Rootways_Megamenu::html/head.phtml"
+                   ifconfig="rootmegamenu_option/general/enable"
+                   before="-">
+               <arguments>
+                    <argument name="view_model" xsi:type="object">Rootways\Megamenu\ViewModel\Head</argument>
+                    <!--<argument name="output" xsi:type="object">Magento\Catalog\ViewModel\Category\Output</argument>-->
+                </arguments>
+            </block>
+        </referenceContainer>
+        
+        <referenceBlock name="catalog.topnav" remove="true"/>
+        <referenceContainer name="store.menu">
+            <block class="Rootways\Megamenu\Block\Topmenu"
+                   name="roomegamenu"
+                   template="Rootways_Megamenu::html/topmenu.phtml"
+                   before="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Rootways\Megamenu\ViewModel\TopMenu</argument>
+                </arguments>
+             </block>
+        </referenceContainer>
+    </body>
+</page>

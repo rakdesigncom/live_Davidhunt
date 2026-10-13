@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2021 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ -->
+<extensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="urn:magento:module:Plumrocket_Base:etc/pr_extensions.xsd">
+    <extension name="LayeredNavigationLite"
+               title="Layered Navigation Lite"
+               config_section="prproductfilter"
+               is_enabled_path="prproductfilter/general/enabled"
+               documentation="https://plumrocket.com/docs/magento-layered-navigation-lite/v1"
+               url="https://plumrocket.com/magento-layered-navigation-lite"
+               marketplace_url="https://marketplace.magento.com/plumrocket-layered-navigation-lite-metapackage.html"
+    />
+</extensions>

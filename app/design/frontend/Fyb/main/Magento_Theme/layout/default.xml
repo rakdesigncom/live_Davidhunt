@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Fyb_Theme::css/lib/owl.carousel.min.css"/>
+        <css src="Fyb_Theme::css/lib/owl.theme.default.min.css"/>
+        <css src="Fyb_Theme::css/lib/swiper-bundle.min.css"/>
+    </head>
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::gtm.phtml" name="gtm.main"/>
+        </referenceBlock>
+        <referenceContainer name="after.body.start">
+            <block class="Magento\Framework\View\Element\Template" template="Magento_Theme::gtmns.phtml" name="gtm.no_script" before="-"/>
+        </referenceContainer>
+
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_width" xsi:type="number">100</argument>
+                <argument name="logo_height" xsi:type="number">100</argument>
+                <argument name="logo_alt" xsi:type="string">Logo name</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="footer">
+            <block class="Fyb\Theme\Block\StoreInfo" name="footer.store.links" after="-" template="Magento_Theme::html/footer_links.phtml"/>
+            <block class="Fyb\Theme\Block\StoreInfo" name="footer.contact.store" after="-" template="Magento_Theme::html/contact_store.phtml"/>
+        </referenceContainer>
+
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="footer_links" remove="true" />
+        <referenceBlock name="header" remove="true" />
+        <referenceBlock name="register-link" remove="true" />
+
+        <move element="navigation.sections" destination="header-wrapper" before="-"/>
+        <move element="header.panel" destination="header-wrapper" before="top.search"/>
+    </body>
+</page>

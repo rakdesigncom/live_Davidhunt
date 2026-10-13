@@ -1,0 +1,47 @@
+.pr-tooltip {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+    margin: -5px 0;
+    cursor: pointer;
+}
+.pr-tooltip-toggle {
+    border-bottom: 1px dotted;
+}
+.pr-tooltip .pr-tooltip-content {
+    visibility: hidden;
+    width: 248px;
+    max-width: 248px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    text-align: center;
+    padding: 18px;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 1.4;
+    background-color:
+    rgba(49, 48, 43, 0.8);
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+    cursor: auto;
+}
+.pr-tooltip:hover .pr-tooltip-content {
+    visibility: visible;
+}
+.pr-tooltip-content:before {
+    border-bottom: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #35302c;
+    bottom: -5px;
+    content: '';
+    height: 0;
+    left: auto;
+    opacity: .8;
+    position: absolute;
+    right: 142px;
+    top: auto;
+    width: 0;
+}

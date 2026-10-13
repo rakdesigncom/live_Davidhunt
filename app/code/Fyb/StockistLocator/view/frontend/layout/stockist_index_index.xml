@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Find a Stockist</title>
+    </head>
+
+    <body>
+        <referenceContainer name="columns.top">
+            <block class="Magento\Framework\View\Element\Template" name="stockist.desc" template="Fyb_StockistLocator::desc.phtml" after="page.main.title"/>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <block class="Fyb\StockistLocator\Block\Index\Index" name="stockist.locator" template="Fyb_StockistLocator::stockistlocator_index_index.phtml" cacheable="false" />
+        </referenceContainer>
+
+        <referenceBlock name="breadcrumbs" remove="true" />
+    </body>
+</page>

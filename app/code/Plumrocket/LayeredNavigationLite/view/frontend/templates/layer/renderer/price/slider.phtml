@@ -1,0 +1,39 @@
+<?php
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+?>
+
+<?php
+/** @var \Plumrocket\LayeredNavigationLite\Block\LayeredNavigation\RenderPrice $block */
+
+$currencySymbol = $block->getCurrencySymbol();
+$currencyRate = $block->getCurrentCurrencyRate();
+$min = floor($block->getMinValue());
+$max = ceil($block->getMaxValue());
+$from = floor($block->getFromValue());
+$to = ceil($block->getToValue());
+?>
+
+<div class="product-filter-slider" data-filter-type="slider">
+    <span><?= $block->escapeHtml(__('Price range:')) ?></span>
+    <div class="filter-price-amount">
+      <?= /* @noEscape */ $currencySymbol ?><span id="filter-price-amount-from"><?= /* @noEscape */ $from ?></span> -
+      <?= /* @noEscape */ $currencySymbol ?><span id="filter-price-amount-to"><?= /* @noEscape */ $to ?></span>
+    </div>
+
+    <div id="slider-range" data-mage-init='{"prProductFilterSlider":{
+        "rate": <?= /* @noEscape */ $currencyRate ?>,
+        "min": <?= /* @noEscape */ $min ?>,
+        "max": <?= /* @noEscape */ $max ?>,
+        "amountFrom": "#filter-price-amount-from",
+        "amountTo": "#filter-price-amount-to",
+        "inputFrom": "#filter-input-price-from",
+        "inputTo": "#filter-input-price-to",
+        "request": <?= /* @noEscape */ $block->getRequestedPrice() ?>
+      }}'
+    >
+    </div>
+</div>

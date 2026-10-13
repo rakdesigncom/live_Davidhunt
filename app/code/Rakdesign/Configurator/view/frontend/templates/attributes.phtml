@@ -1,0 +1,269 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+
+<div class="std-rte mumbo-jumbo ">
+            <p><strong>Don't understand technical jargon? View our useful <a target="_blank" href="/lighting-glossary">Lighting Glossary</a></strong></p>  
+        </div>
+<div class="clearfix"></div>
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+
+$replacedChars = array(",", ", ", "_", "&", "'", "/", "-", " ", ".", "(", ")");
+
+if ($_additional = $block->getAdditionalData()):
+    // Setting variable to determing if Data can be shown
+    $dataToShow = false;
+
+    // Determining whether there is any data to show
+    foreach ($_additional as $_data):
+
+        if ($_data['value'] != '0'):
+            $dataToShow = true;
+            break;
+        endif;
+    endforeach;
+
+    // Showing the Data Sheet tab if relevant data
+    if ($dataToShow):
+        ?>
+
+        <?php
+
+        function array_search_id($search_value, $array, $id_path) {
+
+            if (is_array($array) && count($array) > 0) {
+
+                foreach ($array as $key => $value) {
+
+                    $temp_path = $id_path;
+
+                    // Adding current key to search path 
+                    array_push($temp_path, $key);
+
+                    // Check if this value is an array 
+                    // with atleast one element 
+                    if (is_array($value) && count($value) > 0) {
+                        $res_path = array_search_id(
+                                $search_value, $value, $temp_path);
+
+                        if ($res_path != null) {
+                            return $res_path;
+                        }
+                    } else if ($value == $search_value) {
+                        return join(" --> ", $temp_path);
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        $defaultGroup = 20;
+        $groupTable = array(
+            //-----left table-----//
+
+            'measurements' => array('group' => 0, 'position' => 0, 'table' => 'left'),
+            'basemeasurements' => array('group' => 0, 'position' => 1, 'table' => 'left'),
+            'shademeasurements' => array('group' => 0, 'position' => 2, 'table' => 'left'),
+            'fixing_plate_dimensions' => array('group' => 0, 'position' => 3, 'table' => 'left'),
+            'product_finish' => array('group' => 0, 'position' => 4, 'table' => 'left'),
+            'product_material' => array('group' => 0, 'position' => 5, 'table' => 'left'),
+            'cable' => array('group' => 0, 'position' => 6, 'table' => 'left'),
+            'nettweight' => array('group' => 0, 'position' => 7, 'table' => 'left','afterValue'=>' kg'),
+            
+            
+            //----------//
+            'shadeincluded' => array('group' => 1, 'position' => 0, 'table' => 'left'),
+            'shadereference' => array('group' => 1, 'position' => 1, 'table' => 'left'),
+            'shadematerial' => array('group' => 1, 'position' => 2, 'table' => 'left'),
+            //----------//
+            //----------//
+            'lamp' => array('group' => 2, 'position' => 0, 'table' => 'left', 'class' => 'first-light', 'before' => '<li class="secondary-light"><strong>Primary Light:</strong><span></span></li>'),
+            'bulbinc' => array('group' => 2, 'position' => 1, 'table' => 'left'),
+            'recommendedlamp' => array('group' => 2, 'position' => 2, 'table' => 'left'),
+            /* ------------------ */
+            'lumens' => array('group' => 3, 'position' => 0, 'table' => 'left'),
+            'efficiency' => array('group' => 3, 'position' => 1, 'table' => 'left'),
+            'lamplife' => array('group' => 3, 'position' => 2, 'table' => 'left'),
+            'colourtemp' => array('group' => 3, 'position' => 3, 'table' => 'left'),
+            'colourrendering' => array('group' => 3, 'position' => 4, 'table' => 'left','afterValue'=>' Ra'),
+            //-----right table-----//
+            //-----right table-----//
+            //-----right table-----//
+            //-----right table-----//
+            //-----right table-----//
+            //-----right table-----//
+            //-----right table-----//
+            //-----right table-----//
+            'symbols' => array('group' => 0, 'position' => 0, 'table' => 'right', 'class' => 'font-symbols'),
+            'iprating' => array('group' => 0, 'position' => 1, 'table' => 'right','beforeValue'=>'IP'),
+            'suitable' => array('group' => 0, 'position' => 2, 'table' => 'right'),
+            'electrical_class' => array('group' => 0, 'position' => 3, 'table' => 'right'),
+            //----------//
+            //----------//
+            'lamp_second' => array('group' => 2, 'position' => 0, 'table' => 'right', 'before' => '<li class="secondary-light"><strong>Secondary Light:</strong><span></span></li>'),
+            'bulbinc_second' => array('group' => 2, 'position' => 1, 'table' => 'right'),
+            'recommendedlamp_second' => array('group' => 2, 'position' => 2, 'table' => 'right'),
+            /* ------------------ */
+            'lumens_second' => array('group' => 3, 'position' => 0, 'table' => 'right'),
+            'efficiency_second' => array('group' => 3, 'position' => 1, 'table' => 'right'),
+            'lamplife_second' => array('group' => 3, 'position' => 2, 'table' => 'right'),
+            'colourtemp_second' => array('group' => 3, 'position' => 3, 'table' => 'right'),
+            'colourrendering_second' => array('group' => 3, 'position' => 4, 'table' => 'right','afterValue'=>' Ra'),
+        );
+        $defaultPosition = 1;
+        $displayTable = array();
+        ?>
+        <?php foreach ($_additional as $_data): ?>
+            <?php if ($_data['value'] != '0'): ?>
+                <?php
+                $filterStrip = str_replace($replacedChars, "", $_data['label']);
+                $filterClass = strtolower($filterStrip);
+                ?>
+                <?php if (strlen(trim($_data['value'])) > 0 && $_data['value'] != 'N/A' && $_data['value'] != 'No'): ?>
+
+                    <?php
+                    $label = $block->escapeHtml(__($_data['label']));
+                    $value = str_replace(';', ', ', $_helper->productAttribute($_product, $_data['value'], $_data['code']));
+                    $code = $_data['code'];
+                    $class = '';
+                    if (isset($groupTable[$code]['class'])) {
+                        $class = $groupTable[$code]['class'];
+                    }
+                    $beforeValue = '';
+                    if (isset($groupTable[$code]['beforeValue'])) {
+                        $beforeValue = $groupTable[$code]['beforeValue'];
+                    }
+                    $afterValue = '';
+                    if (isset($groupTable[$code]['afterValue'])) {
+                        $afterValue = $groupTable[$code]['afterValue'];
+                    }
+                    ?>
+                    <?php
+                    $before = '';
+                    if (isset($groupTable[$code]['before'])) {
+                        $before = $groupTable[$code]['before'];
+                    }
+                    ?>
+                    <?php if (array_key_exists($_data['code'], $groupTable)): ?>
+                        <?php $displayTable[$groupTable[$code]['table']][$groupTable[$code]['group']][$groupTable[$code]['position']][$label] = array('label' => $label, 'value' => $value, 'code' => $code, 'position' => $groupTable[$code]['position'], 'class' => $class, 'before' => $before, 'beforeValue' => $beforeValue, 'afterValue' => $afterValue); ?>
+
+                    <?php else: ?>
+                        <?php $displayTable['left'][$defaultGroup][$defaultPosition][$label] = array('label' => $label, 'value' => $value, 'code' => $code, 'position' => 0, 'class' => '', 'before' => '', 'beforeValue' => '', 'afterValue' => ''); ?>
+                        <?php $defaultPosition++; ?>
+                    <?php endif; ?>
+
+
+
+                <?php endif; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <?php
+        if (isset($displayTable['left'])) {
+            ksort($displayTable['left']);
+        }
+
+        //ksort($displayTable['left'][1]);
+        if (isset($displayTable['right'])) {
+            ksort($displayTable['right']);
+        }
+//        echo '<pre>';
+//        var_dump($displayTable);
+//        exit;
+        ?>
+
+
+        <?php for ($i = 0; $i <= 3; $i++): ?>
+            <div class="row row-flex">
+
+                <div class="col-xs-6 ">
+                    <?php $kkey = 0; ?>
+                    <?php if (isset($displayTable['left'][$i])): ?>
+                        <?php //foreach ($displayTable['left'][$i] as $group): ?>
+                        <ul class="att-key-<?php echo $i; ?> attributes-table-list gap40">
+                            <?php ksort($displayTable['left'][$i]); ?>
+                            <?php //echo '<pre>'; var_dump($group); exit;?>
+                            <?php foreach ($displayTable['left'][$i] as $position): ?>
+
+                                <?php foreach ($position as $item): ?>
+
+                                    <?php echo $item['before']; ?>
+                                    <li data-code="<?php echo $item['code']; ?>" class="list-position-<?php echo $item['position'] ?>">
+                                        <strong><?php echo $item['label'] ?></strong>
+                                        <span><?php echo $item['beforeValue'] ?><?php echo $item['value'] ?><?php echo $item['afterValue'] ?></span>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php $kkey++; ?>
+                        <?php //endforeach; ?>
+                    <?php endif; ?>
+                </div>
+                <div class="col-xs-6 ">
+                    <?php $kkey = 0; ?>
+                    <?php if (isset($displayTable['right'][$i])): ?>
+                        <?php //foreach ($displayTable['right'][$i] as $group): ?>
+                        <ul class="att-key-<?php echo $i; ?> attributes-table-list gap40 ">
+                           <?php ksort($displayTable['right'][$i]); ?>
+                            <?php foreach ($displayTable['right'][$i] as $position): ?>
+
+                                <?php foreach ($position as $item): ?>
+                                    <?php //ksort($item);     ?>
+
+                                    <?php echo $item['before']; ?>
+                                    <li class="<?php echo $item['class'] ?> list-position-<?php echo $item['position'] ?>">
+                                        <strong><?php echo $item['label'] ?></strong>
+                                        <span><?php echo $item['beforeValue'] ?><?php echo $item['value'] ?><?php echo $item['afterValue'] ?></span>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php $kkey++; ?>
+                        <?php //endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        <?php endfor; ?>
+        <?php
+    endif; ?>
+    <div class="floating-btn">
+        <a href="/guestwishlist/index/savefile?id=<?php echo $_product->getId(); ?>" target="_blank" class="btn btn-default btn-full-width"><?php echo __('Download datasheet'); ?></a>
+    
+<?php
+$storeHelper = $this->helper('StarDigital\GeneralFunctions\Helper\StoreData');
+$skuHelper = $this->helper('StarDigital\SkuProductInformation\Helper\SkuData');
+$baseUrl = $storeHelper->getStoreBaseUrl();
+$productId = $_product->getId();
+?>
+            <?php if ($productId): ?>
+                <?php $results = $skuHelper->getProductInformation($productId, 'UK'); ?>
+                <?php if ($results): ?>
+                        <?php foreach ($results["files"] as $key => $file): ?>
+                            <?php
+                            $language = preg_replace('/\s*/', '', $key);
+                            $language = strtolower($language);
+                            ?>
+                                <div class="clearfix gap10"></div>
+                                <a class="btn btn-default btn-full-width <?php echo 'lang-' . $language; ?>" href="<?php echo $file; ?>" target="_blank"><?php echo __('Download Instruction Leaflet'); ?></a>
+                        <?php endforeach; ?>
+                <?php endif; ?>
+            <?php endif; ?>
+    </div>
+<?php
+endif;
+?>
+
+

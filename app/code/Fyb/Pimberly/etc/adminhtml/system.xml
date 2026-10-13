@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="pimberly" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+			<label>PIM Integration</label>
+			<tab>fyb_base</tab>
+			<resource>Fyb_Pimberly::settings</resource>
+
+			<group id="general" showInDefault="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>Configuration</label>
+
+                <field id="enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="access_token" showInDefault="1" sortOrder="20" translate="label" type="text">
+					<label>Access Token</label>
+					<comment>Access token for the Google Maps API here</comment>
+				</field>
+                <field id="limit" showInDefault="1" sortOrder="20" translate="label" type="text">
+                    <label>API Limit</label>
+                    <comment>Products exported per once</comment>
+                </field>
+			</group>
+		</section>
+	</system>
+</config>

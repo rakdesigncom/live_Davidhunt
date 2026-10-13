@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2020 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license/  End-user License Agreement
+-->
+<extensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="urn:magento:module:Plumrocket_Base:etc/pr_extensions.xsd">
+    <extension is_service="true" name="ExtendedAdminUi" title="Extended Admin UI"/>
+</extensions>

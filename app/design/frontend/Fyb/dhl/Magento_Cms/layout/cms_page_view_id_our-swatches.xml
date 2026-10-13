@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="cms.static.menu" template="Magento_Cms::html/cms_static_menu.phtml" after="-">
+                <arguments>
+                    <argument name="links_from" xsi:type="string">home_page_menu_dhl_inspire</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+<!--        <referenceContainer name="content">-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.swatches" template="Magento_Cms::swatches/swatches.phtml"/>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.finishes" template="Magento_Cms::swatches/generic_block_1.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_texts" xsi:type="array">-->
+<!--                        <item name="text_1" xsi:type="string"><![CDATA[A perfect synergy between material and process is what really sets David-->
+<!--            Hunt Lighting finishes apart. We have spent decades evolving each and-->
+<!--            every stage of our design process, of which finishing forms a hugely-->
+<!--            significant part.]]></item>-->
+<!--                        <item name="text_2" xsi:type="string"><![CDATA[We can emulate a broad range of metallic finishes such as brass, pewter-->
+<!--            and copper using our own specialised powder coating techniques. We can-->
+<!--            also produce polished chrome and antique brass finishes using a-->
+<!--            combination of plating, dipping and brushing methods. Each of these base-->
+<!--            metallics can then be further characterised through treatments including-->
+<!--            hand polishing or engraving, to name a few.]]></item>-->
+<!--                        <item name="text_3" xsi:type="string"><![CDATA[We are also able to recreate textures and surface qualities inspired by-->
+<!--            nature and often indistinguishable from the real thing through use of our-->
+<!--            signature resin casting process, which was introduced and developed by-->
+<!--            one of our founders more than 50 years ago.]]></item>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Finishes</argument>-->
+<!--                    <argument name="block_subtitle" xsi:type="string">Our</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">finishes</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">false</argument>-->
+<!--                    <argument name="images" xsi:type="array">-->
+<!--                        <item name="finishes_1" xsi:type="string">finishes_1</item>-->
+<!--                        <item name="finishes_2" xsi:type="string">finishes_2</item>-->
+<!--                        <item name="finishes_3" xsi:type="string">finishes_3</item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.samples" template="Magento_Cms::swatches/samples.phtml"/>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.hand_painting" template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Hand painting is utilised on a number of our collections to give a final surface-->
+<!--                            finish that simply could not be created by means other than that of a skilled-->
+<!--                            artist. Paint is usually applied in a delicate and controlled way using a dry brush-->
+<!--                            to achieve a lightly dusted appearance that highlights the contours and-->
+<!--                            characteristics of the surface to which it is applied. Ranges such as our LAUREL-->
+<!--                            and CABANA exemplify how the use of hand painted gold detailing can give a-->
+<!--                            shimmering pearlescent quality to a piece that becomes even more striking-->
+<!--                            once illuminated.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Hand Painting</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">hand_painting</argument>-->
+<!--                    <argument name="block_image_prefix" xsi:type="string">Hand-Painting</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="big_grid" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="1" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Cabana</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-applied gold highlights</item>-->
+<!--                        </item>-->
+<!--                        <item name="2" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Gingko</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-applied gold highlights</item>-->
+<!--                        </item>-->
+<!--                        <item name="3" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Saddler</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-applied leather details</item>-->
+<!--                        </item>-->
+<!--                        <item name="4" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Willow</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-applied gold highlights</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.hand_polishing" template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[We use a combination of both hand and mechanically assisted polishing on our-->
+<!--                        ranges, which varies depending on the level of precision and finish required.-->
+<!--                        Both are manual techniques that involve a polishing compound and direct-->
+<!--                        contact between the metal surface and the polisher. Whilst hand polishing takes-->
+<!--                        more time than machine polishing, it also provides a more personalized, precise-->
+<!--                        result. Our SLOANE and JOSHUA ranges demonstrate how polishing can be-->
+<!--                        used to add lustre and depth to an existing surface.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Hand Polishing</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">hand_polishing</argument>-->
+<!--                    <argument name="block_image_prefix" xsi:type="string">Hand-Polishing</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="big_grid" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="1" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Bailey</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-polished bronze</item>-->
+<!--                        </item>-->
+<!--                        <item name="2" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Horace</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-polished copper</item>-->
+<!--                        </item>-->
+<!--                        <item name="3" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Sloane</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-polished pewter</item>-->
+<!--                        </item>-->
+<!--                        <item name="4" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Snake</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand-polished bronze</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.hand_staining" template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[We have found that the best way to reproduce the same natural depth of-->
+<!--                        colour found on organic textures such as our ASPEN wood and HUNTER-->
+<!--                        leather ranges is through hand staining. This process involves either dipping or-->
+<!--                        brushing the stain onto an area before then carefully removing again in some-->
+<!--                        areas, as in the case of our ANTLER range. This slightly unpredictable process is-->
+<!--                        perfect for mimicking nature, and no two pieces will ever be the same!]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Hand Staining</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">hand_staining</argument>-->
+<!--                    <argument name="block_image_prefix" xsi:type="string">Hand-Staining</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="big_grid" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="1" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Hunter</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand stained leather</item>-->
+<!--                        </item>-->
+<!--                        <item name="2" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Antler</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand stained bleached antler</item>-->
+<!--                        </item>-->
+<!--                        <item name="3" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Aspen</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand stained silver birch </item>-->
+<!--                        </item>-->
+<!--                        <item name="4" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Aspen</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand stained rustic wood</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.resin_casting" template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[One of our most prized and closely guarded finishes is our resin casting. Its main-->
+<!--                            advantage lies in its versatility; the compound starts life as viscous liquid that can-->
+<!--                            be poured into purpose-built moulds or ‘castings’. During treatment, a process-->
+<!--                            of curing takes place, resulting in a stable end product that can go on to have-->
+<!--                            various other finishes applied to it. Many of our most well-known designs-->
+<!--                            comprise elements of resin, including our ANTLER, BAILEY and SADDLER-->
+<!--                            ranges.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Resin Casting</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">resin_casting</argument>-->
+<!--                    <argument name="block_image_prefix" xsi:type="string">Resin-Casting</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="big_grid" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="1" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Loxley</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand casted bicycle chain</item>-->
+<!--                        </item>-->
+<!--                        <item name="2" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Planet</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand casted meteoric rock</item>-->
+<!--                        </item>-->
+<!--                        <item name="3" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Bodkin</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand casted yarn ball</item>-->
+<!--                        </item>-->
+<!--                        <item name="4" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Croc</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand casted crocodile scale</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.hand_engraving" template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Hand Engraving or fettling is a supplementary finish that we can use in both an-->
+<!--                        additive and destructive way by either adding or reintroducing surface texture,-->
+<!--                        or by degrading surface treatments, such as paint. A small rotary tool with a-->
+<!--                        range of attachments is used to achieve a finish that looks more textured, aged-->
+<!--                        or organic. Some examples of this are best characterised by our PLANET,-->
+<!--                        BOTANY and FLEMISH ranges.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Hand Engraving</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">hand_engraving</argument>-->
+<!--                    <argument name="block_image_prefix" xsi:type="string">Hand-Carved</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="big_grid" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="1" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Wisley</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand engraved verdigris</item>-->
+<!--                        </item>-->
+<!--                        <item name="2" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Flemish</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand engraved rustic grey and gold</item>-->
+<!--                        </item>-->
+<!--                        <item name="3" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Emile</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand engraved rustic French cream</item>-->
+<!--                        </item>-->
+<!--                        <item name="4" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">Antler</item>-->
+<!--                            <item name="desc" xsi:type="string">Hand engraved antler texture</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.palette" template="Magento_Cms::swatches/generic_block_1.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_texts" xsi:type="array">-->
+<!--                        <item name="text_1" xsi:type="string"><![CDATA[Over the past decade, we have developed our own distinct colour palette,-->
+<!--            specifically selected to complement our designs. By combining subtle neutral-->
+<!--            tones with rich and daring accents, we are able to provide a collection that-->
+<!--            unites both the beautifully simple with the unapologetically bold.]]></item>-->
+<!--                        <item name="text_2" xsi:type="string"><![CDATA[Now featuring 17 exquisite colours, each deeply pigmented, highly durable and-->
+<!--            with a smooth matt finish, these paints ensure lasting performance on your light-->
+<!--            fitting for years to come.]]></item>-->
+<!--                        <item name="text_3" xsi:type="string"><![CDATA[Alongside our comprehensive bespoke service, we also offer a paint service to-->
+<!--            suit all interior styles. Our online product configurator allows you to customise-->
+<!--            a choice of fittings with any of our beautiful paint finishes.]]></item>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Palette</argument>-->
+<!--                    <argument name="block_subtitle" xsi:type="string">Our</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">palette</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">false</argument>-->
+<!--                    <argument name="images" xsi:type="array">-->
+<!--                        <item name="palette_1" xsi:type="string">palette_1</item>-->
+<!--                        <item name="palette_2" xsi:type="string">palette_2</item>-->
+<!--                        <item name="palette_3" xsi:type="string">palette_3</item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.palette_colors" template="Magento_Cms::swatches/palette.phtml"/>-->
+
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.fabrics" template="Magento_Cms::swatches/generic_block_1.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_texts" xsi:type="array">-->
+<!--                        <item name="text_1" xsi:type="string"><![CDATA[Our fabric collection hosts a hand–picked range of luxury satins, dupion-->
+<!--            silks, woven cottons and pure linens, each finished in a wide variety of both-->
+<!--            rich and subtle natural dyes. We work alongside British-based fabric-->
+<!--            suppliers who share our passion for craft and source only the finest-->
+<!--            materials.]]></item>-->
+<!--                        <item name="text_2" xsi:type="string"><![CDATA[Our shading options are manufactured in close partnership with our sister-->
+<!--            company, The Light Shade Studio. Based in Oxfordshire, their small and-->
+<!--            talented team of dedicated shade makers meticulously craft lampshades by-->
+<!--            hand into a multitude of shapes, sizes, and colours.]]></item>-->
+<!--                        <item name="text_3" xsi:type="string"><![CDATA[The range of possibilities available for those who like to be a little different-->
+<!--            is even more exciting; if you love interiors as much as we do, you’ll be-->
+<!--            thrilled to discover that they also offer a fully bespoke service.]]></item>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Fabrics</argument>-->
+<!--                    <argument name="block_subtitle" xsi:type="string">Our</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">fabrics</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">false</argument>-->
+<!--                    <argument name="images" xsi:type="array">-->
+<!--                        <item name="fabrics_1" xsi:type="string">fabrics_1</item>-->
+<!--                        <item name="fabrics_2" xsi:type="string">fabrics_2</item>-->
+<!--                        <item name="fabrics_3" xsi:type="string">fabrics_3</item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.fabrics_buttons" template="Magento_Cms::swatches/fabrics.phtml"/>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.woven_cotton" template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our cotton partner Ian Mankin have over 150 years of heritage and a-->
+<!--                            passion for their craft that goes into every metre of fabric they weave, all designed and made at their Lancashire mill.-->
+<!--                            They breathe life into these traditional fabrics with contemporary design and skilful creativity, repre-senting great-->
+<!--                            value and unbeatable quality, with a focus on natural fibres.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Woven Cotton</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">woven_cotton</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_81" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">81</item>-->
+<!--                            <item name="desc" xsi:type="string">INDIGO CHECK COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_87" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">87</item>-->
+<!--                            <item name="desc" xsi:type="string">INDIGO STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_82" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">82</item>-->
+<!--                            <item name="desc" xsi:type="string">PEONY CHECK COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_88" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">88</item>-->
+<!--                            <item name="desc" xsi:type="string">PEONY STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_84" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">84</item>-->
+<!--                            <item name="desc" xsi:type="string">SAGE CHECK COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_90" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">90</item>-->
+<!--                            <item name="desc" xsi:type="string">SAGE STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_83" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">83</item>-->
+<!--                            <item name="desc" xsi:type="string">PINK CHECK COTTON</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_89" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">89</item>-->
+<!--                            <item name="desc" xsi:type="string">PINK STRIPE COTTON</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.luxury_satin" template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[A soft and smooth fabric produced using a combination of cotton and polyester fibres, combed to create a luxurious satin finish.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Luxury Satin</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">luxury_satin</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_16" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">16</item>-->
+<!--                            <item name="desc" xsi:type="string">SWAN SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_18" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">18</item>-->
+<!--                            <item name="desc" xsi:type="string">ALMOND CREAM SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_19" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">19</item>-->
+<!--                            <item name="desc" xsi:type="string">CLOUD SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_49" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">49</item>-->
+<!--                            <item name="desc" xsi:type="string">PANNACOTTA SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_17" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">17</item>-->
+<!--                            <item name="desc" xsi:type="string">SEAL SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_42" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">42</item>-->
+<!--                            <item name="desc" xsi:type="string">SOOT SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_46" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">46</item>-->
+<!--                            <item name="desc" xsi:type="string">CHESTNUT SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_48" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">48</item>-->
+<!--                            <item name="desc" xsi:type="string">SEPHORA SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_51" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">51</item>-->
+<!--                            <item name="desc" xsi:type="string">URCHIN SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_45" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">45</item>-->
+<!--                            <item name="desc" xsi:type="string">MARIGOLD SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_52" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">52</item>-->
+<!--                            <item name="desc" xsi:type="string">SPICE SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_53" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">53</item>-->
+<!--                            <item name="desc" xsi:type="string">CRIMSON SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_43" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">43</item>-->
+<!--                            <item name="desc" xsi:type="string">AIRFOCE BLUE SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_44" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">44</item>-->
+<!--                            <item name="desc" xsi:type="string">POSEIDON SATIN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_47" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">47</item>-->
+<!--                            <item name="desc" xsi:type="string">MATCHA SATIN</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.dupion_silk" template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our dupion silk is offered in six colour ways and has texture in abundance.-->
+<!--                            It can be both rolled, gathered or pleated for totally different effect. 100%-->
+<!--                            dupion silk is a natural handwoven fabric, unmistakable by a richness and-->
+<!--                            variety of colour and texture. The triangular structure of the fibre acts like-->
+<!--                            a prism, refracting light and giving the surface of the fabric a lustrous sheen.-->
+<!--                            As a natural fibre the texture and slub of dupion silk is characterised by-->
+<!--                            variations and irregularities in the shade and weave.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Dupion Silk</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">dupion_silk</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_15" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">15</item>-->
+<!--                            <item name="desc" xsi:type="string">IVORY SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_39" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">39</item>-->
+<!--                            <item name="desc" xsi:type="string">SILVER GREY SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_37" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">37</item>-->
+<!--                            <item name="desc" xsi:type="string">CHARCOAL SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_01" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">01</item>-->
+<!--                            <item name="desc" xsi:type="string">TAUPE SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_72" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">72</item>-->
+<!--                            <item name="desc" xsi:type="string">TRUFFLE SILK</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_41" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">41</item>-->
+<!--                            <item name="desc" xsi:type="string">SEA MIST GOLD SILK</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.pure_linen" template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our two laid-back linen colour ways each offer an elegantly simple-->
+<!--                            solution with a classic natural feel. Made from 100% linen, this fabric-->
+<!--                            carries an elegant and subtle matt sheen. Linen is a natural fabric made-->
+<!--                            from the flax plant. One of nature’s strongest fibres, its threads have-->
+<!--                            variable lengths that contribute directly to its overall strength and-->
+<!--                            longevity.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Pure Linen</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">pure_linen</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_07" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">07</item>-->
+<!--                            <item name="desc" xsi:type="string">BONE LINEN</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_08" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">08</item>-->
+<!--                            <item name="desc" xsi:type="string">LIMESTONE LINEN</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.hard_shade_linings" template="Magento_Cms::swatches/material_block.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Offered in four colour ways, our hard shade laminates are what gives our-->
+<!--                            hardback shades their rigidity. We carefully select our laminate to ensure-->
+<!--                            the shades remain rigid whilst allowing the light to give a soft glow through-->
+<!--                            the fabric. Our metallic laminates add a contemporary feel. The warmer-->
+<!--                            gold and bronze will influence the light giving a warmer ambience.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Hard Shade Linings</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">hard_shade_linings</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_15" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">GD</item>-->
+<!--                            <item name="desc" xsi:type="string">GOLD</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_39" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">SI</item>-->
+<!--                            <item name="desc" xsi:type="string">SILVER</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_37" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">BZ</item>-->
+<!--                            <item name="desc" xsi:type="string">BRONZE</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_01" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">WI</item>-->
+<!--                            <item name="desc" xsi:type="string">WHITE</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--            <block class="Magento\Framework\View\Element\Template" name="swatches.soft_shade_linings" template="Magento_Cms::swatches/material_block_black.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_text" xsi:type="string">-->
+<!--                        <![CDATA[Our taffeta linings are a crisp, smooth woven fabric made from an acetate-->
+<!--                            polyester mix. There are two distinct types of taffeta: yarn-dyed and-->
+<!--                            piece-dyed. Piece-dyed taffeta is often used in linings and is soft to the-->
+<!--                            touch.]]>-->
+<!--                    </argument>-->
+<!--                    <argument name="block_title" xsi:type="string">Soft Shade Linings</argument>-->
+<!--                    <argument name="block_image_id" xsi:type="string">soft_shade_linings</argument>-->
+<!--                    <argument name="show_side_line" xsi:type="boolean">true</argument>-->
+<!--                    <argument name="materials" xsi:type="array">-->
+<!--                        <item name="color_07" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">TI</item>-->
+<!--                            <item name="desc" xsi:type="string">IVORY TAFFETA</item>-->
+<!--                        </item>-->
+<!--                        <item name="color_08" xsi:type="array">-->
+<!--                            <item name="title" xsi:type="string">TG</item>-->
+<!--                            <item name="desc" xsi:type="string">GOLD TAFFETA</item>-->
+<!--                        </item>-->
+<!--                    </argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
+
+        <referenceBlock name="breadcrumbs" remove="true" />
+        <referenceBlock name="page.main.title" remove="true" />
+    </body>
+</page>

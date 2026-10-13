@@ -1,0 +1,40 @@
+<?php
+/** @var \Rootways\Megamenu\Block\Topmenu $block */
+$categories = $block->getStoreCategories(true, false, true)->getNodes();
+
+/** @var \Magento\Catalog\Helper\Category $categoryHelper */
+$categoryHelper = $block->getCategoryHelper();
+$sortOrder = [
+    'Collections' => 1,
+    'Categories' => 2,
+    'Rooms' => 3,
+];
+
+usort($categories, function ($a, $b) use ($sortOrder) {
+    $aOrder = $sortOrder[$a->getName()];
+    $bOrder = $sortOrder[$b->getName()];
+
+    return $aOrder <=> $bOrder;
+});
+$buildHelper = $this->helper(\Rakdesign\Configurator\Helper\Data::class);
+?>
+
+<?php foreach ($categories as $key => $category): ?>
+    <div class="root-col-3 clearfix">
+        <div class="title nav-1-<?= $key ?> category-item">
+            <a href="<?= $block->escapeUrl($categoryHelper->getCategoryUrl($category)) ?>">
+                <?= $block->escapeHtmlAttr(__($category->getName())) ?>
+            </a>
+        </div>
+        <ul class="level3-listing root-col-1 clearfix">
+            <?php foreach ($category->getChildren() as $childKey => $child): ?>
+                <li class="nav-1-<?= $key ?>-<?= $childKey ?> category-item">
+                    <a href="<?= $block->escapeUrl($categoryHelper->getCategoryUrl($child) . '?menu=1') ?>">
+                        <span
+                            class="level2-name sub-cat-name"><?= $block->escapeHtmlAttr(__($child->getName())) ?></span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endforeach; ?>

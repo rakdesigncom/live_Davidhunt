@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<paynow>
+			<configuration>
+				<store_id/>
+				<shared_secret/>
+				<mode>0</mode>
+				<merchant_dynamic_name/>
+				<terms_condition_text>I consent to Pay Now using my information.</terms_condition_text>
+				<minimum_amount>0</minimum_amount>
+				<maximum_amount>1000000</maximum_amount>
+			</configuration>
+			<email_configuration>
+				<admin_email_only>1</admin_email_only>
+				<success_transaction_customer/>
+				<failed_transaction_customer/>
+				<success_transaction_admin/>
+				<failed_transaction_admin/>
+			</email_configuration>
+			<title_placeholder>
+				<companyname_enable>1</companyname_enable>
+				<shipping_enable>0</shipping_enable>
+				<title_placeholder_name_level>Name</title_placeholder_name_level>
+				<title_placeholder_name_placeholder>Enter Your Full Name*</title_placeholder_name_placeholder>
+				<title_placeholder_email_level>Email Address </title_placeholder_email_level>
+				<title_placeholder_email_placeholder>Enter Your Email Address </title_placeholder_email_placeholder>
+				<title_placeholder_invoice_level>Invoice Number</title_placeholder_invoice_level>
+				<title_placeholder_invoice_placeholder>Enter Your Invoice Number*</title_placeholder_invoice_placeholder>
+				<title_placeholder_amount_level>Amount</title_placeholder_amount_level>
+				<title_placeholder_amount_placeholder>0</title_placeholder_amount_placeholder>
+				<title_placeholder_billing>
+					<billing_name_level_enable>1</billing_name_level_enable>
+                    <billing_name_level>Name</billing_name_level>
+                    <billing_name_placeholder>Enter Your Name*</billing_name_placeholder>
+
+                    <billing_company_name_level>Company Name</billing_company_name_level>
+                    <billing_company_name_placeholder>Enter Your Company Name*</billing_company_name_placeholder>
+
+                    <billing_address_line1_level_enable>1</billing_address_line1_level_enable>
+                    <billing_address_line1_level>Address Line 1</billing_address_line1_level>
+                    <billing_address_line1_placeholder>Enter Your Address Line 1*</billing_address_line1_placeholder>
+
+                    <billing_address_line2_level_enable>1</billing_address_line2_level_enable>
+                    <billing_address_line2_level>Address Line 2</billing_address_line2_level>
+                    <billing_address_line2_placeholder>Enter Your Address Line 2</billing_address_line2_placeholder>
+
+                    <billing_city_level_enable>1</billing_city_level_enable>
+                    <billing_city_level>City</billing_city_level>
+                    <billing_city_placeholder>Enter Your City*</billing_city_placeholder>
+
+                    <billing_postcode_level_enable>1</billing_postcode_level_enable>
+                    <billing_postcode_level>Postcode</billing_postcode_level>
+                    <billing_postcode_placeholder>Enter Your Postcode*</billing_postcode_placeholder>
+
+                    <billing_county_level_enable>1</billing_county_level_enable>
+                    <billing_county_level>County</billing_county_level>
+                    <billing_county_placeholder>Enter Your County</billing_county_placeholder>
+
+                    <billing_country_level_enable>1</billing_country_level_enable>
+                    <billing_country_level>Country</billing_country_level>
+                    <billing_country_placeholder>Enter Your Country</billing_country_placeholder>
+
+                    <billing_phone_number_level_enable>1</billing_phone_number_level_enable>
+                    <billing_phone_number_level>Phone Number</billing_phone_number_level>
+                    <billing_phone_number_placeholder>Enter Your Phone Number*</billing_phone_number_placeholder>
+				</title_placeholder_billing>
+				<title_placeholder_shipping>
+					<shipping_name_level_enable>1</shipping_name_level_enable>
+					<shipping_name_level>Name</shipping_name_level>
+					<shipping_name_placeholder>Enter Your Name*</shipping_name_placeholder>
+
+					<shipping_address_line1_level_enable>1</shipping_address_line1_level_enable>
+					<shipping_address_line1_level>Address Line 1</shipping_address_line1_level>
+					<shipping_address_line1_placeholder>Enter Your Address Line 1*</shipping_address_line1_placeholder>
+
+					<shipping_address_line2_level_enable>1</shipping_address_line2_level_enable>
+					<shipping_address_line2_level>Address Line 2</shipping_address_line2_level>
+					<shipping_address_line2_placeholder>Enter Your Address Line 2</shipping_address_line2_placeholder>
+
+					<shipping_city_level_enable>1</shipping_city_level_enable>
+					<shipping_city_level>City</shipping_city_level>
+					<shipping_city_placeholder>Enter Your City*</shipping_city_placeholder>
+
+					<shipping_postcode_level_enable>1</shipping_postcode_level_enable>
+					<shipping_postcode_level>Postcode</shipping_postcode_level>
+					<shipping_postcode_placeholder>Enter Your Postcode*</shipping_postcode_placeholder>
+
+					<shipping_county_level_enable>1</shipping_county_level_enable>
+					<shipping_county_level>County</shipping_county_level>
+					<shipping_county_placeholder>Enter Your County</shipping_county_placeholder>
+
+					<shipping_country_level_enable>1</shipping_country_level_enable>
+					<shipping_country_level>Country</shipping_country_level>
+		
+					<shipping_phone_number_level_enable>1</shipping_phone_number_level_enable>
+					<shipping_phone_number_level>Phone Number</shipping_phone_number_level>
+					<shipping_phone_number_placeholder>Enter Your Phone Number*</shipping_phone_number_placeholder>
+				</title_placeholder_shipping>
+			</title_placeholder>
+		</paynow>
+	</default>
+</config>

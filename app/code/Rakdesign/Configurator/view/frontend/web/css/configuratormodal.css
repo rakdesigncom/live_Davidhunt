@@ -1,0 +1,85 @@
+.configurator-add-to-cart-confirm{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgba(0,0,0,0.3);
+}
+.configurator-add-to-cart-confirm .content{
+    display: block;
+    background: #fff;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    max-width: 680px;
+    padding: 20px;
+    position: absolute;
+}
+.configurator-add-to-cart-confirm .content .modal-action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+
+}
+.configurator-add-to-cart-confirm .content .modal-action a{
+    margin: 0 5px;
+}
+.configurator-add-to-cart-confirm .btn.btn-secondary{
+    background: #fff;
+    border:1px solid #789f90!important;
+    color: #789f90;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 12px;
+    transition: all 0.4s;
+    width: auto;
+    width: 100%;
+    margin: 5px 0;
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 0;
+}
+.configurator-add-to-cart-confirm  .configuration-add-to-cart-btn {
+    background: #789f90;
+    color: #fff!important;
+    display: block;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px!important;
+    line-height: 14px!important;
+    text-shadow: none!important;
+    letter-spacing: 2px!important;
+    padding: 13px 5px;
+    font-weight: 800;
+    min-width: 20px;
+    width: 100%;
+}
+.configurator-add-to-cart-confirm .btn.btn-secondary.btn-xs{
+    padding: 5px;
+}
+.configurator-add-to-cart-confirm .btn.btn-secondary:hover{
+    color: #fff;
+    background:  #789f90;
+}
+.configurator-add-to-cart-confirm .configuration-add-to-cart-btn:hover{
+    background: #63666a;
+}
+@media(max-width:767px){
+    .configurator-add-to-cart-confirm .content .modal-action {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .configurator-add-to-cart-confirm .content .modal-action a{
+        margin: 0 0 10px 0;
+    }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+	<group id="pimberly_group">
+		<job instance="Fyb\Pimberly\Cron\ProductsExport" method="execute" name="pimberly_products_export">
+			<schedule>0 * * * *</schedule>
+		</job>
+        <job instance="Fyb\Pimberly\Cron\ProductSync" method="execute" name="pimberly_products_sync">
+            <schedule>*/25 * * * *</schedule>
+        </job>
+	</group>
+</config>

@@ -1,0 +1,149 @@
+<?php
+$product = $block->getCurrentProduct();
+$productID = $product->getId();
+?>
+
+<div class="clearfix" style="margin-bottom: 20px;"></div>
+<?php /* <a href="" class="generate-combinations button action-secondary">Generate New combinations</a>*/ ?>
+<div class="alert alert-info">Combinations are generated automatically by cron</div>
+<div class="ajax-content-combinations" style="margin-top: 60px;">
+    <p>Loading please wait ...</p>
+</div>
+
+
+<script>
+    require([
+        'jquery',
+    ], function ($) {
+
+        jQuery(document).ready(function () {
+            loadCombinations();
+        });
+        jQuery(document).on('click', '.generate-combinations', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure you want to generate new combinations? You will loose all your prices")) {
+                generateNewcombinations();
+            } else {
+                return false;
+            }
+
+        });
+
+        jQuery(document).on('click', '.save-conbinations', function (e) {
+            e.preventDefault();
+            if (confirm("Are you sure you want to save new prices?")) {
+                saveNewPrices();
+            } else {
+                return false;
+            }
+
+        });
+        function saveNewPrices() {
+            //jQuery('.ajax-content-combinations').html('<p>Saving new prices ...</p>');
+            var prices = {};
+            jQuery('.configuratorprice').each(function (key, index) {
+                prices[jQuery(this).attr('data-key')] = jQuery(this).val();
+            });
+            console.log(prices);
+            var url = '<?= $block->escapeUrl($block->getUrl('customconfigurator/ajax/index')) ?>';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {action: 'saveprices', product: '<?php echo $productID; ?>', prices: prices},
+
+            }).done(function (myresponse, status, xhr) {
+                if (myresponse.status) {
+                    jQuery('.ajax-content-combinations').append('<p class="message message-success prices-saved-message">Prices saved</p>');
+                    setTimeout(
+                            function ()
+                            {
+                                jQuery('.prices-saved-message').remove();
+                            }, 3000);
+                } else {
+                    jQuery('.ajax-content-combinations').append('<p class="message message-error prices-saved-message">' + myresponse.error + '</p>');
+                    setTimeout(
+                            function ()
+                            {
+                                jQuery('.prices-saved-message').remove();
+                            }, 3000);
+                }
+
+
+            }).fail(function (myresp) {
+
+
+            });
+            return;
+        }
+        function loadCombinations() {
+            var url = '<?= $block->escapeUrl($block->getUrl('customconfigurator/ajax/index')) ?>';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {action: 'getcombinations', product: '<?php echo $productID; ?>'},
+
+            }).done(function (myresponse, status, xhr) {
+                console.log(myresponse);
+                var html = '<p>Combinations table. Combinations with empty prices will not be displayed.</p><table class="data-grid">';
+                if (myresponse.status) {
+                    jQuery.each(myresponse.data, function (key, value) {
+                        html += '<tr>';
+                        if (key === 0) {
+                            jQuery.each(value, function (key1, value1) {
+                                html += '<th class="data-grid-th">';
+                                html += key1;
+                                html += '</th>';
+                            });
+                            html += '</tr>';
+                            html += '<tr>';
+                        }
+                        jQuery.each(value, function (key1, value1) {
+                            if (key1 == 'image') {
+                                html += '<td>';
+                                html += '<img style="max-width:140px;" src="'+value1 +'" />';
+                                html += '</td>';
+                            } else {
+                                html += '<td>';
+                                html += value1.name;
+                                html += '</td>';
+                            }
+
+                        });
+                        html += '</tr>';
+                    });
+                    html += '</table><a href="" class="save-conbinations button action-secondary">Save all prices</a>';
+                    jQuery('.ajax-content-combinations').html(html);
+                }
+
+            }).fail(function (myresp) {
+
+
+            });
+            return;
+        }
+
+        function generateNewcombinations() {
+            jQuery('.ajax-content-combinations').html('<p>Loading please wait ...</p>');
+            var url = '<?= $block->escapeUrl($block->getUrl('customconfigurator/ajax/index')) ?>';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {action: 'generate', product: '<?php echo $productID; ?>'},
+
+            }).done(function (myresponse, status, xhr) {
+                console.log(myresponse);
+                if (myresponse.status) {
+                    loadCombinations();
+                }
+
+            }).fail(function (myresp) {
+
+
+            });
+            return;
+        }
+
+
+
+    });
+</script>

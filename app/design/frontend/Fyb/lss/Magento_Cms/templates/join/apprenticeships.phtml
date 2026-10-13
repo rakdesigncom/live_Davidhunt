@@ -1,0 +1,24 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+<div class="static-page-content">
+    <div class="inside_block_text_and_image">
+        <div class="inside_block_text_content">
+            <h1 class="small-underline">Apprenticeships</h1>
+
+                <p>
+                    We are currently in the process of introducing an apprenticeship scheme to school, college and
+                    university leavers. The scheme will be based at our head office in Shipston on Stour, Warwickshire.
+                    If
+                    this is something that is of interest to you, please send us your CV with a covering letter to
+                    <a href="mailto: sales@davidhuntlighting.co.uk">sales@davidhuntlighting.co.uk</a>.
+                </p>
+
+
+            <a href="<?= $block->getUrl('contact') ?>" class="button"><?= __('Contact us') ?></a>
+        </div>
+        <img src="<?= $block->getViewFileUrl('Magento_Cms::images/join/apprenticeships.png'); ?>"
+             alt="Apprenticeships"/>
+    </div>
+
+</div>

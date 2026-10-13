@@ -1,0 +1,52 @@
+<?php
+/**
+ * @package     Plumrocket_ProductFilter
+ * @copyright   Copyright (c) 2016 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+?>
+<?php
+/** @var \Plumrocket\LayeredNavigationLite\Block\LayeredNavigation\RenderPrice $block */
+?>
+
+<ol class="items">
+    <?php /** @var \Plumrocket\LayeredNavigationLite\Model\Catalog\Layer\Filter\Item[] $filterItems */?>
+    <?php foreach ($filterItems as $filterItem): ?>
+
+        <?php $isRadio = $filterItem->getFilter()->getIsRadio(); ?>
+        <li class="item">
+            <?php if ($filterItem->getCount() > 0): ?>
+                <a href="<?= $block->escapeUrl($filterItem->getUrl()) ?>"
+                    <?php if ($filterItem->getIsActive()): ?>class="selected"<?php endif; ?>
+                    data-pr-filter="item"
+                    data-variable="<?= $block->escapeHtml($filterItem->getFilter()->getRequestVar()) ?>"
+                    data-value="<?= $block->escapeHtml($filterItem->getValueString()) ?>"
+                    <?php if ($isRadio): ?>data-radio="true"<?php endif; ?>
+                    rel="nofollow">
+                    <span><?= /** @noEscape */ $filterItem->getLabel() ?>
+                    <?php if ($this->helper(\Magento\Catalog\Helper\Data::class)->shouldDisplayProductCountOnLayer()): ?>
+                        <span class="count">
+                            <?= $block->escapeHtml($filterItem->getCount()) ?>
+                            <span class="filter-count-label">
+                                <?= $block->escapeHtml(__($filterItem->getCount() == 1 ? 'item' : 'items')) ?>
+                            </span>
+                        </span>
+                    <?php endif; ?>
+                    </span>
+                </a>
+            <?php else: ?>
+                <span class="attr-dis<?php if ($filterItem->getIsActive()): ?> selected<?php endif; ?>">
+                <?= $block->escapeHtml($filterItem->getLabel()) ?>
+                <?php if ($this->helper(\Magento\Catalog\Helper\Data::class)->shouldDisplayProductCountOnLayer()): ?>
+                    <span class="count">
+                        <?= $block->escapeHtml($filterItem->getCount()) ?>
+                        <span class="filter-count-label">
+                            <?= $block->escapeHtml(__($filterItem->getCount() == 1 ? 'item' : 'items')) ?>
+                        </span>
+                    </span>
+                <?php endif; ?>
+                </span>
+            <?php endif; ?>
+        </li>
+    <?php endforeach ?>
+</ol>

@@ -1,0 +1,201 @@
+//
+//  Color variables
+//  _____________________________________________
+
+
+@color_grey: #666666;
+@color_dark_grey: #4B4A4A;
+@color_light_grey_background: #F0F0F0;
+@color_dark_grey_lighter: #85847F;
+@color_simple_grey: #CCCCCC;
+@color_black_background: #282828;
+@color_grey_text_on_black: #F0F0F0;
+
+
+//fonts
+@button__padding: 16px 24px;
+@root__font-size:72%;
+
+@font-family-gfs-didot:'Bodoni Moda';
+@font-family-gfs-didot_italic:'Bodoni Moda Italic';
+@font-family-gill-sans:'Brandon Grotesque';
+@font-family-gill-sans-light:'Brandon Grotesque Light';
+@font-family-Darsymbolsnew:'Darsymbolsnew';
+
+@font-family-headers:'Bodoni Moda';
+
+@static_description_font: 'Brandon Grotesque';
+@static_description_font_weight:300;
+
+
+@font-family__sans-serif: @font-family-gill-sans;
+@font_size_category_label:@h1__font-size;
+
+@font-size__13: ceil(.75 * @font-size__base); // 13px
+@font-size__m: ceil(.90 * @font-size__base); // 15px
+@font-size__normal_body: ceil(0.95 * @font-size__base); // 16px
+@font-size__16: ceil(0.95 * @font-size__base); // 16px
+@font-size__bigger: ceil(1.1 * @font-size__base); // 18px
+@font-size__18: ceil(1.1 * @font-size__base); // 18px
+@font-size__20: ceil(1.2 * @font-size__base); //     20px;
+@font-size__24: ceil(1.45 * @font-size__base); //     24px;
+@font-size__32: ceil(2 * @font-size__base); //     40px;
+@font-size__38: ceil(2.3 * @font-size__base); //     38px;
+@font-size__40: ceil(2.45 * @font-size__base); //     40px;
+@font-size__48: ceil(2.95 * @font-size__base); //     48px;
+@font-size__64: ceil(3.96 * @font-size__base); //     64px;
+@font-size__80: ceil(4 * @font-size__base); //     64px;
+@font-size__96: ceil(5.8 * @font-size__base); //     96px;
+@font-size__bigger_than_title:  ceil((@font-size__base * 2));
+
+@h1__font-size-biggest: ceil((@font-size__base * 3.5));
+
+
+@line-height_15: ceil(.90 * @font-size__base);
+@line-height_18:ceil(1.1 * @font-size__base); // 18px
+@line-height_20:ceil(1.2 * @font-size__base); //     20px;
+@line-height_21:ceil(1.25 * @font-size__base); //     21px;
+@line-height_22:ceil(1.32 * @font-size__base); //     22px;
+@line-height_24:ceil(1.45 * @font-size__base); //     24px;
+@line-height_27:ceil(1.67 * @font-size__base); //     27px;
+@line-height_28:ceil(1.73 * @font-size__base); //     28px;
+@line-height_32:ceil(1.95 * @font-size__base); //     32px;
+@line-height_34:ceil(2.1 * @font-size__base); //     34px;
+@line-height_35:ceil(2.17 * @font-size__base); //     35px;
+@line-height_40:ceil(2.48 * @font-size__base); //     40px;
+@line-height_50:ceil(3.1 * @font-size__base); //     50px;
+@line-height_58:ceil(3.55 * @font-size__base); //     58px;
+@line-height_70:ceil(4.34 * @font-size__base); //     70px;
+@line-height_80:ceil(4.96 * @font-size__base); //     80px;
+
+
+
+@product_addtocart_button_minus:@font-size__24;
+@product_addtocart_button_plus:@font-size__18;
+@product_addtocart_button_weight:600;
+@product_addtocart_button_padding-top:1px;
+//
+//  Color nesting
+//  ---------------------------------------------
+
+@primary__color:@color_grey;
+@secondary__color: @color_dark_grey;
+
+@theme__color__primary:@color_grey;
+@theme__color__primary-alt:@color_dark_grey;
+
+@theme__color__secondary:@color_black_background;
+
+//buttons
+@button__font-size:ceil(.80 * @font-size__base); // 13px
+@button__font-lineheight: ceil(1.2 * @font-size__base); //     20px;
+@button__color: @primary__color;
+@button__background: transparent;
+@button__border: 1px solid @color_dark_grey_lighter;
+@button__border-radius: 0;
+
+@button__hover__color: @color-white;
+@button__hover__background: @color_grey;
+@button__hover__border: @color_grey;
+@button__hover_border: 1px solid @button__hover__border;
+@button-primary__font-family: @font-family-gill-sans;
+
+// forms
+@form-element-input__font-size:@font-size__16;
+@form-element-input__height:47px;
+@form-element-input__border-color:@color_grey;
+@form-element-input__color: @color_dark_grey;
+@form-element-input__background: none;
+@form-element-input__line-height:@form-element-input__height;
+@form-element-input__font-family:@font-family-gill-sans;
+
+
+@select__line-height:@font-size__16;
+@select__font-size:@font-size__16;
+@select__padding: 4px 2px 2px;
+@select__height:auto;
+@select__background:@color-white;
+@select__color:@color_grey;
+
+@form-element-input__padding:2px 9px 0 9px;
+
+//fonts
+@font-family__base:@font-family-gill-sans;
+
+
+
+//spacing
+@theme_general_side_margins: 90px;
+@product_page_right_space: 290px;
+@product_page_upsel_space: 984px;
+
+@theme_general_spacing: 15px;
+@theme_general_sections_space: 40px;
+@theme_footer_sections_space: 110px;
+@theme_footer_titles_space: 70px;
+@theme_titles_max_width: 1224px;
+
+@theme_general_spacing_title_top: 60px;
+@theme_general_spacing_title_bottom: 30px;
+
+@theme_menu_top_bottom_space: 64px;
+
+@theme_general_secondary_menu_padding: 21px;
+
+@layout__max-width: 1920px;
+@layout-indent__width: 90px;
+@layout-indent__extra_width: 150px;
+@layout-header_padding: 40px;
+
+@products_page_category_space:44px;
+@products_page_category_label_space:24px;
+@products_page_category_image_width:408px;
+
+@products-big-widget-image-width:360px;
+
+@products-big-widget-image-space:80px;
+@products-big-widget-image-info-space:40px;
+@products-big-widget-image-info-width:@products-big-widget-image-width + @products-big-widget-image-info-space;
+
+@products-big-widget-item:@products-big-widget-image-width + @products-big-widget-image-space;
+
+@products-small-widget-image-width:200px;
+
+@products-small-widget-image-space:20px;
+@products-small-widget-image-info-space:40px;
+@products-small-widget-image-info-width:@products-small-widget-image-width + @products-small-widget-image-info-space;
+
+@products-small-widget-item:@products-small-widget-image-width + @products-small-widget-image-space;
+
+
+@layout__static_max-width: 1492px;
+//
+//  Navigation variables
+//  _____________________________________________
+
+@navigation__background: @color-white;
+
+@block-width-300: ~"(100% - 300px)";
+@block-width-250: ~"(100% - 250px)";
+
+@block-width-calc-24: ~"(100% - 24px)";
+
+@logo-max-width:96px;
+@logo-max-height:80px;
+
+@search-padding-top:7px;
+@search-padding-bottom:9px;
+
+@main_menu_underline_gap:7px;
+@back_button_top_padding:0;
+@buttons_letter_spacing:0.065em;
+///homepage
+@homepage_brandlist_max-width:600px;
+@block-width-calc-margin-maxwidth-90: ~"(90px + (100% - 1920px)/2)";
+@screen__xxl: 1920px;
+
+@gridspan:  ~"1 / span 3";
+
+//minicart
+@margin_edit_buttons:-28px;
+@margin_update_button:8px 15px 7px;

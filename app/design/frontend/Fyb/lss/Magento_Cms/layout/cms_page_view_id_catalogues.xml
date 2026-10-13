@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="cms.static.menu" template="Magento_Cms::html/cms_static_menu.phtml" after="-">
+                <arguments>
+                    <argument name="links_from" xsi:type="string">home_page_menu_lss_inspire</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+
+        <referenceContainer name="content">
+<!--            <block class="Magento\Framework\View\Element\Template" name="catalogues.catalogues" template="Magento_Cms::catalogues/catalogues.phtml"/>-->
+            <block class="Fyb\Product\Block\Product\ProductList\Downloadable" name="catalogues.products" template="Magento_Cms::catalogues/products.phtml" />
+        </referenceContainer>
+
+        <referenceBlock name="breadcrumbs" remove="true" />
+        <referenceBlock name="page.main.title" remove="true" />
+    </body>
+</page>

@@ -1,0 +1,24 @@
+{
+    "autify_lloydscardnetpayment_payments": {
+        "column": {
+            "payments_id": true,
+            "amount": true,
+            "status": true,
+            "order_id": true,
+            "order_increment_id": true,
+            "remote_reference": true,
+            "remote_message": true,
+            "remote_status_or_code": true,
+            "cardnet_order_id": true,
+            "cardnet_refund_id": true,
+            "transaction_update_webhook": true,
+            "transaction_update_response": true,
+            "redirect_email_sent": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

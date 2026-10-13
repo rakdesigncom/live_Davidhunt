@@ -1,0 +1,311 @@
+/**
+ * WARNING: Please don't edit this file. This file was generated automatically, your any changes on this file will be overwritten and lost.
+ * Updated on <?= date("Y-m-d H:i:s"); ?>
+ */
+<?php
+/** @var \Rootways\Megamenu\Block\Design $block */
+?>
+<?php
+$general = $block->getConfig("rootmegamenu_option", $block->_coreRegistry->registry('cssgen_store'));
+$general_value = $general['general'];
+
+$design = $block->getConfig("rootmegamenu_option", $block->_coreRegistry->registry('cssgen_store'));
+$design_value = $design['design'];
+
+$ulDisplay = 'table';
+$ulJustify = '';
+$liPadding = '15px 15px;';
+if ($general_value['topmenualignmenttype'] == 0) {
+    $float = 'left';
+    $display = 'inline-block';
+    $clear = 'none';
+    $text_align = 'left';
+} elseif ($general_value['topmenualignmenttype'] == 1) {
+    $float = 'none';
+    $display = 'inline-block';
+    $clear = 'none';
+    $text_align = 'right';
+} elseif ($general_value['topmenualignmenttype'] == 3) {
+    $float = 'none';
+    $display = 'inline-block';
+    $clear = 'none';
+    $text_align = 'center';
+    $ulDisplay = 'flex';
+    $ulJustify = 'justify-content:center;';
+} else {
+    $float = 'none';
+    $display = 'table-cell';
+    $clear = 'both';
+    $text_align = 'left';
+    $liPadding = '15px 5px;';
+}
+$mainbordercolor = !empty($design_value['mainbordercolor']) ? $design_value['mainbordercolor'] : '097FB4';
+$fontcolor = !empty($design_value['fontcolor']) ? $design_value['fontcolor'] : 'FFFFFF';
+$fontsize = !empty($design_value['fontsize']) ? $design_value['fontsize'] : '13';
+$submenuheadingcolor = !empty($design_value['submenuheadingcolor']) ? $design_value['submenuheadingcolor'] : '424242';
+$submenuheadingfontsize = !empty($design_value['submenuheadingfontsize']) ? $design_value['submenuheadingfontsize'] : '15';
+$submenubgcolor = !empty($design_value['submenubgcolor']) ? $design_value['submenubgcolor'] : 'FFFFFF';
+$dropdownborderwidth = !empty($design_value['dropdownborderwidth']) ? $design_value['dropdownborderwidth'] : '3';
+$dropdownbordercolor = !empty($design_value['dropdownbordercolor']) ? $design_value['dropdownbordercolor'] : '097FB4';
+$submenufountcolor = !empty($design_value['submenufountcolor']) ? $design_value['submenufountcolor'] : '424242';
+$submenuhoverfontcolor = !empty($design_value['submenuhoverfontcolor']) ? $design_value['submenuhoverfontcolor'] : '424242';
+$tebingbgcolor = !empty($design_value['tebingbgcolor']) ? $design_value['tebingbgcolor'] : 'FFFFFF';
+$tebingfontcolor = !empty($design_value['tebingfontcolor']) ? $design_value['tebingfontcolor'] : '424242';
+$tebingfontsize = !empty($design_value['tebingfontsize']) ? $design_value['tebingfontsize'] : '12';
+$tebingheadingbgcolor = !empty($design_value['tebingheadingbgcolor']) ? $design_value['tebingheadingbgcolor'] : 'F5F5F5';
+$tebingheadingbordercolor = !empty($design_value['tebingheadingbordercolor']) ? $design_value['tebingheadingbordercolor'] : 'E2E2E2';
+$tebingheadingfontcolor = !empty($design_value['tebingheadingfontcolor']) ? $design_value['tebingheadingfontcolor'] : '424242';
+$tebingheadingfontsize = !empty($design_value['tebingheadingfontsize']) ? $design_value['tebingheadingfontsize'] : '12';
+$tebinghoverbgcolor = !empty($design_value['tebinghoverbgcolor']) ? $design_value['tebinghoverbgcolor'] : 'FFFFFF';
+$tebingheadinghoverfontcolor = !empty($design_value['tebingheadinghoverfontcolor']) ? $design_value['tebingheadinghoverfontcolor'] : '424242';
+$tebinghoverfontcolor = !empty($design_value['tebinghoverfontcolor']) ? $design_value['tebinghoverfontcolor'] : '424242';
+$simplesubbgcolor = !empty($design_value['simplesubbgcolor']) ? $design_value['simplesubbgcolor'] : 'F6F6F6';
+$simplesubbordercolor = !empty($design_value['simplesubbordercolor']) ? $design_value['simplesubbordercolor'] : 'F6F6F6';
+$simplesubfontcolor = !empty($design_value['simplesubfontcolor']) ? $design_value['simplesubfontcolor'] : '000000';
+$simplesubfontsize = !empty($design_value['simplesubfontsize']) ? $design_value['simplesubfontsize'] : '12';
+$simplesubhoerbgcolor = !empty($design_value['simplesubhoerbgcolor']) ? $design_value['simplesubhoerbgcolor'] : 'E2E2E2';
+$simplesubhoverfontcolor = !empty($design_value['simplesubhoverfontcolor']) ? $design_value['simplesubhoverfontcolor'] : '000000';
+$showAllCatHoverBgColor = !empty($general_value['show_all_cat_hoverbgcolor']) ? $general_value['show_all_cat_hoverbgcolor'] : '097FB4';
+$show_all_cat_fontsize = !empty($general_value['show_all_cat_fontsize']) ? $general_value['show_all_cat_fontsize'] : '13';
+$hoverfontcolor = !empty($design_value['hoverfontcolor']) ? $design_value['hoverfontcolor'] : 'FFFFFF';
+$activefontcolor = !empty($design_value['activefontcolor']) ? $design_value['activefontcolor'] : 'FFFFFF';
+$show_all_cat_bgcolor = !empty($general_value['show_all_cat_bgcolor']) ? $general_value['show_all_cat_bgcolor'] : 'FF0707';
+$show_all_cat_gradient_hoverbgcolor = !empty($general_value['show_all_cat_gradient_hoverbgcolor']) ? $general_value['show_all_cat_gradient_hoverbgcolor'] : '0deg, #5f2424, #ff0707';
+$show_all_cat_gradient_bgcolor = !empty($general_value['show_all_cat_gradient_bgcolor']) ? $general_value['show_all_cat_gradient_bgcolor'] : '0deg, #965454, #d40000';
+$show_all_cat_fontcolor = !empty($general_value['show_all_cat_fontcolor']) ? $general_value['show_all_cat_fontcolor'] : 'FFFFFF';
+$show_all_cat_hovercolor = !empty($general_value['show_all_cat_hovercolor']) ? $general_value['show_all_cat_hovercolor'] : 'FFFFFF';
+$all_cat_left_font_color = !empty($general_value['all_cat_left_font_color']) ? $general_value['all_cat_left_font_color'] : '000000';
+$all_cat_left_bg_color = !empty($general_value['all_cat_left_bg_color']) ? $general_value['all_cat_left_bg_color'] : 'FFFFFF';
+
+
+$mainLiBorder = "border: none !important;";
+if ($design_value['background_type'] == 1) {
+    $mainBg = "none";
+} elseif ($design_value['background_type'] == 2) {
+    $mainBg = "linear-gradient(".$design_value['gradient_bg'].")";
+} else {
+    $mainBg = !empty($design_value['bgcolor']) ? "#".$design_value['bgcolor'] : "#".'179BD7';
+    $mainLiBorder = "";
+    
+}?>
+.nav-sections, .rootmenu {
+    background: <?= $block->escapeHtml($mainBg); ?>;
+}
+.rootmenu .rootmenu-list{
+    text-align: <?= $block->escapeHtmlAttr($text_align); ?>;
+    display: <?= $block->escapeHtmlAttr($ulDisplay); ?>;
+    <?= $block->escapeHtml($ulJustify); ?>
+}
+.rootmenu-list > li {
+    border-color: #<?= $block->escapeHtml($mainbordercolor) ?> !important;
+    float: <?= $block->escapeHtmlAttr($float) ?>;
+    display: <?= $block->escapeHtmlAttr($display) ?>;
+    clear: <?= $block->escapeHtmlAttr($clear) ?> !important;
+    <?= $block->escapeHtml($mainLiBorder) ?>
+}
+.rootmenu-list > li > a{ 
+    color: #<?= $block->escapeHtml($fontcolor) ?>;
+    font-size: <?= $block->escapeHtml($fontsize) ?>px;
+    text-transform: <?= $block->escapeHtml($design_value['menulabel']) ?>;
+    padding: <?= $block->escapeHtml($liPadding) ?>
+}
+
+<?php $activeBgColor = !empty($design_value['activebgcolor']) ? "#".$block->escapeHtml($design_value['activebgcolor']) : "#".'097FB4';
+if ($design_value['active_background_type'] == 1) {
+    $active_gradient_bg = !empty($design_value['active_gradient_bg']) ? $block->escapeHtml($design_value['active_gradient_bg']) : '90deg, rgba(2,0,36,1) 0%, rgba(9,64,121,1) 39%, rgba(0,212,255,1) 100%';
+    $activeBgColor = "linear-gradient(".$active_gradient_bg .")";
+    
+}
+$hoverBgColor =  !empty($design_value['hoverbgcolor']) ? "#".$block->escapeHtml($design_value['hoverbgcolor']) : "#".'097FB4';
+if ($design_value['active_background_type'] == 1) {
+    $hover_gradient_bg = !empty($design_value['hover_gradient_bg']) ? $block->escapeHtml($design_value['hover_gradient_bg']) : '90deg, rgba(2,0,36,1) 0%, rgba(9,64,121,1) 39%, rgba(0,212,255,1) 100%';
+    $hoverBgColor = "linear-gradient(".$hover_gradient_bg.")";
+    
+}?>
+
+
+.rootmenu .title a,
+.rootmenu .title a{
+    color: #<?= $block->escapeHtml($submenuheadingcolor) ?>;
+    font-size: <?= $block->escapeHtml($submenuheadingfontsize) ?>px;
+}
+
+<?php if ($general_value['mobile_dropdownclickbehaviour'] == 1) { ?>
+.rootmenu > .rootmenu-list > li > .rootmenu-click {width:100%;}
+<?php } ?>
+
+.rootmenu > .rootmenu-list .halfmenu,
+.rootmenu > .rootmenu-list > li > .megamenu {
+    background: #<?= $block->escapeHtml($submenubgcolor) ?>;
+    text-transform: <?= $block->escapeHtml($design_value['sub_uppercase']) ?>;
+    border-top:  <?= $block->escapeHtml($dropdownborderwidth) ?>px solid;
+    border-color: #<?= $block->escapeHtml($dropdownbordercolor) ?>
+}
+
+.rootmenu > .rootmenu-list .halfmenu ul > li > a,
+.rootmenu > .rootmenu-list .fullmenu ul > li > a {
+    color: #<?= $block->escapeHtml($submenufountcolor) ?>;
+}
+.rootmenu > .rootmenu-list .halfmenu ul > li > a:hover,
+.rootmenu > .rootmenu-list .fullmenu ul > li > a:hover {
+    color: #<?= $block->escapeHtml($submenuhoverfontcolor) ?>;
+}
+<?php
+if ($general_value['underline'] == 1) { ?>
+    .rootmenu > .rootmenu-list .level2-popup > li:hover .sub-cat-name,
+    .rootmenu > .rootmenu-list .level3-popup > li:hover a span,
+    .rootmenu > .rootmenu-list .level3-listing >li:hover > a .sub-cat-name,
+    .rootmenu > .rootmenu-list .level4-listing >li:hover > a .sub-cat-name,
+    .rootmenu > .rootmenu-list .tabbing_lev4 >li:hover > a .sub-cat-name,
+    .rootmenu > .rootmenu-list .ulliststy02 >li:hover > a .sub-cat-name{text-decoration:underline}
+<?php } ?>
+
+.topmenu_main,
+.rootmenu .tabmenu .verticalopen,
+.rootmenu .rootmenu-list .tabmenu {
+    background: #<?= $block->escapeHtml($tebingbgcolor) ?> !important;
+}
+
+.rootmenu .tabmenu .tabimgtext,
+.rootmenu .rootmenu-list .view_all{
+    color: #<?= $block->escapeHtml($tebingfontcolor) ?>;
+    font-size: <?= $block->escapeHtml($tebingfontsize) ?>px;
+}
+.rootmenu .tabmenu .vertical-menu > li > a{
+    background: #<?= $block->escapeHtml($tebingheadingbgcolor) ?>;
+    border-bottom-color: #<?= $block->escapeHtml($tebingheadingbordercolor) ?> !important;
+    color: #<?= $block->escapeHtml($tebingheadingfontcolor) ?>;
+    font-size: <?= $block->escapeHtml($tebingheadingfontsize) ?>px;
+}
+.rootmenu > .rootmenu-list .tabmenu .vertical-menu .main_openactive01 > a {
+    background: #<?= $block->escapeHtml($tebinghoverbgcolor) ?>;
+    color: #<?= $block->escapeHtml($tebingheadinghoverfontcolor) ?>;
+}
+.rootmenu .tabmenu .tabimgtext:hover{
+      color: #<?= $block->escapeHtml($tebinghoverfontcolor) ?>;
+}
+
+.rootmenu > .rootmenu-list .rootmenu-submenu {
+    border-top:  <?= $block->escapeHtml($dropdownborderwidth) ?>px solid;
+    border-color: #<?= $block->escapeHtml($dropdownbordercolor) ?>
+}
+
+.rootmenu > .rootmenu-list .rootmenu-submenu li  a{
+    background: #<?= $block->escapeHtml($simplesubbgcolor) ?>;
+    border-bottom-color: #<?= $block->escapeHtml($simplesubbordercolor) ?> !important;
+    color: #<?= $block->escapeHtml($simplesubfontcolor) ?>;
+    font-size: <?= $block->escapeHtml($simplesubfontsize) ?>px !important;
+}
+.rootmenu > .rootmenu-list .rootmenu-submenu li a:hover,
+.rootmenu > .rootmenu-list .rootmenu-submenu li:hover > a{
+    background: #<?= $block->escapeHtml($simplesubhoerbgcolor) ?> !important;
+    color: #<?= $block->escapeHtml($simplesubhoverfontcolor) ?> !important;
+}
+
+@media only screen and (min-width:769px) {
+    <?php if (isset($general_value['show_all_cat_bgcolor'])) {
+        $allCatHoverBg = '#'.$showAllCatHoverBgColor.' !important';
+        $allCatBg = '#'.$block->escapeHtml($show_all_cat_bgcolor).' !important';
+        if (isset($general_value['all_cat_background_type']) && $general_value['all_cat_background_type'] == 1) {
+            $allCatHoverBg = "linear-gradient(".$block->escapeHtml($show_all_cat_gradient_hoverbgcolor).") !important";
+            $allCatBg = "linear-gradient(".$block->escapeHtml($show_all_cat_gradient_bgcolor).") !important";
+        }?>
+        li.all-category-wrapper {
+            background: <?= $block->escapeHtml($allCatBg) ?>;
+            color: <?= '#'.$block->escapeHtml($show_all_cat_fontcolor).' !important'; ?>;
+            font-size: <?= $block->escapeHtml($show_all_cat_fontsize) ?>px !important;
+        }
+        li.all-category-wrapper:hover > a {
+            background: <?= $block->escapeHtml($allCatHoverBg) ?>;
+            color: <?= '#'.$block->escapeHtml($show_all_cat_hovercolor).' !important'; ?>;
+        }
+    <?php } ?>
+
+    .rootmenu .rw-vertical-menu .verticalmenu02 .rootverticalnav > a {color: #<?= $block->escapeHtml($all_cat_left_font_color)?>;}
+    .rootmenu .rw-vertical-menu .verticalmenu02 .rootverticalnav > a:hover {color: <?= '#'.$block->escapeHtml($show_all_cat_hovercolor).' !important'; ?>;}
+    .rootmenu .rw-vertical-menu  .verticalmenu02 > .vertical-list > li {background: #<?= $block->escapeHtml($all_cat_left_bg_color)?>;}
+
+    .rootmenu .rw-vertical-menu .verticalmenu02 > .vertical-list > li:hover {background: #<?= $showAllCatHoverBgColor?>}
+    .rootmenu .verticalmenu02>.vertical-list>li.rootverticalnav::after {border-left: 0px solid #<?= $showAllCatHoverBgColor?>}
+
+    .rootmenu .verticalmenu02 .vertical-list {
+        border-left: 1px solid #<?= $showAllCatHoverBgColor?>;
+        border-bottom: 1px solid #<?= $showAllCatHoverBgColor?>;
+        border-right: 1px solid #<?= $showAllCatHoverBgColor?>;
+    }
+
+    <?php if (isset($general_value['all_category_dropdown_position']) && $general_value['all_category_dropdown_position'] == '1') { ?>
+        .rootmenu .verticalmenu02>.vertical-list>li.rootverticalnav:hover > a::after {border-left: 10px solid #<?= $showAllCatHoverBgColor?>; }
+        .rootmenu .verticalmenu02>.vertical-list>li>a {position: relative;}
+    <?php } else { ?>
+        .rootmenu .verticalmenu02>.vertical-list>li.rootverticalnav:hover::after {border-left: 10px solid #<?= $showAllCatHoverBgColor?>; }
+        .rootmenu .verticalmenu02>.vertical-list>li.rootverticalnav {position: relative !important;}
+    <?php } ?>
+
+    
+    <?php if (isset($general_value['delay_hover_second'])) { ?>
+        <?php if ($general_value['delay_hover_second'] != '' && $general_value['dropdown_delay'] == 1) { ?>
+            .rootmenu > .rootmenu-list > li:hover .megamenu,
+            .rootmenu > .rootmenu-list li:hover .halfmenu,
+            .rootmenu > .rootmenu-list > li:hover > .rootmenu-submenu {
+                transition-delay:<?= $block->escapeHtml($general_value['delay_hover_second']) ?>s;
+            }
+        <?php } ?>
+    <?php } ?>
+    
+    <?php if ($general_value['show_contactus'] == 1) { ?>
+        .contactus_menu {position: relative;}
+        .megamenu.fullmenu.contacthalfmenu.clearfix {
+            width: 370px;
+            left: inherit;
+        }
+    <?php } ?>
+    <?php if ($general_value['sticky'] == 1) { ?>
+        .nav-sections.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    <?php } ?>
+    <?php if ($general_value['topmenualignmenttype'] == 0) { ?>
+        .rw-social-links {float: right !important; border-right: none !important; border-left: 1px solid;}
+    <?php } ?>
+    <?php if ($general_value['topmenualignmenttype'] == 1) { ?>
+        .rw-social-links {float: left !important; border-left: none !important; border-right: 1px solid;}
+    <?php } ?>
+    <?php if ($general_value['contactus_position'] == 2) { ?>
+        li.contactus_menu{float: left !important; border-left: none !important; border-right: 1px solid;}
+    <?php } if ($general_value['contactus_position'] != 2 && $general_value['show_contactus'] == 1) { ?>
+        .megamenu.fullmenu.contacthalfmenu.clearfix {right: 0 !important;}
+    <?php } ?>
+    <?php if ($general_value['contactus_position'] == 1) { ?>
+        li.contactus_menu {float: right !important; border-right: none !important; border-left: 1px solid;}
+    <?php } ?>
+
+    .rootmenu-list > li:hover > a,
+    .rootmenu-list > li > a:hover{
+    background: <?= $block->escapeHtml($hoverBgColor) ?>;
+    color: #<?= $block->escapeHtml($hoverfontcolor) ?>;
+    }
+    .rootmenu-list > li > a.active {
+        background: <?= $block->escapeHtml($activeBgColor) ?>;
+        color: #<?= $block->escapeHtml($activefontcolor) ?>;
+    }
+    
+}
+
+@media only screen and (max-width:768px){
+    .rootmenu-list > li{
+        float: none !important;
+    }
+    <?php if ($general_value['topmenualignmenttype'] == 3) { ?>
+        .rootmenu .rootmenu-list {
+            text-align: left;
+            display: table;
+        }
+    <?php } ?>
+}
+
+<?php if (!empty($general['rw_menucustom_css']['menucustom_css'])) { ?>
+    <?=$general['rw_menucustom_css']['menucustom_css']?>
+<?php } ?>

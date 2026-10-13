@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template" name="cms.static.menu" template="Magento_Cms::html/cms_static_menu.phtml" after="-">
+                <arguments>
+                    <argument name="links_from" xsi:type="string">home_page_menu_dhl_inspire</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="columns.top">
+            <block class="Magento\Framework\View\Element\Template" name="mpblog.main.desc" template="Mageplaza_Blog::desc.phtml" after="page.main.title"/>
+        </referenceContainer>
+
+        <referenceBlock name="blog.sidebar.main">
+            <block class="Mageplaza\Blog\Block\Design" name="mpblog.sidebar.follow" template="Mageplaza_Blog::follow.phtml"/>
+        </referenceBlock>
+
+        <referenceBlock name="breadcrumbs" remove="true"/>
+        <referenceBlock name="mpblog.copy.right" remove="true"/>
+        <referenceBlock name="mpblog.sidebar.topic" remove="true"/>
+        <referenceBlock name="mpblog.sidebar.tag" remove="true"/>
+    </body>
+</page>

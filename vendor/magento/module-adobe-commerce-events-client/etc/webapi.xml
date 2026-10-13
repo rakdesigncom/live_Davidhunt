@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Adobe and its suppliers, if any. The intellectual
+ * and technical concepts contained herein are proprietary to Adobe
+ * and its suppliers and are protected by all applicable intellectual
+ * property laws, including trade secret and copyright laws.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/eventing/eventSubscribe" method="POST">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventSubscriberInterface" method="subscribe" />
+        <resources>
+            <resource ref="Magento_AdobeCommerceEventsClient::event_subscribe" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventSubscribe/:name" method="PUT">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventUpdaterInterface" method="update" />
+        <resources>
+            <resource ref="Magento_AdobeCommerceEventsClient::event_subscribe" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventUnsubscribe/:name" method="POST">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventSubscriberInterface" method="unsubscribe" />
+        <resources>
+            <resource ref="Magento_AdobeCommerceEventsClient::event_unsubscribe" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/updateConfiguration" method="PUT">
+        <service class="Magento\AdobeCommerceEventsClient\Api\UpdateConfigurationInterface" method="update" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::configuration_update" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/getEventProviders" method="GET">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventProviderManagementInterface" method="getList" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::event_provider_list" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventProvider" method="GET">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventProviderManagementInterface" method="getList" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::event_provider_list" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventProvider/:providerId" method="GET">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventProviderManagementInterface" method="getByProviderId" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::event_provider_list" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventProvider" method="POST">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventProviderManagementInterface" method="save" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::event_provider_edit" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventProvider" method="PUT">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventProviderManagementInterface" method="save" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::event_provider_edit" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/eventProvider/:providerId" method="DELETE">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventProviderManagementInterface" method="deleteByProviderId" />
+        <resources>
+            <resource ref="Magento_AdobeIoEventsClient::event_provider_delete" />
+        </resources>
+    </route>
+    <route url="/V1/eventing/getEventSubscriptions" method="GET">
+        <service class="Magento\AdobeCommerceEventsClient\Api\EventSubscriptionListInterface" method="getList" />
+        <resources>
+            <resource ref="Magento_AdobeCommerceEventsClient::event_subscriptions" />
+        </resources>
+    </route>
+</routes>

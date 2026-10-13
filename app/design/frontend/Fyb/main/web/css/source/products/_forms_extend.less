@@ -1,0 +1,98 @@
+& when (@media-common = true) {
+    .catalog-product-view {
+        .page-main {
+            .product-add-form {
+                margin: 0 0 @theme_general_spacing 0;
+
+                .box-tocart {
+                    margin: 0 0 @theme_general_spacing 0;
+
+                    .fieldset > .field {
+                        margin: 0;
+                    }
+
+                    .fieldset {
+
+                        margin-bottom: 0;
+
+                        label {
+                            display: none;
+                        }
+
+                        .input-group {
+                            position: relative;
+
+
+
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .catalog-product-view {
+        .page-main {
+            .product-add-form {
+
+
+                .box-tocart {
+
+                    .fieldset {
+                        display: grid;
+                        row-gap: @theme_general_spacing;
+
+                        .input-group {
+
+                            input[type="number"] {
+                                width: 100%;
+                                height: 48px;
+                                text-align: center;
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .catalog-product-view {
+        .page-main {
+            .product-add-form {
+
+
+                .box-tocart {
+
+                    .fieldset {
+                        display: grid;
+                        grid-template-columns: 72px auto;
+                        column-gap: @theme_general_spacing;
+
+
+                        .input-group {
+
+                            input[type="number"] {
+                                width: 48px;
+                                height: 48px;
+                                border-right: 0;
+                                text-align: center;
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+}

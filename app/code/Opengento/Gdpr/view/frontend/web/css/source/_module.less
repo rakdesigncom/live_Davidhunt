@@ -1,0 +1,26 @@
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  &.action {
+    &.action-danger {
+      color: @color-red9;
+    }
+
+    &.primary.primary-danger {
+      background: @color-red9;
+      border: 1px solid @color-red9;
+
+      &:hover {
+        background: @color-red11;
+        border: 1px solid @color-red11;
+      }
+    }
+  }
+}

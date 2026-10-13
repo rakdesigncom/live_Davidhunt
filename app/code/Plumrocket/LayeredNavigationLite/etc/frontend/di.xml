@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Category" type="Plumrocket\LayeredNavigationLite\Model\Filter\Category"/>
+    <preference for="\Magento\Catalog\Model\Layer\Filter\DataProvider\Category" type="Plumrocket\LayeredNavigationLite\Model\Catalog\Layer\Filter\DataProvider\Category"/>
+    <preference for="\Magento\Catalog\Model\ResourceModel\Layer\Filter\Attribute" type="Plumrocket\LayeredNavigationLite\Model\Catalog\ResourceModel\Layer\Filter\Attribute"/>
+    <preference for="\Magento\Swatches\Block\LayeredNavigation\RenderLayered" type="Plumrocket\LayeredNavigationLite\Block\Swatches\LayeredNavigation\RenderLayered"/>
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="prproductfilter" xsi:type="array">
+                    <item name="class" xsi:type="string">Plumrocket\LayeredNavigationLite\Controller\Router</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\App\Action\AbstractAction">
+        <plugin name="pr-filter-handle-filter-ajax"
+                type="Plumrocket\LayeredNavigationLite\App\Action\Plugin\HandleFilterAjaxRequest"/>
+    </type>
+    <type name="Magento\Catalog\Model\Layer\Filter\DataProvider\Price">
+        <plugin name="prproductfilter_skip_to_price_edit" type="Plumrocket\LayeredNavigationLite\Plugin\Model\Catalog\Layer\Filter\DataProvider\Price" />
+    </type>
+    <type name="Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection">
+        <plugin name="pr-filter-fix-price"
+                type="Plumrocket\LayeredNavigationLite\Plugin\Elasticsearch\FixMaxAndMinPrices" sortOrder="10"/>
+    </type>
+    <type name="Magento\Elasticsearch\SearchAdapter\Aggregation\Builder\Dynamic">
+        <plugin name="pr-filter-save-real-max-min-prices"
+                type="Plumrocket\LayeredNavigationLite\Plugin\Elasticsearch\SaveRealMaxAndMinPrices" sortOrder="10"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Layer\Filter\Decimal">
+        <plugin name="pr-filter-convert-null-max-min-values"
+                type="Plumrocket\LayeredNavigationLite\Plugin\Model\Catalog\ResourceModel\Layer\Filter\Decimal" sortOrder="10"/>
+    </type>
+</config>

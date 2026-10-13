@@ -1,0 +1,71 @@
+<?php
+/**
+ * @author FYB Romania
+ * @copyright Copyright (c) FYB Romania (https://fyb.ro)
+ * @package Notification Bar for Magento 2
+ */
+/** @var $block \Fyb\NotificationBar\Block\Adminhtml\System\Config\PreviewPromo */
+?>
+<div class="section-config" style="margin-top: 10px;">
+    <div class="entry-edit-head admin__collapsible-block">
+        <span style="font-size: 20px">Preview</span>
+    </div>
+    <div class="preview-container" style="margin-top: 20px;" id="preview-container">
+    </div>
+</div>
+
+<script>
+    require(['jquery'], function($){
+        function prepareFrame() {
+            var idIframe = 'preview-iframe';
+            if ($('#' + idIframe).length) {
+                $('#' + idIframe).remove();
+            }
+
+            var iframe = document.createElement("iframe");
+            var htmlcode = '<div class="sticky-notification-bar" ' +
+                'style="background-color: ' + $('#notification_bar_general_background_color').val() + ';' +
+                'color: ' + $('#notification_bar_general_text_color').val() + ';" >' +
+                '<div class="content" style="min-height: ' + $('#notification_bar_general_min_height').val()  + 'px;">' +
+                $('#notification_bar_general_content').val() + '</div>' +
+            '</div>';
+
+            iframe.id = idIframe;
+            document.getElementById("preview-container").appendChild(iframe);
+
+            iframe.setAttribute("style","width:100%;");
+            iframe.contentWindow.document.open();
+            iframe.contentWindow.document.write(htmlcode);
+            iframe.contentWindow.document.close();
+
+            let head = $('#' + idIframe).contents().find("head");
+            let css = '<style>' +
+                <?= json_encode($block->getCssAdditional()) ?> +
+                '.sticky-notification-bar .content { padding: 0 !important; }' +
+                '.sticky-notification-bar .content p { margin: 0 !important; }' +
+                $('#notification_bar_general_custom_css').val() +
+                '</style>';
+            $(head).append(css);
+        }
+
+        $(document).ready(function() {
+            prepareFrame();
+        });
+
+        let timer;
+        const waitTime = 600;
+
+        $('#notification_bar_general_custom_css, #notification_bar_general_background_color,' +
+            '#notification_bar_general_text_color, #notification_bar_general_content, ' +
+            '#notification_bar_general_min_height'
+        ).on("change", function() {
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+                if ($('#preview-iframe').length) {
+                    prepareFrame();
+                }
+            }, waitTime);
+        });
+    })
+</script>

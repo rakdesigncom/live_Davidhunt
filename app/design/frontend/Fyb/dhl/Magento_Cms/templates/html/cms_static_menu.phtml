@@ -1,0 +1,47 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<?php
+$menuId = $block->getData('links_from');
+if (!$menuId) {
+    return;
+}
+
+$menuContent = $this->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId($menuId)
+    ->toHtml();
+
+$dom = new \DomDocument();
+$dom->loadHTML($menuContent);
+$menuItems = [];
+
+/** @var \DOMElement $item */
+foreach ($dom->getElementsByTagName('a') as $item) {
+    $label = trim($item->textContent);
+    if (preg_match('/img|image/i', $label)) {
+        continue;
+    }
+    $menuItems[] = [
+        'link' => $item->getAttribute('href'),
+        'text' => trim($item->textContent)
+    ];
+}
+$currentUrl = trim($block->getRequest()->getUri()->getPath(), '/');
+?>
+
+<?php if ($menuItems): ?>
+<div class="header_submenu_static">
+    <ul >
+        <?php foreach ($menuItems as $item): ?>
+            <?php
+                $itemUrl = pathinfo($item['link'])['basename'];
+            ?>
+            <li class="<?= $itemUrl == $currentUrl ? 'active':'' ?>">
+                <a href="<?= $item['link']?>"><?= $block->escapeHtml($item['text']) ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

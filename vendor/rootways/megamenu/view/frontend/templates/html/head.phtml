@@ -1,0 +1,6 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Rootways\Megamenu\ViewModel\Head $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<link rel="stylesheet" type="text/css" media="all" href="<?= $block->escapeUrl($viewModel->getStoreCss()) ?>">

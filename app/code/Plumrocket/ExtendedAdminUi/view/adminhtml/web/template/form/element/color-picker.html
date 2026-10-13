@@ -1,0 +1,15 @@
+<!--
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2020 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license/  End-user License Agreement
+-->
+
+<div class="admin__field-control"
+     visible="visible"
+     css="$data.additionalClasses">
+    <div attr="id: uid + '_color_picker'"></div>
+    <input type="text" class="admin__control-text colorpicker-input"
+           ko-value="value" hasFocus="focused" disable="disabled"
+           attr="name: inputName, id: uid, placeholder: placeholder"
+           afterRender="initColorPicker">
+</div>

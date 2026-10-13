@@ -1,0 +1,166 @@
+& when (@media-common = true) {
+    .box-customise {
+        margin-bottom: 15px;
+
+        #product-customise-button {
+            width: 100%;
+            text-align: center;
+
+        }
+    }
+
+
+    .catalog-product-view {
+        .page-main {
+            .product-form-all-options-list{
+                .box-tocart {
+                    .action.primary {
+                        width: 100%;
+                        margin-bottom: 0;
+                        font-size: @button__font-size;
+                        line-height: @button__font-size;
+                        letter-spacing: 0.07em;
+                        font-weight: normal;
+                        font-style: normal;
+                        text-transform: uppercase;
+                        padding: 16px 24px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .product-add-form {
+
+                .box-tocart {
+                    .fieldset {
+
+                        .input-group {
+                            button {
+
+                                border: 1px solid @color_grey;
+                                line-height: 24px;
+                                font-size: @product_addtocart_button_minus;
+                                font-weight: @product_addtocart_button_weight;
+                                padding-top:@product_addtocart_button_padding-top;
+                                &:last-of-type{
+                                    font-size: @product_addtocart_button_plus;
+                                }
+                            }
+                        }
+
+                        .action.tocart {
+                            width: 100%;
+                            margin-bottom: 0;
+                            font-size: @button__font-size;
+                            line-height: @button__font-size;
+                            letter-spacing: 0.07em;
+                            font-weight: normal;
+                            font-style: normal;
+                            text-transform: uppercase;
+                            padding: 16px 24px;
+                        }
+
+                    }
+                }
+
+                .fabrics-buttons {
+                    display: flex;
+                    column-gap: @theme_general_spacing;
+                    a{
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+    .products-grid{
+        .box-customise #product-customise-button{
+            background: no-repeat top center url(../images/customize_button_2.png);
+            border: 0;
+            width: 165px;
+            height: 22px;
+            padding: 0;
+            font-size: 0;
+            background-size: cover;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .catalog-product-view {
+        .page-main {
+
+
+            .product-add-form {
+
+                .box-tocart {
+                    .fieldset {
+                        .input-group {
+                            button {
+                                position: absolute;
+                                left: 0;
+                                width: 47px;
+                                height: 47px;
+                                padding: 0;
+                                top:0;
+                                border: 1px solid @color_grey;
+                            }
+
+
+
+                            button:last-of-type {
+                                left: auto;
+                                right:0;
+                            }
+                        }
+
+
+
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .catalog-product-view {
+        .page-main {
+
+            .product-add-form {
+
+                .box-tocart {
+                    .fieldset {
+                        .input-group {
+                            button {
+                                position: absolute;
+                                right: 0;
+                                width: 24px;
+                                height: 24px;
+                                padding: 0;
+                            }
+
+                            button:first-of-type {
+                                bottom: 0;
+                                border-top:0;
+                            }
+
+                            button:last-of-type {
+                                top: 0;
+                            }
+                        }
+
+
+
+                    }
+                }
+
+
+            }
+        }
+    }
+}

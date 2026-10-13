@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div class="homepage-newsletter">
+    <div class="homepage-newsletter-content">
+        <div>
+            <h1><?= $block->escapeHtml(__('Newsletter')) ?></h1>
+            <span>Keep up to date with our latest news, including new product launches, offers, events and more.</span>
+        </div>
+        <div class="content">
+            <form class="form subscribe"
+                  novalidate
+                  action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                  method="post"
+                  data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                  id="newsletter-validate-detail">
+                <div class="newsletter-form-content">
+                    <div class="field newsletter">
+
+
+                        <input name="email" type="email" id="newsletter"
+                               placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>"
+                               data-mage-init='{"mage/trim-input":{}}'
+                               data-validate="{required:true, 'validate-email':true}"
+                        />
+
+                    </div>
+                    <div class="actions">
+                        <button class="action subscribe primary"
+                                title="<?= $block->escapeHtmlAttr(__('Subscribe')) ?>"
+                                type="submit"
+                                aria-label="Subscribe">
+                            <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "newsletter-validate-detail"
+            }
+        }
+    }
+
+
+</script>

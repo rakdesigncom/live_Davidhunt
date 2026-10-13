@@ -1,0 +1,82 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Catalog\ViewModel\Product\Listing\PreparePostData;
+use Magento\Framework\App\ActionInterface;
+use Magento\Framework\App\Action\Action;
+
+/* @var $block \Magento\Catalog\Block\Product\AbstractProduct */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+/** @var \Magento\Catalog\Helper\Image $imageHelper */
+?>
+
+<?php
+
+/** @var \Fyb\Product\Block\Product\ProductList\Downloadable $block */
+
+$imageDisplayArea = 'category_page_grid';
+$items = $block->getLoadedProductCollection();
+$_item = null;
+$imageHelper = $this->helper(\Magento\Catalog\Helper\Image::class);
+$mediaUrl = $block->getMediaUrl();
+?>
+
+<div class="cms-catalog-products-list">
+    <?php foreach ($items as $_item): ?>
+        <?php
+
+         ?>
+        <div class="cms-catalog-products-list-item">
+            <div class="block-image">
+                <img class="normal-image"
+                     src="<?= $mediaUrl  . 'catalog/product' . $_item->getImage(); ?>"
+                     alt="<?= __($_item->getName()) ?>">
+                <img class="hover-image"
+                     src="<?= $mediaUrl  . 'catalog/product' . $_item->getThumbnail(); ?>"
+                     alt="<?= __($_item->getName()) ?>">
+            </div>
+            <div class="block-content">
+                <h2><?= $block->escapeHtmlAttr($_item->getName()) ?></h2>
+                <div class="cms-catalog-products-list-item_links">
+                    <span> <?= /* @noEscape */ $block->getProductPrice($_item) ?></span>
+
+                    <div class="buttons_list  <?php if ($_item->getData('downloadable_link')): ?> buttons_list_grid<?php endif; ?>">
+
+                        <?php if ($_item->getData('downloadable_link')): ?>
+                            <a href="<?= $_item->getData('downloadable_link') ?>" class="button" target="_blank">VIEW ONLINE </a>
+                        <?php endif; ?>
+                            <?php $postParams = $block->getAddToCartPostParams($_item); ?>
+                            <form data-role="tocart-form"
+                                  data-product-sku="<?= $escaper->escapeHtml($_item->getSku()) ?>"
+                                  action="<?= $escaper->escapeUrl($postParams['action']) ?>"
+                                  data-mage-init='{"catalogAddToCart": {"addToCartButtonTextDefault": "Purchase"}}'
+                                  method="post">
+
+                                <input type="hidden"
+                                       name="product"
+                                       value="<?= /* @noEscape */ $postParams['data']['product'] ?>">
+                                <input type="hidden"
+                                       name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>"
+                                       value="<?=
+                                       /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
+                                       ?>">
+                                <?= $block->getBlockHtml('formkey') ?>
+                                <button type="submit"
+                                        title="<?= $escaper->escapeHtmlAttr(__('Purchase')) ?>"
+                                        class="action tocart primary"
+                                        disabled>
+                                    <span><?= $escaper->escapeHtml(__('Purchase')) ?></span>
+                                </button>
+                            </form>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>
+
+

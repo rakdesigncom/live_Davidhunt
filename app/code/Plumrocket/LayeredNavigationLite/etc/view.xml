@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Plumrocket_ProductFilter">
+        <var name="catalog_left_navigation_block">catalog.leftnav</var>
+        <var name="catalog_product_list_block">category.products</var>
+        <var name="catalogsearch_left_navigation_block">catalogsearch.leftnav</var>
+        <var name="catalogsearch_product_list_block">search_result_list</var>
+    </vars>
+</view>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Plumrocket_LayeredNavigationLite
+ * @copyright   Copyright (c) 2022 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Plumrocket\LayeredNavigationLite\Api\GetUrlVariablesInterface" type="Plumrocket\LayeredNavigationLite\Model\Variable\GetList"/>
+    <preference for="Plumrocket\LayeredNavigationLite\Api\Data\FilterMetaInterface" type="Plumrocket\LayeredNavigationLite\Model\FilterMeta"/>
+    <preference for="Plumrocket\LayeredNavigationLite\Api\FilterMetaRepositoryInterface" type="Plumrocket\LayeredNavigationLite\Model\FilterMeta\Repository"/>
+    <preference for="Plumrocket\LayeredNavigationLite\Api\FilterItemUrlBuilderInterface" type="Plumrocket\LayeredNavigationLite\Model\FilterItem\Url"/>
+    <preference for="Plumrocket\LayeredNavigationLite\Api\FiltersOptionsInterface" type="Plumrocket\LayeredNavigationLite\Model\FiltersOptions"/>
+    <preference for="Plumrocket\LayeredNavigationLite\Model\Variable\Value\UrlInterface" type="Plumrocket\LayeredNavigationLite\Model\Variable\Value\Url"/>
+
+    <preference for="Magento\LayeredNavigation\Block\Navigation\State" type="Plumrocket\LayeredNavigationLite\Block\LayeredNavigation\Navigation\State"/>
+    <preference for="Magento\Catalog\Model\Layer\Filter\Item" type="Plumrocket\LayeredNavigationLite\Model\Catalog\Layer\Filter\Item"/>
+    <preference for="Magento\Catalog\Model\Layer\Category\FilterableAttributeList" type="Plumrocket\LayeredNavigationLite\Model\Catalog\Layer\Category\FilterableAttributeList"/>
+    <preference for="Magento\Catalog\Model\Layer\Filter\Price\Range" type="Plumrocket\LayeredNavigationLite\Model\Catalog\Layer\Filter\Price\Range"/>
+
+    <type name="Magento\Framework\App\Http\Context">
+        <arguments>
+            <argument name="default" xsi:type="array">
+                <item name="pr_filter_request" xsi:type="number">0</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="categoryFilterList" type="Magento\Catalog\Model\Layer\FilterList">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="attribute" xsi:type="string">Plumrocket\LayeredNavigationLite\Model\Filter\Attribute</item>
+                <item name="price" xsi:type="string">Plumrocket\LayeredNavigationLite\Model\Filter\Price</item>
+                <item name="decimal" xsi:type="string">Magento\Catalog\Model\Layer\Filter\Decimal</item>
+                <item name="category" xsi:type="string">Plumrocket\LayeredNavigationLite\Model\Filter\Category</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="searchFilterList" type="Magento\Catalog\Model\Layer\FilterList">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="attribute" xsi:type="string">Plumrocket\LayeredNavigationLite\Model\Filter\Attribute</item>
+                <item name="price" xsi:type="string">Plumrocket\LayeredNavigationLite\Model\Filter\Price</item>
+                <item name="decimal" xsi:type="string">Magento\Catalog\Model\Layer\Filter\Decimal</item>
+                <item name="category" xsi:type="string">Plumrocket\LayeredNavigationLite\Model\Filter\Category</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Plumrocket\LayeredNavigationLite\Plugin\Block\LayeredNavigation\Navigation\FilterRenderer">
+        <arguments>
+            <argument name="filterRenderers" xsi:type="array">
+                <item name="\Magento\Catalog\Model\Layer\Filter\Price" xsi:type="string">Plumrocket\LayeredNavigationLite\Block\LayeredNavigation\RenderPrice</item>
+                <item name="\Magento\CatalogSearch\Model\Layer\Filter\Price" xsi:type="string">Plumrocket\LayeredNavigationLite\Block\LayeredNavigation\RenderPrice</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Plumrocket\LayeredNavigationLite\Model\FiltersOptions">
+        <arguments>
+            <argument name="filterOptionCollectors" xsi:type="array">
+                <item name="attribute" xsi:type="object">Plumrocket\LayeredNavigationLite\Model\FilterOption\AttributeCollector</item>
+                <item name="category" xsi:type="object">Plumrocket\LayeredNavigationLite\Model\FilterOption\CategoryCollector</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\LayeredNavigation\Block\Navigation\FilterRenderer">
+        <plugin name="pr_filter_layered_renderer" type="Plumrocket\LayeredNavigationLite\Plugin\Block\LayeredNavigation\Navigation\FilterRenderer" sortOrder="1" />
+    </type>
+
+    <type name="Magento\CatalogSearch\Model\Layer\Category\ItemCollectionProvider">
+        <plugin name="prproductfilter_collection_provider" type="Plumrocket\LayeredNavigationLite\Plugin\Model\CatalogSearch\Layer\Category\ItemCollectionProvider" />
+    </type>
+
+    <type name="Magento\Catalog\Model\Layer\FilterList">
+        <plugin name="prproductfilter_filter_list" type="Plumrocket\LayeredNavigationLite\Plugin\Model\Catalog\Layer\FilterList" />
+    </type>
+    <type name="Magento\CatalogSearch\Model\Layer\FilterList">
+        <plugin name="prproductfilter_filter_list" type="Plumrocket\LayeredNavigationLite\Plugin\Model\Catalog\Layer\FilterList" />
+    </type>
+
+    <!-- fix for ee Elasticsearch -->
+    <type name="Magento\Elasticsearch\SearchAdapter\Filter\Builder\Term">
+        <plugin name="prproductfilter_fix" type="Plumrocket\LayeredNavigationLite\Plugin\Elasticsearch\TermPlugin" />
+    </type>
+
+    <type name="Wyomind\Elasticsearch\Model\Client">
+        <plugin name="prproductfilter_elasticsearch" type="Plumrocket\LayeredNavigationLite\Plugin\Elasticsearch\Client" />
+    </type>
+
+    <type name="Amasty\ElasticSearch\Model\Search\GetRequestQuery">
+        <plugin name="prproductfilter_amasty_elasticsearch" type="Plumrocket\LayeredNavigationLite\Plugin\Elasticsearch\Amasty\Search\GetRequestQuery" />
+    </type>
+</config>

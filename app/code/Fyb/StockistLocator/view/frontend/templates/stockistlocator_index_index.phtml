@@ -1,0 +1,151 @@
+<?php
+$storeHelper = $this->helper('Fyb\Theme\Helper\StoreData');
+
+$baseUrl = $storeHelper->getStoreBaseUrl();
+$mediaUrl = $storeHelper->getStoreMediaUrl();
+
+$apiKey = $storeHelper->getConfig('stockistlocator/general/access_token');
+$defaultAddress = $storeHelper->getConfig('stockistlocator/general/default_location');
+?>
+
+<div class="stockist__right-side">
+    <form class="stockists clearfix" method="GET" id="stockist-form">
+        <div>
+            <label for="address"><?= __('Enter a location'); ?></label>
+            <input id="address" type="text" name="address" placeholder="Location"/>
+        </div>
+
+        <div>
+            <label for="radius"><?= __('Radius'); ?></label>
+            <select name="radius" id="radius">
+                <option value="5">5 mi</option>
+                <option value="10">10 mi</option>
+                <option value="25" selected="selected">25 mi</option>
+                <option value="50">50 mi</option>
+                <option value="100">100 mi</option>
+            </select>
+        </div>
+        <div>
+            <button class="btn primary-btn search-button"><?php echo __("Search"); ?></button>
+        </div>
+        <input type="hidden" value="enquiry" name="enquiry"/>
+        <input type="hidden" value="stock" name="option"/>
+    </form>
+
+    <div class="stockist-result">
+
+    </div>
+
+    <div class="results">
+
+    </div>
+
+    <div class="popup">
+
+    </div>
+    <div class="sideresults cf">&nbsp;</div>
+</div>
+
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        var isFirstSearch = 1;
+        $('.stockists button').click(function (e) {
+            e.preventDefault();
+            var address = $('input#address').val();
+
+            if (address.length > 0) {
+                getStockists();
+            }
+        });
+
+        $('#radius').on('change', function (e) {
+            if ($('input#address').val()) {
+                getStockists();
+            }
+        });
+
+        function getStockists() {
+            var address = $('input#address').val();
+            var radius = $('#radius').val();
+
+            $.ajax({
+                type: 'POST',
+                showLoader: true,
+                url: '<?php echo $baseUrl; ?>stockist/search/getstockists',
+                data: {
+                    address: address,
+                    radius: radius,
+                    isFirstSearch: isFirstSearch
+                }
+            }).done(function (msg) {
+                isFirstSearch = 0;
+                $('.stockist-result').html(msg);
+            });
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'Stockists',
+                'address': address
+            });
+        }
+    });
+</script>
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=<?= $apiKey ?>&sensor=true&libraries=marker"></script>
+
+<div id="map-canvas" class="stockist__left-side" style="height:630px; width:100%;">&nbsp;</div>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        var geocoder = new google.maps.Geocoder();
+        var curPosition = {
+            lat: 54.5,
+            lng: -3.5,
+        };
+
+        function showPosition(position) {
+            if (position.coords) {
+                const latlng = {
+                    lat: parseFloat(position.coords.latitude),
+                    lng: parseFloat(position.coords.longitude),
+                };
+                geocoder.geocode({
+                    latLng: latlng
+                }, function (results, status) {
+                    if (status === 'OK') {
+                        var address = results[0].formatted_address;
+                        $('input#address').val(address);
+                        $('.stockists button').click();
+                    } else {
+                        console.log('Geocode was not successful for the following reason: ' + status);
+                        $('input#address').val('<?= $defaultAddress ?>');
+                        $('.stockists button').click();
+                    }
+                });
+            }
+        }
+
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition,errorCallback);
+            } else {
+                $('input#address').val('<?= $defaultAddress ?>');
+                $('.stockists button').click();
+            }
+        }
+        function errorCallback() {
+
+                $('input#address').val('<?= $defaultAddress ?>');
+                $('.stockists button').click();
+
+        }
+
+        getCurrentLocation();
+    });
+</script>

@@ -1,0 +1,19 @@
+<?php
+/** @var \Magento\Catalog\Block\Product\View $block */
+$product = $block->getProduct();
+$showFabrics = $product->getData('our_palette') || $product->getData('our_fabric');
+?>
+<?php if ($showFabrics): ?>
+<div class="fabrics-buttons">
+    <?php if ($product->getData('our_palette')): ?>
+        <a href="<?= $block->getUrl('our-swatches') . '#palette' ?>" target="_blank" title="<?= __('Our Palette') ?>" class="button action">
+            <span><?= __('Our Palette') ?></span>
+        </a>
+    <?php endif; ?>
+    <?php if ($product->getData('our_fabric')): ?>
+        <a href="<?= $block->getUrl('our-swatches') . '#fabrics' ?>" target="_blank" type="button" title="<?= __('Our Fabrics') ?>" class="button action">
+            <span><?= __('Our Fabrics') ?></span>
+        </a>
+    <?php endif; ?>
+</div>
+<?php endif; ?>

@@ -1,0 +1,31 @@
+{
+    "name": "onestepcheckout/iosc",
+    "description": "Original OneStepCheckout extension for Magento 2",
+    "type": "magento2-module",
+    "version": "1.2.060",
+    "license": [
+        "Commercial"
+    ],
+    "require": {
+        "google/recaptcha" : "*",
+        "geoip2/geoip2": "~2.0"
+    },
+    "authors": [
+        {
+            "name": "Anton Siniorg",
+            "email": "siniorg@onestepcheckout.com"
+        }
+    ],
+    "support": {
+        "email": "support@onestepcheckout.com",
+        "documentation": "https://knowledgebase.onestepcheckout.com/magento-2/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Onestepcheckout\\Iosc\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

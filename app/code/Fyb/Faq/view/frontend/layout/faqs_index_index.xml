@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+        <referenceContainer name="columns.top">
+            <block class="Magento\Framework\View\Element\Template" name="faqs.desc" template="Fyb_Faq::desc.phtml" after="page.main.title"/>
+        </referenceContainer>
+
+		<referenceContainer name="content">
+			<block class="Fyb\Faq\Block\Faq" name="faqs.questions" template="Fyb_Faq::questions.phtml" />
+		</referenceContainer>
+	</body>
+</page>

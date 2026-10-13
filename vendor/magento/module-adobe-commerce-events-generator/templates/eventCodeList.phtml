@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\AdobeCommerceOutOfProcessExtensibility\Model\Generator\ModuleBlock $block */
+/** @var string $name */
+/** @var array $plugins */
+/** @var array $observers */
+?>
+<?='<?php';?>
+
+# Generated code. DO NOT EDIT!
+
+/************************************************************************
+ *
+ * ADOBE CONFIDENTIAL
+ * ___________________
+ *
+ * Copyright 2024 Adobe
+ * All Rights Reserved.
+ *
+ * NOTICE: All information contained herein is, and remains
+ * the property of Adobe and its suppliers, if any. The intellectual
+ * and technical concepts contained herein are proprietary to Adobe
+ * and its suppliers and are private by all applicable intellectual
+ * property laws, including trade secret and copyright laws.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe.
+ * ************************************************************************
+ */
+declare(strict_types=1);
+
+namespace <?= $block->getNamespace(); ?>\EventCode;
+
+/**
+ * Auto generated class with list of available event codes for <?= strtolower($name) ?>
+
+ */
+class <?= $name; ?>
+
+{
+    private array $eventCodes = [
+<?php
+    if (isset($plugins)) {
+        foreach ($plugins as $plugin) {
+            foreach ($plugin['methods'] as $method) {
+                echo sprintf(
+                        "        '%s' => '%s %s',\n",
+                        $method['eventCode'],
+                        $plugin['interfaceShort'],
+                        $method['nameLower']
+                );
+            }
+        }
+    }
+    if (isset($observers)) {
+        foreach ($observers as $class => $observer) {
+            echo sprintf("        '%s' => '%s',\n", $class, $observer);
+        }
+    }
+?>
+    ];
+
+    /**
+     * Returns list of available event codes
+     *
+     * @return array
+     */
+    public function getCodes(): array
+    {
+        return $this->eventCodes;
+    }
+}

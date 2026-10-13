@@ -1,0 +1,164 @@
+<?php
+/** @var \Rootways\Megamenu\Block\Topmenu $block */
+/** @var \Rootways\Megamenu\ViewModel\TopMenu $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<?php
+$categories = $block->getStoreCategories(true, false, true);
+$categoryHelper = $block->getCategoryHelper();
+$requiredSettings = $viewModel->getRequiredSettings();
+
+if ($requiredSettings['is_active'] == 1) { ?>
+    <?php if ($requiredSettings['topmenualignmenttype'] != 3) { ?>
+        <div class="page-main">
+    <?php } ?>
+        <nav class="rootmenu" data-action="navigation">
+            <ul id="rw-menutop" class="mobile-sub rootmenu-list">
+                <?php if ($requiredSettings['show_home'] == 1) { ?>
+                    <li>
+                        <a <?php if ($block->getIsHomePage() == 1) { echo 'class="active"'; } ?>
+                                href="<?= $block->escapeUrl($block->getStoreBaseUrl()) ?>"
+                                title="Home">
+                            <span class="fa fa-home homeicon"></span>
+                            <em><?= $block->escapeHtml(__('Home')) ?></em>
+                        </a>
+                    </li>
+                <?php }
+                echo $block->viewAllCategoriesHTML(count($categories));
+                $view_more_array = [];
+                $main_cat_cnt = 1;
+                foreach ($categories as $category) {
+                    $main_category_load = $block->getCategoryById($category->getId());
+                    echo $block->getCustomLinks($main_category_load->getId());
+
+                    if ($viewModel->getConfig('rootmegamenu_option/general/show_view_more') == 1) {
+                        if ($viewModel->getConfig('rootmegamenu_option/general/view_more') == '') {
+                            $view_more_after = 8;
+                        } else {
+                            $view_more_after = $viewModel->getConfig('rootmegamenu_option/general/view_more');
+                        }
+                        if ($main_cat_cnt > $view_more_after) {
+                            $view_more_array[$main_category_load->getName()] = $main_category_load->getURL();
+                            continue;
+                        }
+                    }
+
+                    if (!$main_category_load->getIsActive() || !$main_category_load->getIncludeInMenu()) {
+                        continue;
+                    }
+                    $active_cls = $block->_getMenuItemAttributes($category);
+                    $custom_cls = '';
+                    if ($main_category_load->getMegamenuTypeClass() != '') {
+                        $custom_cls .= $main_category_load->getMegamenuTypeClass();
+                    }
+                    if ($main_category_load->getMegamenuTypeHalfPos() == 1) {
+                        $custom_cls .= ' dropdown_left';
+                    }
+                    if ($custom_cls == '') {
+                        $custom_cls .= 'nav-'.$main_cat_cnt.' category-item';
+                    } else {
+                        $custom_cls .= ' nav-'.$main_cat_cnt.' category-item';
+                    }
+                    if ($main_category_load->getMegamenuType() == 2) {
+                         $custom_cls .= ' rw-vertical-menu';
+                    }
+                    ?>
+                    <li class="<?= $block->escapeHtmlAttr($custom_cls) ?>">
+                        <?php $hasSubCategory = str_contains($active_cls, 'has-sub-cat') ? 'aria-haspopup="true"' : ''; ?>
+                        <a <?php if ($active_cls != '') { ?> class="<?=$active_cls?>" <?php } ?> <?=$hasSubCategory?> href="<?= $block->escapeUrl($categoryHelper->getCategoryUrl($main_category_load)) ?>">
+                            <?php if ($viewModel->getConfig('rootmegamenu_option/general/topmenu_icon') == 1 && $main_category_load->getImageUrl() != '') { ?>
+                                <span class="main-category-name">
+                                    <i class="main-category-icon"><img alt="<?= $block->escapeHtmlAttr($category->getName()) ?>" src="<?= $block->escapeUrl($main_category_load->getImageUrl()) ?>"/></i>
+                                    <em><?= $block->escapeHtmlAttr($category->getName()) ?></em>
+                                </span>
+                            <?php } else {
+                                echo $main_category_load->getName();
+                            } ?>
+                           <?php if ($main_category_load->getMegamenuTypeLabeltx() != '') {
+                                echo '<span class="roottag">
+                                        <em class="rootmenutag" style="background-color: #'.$main_category_load->getMegamenuTypeLabelclr().'">
+                                            '.$main_category_load->getMegamenuTypeLabeltx().'
+                                        </em>
+                                    </span>';
+                           } ?>
+                        </a>
+                        <?php
+                        if ($main_category_load->getMegamenuType() == 1) {
+                            echo $block->simpletMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 2) {
+                            echo $block->megadropdown($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 3) {
+                            echo $block->dropdownTitle($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 4) {
+                            echo $block->halfMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 5) {
+                             echo $block->halfTitleMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 6) {
+                             echo $block->fullWidthMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 7) {
+                            echo $block->fullTitleMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 8) {
+                            echo $block->tabMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 9) {
+                            echo $block->tabHorizontal($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 10) {
+                            echo $block->productMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 14) {
+                            echo $block->categoryProductMenu($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 11) {
+                            echo $block->multiTabbing($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 12) {
+                            echo $block->halfMenuContentOnly($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 13) {
+                            echo $block->fullWidthContentOnly($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 15) {
+                            echo $block->halfMenuImageOnly($category, $main_cat_cnt);
+                        } elseif ($main_category_load->getMegamenuType() == 16) {
+                            echo $block->fullWidthImageOnly($category, $main_cat_cnt);
+                        } else {
+                            echo $block->simpletMenu($category, $main_cat_cnt);
+                        } ?>
+                    </li>
+                    <?php $main_cat_cnt++; ?>
+                <?php } ?>
+
+                <?= $block->getCustomLinks(false);?>
+
+                <?php if ($requiredSettings['show_contactus'] == 1 || $requiredSettings['show_contactus'] == 2) { ?>
+                     <?= $block->contactus() ?>
+                <?php } ?>
+
+                <?php if ($view_more_array != null) { ?>
+                    <li class="level0 view-more">
+                        <a class="has-sub-cat" href="javaScript:void(0);"><?= $block->escapeHtml(__('View More')) ?> <i aria-hidden="true" class="fa fa-angle-down"></i></a>
+                        <ul class="rootmenu-submenu topmenu_main dropdown-leftside">
+                            <?php foreach ($view_more_array as $key => $value) { ?>
+                                <li><a href="<?= $block->escapeUrl($value) ?>"><?= $block->escapeHtmlAttr($key) ?></a></li>
+                            <?php } ?>
+                        </ul>
+                    </li>
+                <?php } ?>
+
+                <?= $block->getSocialShare();?>
+
+                <?php /* ?>
+                <li>
+                <?= $this->getChildHtml("store_language_nav"); ?>
+                </li>
+                <?php */ ?>
+            </ul>
+        </nav>
+    <?php if ($requiredSettings['topmenualignmenttype'] != 3) { ?>
+        </div>
+    <?php } ?>
+<?php } else { ?>
+    <?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+    <?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+    <nav class="navigation" data-action="navigation">
+        <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+            <?= /* @noEscape */ $_menu; ?>
+            <?= $block->getChildHtml(); ?>
+        </ul>
+    </nav>
+<?php } ?>

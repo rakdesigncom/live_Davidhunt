@@ -1,0 +1,311 @@
+<?php
+    $storeHelper 	= $this->helper('Fyb\Theme\Helper\StoreData');
+
+    $baseUrl  = $storeHelper->getStoreBaseUrl();
+    $mediaUrl = $storeHelper->getStoreMediaUrl();
+
+	$stockists = $this->getStockists();
+	$f = 1;
+    $stockistCount = count($stockists);
+    if ($stockistCount > 1) {
+       $stockistCount--;
+    }
+    $customerPoints = $stockists['customerPoints'] ?? [
+        'lon' => 54.5,
+        'lat' => -3.5,
+    ];
+?>
+
+<div class="stockist__address">
+    <ul class="clearfix">
+        <?php if (count($stockists) <= 1): ?>
+            <?php echo __('There are no Stockists for your location'); ?>
+        <?php endif ?>
+
+        <?php foreach ($stockists as $key => $storeData): ?>
+            <?php
+            if ($key === "customerPoints"):
+                continue;
+            endif;
+
+            $store = $storeData['store'];
+            ?>
+            <li>
+                <?php if ($store->getName()): ?>
+                    <div style="cursor: pointer;" data-click="<?= $key ?>">
+                        <p class="stockist__address__title"><?php echo $store->getName(); ?></p>
+
+                        <ul class="stockist__address__address clearfix" >
+                            <?php if ($store->getData('address_1')): ?>
+                                <li>
+                                    <p><?php echo $store->getData('address_1'); ?></p>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if ($store->getData('address_2')): ?>
+                                <li>
+                                    <p><?php echo $store->getData('address_2'); ?></p>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php
+                                $stockAddress = implode(', ', array_filter([
+                                    $store->getCounty(),
+                                    $store->getCity(),
+                                    $store->getPostcode()
+                                ]));
+                            ?>
+                            <li>
+                                <p><?php echo $stockAddress; ?></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="stockist__address__phone"><?php echo $store->getTelephone(); ?></p>
+
+                    <p class="stockist__address__distance">
+                        <a target="_blank" href="https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=<?= $store->getData('latitude') ?>,<?= $store->getData('longitude') ?>" class="button primary"><?= __('Directions') ?></a>
+                    </p>
+                    <p class="stockist__address__distance"><?php echo number_format(round($storeData['distance'], 2), 2) . ' ' . __('miles'); ?></p>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function($) {
+        var curPosition = {
+            lat: <?php echo $customerPoints['lat'] ?>,
+            lng: <?php echo $customerPoints['lon'] ?>,
+        }
+        var customerAddress = '<?= ($customerPoints['address'] ?? '') ?>';
+        if (customerAddress) {
+            $('input#address').val(customerAddress);
+        }
+        var mapOptions = {
+            zoom: 8,
+            disableDefaultUI: true,
+            center: new google.maps.LatLng(curPosition.lat, curPosition.lng),
+            // mapId: 'ce2a11ebf191ec00',
+            styles: [
+                {
+                    "featureType": "administrative",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "saturation": "-100"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": 65
+                        },
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "saturation": "-100"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "saturation": "-12"
+                        },
+                        {
+                            "lightness": "12"
+                        },
+                        {
+                            "visibility": "on"
+                        },
+                        {
+                            "weight": "4.11"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway.controlled_access",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "visibility": "simplified"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "hue": "#ffff00"
+                        },
+                        {
+                            "lightness": -25
+                        },
+                        {
+                            "saturation": -97
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "labels",
+                    "stylers": [
+                        {
+                            "lightness": -25
+                        },
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }
+            ]
+        }
+
+
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        const markerColor = {
+            path: "M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z",
+            strokeColor: "#000000",
+            fillColor: "#a1a1a1",
+            fillOpacity: 1,
+            strokeWeight: 0.5,
+            rotation: 0,
+            scale: 2
+        };
+
+        var allInfoWindows = [];
+        function goToMarker(marker, infowindow) {
+            map.setZoom(10);
+            map.panTo(marker.position);
+            allInfoWindows.forEach(function (info) {
+                info.close();
+            })
+            infowindow.open(map, marker);
+        }
+
+        <?php
+            $n = 0;
+            foreach ($stockists as $key => $store):
+
+                if ($key === 'customerPoints'):
+                    continue;
+                endif;
+
+                $location 		= $store['location'];
+                $storeAddress 	= '<h4>' . $store['store']->getName() . '</h4>';
+
+                if ($store['store']->getAddress1()):
+                    $storeAddress .= $store['store']->getAddress1() . '<br />';
+                endif;
+
+                if ($store['store']->getAddress2()):
+                    $storeAddress .= $store['store']->getAddress2() . '<br />';
+                endif;
+
+                $storeAddress .= implode(', ', array_filter([
+                    $store['store']->getCounty(),
+                    $store['store']->getCity(),
+                    $store['store']->getPostcode()
+                ])) . '<br />';
+                $storeAddress .= $store['store']->getTelephone() . '<br />';
+
+                $storeAddress .= number_format(round($store['distance'], 2), 2) . ' miles<br />';
+        ?>
+
+                myLatlng = new google.maps.LatLng(<?php echo $location['lat'] ?>, <?php echo $location['lon'] ?>);
+
+                var contentString<?php echo $n; ?> = "<div style=\"float:left; width:auto; height:auto;\"><?php echo $storeAddress; ?></div>";
+
+                var infowindow<?php echo $n; ?> = new google.maps.InfoWindow({
+                    content: contentString<?php echo $n; ?>
+                });
+                allInfoWindows.push(infowindow<?php echo $n; ?>);
+
+                var marker<?php echo $n; ?> = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    icon: markerColor,
+                    title: "<?php echo $store["store"]->getName(); ?>"
+                });
+
+                $('[data-click=<?= $key ?>]').on('click', function() {
+                    goToMarker(marker<?php echo $n; ?>, infowindow<?php echo $n; ?>);
+                });
+                google.maps.event.addListener(marker<?php echo $n; ?>, 'click', function() {
+                    goToMarker(marker<?php echo $n; ?>, infowindow<?php echo $n; ?>);
+                });
+        <?php
+                $n++;
+            endforeach;
+        ?>
+    });
+</script>

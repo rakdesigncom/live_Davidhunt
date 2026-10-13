@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Wishlist\Block\Catalog\Product\View\AddTo\Wishlist $block */
+
+?>
+<?php if ($block->isWishListAllowed()) : ?>
+    <?php
+    $wishlistHelper = $this->helper('Magento\Wishlist\Helper\Data');
+    $inWishlist = $wishlistHelper->getWishlistItemCollection()
+        ->addFieldToFilter('main_table.product_id', $block->getProduct()->getId())->getFirstItem()->getId();
+    ?>
+    <a href="#"
+       class="action towishlist <?= $inWishlist ? 'inwishlist': ''?>"
+       data-post='<?= /* @noEscape */ $block->getWishlistParams() ?>'
+       data-action="add-to-wishlist"><span><?= $block->escapeHtml(__('Add to Wishlist')) ?></span></a>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "body": {
+            "addToWishlist": <?= /* @noEscape */ $block->getWishlistOptionsJson() ?>
+    }
+}
+</script>

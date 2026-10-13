@@ -1,0 +1,15 @@
+<div class="homepage-featuredin">
+    <a href="#showroom" class="vertical-arrow-button">
+        <?= __("SHOWROOM") ?>
+    </a>
+    <div>
+        <h1>Featured in</h1>
+    </div>
+    <div class="brand-list">
+        <?php foreach(range(1, 8) as $item): ?>
+            <div>
+                <img style="max-width:140px" src="<?= $block->getViewFileUrl('Magento_Cms::images/featured_in_' . $item . '.jpg') ?>" alt="inst">
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

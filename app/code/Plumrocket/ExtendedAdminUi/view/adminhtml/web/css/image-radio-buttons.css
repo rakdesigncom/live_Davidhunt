@@ -1,0 +1,88 @@
+/**
+ * @package     Plumrocket_ExtendedAdminUi
+ * @copyright   Copyright (c) 2021 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+
+.plum_admin__field-wrapper{
+    width: 54% !important;
+    overflow: auto;
+}
+
+.plum_admin__field-image-radio-buttons {
+    display: inline-block;
+    width: auto;
+    margin: 0 4rem 2rem 0 !important;
+    vertical-align: top;
+}
+
+.plum_admin__field-wrapper .plum_admin__field-image-radio-buttons:last-of-type{
+    margin-right: 0 !important;
+}
+
+.plum_admin__field-image-radio-buttons .pr-radio-img-wrp {
+    margin-top: 1.5rem;
+    margin-left: -2.6rem;
+}
+
+.plum_admin__field-image-radio-buttons.admin__field-option > .admin__control-radio {
+    display: none;
+}
+
+.plum_admin__field-image-radio-buttons .admin__field-label:hover img{
+    box-shadow: 3px 3px 5px -1px #0000007d;
+    transition: .2s all ease-in-out;
+}
+
+.plum_admin__field-image-radio-buttons > .admin__control-radio:checked + label .pr-radio-img-wrp{
+    border: 1px solid #7f8eb5;
+}
+
+.plum_admin__field-image-radio-buttons .pr-radio-img-wrp{
+    position: relative;
+    border: 1px solid transparent;
+    padding: 0;
+    transition: .2s all ease-in-out;
+}
+
+.plum_admin__field-image-radio-buttons  .pr-radio-img-wrp img{
+    display: block !important;
+    min-height: 40px;
+}
+.plum_admin__field-image-radio-buttons  .pr-radio-img-wrp .image__anim{
+    display: none !important;
+}
+
+.pr-radio-img-wrp:hover .image__anim{
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.image__anim{
+    display: none;
+}
+
+.plum_admin__field-image-radio-buttons > .admin__control-radio:checked + label .pr-radio-img-wrp:before{
+    content: "";
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg fill='%23fff' version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='10px' height='10px' viewBox='0 0 78.369 78.369' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M78.049,19.015L29.458,67.606c-0.428,0.428-1.121,0.428-1.548,0L0.32,40.015c-0.427-0.426-0.427-1.119,0-1.547l6.704-6.704 c0.428-0.427,1.121-0.427,1.548,0l20.113,20.112l41.113-41.113c0.429-0.427,1.12-0.427,1.548,0l6.703,6.704 C78.477,17.894,78.477,18.586,78.049,19.015z'/%3E%3C/g%3E%3C/svg%3E%0A");
+    top: 7px;
+    right: 7px;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.plum_admin__field-image-radio-buttons > .admin__control-radio:checked + label .pr-radio-img-wrp:after{
+    content: "";
+    border: 20px solid transparent;
+    border-top: 20px solid #e0510f;
+    border-right: 20px solid #e0510f;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

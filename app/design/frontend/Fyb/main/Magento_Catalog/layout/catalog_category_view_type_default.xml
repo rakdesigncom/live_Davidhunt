@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="additional.product.footer" after="page.bottom.container" template="Magento_Catalog::product/view/product_footer.phtml"/>
+        </referenceContainer>
+
+        <referenceBlock name="catalog.leftnav">
+            <arguments>
+                <argument name="imageViewModel" xsi:type="object">Magento\Catalog\ViewModel\Category\Image</argument>
+            </arguments>
+        </referenceBlock>
+
+    </body>
+</page>

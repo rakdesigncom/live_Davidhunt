@@ -1,0 +1,68 @@
+<?php $helper = $this->helper(\AutifyDigital\PayNow\Helper\Data::class); ?>
+<?php
+$transactionData = $block->getTransactionData();
+$gatewayTransactionData = $block->getGatewayTransactionData();
+?>
+<div class="pay-now-confirmation-details">
+<?php if($transactionData) : ?>
+
+	<?php if($transactionData->getPaymentStatus() == 2): ?>
+		<p class="payment-status"><?= $escaper->escapeHtml(__("Your Payment for Invoice #%1 is successful.", $transactionData->getInvoiceNumber())) ?></p>
+	<?php else: ?>
+		<p class="payment-status"><?= $escaper->escapeHtml(__("Your Payment for Invoice #%1 is failed.", $transactionData->getInvoiceNumber())) ?></p>
+	<?php endif; ?>
+
+	<div class="payment-info-table">
+		<p><?= $escaper->escapeHtml(__("Below are the transaction info:")) ?></p>
+		<table class="table ">
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Customer Name")) ?></th>
+				<td><?= $escaper->escapeHtml($transactionData->getName()) ?></td>
+			</tr>
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Email Address")) ?></th>
+				<td><?= $escaper->escapeHtml($transactionData->getEmailAddress()) ?></td>
+			</tr>
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Invoice Number")) ?></th>
+				<td><?= $escaper->escapeHtml($transactionData->getInvoiceNumber()) ?></td>
+			</tr>
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Amount")) ?></th>
+				<td><?= $escaper->escapeHtml($this->helper('Magento\Framework\Pricing\Helper\Data')->currency($transactionData->getAmount(),true,false)); ?></td>
+			</tr>
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Merchant Transaction ID")) ?></th>
+				<td><?= $escaper->escapeHtml($transactionData->getMerchantTransactionId()); ?></td>
+			</tr>
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Billing Address")) ?></th>
+				<td>
+					<?php echo $escaper->escapeHtml($transactionData->getCompanyName()) ? $escaper->escapeHtml($transactionData->getCompanyName()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getBilltoStreet1()) ? $escaper->escapeHtml($transactionData->getBilltoStreet1()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getBilltoStreet2()) ? $escaper->escapeHtml($transactionData->getBilltoStreet2()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getBilltoCity()) ? $escaper->escapeHtml($transactionData->getBilltoCity()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getBilltoState()) ? $escaper->escapeHtml($transactionData->getBilltoState()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getBilltoCountry()) ? $escaper->escapeHtml($helper->getCountryName($transactionData->getBilltoCountry())) : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getBilltoPostcode()) ? " - " . $escaper->escapeHtml($transactionData->getBilltoPostcode()) : ""; ?>
+				</td>
+			</tr>
+			<?php if($helper->getConfig('paynow/title_placeholder/shipping_enable')) : ?>
+			<tr>
+				<th><?= $escaper->escapeHtml(__("Shipping Address")) ?></th>
+				<td>
+					<?php echo $escaper->escapeHtml($transactionData->getShiptoStreet1()) ? $escaper->escapeHtml($transactionData->getShiptoStreet1()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getShiptoStreet2()) ? $escaper->escapeHtml($transactionData->getShiptoStreet2()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getShiptoCity()) ? $escaper->escapeHtml($transactionData->getShiptoCity()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getShiptoState()) ? $escaper->escapeHtml($transactionData->getShiptoState()) . ",<br>" : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getShiptoCountry()) ? $escaper->escapeHtml($helper->getCountryName($transactionData->getShiptoCountry())) : ""; ?>
+					<?php echo $escaper->escapeHtml($transactionData->getShiptoPostcode()) ? " - " . $escaper->escapeHtml($transactionData->getShiptoPostcode()) : ""; ?>
+				</td>
+			</tr>
+			<?php endif; ?>
+		</table>
+	</div>
+<?php else: ?>
+	<div class="error"><?= $escaper->escapeHtml(__("Something went wrong.")) ?></div>
+<?php endif; ?>
+</div>

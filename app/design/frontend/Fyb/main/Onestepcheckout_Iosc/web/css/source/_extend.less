@@ -1,0 +1,105 @@
+& when (@media-common = true) {
+    .checkout-index-index {
+        .qtybuttons{
+            margin-left:5px;
+        }
+        .checkout-container select{
+            border: 1px solid @color_simple_grey;
+        }
+        .page-header{
+            margin-bottom: 15px;
+        }
+        .title-number {
+            color: @color_dark_grey_lighter;
+            font-size: @font-size__16;
+            font-family: @font-family-gfs-didot_italic;
+            margin-top: 0;
+            border:0;
+            background: transparent;
+            box-shadow: none;
+            position:relative;
+            font-size: @font-size__24;
+            line-height: @line-height_32;
+            font-weight: 400;
+
+            display:none;
+        }
+
+        div#iosc-summary,
+        .opc-wrapper {
+            .step-title {
+
+                font-size: @font-size__24;
+                line-height: @line-height_32;
+                margin-bottom: 10px;
+
+                font-family: @font-family-gfs-didot_italic;
+                font-weight: normal;
+                font-style: italic;
+                color: @color_dark_grey;
+
+                padding-left:0;
+            }
+        }
+        div#iosc-summary{
+            .title-number {
+                display: none;
+            }
+            .step-title {
+                padding-left:0;
+            }
+        }
+
+
+        .newaddress-button-title {
+            .action-toggle {
+                color: @color_dark_grey;
+            }
+        }
+
+        .qtybuttons a.add:before {
+            color: @color_dark_grey;
+        }
+
+        .qtybuttons a.add:hover:before{
+            color:@color_grey;
+        }
+        .minicart-items{
+            input[type="number"]{
+                height:30px;
+            }
+        }
+
+        div.iosc-place-order-container button.iosc-place-order-button {
+            text-transform: uppercase;
+            font-family: @button-primary__font-family;
+
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+            text-shadow: none;
+
+
+            padding: @button__padding;
+            font-size: @button__font-size;
+            line-height: @button__font-size;
+            text-align: center;
+            letter-spacing: @buttons_letter_spacing;
+
+            background: @button__color;
+            border: @button__color;
+            color: @color-white;
+            box-shadow:none;
+            border-radius:0;
+            width:100%;
+
+            &:focus,
+            &:hover,
+            &:active {
+                background: @button__color;
+                border: @button__color;
+                color: @color-white;
+            }
+        }
+    }
+}

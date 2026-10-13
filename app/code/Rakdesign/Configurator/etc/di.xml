@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Helper\Product\View">
+        <plugin name="add_build_layout_handle_product_page"
+                type="Rakdesign\Configurator\Plugin\AddBuildLayoutHandle"/>
+    </type>
+</config>

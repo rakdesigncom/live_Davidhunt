@@ -1,0 +1,24 @@
+{
+  "templateVersion": "0.2",
+  "product": {
+    "name": "Magento Cloud Patches",
+    "description": "The Magento Cloud Patches package is a set of patches, previously used within the ece-tools package to improve the integration of all Magento versions with Cloud environments and to deliver critical fixes quickly"
+  },
+  "contacts": {
+    "team": {
+      "name": "Mystic Mountain",
+      "DL": "Grp-Mystic-Mountain",
+      "slackChannel": "#mystic-mountain-team"
+    }
+  },
+  "ticketTracker": {
+    "functionalJiraQueue": {
+      "projectKey": "MCLOUD"
+    },
+    "securityJiraQueue": {
+      "projectKey": "MAGREQ",
+      "component": "MAGREQ/Magento Cloud Engineering"
+    }
+  },
+  "productionCodeBranches": ["1.0"]
+}

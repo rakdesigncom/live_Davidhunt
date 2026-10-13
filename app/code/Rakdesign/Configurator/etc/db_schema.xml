@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="rakdesign_configurator" resource="default" engine="innodb"  comment="Configurator">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+        <column xsi:type="int" name="product_id" padding="11" unsigned="false" nullable="false" comment="Product ID"/>
+        <column xsi:type="varchar" name="name" length="255"  nullable="true"  default="null" comment="Name"/>
+        <column xsi:type="text" name="congifuration"  nullable="true"  comment="congifuration"/>
+        <column xsi:type="datetime" name="created" nullable="true" comment="created"/>
+        <column xsi:type="datetime" name="modified" nullable="true" comment="modified"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+
+    </table>
+</schema>

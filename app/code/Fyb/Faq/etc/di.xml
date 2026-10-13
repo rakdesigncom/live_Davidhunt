@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="fyb_faq_qa_listing_data_source" xsi:type="string">Fyb\Faq\Model\ResourceModel\Qa\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Fyb\Faq\Model\ResourceModel\Qa\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">fyb_faq_qa</argument>
+            <argument name="resourceModel" xsi:type="string">Fyb\Faq\Model\ResourceModel\Qa</argument>
+        </arguments>
+    </virtualType>
+</config>

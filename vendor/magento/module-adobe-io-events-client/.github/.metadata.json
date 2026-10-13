@@ -1,0 +1,28 @@
+{
+  "templateVersion": "0.1",
+  "product": {
+    "name": "Adobe I/O Events Client",
+    "description": "Commerce module for communicating with Adobe I/O Events"
+  },
+  "contacts": {
+    "team": {
+      "name": "Mercury",
+      "DL": "Grp-DL-Mercury",
+      "slackChannel": "#commerce-team-mercury"
+    }
+  },
+  "ticketTracker": {
+    "functionalJiraQueue": {
+      "projectKey": "CEXT",
+      "component": ""
+    },
+    "securityJiraQueue": {
+      "projectKey": "MAGREQ",
+      "component": "Extensibility"
+    }
+  },
+  "staticScan": {
+    "enable": true,
+    "frequency": "monthly"
+  }
+}

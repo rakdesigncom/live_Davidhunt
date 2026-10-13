@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="fyb_pimberly_queue" resource="default" engine="innodb" comment="Pimberly Queue">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="varchar" name="sku" nullable="false" length="255" comment="Product SKU"/>
+        <column xsi:type="varchar" name="product_id" nullable="false" length="255" comment="Product PIM Id"/>
+        <column xsi:type="mediumtext" name="data" nullable="false" comment="Data"/>
+        <column xsi:type="text" name="error" nullable="true" comment="Sync Error"/>
+        <column xsi:type="boolean" name="is_synced" nullable="false" default="0"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="imported_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Imported From PIM Time"/>
+        <column xsi:type="timestamp" name="synced_at" on_update="false" nullable="true" comment="Synced in Magento Time"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+
+        <constraint xsi:type="unique" referenceId="FYB_PIMBERLY_QUEUE_SKU">
+            <column name="sku"/>
+        </constraint>
+    </table>
+
+    <table name="fyb_pimberly_log" resource="default" engine="innodb" comment="Pimberly Log">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="boolean" name="status" nullable="false" default="0"/>
+        <column xsi:type="text" name="info" nullable="true" comment="Log Info"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="sync_date" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Sync Date"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

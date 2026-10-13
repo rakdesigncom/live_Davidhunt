@@ -1,0 +1,54 @@
+/**
+ * @package     Plumrocket_Base
+ * @copyright   Copyright (c) 2023 Plumrocket Inc. (https://plumrocket.com)
+ * @license     https://plumrocket.com/license   End-user License Agreement
+ */
+
+#pr_new_updates_content.base-exten-info {
+  border: none;
+  margin-top: 20px;
+}
+
+.base-exten-info .details-item {
+  padding: 5px 10px;
+  padding-left: 50px;
+}
+
+.base-exten-info .details-item-ver {
+  margin-bottom: 5px;
+  padding-bottom: 0;
+  font-weight: 600;
+  color: #193088;
+}
+
+.base-exten-info .details-item-ver:not(:first-of-type){
+  margin-top: 20px;
+}
+
+.base-exten-info .details-item.feature,
+.base-exten-info .details-item.fix {
+  position: relative;
+  margin-bottom: 0;
+  padding-left: 90px;
+}
+
+.base-exten-info .details-item.feature::before,
+.base-exten-info .details-item.fix:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  left: 60px;
+  width: 22px;
+  height: 22px;
+}
+
+.base-exten-info .details-item.feature::before {
+  background-image: url(../../images/sprite.svg);
+  background-position: 267px 207px;
+}
+
+.base-exten-info .details-item.fix::before {
+  background-image: url(../../images/sprite.svg);
+  background-position: 296px 207px;
+}

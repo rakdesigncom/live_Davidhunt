@@ -1,0 +1,28 @@
+{
+    "name": "rootways/megamenu",
+    "description": "Rootways Mega Menu Extension",
+    "require": {
+       "php": "~7.2.0|~7.3.0|~7.3.14|~7.4.0|~7.4.5|~7.4.8|~8.1.0|~8.2.0"
+    },
+    "type": "magento2-module",
+    "version": "3.0.3",
+    "license": [
+        "OSL-3.0"
+    ],
+    "authors": [
+        {
+          "name": "Rootways Developer",
+          "email": "help@rootways.com",
+          "homepage": "https://www.rootways.com/",
+          "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Rootways\\Megamenu\\": ""
+        }
+    }
+}

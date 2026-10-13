@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author FYB Romania
+ * @copyright Copyright (c) FYB Romania (https://fyb.ro)
+ * @package Notification Bar for Magento 2
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <notification_bar>
+            <general>
+                <is_sticky>1</is_sticky>
+                <text_color>#ffffff</text_color>
+                <min_height>40</min_height>
+                <background_color>#17b527</background_color>
+                <pages_exclude><![CDATA[checkout,
+onepage]]></pages_exclude>
+            </general>
+        </notification_bar>
+    </default>
+</config>

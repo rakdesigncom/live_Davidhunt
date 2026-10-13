@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="widget_columns">
+        <column name="price">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="renders" xsi:type="array">
+                        <item name="prices" xsi:type="array">
+                            <item name="default" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="regular_price" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true"/>
+                                        <item name="sortOrder" xsi:type="number">1</item>
+                                    </item>
+                                    <item name="special_price" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true">now</item>
+                                        <item name="sortOrder" xsi:type="number">2</item>
+                                    </item>
+                                </item>
+                            </item>
+                            <!-- ConfigurableProduct overrides regular_price to the final_price template,
+                                 which hides the struck old price. Restore the old-price template and
+                                 the "now" label/ordering so configurable matches simple products. -->
+                            <item name="configurable" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="regular_price" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true"/>
+                                        <item name="bodyTmpl" xsi:type="string">Magento_Catalog/product/price/regular_price</item>
+                                        <item name="sortOrder" xsi:type="number">1</item>
+                                    </item>
+                                    <item name="special_price" xsi:type="array">
+                                        <item name="label" xsi:type="string" translate="true">now</item>
+                                        <item name="sortOrder" xsi:type="number">2</item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

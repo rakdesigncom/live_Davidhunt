@@ -1,0 +1,50 @@
+<?php
+/**
+ * Copyright © OpenGento, All rights reserved.
+ * See LICENSE bundled with this library for license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Opengento\Gdpr\ViewModel\Customer\Privacy\ExportCustomerDataProvider;
+use Opengento\Gdpr\ViewModel\Customer\Privacy\ExportDataProvider;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+$escaper = $escaper ?? $block;
+
+/** @var ExportDataProvider $exportDataProvider */
+$exportDataProvider = $block->getData('exportDataProvider');
+/** @var ExportCustomerDataProvider $exportCustomerDataProvider */
+$exportCustomerDataProvider = $block->getData('exportCustomerDataProvider');
+?>
+<div class="block block-dashboard-info">
+    <div class="block-title">
+        <strong><?= $escaper->escapeHtml(__('Export Personal Data')) ?></strong>
+    </div>
+    <div class="block-content">
+        <?php if ($exportDataProvider->getExportInformationHtml()): ?>
+            <div class="widget block block-static-block">
+                <?= $exportDataProvider->getExportInformationHtml() ?>
+            </div>
+        <?php endif; ?>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <?php if ($exportCustomerDataProvider->isExported()): ?>
+                    <a href="<?= $escaper->escapeUrl($block->getData('downloadActionUrl')) ?>" class="action submit primary" id="download">
+                        <span><?= $escaper->escapeHtml(__('Download Personal Data')) ?></span>
+                    </a>
+                <?php elseif ($exportCustomerDataProvider->hasExport()): ?>
+                    <div class="message info">
+                        <span><?= $escaper->escapeHtml(__('Your personal data document is pending export.')) ?></span>
+                    </div>
+                <?php else: ?>
+                    <a href="<?= $escaper->escapeUrl($block->getData('exportActionUrl')) ?>" class="action submit primary" id="export">
+                        <span><?= $escaper->escapeHtml(__('Export Personal Data')) ?></span>
+                    </a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>

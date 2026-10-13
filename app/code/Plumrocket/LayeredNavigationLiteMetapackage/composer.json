@@ -1,0 +1,10 @@
+{
+    "name": "plumrocket/layered-navigation-lite-metapackage",
+    "version": "1.3.8",
+    "description": "Plumrocket Layered Navigation Lite Package for Magento 2",
+    "type": "metapackage",
+    "require": {
+        "plumrocket/module-plumbase": ">=2.10.1",
+        "plumrocket/module-layered-navigation-lite": ">=1.3.8"
+    }
+}

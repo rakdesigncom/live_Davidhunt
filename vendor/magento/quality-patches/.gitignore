@@ -1,0 +1,10 @@
+.DS_Store
+/.idea
+/.cursor
+/vendor
+/composer.phar
+/composer.lock
+/auth.json
+/codeception.yml
+/_workdir
+/tests/integrity/.phpunit.result.cache

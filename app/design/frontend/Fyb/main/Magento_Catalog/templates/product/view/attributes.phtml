@@ -1,0 +1,150 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+$_product = $block->getProduct();
+$attributesInfo = [
+    'measurements',
+    'dual_mount',
+    'fixint_bracket_measurements',
+    'basemeasurements',
+    'shademeasurements',
+    'dimension_shade',
+    'primary_associated_shade',
+    'associated_shades',
+    'lamp_replaceable',
+    'has_bluetooth',
+    'motion_sensor',
+    'solar_powered',
+    'batteries_required',
+    'batteries_included',
+    'has_usb',
+    'primary_secondary_appearance',
+    'material',
+    'cable_colour',
+    'shade_included',
+    'primary_bulb_detail',
+    'primary_bulb_included_detail',
+    'recommendedlamp' ,
+    'lumens',
+    'colour_temp',
+    'colour_rendering',
+    'efficiency',
+    'lamplife',
+    'dimmable',
+    'switch_type',
+    'suitable',
+    'iprating',
+    'electrical_accessories',
+    'selling_pack_size',
+    'pallet_delivery',
+    'weight',
+    'icons',
+];
+$_additional = $block->getAdditionalData();
+?>
+
+<h3>Technical information</h3>
+<div class="product-attributes-tehnical-information">
+<?php if ($_additional) :?>
+    <?php
+    $attributesInfo = array_flip($attributesInfo);
+    foreach ($_additional as $attr => $data) {
+        if (!isset($attributesInfo[$attr])) {
+            unset($_additional[$attr]);
+        }
+    }
+    $_additional = array_merge($attributesInfo, $_additional);
+    ?>
+    <div class="additional-attributes-wrapper ">
+        <div class="additional-attributes" id="product-attribute-specs-table">
+            <?php foreach ($_additional as $attributeCode => $_data) :?>
+                <?php if (!is_array($_data) || (isset($_data['value']) && (string)$_data['value'] === 'N/A')) {
+                    continue;
+                }
+
+                $showAttr = true;
+                switch ($attributeCode) {
+                    case 'measurements':
+                    case 'fixint_bracket_measurements':
+                    case 'basemeasurements':
+                    case 'shademeasurements':
+                    case 'dimension_shade':
+                        $showAttr = !!$_data['value'];
+                        break;
+                    case 'weight':
+                        $_data['value'] = round($_data['value'], 1) . ' kg';
+                        $_data['label'] = __('Nett Weight (kg)');
+                        break;
+                    case 'shade_included':
+                    case 'recommendedlamp':
+                        $showAttr = !!$_data['value'] && $_data['value'] != '0';
+                        break;
+                    case 'dual_mount':
+                    case 'lamp_replaceable':
+                    case 'has_bluetooth':
+                    case 'motion_sensor':
+                    case 'solar_powered':
+                    case 'batteries_required':
+                    case 'has_usb':
+                        $showAttr = $_data['value'] == 'Yes';
+                        break;
+                    case 'lumens':
+                    case 'colour_temp':
+                    case 'colour_rendering':
+                    case 'efficiency':
+                    case 'lamplife':
+                    case 'selling_pack_size':
+                        $showAttr = $_data['value'] > 1;
+                        break;
+                    case 'batteries_included':
+                        $showAttr = isset($_additional['batteries_required']['value']) && $_additional['batteries_required']['value'] == 'Yes';
+                        break;
+                    case 'iprating':
+                        $showAttr = is_int($_data['value']) && $_data['value'] > 21;
+                        $_data['value'] = 'IP' . $_data['value'];
+                        break;
+                    case 'primary_secondary_appearance':
+                    case 'material':
+                        $_data['value'] = str_replace(',', ' &', $_data['value']);
+                        break;
+                    default:
+                        break;
+                }
+
+                if (!$showAttr) {
+                    continue;
+                }
+                ?>
+
+                <div class="additional-attribute-item">
+                    <label><?= $_data['code'] == 'icons' ? '' : $block->escapeHtml($_data['label']).":" ?> </label>
+                    <span class="<?= $_data['code'] == 'icons' ? 'icon-font-attribute': '' ?>"><?= /* @noEscape */ $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></span>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif;?>
+    <?php
+    $productHelper = $this->helper('\Fyb\Product\Helper\Data');
+
+    $imageUrl = $productHelper->getMeasurementImage($_product);
+    ?>
+    <?php if ($imageUrl): ?>
+        <div class="additional-attributes-image">
+            <img src="<?= $imageUrl['url'] ?>" alt="Measurement Image">
+        </div>
+    <?php endif; ?>
+</div>

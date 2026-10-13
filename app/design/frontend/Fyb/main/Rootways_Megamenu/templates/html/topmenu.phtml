@@ -1,0 +1,141 @@
+<?php
+/** @var \Rootways\Megamenu\Block\Topmenu $block */
+/** @var \Rootways\Megamenu\ViewModel\TopMenu $viewModel */
+$viewModel = $block->getData('view_model');
+?>
+<?php
+$requiredSettings = $viewModel->getRequiredSettings();
+
+if ($requiredSettings['is_active'] == 1) { ?>
+    <?php if ($requiredSettings['topmenualignmenttype'] != 3) { ?>
+        <div class="page-main">
+    <?php } ?>
+    <nav class="rootmenu" data-action="navigation">
+        <ul id="rw-menutop" class="mobile-sub rootmenu-list">
+            <?php if ($requiredSettings['show_home'] == 1) { ?>
+                <li>
+                    <a <?php if ($block->getIsHomePage() == 1) { echo 'class="active"'; } ?>
+                            href="<?= $block->escapeUrl($block->getStoreBaseUrl()) ?>"
+                            title="Home">
+                        <?= $block->escapeHtml(__('Home')) ?>
+                    </a>
+                </li>
+            <?php }
+            $view_more_array = [];
+            $main_cat_cnt = 1;
+            ?>
+
+            <?= $block->getCustomLinks(false);?>
+
+            <?php if ($requiredSettings['show_contactus'] == 1 || $requiredSettings['show_contactus'] == 2) { ?>
+                <?= $block->contactus() ?>
+            <?php } ?>
+
+            <?php if ($view_more_array != null) { ?>
+                <li class="level0 view-more">
+                    <a class="has-sub-cat" href="javaScript:void(0);"><?= $block->escapeHtml(__('View More')) ?> <i aria-hidden="true" class="fa fa-angle-down"></i></a>
+                    <ul class="rootmenu-submenu topmenu_main dropdown-leftside">
+                        <?php foreach ($view_more_array as $key => $value) { ?>
+                            <li><a href="<?= $block->escapeUrl($value) ?>"><?= $block->escapeHtmlAttr($key) ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </li>
+            <?php } ?>
+
+            <?= $block->getSocialShare();?>
+
+            <?php /* ?>
+                <li>
+                <?= $this->getChildHtml("store_language_nav"); ?>
+                </li>
+                <?php */ ?>
+        </ul>
+    </nav>
+    <?php if ($requiredSettings['topmenualignmenttype'] != 3) { ?>
+        </div>
+    <?php } ?>
+<?php } else { ?>
+    <?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+    <?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+
+    <nav class="navigation" data-action="navigation">
+        <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+            <?= /* @noEscape */ $_menu; ?>
+            <?= $block->getChildHtml(); ?>
+        </ul>
+    </nav>
+<?php } ?>
+
+<script>
+    require(['jquery', 'Fyb_Theme/js/lib/jquery.sticky', 'domReady!'], function($) {
+        var elems = $('.rootmenu-list > li');
+        var headerElem = $('.page-header');
+        var videoElem = $('.video-homepage');
+
+        headerElem.on('sticky-end', function() {
+            $(this).closest('.sticky-wrapper').css('height', '');
+        });
+
+        if (!videoElem.length) {
+            headerElem.sticky({topSpacing:0, zIndex: 99999});
+            return;
+        }
+
+        var isHovered = false;
+        $.each(elems, function (index, item) {
+            $(item).hover(
+                function() {
+                    isHovered = true;
+                    stickyHeader(true);
+                    headerElem.addClass("hover-header");
+                }, function() {
+                    isHovered = false;
+                    headerElem.removeClass("hover-header");
+                    stickyHeader();
+                }
+            );
+        });
+
+        var timer = null;
+        var stickyMenuActive = false;
+        var sleep = 5;
+
+        function stickyHeader(force = false) {
+            if (force) {
+                headerElem.sticky({topSpacing:0, zIndex: 99999});
+                stickyMenuActive = true;
+                return;
+            }
+
+            var inviewVideo = inview(videoElem);
+            if (inviewVideo && stickyMenuActive && !isHovered) {
+                headerElem.unstick();
+                stickyMenuActive = false;
+            }
+
+            if (!inviewVideo && !stickyMenuActive) {
+                headerElem.sticky({topSpacing:0, zIndex: 99999});
+                stickyMenuActive = true;
+            }
+        }
+
+        var inview = function ($el) {
+            var elH = $el.outerHeight(),
+                H   = $(window).height(),
+                r   = $el[0].getBoundingClientRect(), t=r.top, b=r.bottom;
+            return Math.max(0, t>0? Math.min(elH, H-t) : Math.min(b, H));
+        }
+
+        $(window).scroll(function() {
+            if(timer !== null) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(function() {
+                stickyHeader();
+            }, sleep);
+        });
+
+
+        stickyHeader();
+    });
+</script>

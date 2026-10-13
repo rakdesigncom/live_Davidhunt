@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Rootways Inc. Team
+ * @copyright Copyright (c) 2023 Rootways (https://www.rootways.com/)
+ * @package Rootways_Megamenu
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="admin_system_config_changed_section_rootmegamenu_option">
+        <observer name="rootmegamenu_optionssettings" instance="Rootways\Megamenu\Observer\DesignSettings"/>
+    </event>
+</config>

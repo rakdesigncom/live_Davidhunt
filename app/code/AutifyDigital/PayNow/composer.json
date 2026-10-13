@@ -1,0 +1,17 @@
+{
+    "name": "autifydigital/module-paynow",
+    "description": "Autify Digital Pay Now for Magento 2",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "require": {
+        "php": "~8.1.0||~8.2.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "AutifyDigital\\PayNow\\": ""
+        }
+    }
+}

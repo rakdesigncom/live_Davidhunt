@@ -1,0 +1,21 @@
+{
+    "name": "fyb_romania/module-base",
+    "description": "FYB Base",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "php": ">=7.4",
+        "magento/framework": "103.0.*"
+    },
+    "version": "1.0.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Fyb\\Base\\": ""
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\Escaper;
+use Magento\AdobeCommerceEventsClient\Block\Adminhtml\System\Config\TestConnectionButton;
+
+/** @var Escaper $escaper */
+/** @var TestConnectionButton $block */
+?>
+<script type="text/x-magento-init">
+    {
+        "#test_connection": {
+            "Magento_AdobeCommerceEventsClient/js/configuration-button": {
+                "ajaxUrl": "<?= $escaper->escapeUrl($block->getAjaxUrl()) ?>",
+                "buttonId": "#test_connection",
+                "buttonInfoId": "#connection_button_info",
+                "messageDivId": "#connection_message",
+                "messages": {
+                    "saveConfig": "Save your configuration before testing the connection.",
+                    "success": "Successfully sent a test event.",
+                    "failure":  "Failed to connect."
+                }
+            }
+        }
+    }
+</script>
+
+<?= $block->getButtonHtml() ?>
+<div id="connection_button_info">
+<?php if ($block->isButtonDisabled()): ?>
+    <p class="note"><span>Complete the <b>Adobe I/O Workspace Configuration</b> in the "General configuration" section
+            to test the connection.</span></p>
+<?php else: ?>
+    <div id="connection_message" style="display: none;">
+        <div class="message-text"></div>
+    </div>
+<?php endif; ?>
+</div>
